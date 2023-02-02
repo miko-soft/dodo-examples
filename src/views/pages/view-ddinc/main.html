@@ -1,0 +1,16 @@
+<h1>View#ddInc() - simple including of views</h1>
+<p>
+  This example tests implementation of multilevel, nested <b>data-dd-inc</b> elements.
+  which is rendered by <b>View.js#ddInc()</b> method.
+</p>
+<br>
+
+<article data-dd-inc="test/inc1.html">--inc1.html--</article>
+
+<br><br><span>--------------</span>
+
+<section data-dd-inc="test/inc10.html @@ sibling @@ b">--load inc10.html@@sibling@@b--</section>
+
+<br><br><span>--------------</span>
+
+<section data-dd-inc="test/inc3.html @@ prepend">--load inc3.html@@prepend--</section>

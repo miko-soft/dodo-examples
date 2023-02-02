@@ -1,0 +1,33 @@
+<h1>Controller Lifecycle Hooks</h1>
+Every time a new route is opened the controller is changed and new controller lifecycle starts.
+<br>This example shows in which order will be executed controller constructor and the lifecycle hooks.
+Open the browser console to see the constructor and hook arguments.
+<ol>
+  <li><b>constructor(app)</b> - Will be executed on the browser page reload.</li>
+  <li><b>loader(trx)</b> - Load views via data-rg-inc and/or data-rg-view.</li>
+  <li><b>init(trx)</b> - The place where AJAX calls should be used.</li>
+  <li>rend(trx) - This method shouldn't be used unless you want to improve the app speed.</li>
+  <li><b>postrend(trx)</b> - Render HTML elements after AJAX and render are done.</li>
+  <li><b>destroy(trx)</b> - Activated when the route is changed i.e. address in the browser bar.</li>
+</ol>
+<br><i>app</i> is the App class instance
+<br><i>trx</i> is the regoch router transitional variable.
+
+
+<br><br>
+<h3>A) Open another uri i.e. controller</h3>
+<a href="/" data-dd-href>HOME</a>
+<br>- open "HomeCtrl" controller
+<br>- execute the destroy() method in the "ControllerHooksCtrl" controller
+
+<br><br>
+<h3>B) Open another uri but same controller</h3>
+<a href="/controller-hooks-same" data-dd-href>/controller-hooks-same</a>
+<br>- open "ControllerHooksCtrl" controller
+<br>- execute the destroy() method in the "ControllerHooksCtrl" controller
+
+<br><br>
+<h3>C) Open same uri and same controller</h3>
+<a href="/controller-hooks" data-dd-href>/controller-hooks</a>
+<br>- open "ControllerHooksCtrl" controller
+<br>- execute the destroy() method in the "ControllerHooksCtrl" controller

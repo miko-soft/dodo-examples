@@ -1,0 +1,44 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+div.layout {
+  margin: 21px;
+  padding: 13px 13px 50px 13px;
+  border: 1px solid gray;
+  min-height: 90%;
+  font: 15px Verdana;
+  background: #fafafa;
+}
+
+a {
+  color: #00b5ed;
+}
+
+a:hover {
+  color: #0037ed;
+}
+
+h1 {
+  color: Gray;
+  text-align: center;
+  margin-top: 34px;
+}
+
+h2.notfound {
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(255, 51, 0);
+}
+
+em {
+  color: rgb(229, 10, 236);
+  padding: 3px;
+  font: 13px Georgia;
+  background: #eee;
+  font-weight: bold;
+}

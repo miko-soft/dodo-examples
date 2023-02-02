@@ -1,0 +1,51 @@
+<h1>Model Test ($model, $modeler)</h1>
+<br>
+<h3>test model as string</h3>
+<button data-dd-click="str()">str</button>
+<br>$model.first_name: <span data-dd-print="$model.first_name"></span>
+<br>
+<br>
+<h3>test model as object</h3>
+<button data-dd-click="obj()">obj</button>
+<br>$model.user.name: <span data-dd-print="$model.user.name"></span>
+<br>$model.user.age: <span data-dd-print="$model.user.age"></span>
+<br>$model.user.isActive: <span data-dd-print="$model.user.isActive"></span>
+<br>
+<br>
+<h3>test model as array</h3>
+<button data-dd-click="arr()">arr</button>
+<br>$model.pets: <span data-dd-print="$model.pets"></span>
+
+<br>
+<br>
+<h3>test model with the 5 levels deep object</h3>
+<button data-dd-click="level5()">level5</button>
+<br>$model.car.x.y.z.w.year: <span data-dd-print="$model.car.x.y.z.w.year"></span>
+<br>YEAR: <span data-dd-print="$model.yearOfCar">data-dd-print="year"</span>
+
+<br>
+<br>
+<br>
+<h3>model in INPUT tag</h3>
+Automatic render of the model. The text will be changed automatically as you type.
+<br><small>used data-dd-model="wood_type"</small>
+<br><input type="text" data-dd-model="wood_type"> <span data-dd-print="$model.wood_type"></span>
+<br>
+<br><small>used data-dd-model="$model.wood_type2"</small>
+<br><input type="text" data-dd-model="$model.wood_type2"> <span data-dd-print="$model.wood_type2"></span>
+<br><br>Notice: Both <em>data-dd-model="wood_type"</em> and <em>data-dd-model="$model.wood_type2"</em> are valid.
+
+<br>
+<br>
+<br>
+<h3>convert data type</h3>
+By default the model data type is converted. For example string "1" is converted to number 1. To control this use <b>@@ convertType</b> or <b>@@ convertTypeDont</b>.
+<br><br>Type some numbers or JSON or boolean in the fields. Open browser console.
+<br>
+<input type="text" data-dd-model="myMdl1" placeholder="default">
+<input type="text" data-dd-model="myMdl2 @@ convertType" placeholder="convertType">
+<input type="text" data-dd-model="myMdl3 @@ convertTypeDont" placeholder="convertTypeDont">
+<button data-dd-click="modelSeeConsole()">See in console</button>
+
+<br>
+<br>
