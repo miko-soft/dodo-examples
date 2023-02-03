@@ -11,6 +11,7 @@ import HomeCtrl from './controllers/HomeCtrl.js';
 import ControllerHooksCtrl from './controllers/ControllerHooksCtrl.js';
 import ModelCtrl from './controllers/ModelCtrl.js';
 import View_ddIncCtrl from './controllers/View_ddIncCtrl.js';
+import View_loadViewsCtrl from './controllers/View_loadViewsCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -21,6 +22,7 @@ const routes = [
   ['when', '/controller-hooks-same', 'ControllerHooksCtrl'],
   ['when', '/model', 'ModelCtrl'],
   ['when', '/view-ddinc', 'View_ddIncCtrl'],
+  ['when', '/view-loadviews', 'View_loadViewsCtrl'],
   ['notfound', 'NotfoundCtrl']
 ];
 
@@ -36,6 +38,7 @@ app
     ControllerHooksCtrl,
     ModelCtrl,
     View_ddIncCtrl,
+    View_loadViewsCtrl,
     NotfoundCtrl
   ]);
 

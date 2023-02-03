@@ -1,0 +1,19 @@
+<h1>Page#loadViews() - dynamically load views</h1>
+The views can be loaded with <b>loadView()</b> or <b>loadViews()</b> methods used in controller loader() hook.
+<br><br>
+
+++++++++++++++++++++++++++++++++
+<div data-dd-view="#part1"></div>
+++++++++++++++++++++++++++++++++
+<div data-dd-view="#part2">This is </div>
+++++++++++++++++++++++++++++++++
+<div data-dd-view="#part3"> prepended.</div>
+++++++++++++++++++++++++++++++++
+
+<br><br><br><br><br>
+<div>
+  This example tests <b>Page::loadViews(viewDefs, isAsync)</b>.
+  <br>
+  <br><i>Notice:</i> If isAsync=false sometimes it can return the error
+  <i style="color:red">Element [data-dd-view="#part1"] not found.</i>.
+</div>
