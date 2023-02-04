@@ -22,6 +22,7 @@ import LoginFormCtrl from './controllers/LoginFormCtrl.js';
 import LoginDashboardCtrl from './controllers/LoginDashboardCtrl.js';
 import Navig1Ctrl from './controllers/Navig1Ctrl.js';
 import Navig2Ctrl from './controllers/Navig2Ctrl.js';
+import PaginatorCtrl from './controllers/PaginatorCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -46,6 +47,8 @@ const routes = [
   ['when', '/navig1', 'Navig1Ctrl'],
   ['when', '/navig2', 'Navig2Ctrl'],
   ['redirect', '/navig3', '/navig1'],
+
+  ['when', '/paginator', 'PaginatorCtrl'],
 
   ['notfound', 'NotfoundCtrl']
 ];
@@ -73,6 +76,7 @@ app
     LoginDashboardCtrl,
     Navig1Ctrl,
     Navig2Ctrl,
+    PaginatorCtrl,
     NotfoundCtrl
   ]);
 

@@ -1,0 +1,33 @@
+<h1>Paginator Test</h1>
+
+<!-- results -->
+<div class="w3-container w3-margin">
+  <div>
+    <h3>Results: <small><span data-dd-print="$model.results.length"></span> of <span data-dd-print="$model.itemsTotal"></span></small></h3>
+  </div>
+  <div data-dd-for="$model.results">
+    <span class="w3-text-green w3-margin-right" data-dd-echo="solveMath/({{currentPage}} - 1) * {{this.itemsPerPage}} + $i0 + 1/."></span>
+    <span class="w3-margin-right" data-dd-print="$model.results.$i0.name"></span> &middot;
+    <span data-dd-print="$model.results.$i0.age @@append" style="color:gray">age: </span>
+  </div>
+</div>
+
+<!-- pagination links -->
+<div class="w3-container w3-margin">
+  <div class="w3-row">
+    <div class="w3-third">&nbsp;</div>
+    <div class="w3-third">
+      <div class="w3-center">
+        <div class="w3-bar">
+          <a href="" class="w3-button" data-dd-click="openPage(1, $element) @@ preventDefault">&laquo;</a>
+          <a href="" class="w3-button" data-dd-for="$model.pageLinks" data-dd-class="$model.pageLinks.$i0.c" data-dd-click="openPage(this.$model.pageLinks.$i0.i) @@ preventDefault" data-dd-print="$model.pageLinks.$i0.i">1</a>
+          <a href="" class="w3-button" data-dd-click="openPage(this.pagesTotal, $element) @@ preventDefault">&raquo;</a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">&nbsp;</div>
+  </div>
+</div>
+
+
+Notice: W3 CSS library is loaded dynamicall (https://www.w3schools.com/w3css/4/w3.css)
