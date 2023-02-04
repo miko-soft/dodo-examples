@@ -17,6 +17,8 @@ export default class View_ddIncCtrl extends Controller {
 
 
   async init(trx) {
+    // watch the compiled view
+    console.log('compiled view::\n', window.dodoGlob.viewsCached['pages/view-ddinc/main.html']);
   }
 
   async postrend(trx) {

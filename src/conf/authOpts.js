@@ -1,8 +1,8 @@
 const authOpts = {
-  apiLogin: 'http://localhost:8001/panel/users/login',
-  afterGoodLogin: '/playground/{loggedUserRole}/dashboard', // redirect after succesful login:
-  afterBadLogin: '/playground/login',  // redirect after unsuccesful login
-  afterLogout: '/playground/login'     // URL after logout
+  apiLogin: 'https://api.dex8.com/panel/users/login',
+  afterGoodLogin: '/{loggedUserRole}/login-dashboard', // redirect after succesful login
+  afterBadLogin: '/login-form',  // redirect after unsuccesful login
+  afterLogout: '/login-form'     // URL after logout
 };
 
 export { authOpts };

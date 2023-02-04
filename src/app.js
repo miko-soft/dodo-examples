@@ -17,6 +17,9 @@ import DataDdCtrl from './controllers/DataDdCtrl.js';
 import DataDdListenersCtrl from './controllers/DataDdListenersCtrl.js';
 import CookieCtrl from './controllers/CookieCtrl.js';
 import BrowserStorageCtrl from './controllers/BrowserStorageCtrl.js';
+import FormCtrl from './controllers/FormCtrl.js';
+import LoginFormCtrl from './controllers/LoginFormCtrl.js';
+import LoginDashboardCtrl from './controllers/LoginDashboardCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -33,6 +36,9 @@ const routes = [
   ['when', '/dataddlisteners', 'DataDdListenersCtrl'],
   ['when', '/cookie', 'CookieCtrl'],
   ['when', '/browserstorage', 'BrowserStorageCtrl'],
+  ['when', '/form', 'FormCtrl'],
+  ['when', '/login-form', 'LoginFormCtrl', { authGuards: ['autoLogin'] }],
+  ['when', '/developer/login-dashboard', 'LoginDashboardCtrl', { authGuards: ['isLogged', 'hasRole'] }],
   ['notfound', 'NotfoundCtrl']
 ];
 
@@ -54,6 +60,9 @@ app
     DataDdListenersCtrl,
     CookieCtrl,
     BrowserStorageCtrl,
+    FormCtrl,
+    LoginFormCtrl,
+    LoginDashboardCtrl,
     NotfoundCtrl
   ]);
 

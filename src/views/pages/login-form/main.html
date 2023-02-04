@@ -1,0 +1,21 @@
+<h1>Auth (Login)</h1>
+<p>The login test i.e. test the <b>Auth</b> core library.
+  <br>
+  <br>1) Click <a href="/developer/login-dashboard" data-dd-href>/developer/login-dashboard</a> to test <b>Auth::isLogged()</b> and <b>Auth::hasRole()</b> route guards.
+  If the user is already logged and has 'developer' role then the dashboard page will open. If not the route should redirect to the <i>afterBadlogin</i> URL.
+  <br>
+  <br>2) To test the method <b>Auth::autoLogin()</b> just <a href="/login-form" data-dd-href>reload this URL</a>.
+  If the user is logged redirect to <i>afterGoodLogin</i> URL.
+</p>
+
+<br><br><br>
+
+<form data-dd-form="loginForm" style="background-color:#ccc;padding:13px;">
+  username: <input type="text" name="username" value="demo">
+  <br>password: <input type="text" name="password" value="">
+  <br>
+  <br><button type="button" data-dd-click="doLogin()">Login</button>
+</form>
+
+<br><br><br>
+<p>Notice: To test this feature properly you ll need a dex8.com account (demo:12345) and endpoint <b>POST https://api.dex8.com/panel/users/login</b> will be used.</p>

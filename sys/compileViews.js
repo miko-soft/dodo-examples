@@ -3,8 +3,6 @@ import chokidar from 'chokidar';
 import fs from 'fs';
 const fsp = fs.promises;
 
-import views from '../src/views.js';
-
 
 
 class CompileViews {
@@ -17,6 +15,13 @@ class CompileViews {
   async init() {
     const doesExist = await this.dirExists();
     if (!doesExist) { return console.log(`Views folder "${this.viewsDir}" doesn't exist.`); }
+
+    const views_imported = await import('../src/views.js').catch(console.log);
+    this.views = { ...views_imported }; // cole the object to prevent error: Cannot add property inc/layout.html, object is not extensible
+    if (!this.views) {
+      this.views = {};
+      await this.makeViewFile(this.views); // on error create views.js with empty object
+    }
 
     this.dirWatch();
   }
@@ -47,7 +52,7 @@ class CompileViews {
   dirWatch() {
     const watcher = chokidar.watch(this.viewsDir, {
       ignored: /(^|[\/\\])\../, // ignore dotfiles
-      persistent: true
+      persistent: false
     });
 
     watcher
@@ -63,9 +68,10 @@ class CompileViews {
 
     let html = await this.getHTML(filePath);
     html = this.minifyHTML(html);
+    html = this.correctHTML(html);
 
-    views[filePath2] = html;
-    await this.makeViewFile(views);
+    this.views[filePath2] = html;
+    await this.makeViewFile(this.views);
   }
 
 
@@ -75,9 +81,10 @@ class CompileViews {
 
     let html = await this.getHTML(filePath);
     html = this.minifyHTML(html);
+    html = this.correctHTML(html);
 
-    views[filePath2] = html;
-    await this.makeViewFile(views);
+    this.views[filePath2] = html;
+    await this.makeViewFile(this.views);
   }
 
 
@@ -85,8 +92,8 @@ class CompileViews {
     const filePath2 = this.shortenPath(filePath);
     console.log(`   - ${filePath2}`);
 
-    views[filePath2] = undefined;
-    await this.makeViewFile(views);
+    this.views[filePath2] = undefined;
+    await this.makeViewFile(this.views);
   }
 
 
@@ -113,10 +120,10 @@ class CompileViews {
 
 
   /**
-  * Remove empty spaces, new lines, tabs and HTML comments.
-  * @param {string} html - HTML code
-  * @return {string} - minified HTML
-  */
+   * Remove empty spaces, new lines, tabs and HTML comments.
+   * @param {string} html - HTML code
+   * @return {string} - minified HTML
+   */
   minifyHTML(html) {
     html = html.replace(/\t+/g, ' ');
     html = html.replace(/\s+/g, ' ');
@@ -125,6 +132,16 @@ class CompileViews {
     html = html.replace(/> </g, '><');
     html = html.replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/g, ''); // remove comments
     html = html.trim();
+    return html;
+  }
+
+
+  /**
+   * Correct HTML to be valid JSON string.
+   * @param {string} html - HTML code
+   * @return {string} - corrected HTML
+   */
+  correctHTML(html) {
     return html;
   }
 
