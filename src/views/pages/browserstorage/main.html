@@ -1,0 +1,47 @@
+<h1>BrowserStorage Test</h1>
+The tests work for both localStorage and sessionStorage in parallel. You can check it Chrome Dev Tools -> Application.
+<br>
+<br>
+<input type="text" name="first_name" value="John" data-dd-setinitial="first_name" data-dd-set="first_name" placeholder="first name">
+<button type="button" data-dd-click="test_put()">put() - string</button> -- save string value
+
+<br>
+<br>
+<input type="text" style="width:340px" name="some_obj" value='{"str": "some string", "num": 55}' data-dd-setinitial="some_obj @@ convertType" data-dd-set="some_obj @@ convertType" placeholder="enter JSON">
+<button type="button" data-dd-click="test_putObject()">putObject() - object</button> -- save object
+
+<br>
+<br>
+<br>
+<button type="button" data-dd-click="test_getAll()">getAll()</button> -- list all values
+<div>
+  <b>localStorage</b>
+  <p data-dd-for="$model.localStorageValues" data-dd-print="$model.localStorageValues.$i @@ prepend"></p>
+</div>
+<div>
+  <b>sessionStorage</b>
+  <p data-dd-for="$model.sessionStorageValues" data-dd-print="$model.sessionStorageValues.$i @@ prepend"></p>
+</div>
+
+<br>
+<br>
+<input type="text" name="storageName" value="first_name" data-dd-setinitial="storageName" data-dd-set="storageName" placeholder="enter storage name">
+<button type="button" data-dd-click="test_get()">get()</button>
+-- <b>localStorage</b>: <i data-dd-print="$model.localStorageVal"></i>
+-- <b>sessionStorage</b>: <i data-dd-print="$model.sessionStorageVal"></i>
+
+<br>
+<br>
+<input type="text" name="storageName2" value="some_obj" data-dd-setinitial="storageName2" data-dd-set="storageName2" placeholder="enter storage name of the object">
+<button type="button" data-dd-click="test_getObject()">getObject()</button>
+-- <b>localStorage</b>: <i data-dd-print="$model.localStorageVal2"></i>
+-- <b>sessionStorage</b>: <i data-dd-print="$model.sessionStorageVal2"></i>
+
+<br>
+<br>
+<input type="text" name="storageName3" value="first_name" data-dd-setinitial="storageName3" data-dd-set="storageName3" placeholder="enter storage name">
+<button type="button" data-dd-click="test_remove()">remove()</button>
+
+<br>
+<br>
+<button type="button" data-dd-click="test_removeAll()">removeAll()</button>

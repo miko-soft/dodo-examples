@@ -16,6 +16,7 @@ import View_lazyJSCtrl from './controllers/View_lazyJSCtrl.js';
 import DataDdCtrl from './controllers/DataDdCtrl.js';
 import DataDdListenersCtrl from './controllers/DataDdListenersCtrl.js';
 import CookieCtrl from './controllers/CookieCtrl.js';
+import BrowserStorageCtrl from './controllers/BrowserStorageCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -31,6 +32,7 @@ const routes = [
   ['when', '/datadd', 'DataDdCtrl'],
   ['when', '/dataddlisteners', 'DataDdListenersCtrl'],
   ['when', '/cookie', 'CookieCtrl'],
+  ['when', '/browserstorage', 'BrowserStorageCtrl'],
   ['notfound', 'NotfoundCtrl']
 ];
 
@@ -51,6 +53,7 @@ app
     DataDdCtrl,
     DataDdListenersCtrl,
     CookieCtrl,
+    BrowserStorageCtrl,
     NotfoundCtrl
   ]);
 
