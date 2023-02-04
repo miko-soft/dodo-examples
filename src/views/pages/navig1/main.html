@@ -1,0 +1,29 @@
+<h1>Navig Test - Page 1</h1>
+<p>Test the <b>Navig</b> methods.</p>
+<i>Activate debug: {router:true, ddKILL:true}</i>
+<br>
+<h4>LINKS</h4>
+<b>with data-dd-href</b>
+<br><a href="/navig1" data-dd-href>/navig1</a>
+<br><a href="/navig1#somehash" data-dd-href>/navig1#somehash</a>
+<br><a href="/navig1#somehash2" data-dd-href>/navig1#somehash2</a>
+<br><a href="/navig2" data-dd-href>/navig2</a>
+<br><a href="/navig2#somehash" data-dd-href>/navig2#somehash</a>
+<br><a href="/bad-url" data-dd-href>/bad-url</a> - click on this link and after that click on BACK button
+<br>
+<br>
+<b>no data-dd-href</b>
+<br><a href="/navig1">/navig1</a>
+<br><a href="/navig1#somehash">/navig1#somehash</a>
+<br><a href="/navig2">/navig2</a>
+<br><a href="/navig2#somehash">/navig2#somehash</a>
+<br><a href="/navig1#somehash">/navig1#somehash</a>
+<br>
+<br>
+<br>
+<br>
+<h4>METHODS</h4>
+<button data-dd-click="runGOTO('/navig2')">goto /navig2</button>
+<button data-dd-click="runBACK()">back</button>
+<button data-dd-click="runFORWARD()">forward</button>
+<button data-dd-click="runRELOAD()">reload</button>

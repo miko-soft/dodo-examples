@@ -20,6 +20,8 @@ import BrowserStorageCtrl from './controllers/BrowserStorageCtrl.js';
 import FormCtrl from './controllers/FormCtrl.js';
 import LoginFormCtrl from './controllers/LoginFormCtrl.js';
 import LoginDashboardCtrl from './controllers/LoginDashboardCtrl.js';
+import Navig1Ctrl from './controllers/Navig1Ctrl.js';
+import Navig2Ctrl from './controllers/Navig2Ctrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -37,8 +39,14 @@ const routes = [
   ['when', '/cookie', 'CookieCtrl'],
   ['when', '/browserstorage', 'BrowserStorageCtrl'],
   ['when', '/form', 'FormCtrl'],
+
   ['when', '/login-form', 'LoginFormCtrl', { authGuards: ['autoLogin'] }],
   ['when', '/developer/login-dashboard', 'LoginDashboardCtrl', { authGuards: ['isLogged', 'hasRole'] }],
+
+  ['when', '/navig1', 'Navig1Ctrl'],
+  ['when', '/navig2', 'Navig2Ctrl'],
+  ['redirect', '/navig3', '/navig1'],
+
   ['notfound', 'NotfoundCtrl']
 ];
 
@@ -63,6 +71,8 @@ app
     FormCtrl,
     LoginFormCtrl,
     LoginDashboardCtrl,
+    Navig1Ctrl,
+    Navig2Ctrl,
     NotfoundCtrl
   ]);
 
