@@ -1,0 +1,16 @@
+<h1>Cookie</h1>
+<form data-dd-form="cookieF" data-dd-change="showFields()">
+  cookie method: <select name="cookieMethod">
+    <option value="put">put</option>
+    <option value="putObject">putObject</option>
+    <option value="getAll">getAll</option>
+    <option value="get">get</option>
+    <option value="getObject">getObject</option>
+    <option value="remove">remove</option>
+    <option value="removeAll">removeAll</option>
+    <option value="exists">exists</option>
+  </select>
+  <br>cookie name: <input type="text" name="cookieName" size="50" data-dd-if="$model.input1">
+  <br>cookie value: <input type="text" name="cookieValue" size="50" data-dd-if="$model.input2">
+  <br><button type="button" data-dd-click="runCOOKIE()">run COOKIE</button>
+</form>
