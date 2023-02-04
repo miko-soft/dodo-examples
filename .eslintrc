@@ -1,6 +1,7 @@
 {
 	"globals": {
-    "dodoGlob": true
+    "dodoGlob": true,
+    "$": true
 	},
 	"env": {
 		"browser": true,

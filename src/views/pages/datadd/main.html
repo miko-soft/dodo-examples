@@ -1,0 +1,318 @@
+<h1>DataRg Test</h1>
+
+<!-- examples -->
+<h3>--GENERATORS--</h3>
+
+<h4>DATA-DD-FOR</h4>
+<button data-dd-click="runFOR()">run FOR (priority: 0)</button> - render only $model.companies (initial array $model.companies has some elements)
+<p data-dd-for="$model.companies" style="color:green" class="solveMath/$i+1/">
+  <span data-dd-print="$model.companies.$i.name @@ append">solveMath/$i+1/. name:</span> --
+  <b data-dd-print="$model.companies.$i.size"></b>
+</p>
+
+<br>
+<br><button data-dd-click="runFOR2()">run FOR </button> - render only $model.companies2 (initial array $model.companies2 is undefined)
+<p data-dd-for="$model.companies2" style="color:green" class="smth">
+  <span data-dd-echo="$i. "></span>
+  <span data-dd-echo="company: {{$model.companies2.$i.name}}"></span>
+  <span data-dd-echo=" | "></span>
+  <span data-dd-echo="size: {{$model.companies2.$i.size}}"></span>
+  <span data-dd-echo=" | "></span>
+  <span data-dd-print="$model.companies2.$i.address"></span>
+</p>
+
+<br><br>
+<button data-dd-click="runFORsolvers()">run FORsolvers (priority: 1)</button> - initial array has no elements (empty array). Example with <b>@@priority</b> parameter, $i and solveMath method.
+<ul>
+  <!-- All commented examples works ! -->
+  <li data-dd-for="$model.herbals"><span data-dd-print="$model.herbals.$i @@ append">skipNum:{{skipNum}} | $i | solveMath/$i + 1/ | solveMath/({{skipNum}} + $i) * 5/ |</span> </li>
+  <!-- <li data-dd-for="$model.herbals"><span data-dd-print="$model.herbals.$i0 @@ append">skipNum:{{skipNum}} | $i0 | solveMath/$i0 + 1/ | solveMath/({{skipNum}} + $i0) * 5/ |</span> </li> -->
+  <!-- <li data-dd-for="$model.herbals @@ 0"><span data-dd-print="$model.herbals.$i0 @@ append">skipNum:{{skipNum}} | $i0 | solveMath/$i0 + 1/ | solveMath/({{skipNum}} + $i0) * 5/ |</span> </li> -->
+  <!-- <li data-dd-for="$model.herbals @@ 0"><span data-dd-print="$model.herbals.$i @@ append">skipNum:{{skipNum}} | $i | solveMath/$i0 + 1/ | solveMath/({{skipNum}} + $i0) * 5/ |</span> </li> -->
+  <!-- <li data-dd-for="$model.herbals @@ 1"><span data-dd-print="$model.herbals.$i1 @@ append">skipNum:{{skipNum}} | $i1 | solveMath/$i1 + 1/ | solveMath/({{skipNum}} + $i1) * 5/ |</span> </li> -->
+</ul>
+
+
+<br><br>
+<button data-dd-click="runFORnested()">run FORnested (priorities: 2,3)</button> - run data-dd-for inside another data-dd-for
+<table>
+  <tr data-dd-for="$model.trains @@ 2">
+    <td data-dd-for="fields @@ 3" style="width:200px"><span data-dd-print="$model.trains.$i2.{{fields.$i3}} @@ append"><b>solveMath/$i3 + 1/.</b></span></td>
+  </tr>
+</table>
+
+
+<br><br>
+<button data-dd-click="runFOR_solveInterpolated()">run runFOR_solveInterpolated</button> - parse interpolated text in variable name
+<ul>
+  <li data-dd-for="$model.kids">
+    <span data-dd-print="$model.kids.$i0.name"></span>
+    ({{$model.kids.$i0._id}} - <span data-dd-print="$model.kid_{{$model.kids.$i0._id}}"></span>)
+  </li>
+</ul>
+
+
+<br><br>
+<h4>DATA-DD-REPEAT</h4>
+<p>The example shows how <b>data-dd-repeat</b> will multiply the element. It will work good even if it contains data-dd-model and data-dd-print elements.</p>
+<p>Initially the P element will be repeated 3 times due to <b>data-dd-repeat="3"</b> attribute. When the button "run REPEAT" is clicked the element will be repeated 5 times.</p>
+<button data-dd-click="runREPEAT(5)">run REPEAT 5</button>
+<p data-dd-repeat="$model.multiplikator" class="solveMath/$i0+1/">
+  The pet #solveMath/$i0+1/:
+  <input data-dd-model="pets.$i0">
+  <span data-dd-print="$model.pets.$i0"></span>
+</p>
+
+<br><br>
+<h4>DATA-DD-REPEAT</h4>
+The example shows how to change the variable name dynamically by using {{ctrlProp}} (changeable variable name), for-example: data-dd-repeat="$model.{{repeat_var_name}}" .
+<p data-dd-print="repeat_var_name @@ prepend"> is the variable name.</p>
+<p data-dd-repeat="$model.{{repeat_var_name}}">solveMath/$i0+1/. repeated</p>
+
+<br><br>
+<h4>DATA-DD-PRINT &amp; DATA-DD-SET</h4>
+<button data-dd-click="runPRINT()">run PRINT</button> <small>Click on the button to change the print values</small>
+<!-- <input type="text" name="x" data-dd-set="product" data-dd-print="product @@ sibling"> -->
+<br>
+<br>a) @@inner -- <b data-dd-print="$model.product.name @@ inner">product.name:</b>
+<br>b) @@outer -- <b data-dd-print="$model.product.name @@ outer">product.name:</b>
+<br>c) @@sibling -- <b data-dd-print="$model.product.name @@ sibling">product.name:</b>
+<br>d) @@append -- <b data-dd-print="$model.product.name @@ append">product.name:</b>
+<br>e) @@prepend -- <b data-dd-print="$model.product.name @@ prepend">is the product.name</b>
+<br>f) @@inset -- <b data-dd-print="$model.product.name @@ inset">The product name is <i>{{}}</i> !</b>
+<br> <input type="text" name="x" data-dd-model="product.name" placeholder="change product.name">
+<br>
+<br>g) <span data-dd-print="$model.product.address.city @@ append">The product.address.city is</span>
+<br>h) <span data-dd-print="$model.product @@ append" style="color:Gray">JSON: </span>
+<br>
+<br>i) array test
+<br>product.colors: <span data-dd-print="$model.product.colors"></span>
+<br>product.colors.0: <span data-dd-print="$model.product.colors.0">Dont keep</span> <input type="text" data-dd-model="product.colors.0" placeholder="change product.colors.0">
+<br>product.colors.1: <span data-dd-print="$model.product.colors.1">Dont keep</span>
+<br>product.colors.2: <span data-dd-print="$model.product.colors.2 @@ inner @@ keep">KEEP</span> <input type="text" data-dd-model="product.colors.2" placeholder="change product.colors.2">
+<br><br>
+
+<br><br>
+<h4>DATA-DD-SETINITIAL &amp; DATA-DD-PRINT (initial value)</h4>
+<input type="text" value="5" data-dd-setinitial="someNum_1 @@ convertType"> - <small>data-dd-setinitial="someNum_1 @@ convertType"</small> - will convert to number automatically
+<br><input type="text" value="8" data-dd-setinitial="someNum_2 @@convertTypeDont"> - <small>data-dd-setinitial="someNum_2 @@ convertTypeDont"</small> - will not convert to number automatically, original string will stay
+<br><button data-dd-click="showSetinitial()">Show in console</button>
+<br><br>
+<p>Set the initial value of the input tag with the <b>value</b> attribute. Then print that initial value.</p>
+Change pet name: <input type="text" value="Mrnjao" data-dd-setinitial="$model.pet.cat.name" data-dd-model="pet.cat.name">
+<br><span data-dd-print="$model.pet.cat.name @@ append">Pet name is</span>
+
+
+<br><br>
+<h4>DATA-DD-PRINT with pipe</h4>
+<b>data-dd-print="$model.longText"</b> &rarr; <span data-dd-print="$model.longText"></span>
+<br><b>data-dd-print="$model.longText | slice(0, 10)"</b> &rarr; <span data-dd-print="$model.longText | slice(0, 10)"></span>
+<br><b>data-dd-print="$model.longText | replace(/Lorem/ig, 'LOREM')"</b> &rarr; <span data-dd-print="$model.longText | replace(/Lorem/ig, 'LOREM')"></span>
+<br><b>data-dd-print="$model.obj4json"</b> convert object to JSON (no need for pipe) &rarr; <span data-dd-print="$model.obj4json"></span>
+
+<br><br>
+<h4>DATA-DD-PRINT variable with HTML tags</h4>
+<button data-dd-click="printHTML()">print HTML</button>
+<p data-dd-print="htmlText"></p>
+
+<br><br>
+<h4>DATA-DD-PRINT dynamic variable name with {{}} and solveMath//</h4>
+<b>data-dd-print="$model.advert___{{ad_num}}"</b> - always separate dynamic part with 3 underscores ___ , otherwise automatic render() will not work with the $model
+<br><button data-dd-click="printHTML_solvemath(3)">print solvemath</button>
+<p data-dd-print="$model.advert___{{ad_num}}"></p>
+<p data-dd-print="$model.advert___solveMath/{{ad_num}} + 1/"></p>
+
+<br><br>
+<h4>DATA-DD-PRINT - two simmilar $model property names</h4>
+There was an issue with two simmilar data-dd-xyz names.
+<br>For example: this.$model.nicepetName = 'Astor' will render data-dd-print="$model.nicepetName", but also render of data-dd-print="$model.nicepetName2" .
+<br>This is due to <b>elems = document.querySelectorAll(`[${attrName}^="${attrValQuery}"]`);</b> in Aux._listElements().
+<br>
+<br>defined value: <i data-dd-print="$model.nicepetName2"></i>
+<br>undefined value: <i data-dd-print="$model.nicepetName"></i>
+<br><button data-dd-click="print_nicepet()">print nicepet</button>
+
+<br><br><br>
+<h3>--NON-GENERATORS--</h3>
+
+<h4>DATA-DD-IF (with comparison functions: $not, $eq, ...</h4>
+<i>Notice that initially ifY object is undefined</i>
+<br><button data-dd-click=" runIF()">run IF</button>
+<br>1. $model.ifY.bool <span data-dd-if="$model.ifY.bool" style="color:green">OK</span>
+<br>1. $model.ifY.bool $eq(true)<span data-dd-if="$model.ifY.bool $eq(true)" style="color:green">OK</span>
+<br>1. $model.ifY.bool $eq(this.myBool)<span data-dd-if="$model.ifY.bool $eq(this.myBool)" style="color:green">OK</span>
+<br>1. $model.this.myBool $not() <span data-dd-if="$model.ifY.bool $not()" style="color:green">OK</span>
+<br>2. $model.ifY.str $eq(this.myStr) <span data-dd-if="$model.ifY.str $eq(this.myStr)" style="color:green">OK</span>
+<br>2. $model.ifY.str $eq(this.$model.myStr_model) <span data-dd-if="$model.ifY.str $eq(this.$model.myStr_model)" style="color:green">OK</span>
+<br>2. $model.ifY.str $eq($model.myStr_model) <span data-dd-if="$model.ifY.str $eq($model.myStr_model)" style="color:green">OK</span>
+<br>2. $model.ifY.str $eq('some str') <span data-dd-if="$model.ifY.str $eq('some str')" style="color:green">OK</span>
+<br>2. $model.ifY.str $eq('') <span data-dd-if="$model.ifY.str $eq('')" style="color:green">OK</span>
+<br>2. this.repeat_var_name $eq('multiplikator') <span data-dd-if="this.repeat_var_name $eq('multiplikator')" style="color:green">OK</span>
+<br>2. this.repeat_var_name $eq('multiplikator5') <span data-dd-if="this.repeat_var_name $eq('multiplikator5')" style="color:green">OK</span>
+<br>3. $model.ifY.num $eq(this.myNum) <span data-dd-if="$model.ifY.num $eq(this.myNum)" style="color:green">OK</span>
+<br>3. $model.ifY.num $eq(5) <span data-dd-if="$model.ifY.num $eq(5)" style="color:green">OK</span>
+<br>4. $model.ifY.num $lt(5.5) <span data-dd-if="$model.ifY.num $lt(5.5)" style="color:green">OK</span>
+<br>4. $model.ifY.num $gt(5.5) <span data-dd-if="$model.ifY.num $gt(5.5)" style="color:green">OK</span>
+<br>5. $model.ifY.num $gte(this.myNum) <span data-dd-if="$model.ifY.num $gte(this.myNum)" style="color:green">OK</span>
+<br>6. $model.ifY.num $in(this.myArr) <span data-dd-if="$model.ifY.num $in(this.myArr)" style="color:green">OK</span>
+<br>7. $model.ifY.num $nin(this.myArr) <span data-dd-if="$model.ifY.num $nin(this.myArr)" style="color:green">OK</span>
+<br>8. $model.ifY.str $reg(/^some/) <span data-dd-if="$model.ifY.str $reg(/^some/)" style="color:green">OK</span>
+<br>9. $model.ifY.str $nreg(/^some/) <span data-dd-if="$model.ifY.str $nreg(/^some/)" style="color:green">OK</span>
+<br>10. $model.ifY.str $nreg(/^nonsense/) <span data-dd-if="$model.ifY.str $nreg(/^nonsense/)" style="color:green">OK</span>
+
+<br><br>
+<h4>DATA-DD-IF (with comparison operators: ! = <> && ||</h4>
+<br><button data-dd-click="runIF2()">run IF2</button>
+<br>1. 2 &lt;= 5 <span data-dd-if="2 <= 5" style="color:green">OK</span>
+<br>2. $model.ifY2.num &gt; 3 <span data-dd-if="$model.ifY2.num > 3" style="color:green">OK</span>
+<br>3. $model.ifY2.num === this.myNum2 <span data-dd-if="$model.ifY2.num === this.myNum2" style="color:green">OK</span>
+<br>4. $model.ifY2.num &gt;= this.myNum2 <span data-dd-if="$model.ifY2.num >= this.myNum2" style="color:green">OK</span>
+<br>5. $model.ifY2.num &gt;= this.myNum2 && $model.ifY2.str === 'some str' <span data-dd-if="$model.ifY2.num >= this.myNum2 && $model.ifY2.str === 'some str'" style="color:green">OK</span>
+<br>6. $model.ifY2.num &lt; this.myNum2 || $model.ifY2.str === 'some str' <span data-dd-if="$model.ifY2.num < this.myNum2 || $model.ifY2.str === 'some str'" style="color:green">OK</span>
+
+
+
+<br><br>
+<h4>DATA-DD-IF</h4>
+<button data-dd-click="toggleIF()">toggle IF</button>
+<br>PREFIX1 <span data-dd-if="$model.ifX" style="color:green">ifX1</span> SUFIX1
+<br>
+
+
+<br><br>
+<h4>DATA-DD-IF (child of the data-dd-print)</h4>
+<button data-dd-click="toggleIF2()">toggle IF2</button>
+<p data-dd-print="$model.continent @@ append">
+  <i data-dd-if="$model.continent">CONTINENT:</i>
+  <i data-dd-if="$model.continent $not()">NO CONTINENT</i>
+</p>
+<br>or do this with the data-dd-switch:
+<p data-dd-print="$model.continent @@ append" data-dd-switch="$model.continent">
+  <i data-dd-switchcase="Europe">CONTINENT:</i>
+  <i data-dd-switchdefault>NO CONTINENT</i>
+</p>
+
+
+<br><br>
+<h4>DATA-DD-SWITCH</h4>
+<p>Here are two tests. <br>First will show only one switchcase when red, blue, green is typed in the input field. Another test will show multiple switchcases.</p>
+<i>-- switch one example</i>
+<br><input type="text" data-dd-model="$model.myColor" placeholder="type red, green or blue">
+<ul data-dd-switch="$model.myColor">
+  <li data-dd-switchcase="red">red</li>
+  <li data-dd-switchcase="green">green</li>
+  <li data-dd-switchcase="blue">blue</li>
+  <li data-dd-switchdefault>silver (default)</li>
+</ul>
+<br>
+<br><i>--switch multiple example</i>
+<br><button data-dd-click="runSWITCH()">run SWITCH</button>
+<div data-dd-switch="$model.obj.myColors @@ multiple">
+  <p data-dd-switchcase="red2">red2</p>
+  <p data-dd-switchcase="green2">green2</p>
+  <p data-dd-switchcase="blue2">blue2</p>
+  <p data-dd-switchdefault>silver2 (default)</p>
+</div>
+
+
+<br><br><br>
+<h4>DATA-DD-ELEM</h4>
+<button data-dd-click="runELEM()">run ELEM</button> <small>Click button multiple times to toggle the text color.</small>
+<p style="font-weight:bold" data-dd-elem="myElem">catch this element and store in the controller object (this.$dd.elems)</p>
+
+
+<br><br><br>
+<h4>DATA-DD-ECHO</h4>
+<p data-dd-echo="This is the echoed pure text!"></p>
+<p data-dd-echo="
+  I work in {{$model.companies.0.name}}.
+  [br] The multiplikator is [b style='color:red']{{$model.multiplikator}}[/b] !
+  [br] Increased multiplikator is solveMath/{{$model.multiplikator}} + 1/ .
+  "></p>
+<p data-dd-repeat="$model.multiplikator" data-dd-echo="company name: {{$model.companies.$i0.name  }} -- company size: {{ $model.companies.$i0.size }}"></p>
+
+
+<br><br>
+<h4>DATA-DD-DISABLED</h4>
+<button data-dd-click="toggleDISABLED()">toggle DISABLED</button> - disable/enable the INPUT element
+<input type="text" style="width:32%" data-dd-disabled="$model.isDisabled">
+
+
+<br><br>
+<h4>DATA-DD-CLASS</h4>
+<button data-dd-click="runCLASS()">runCLASS</button>
+<small>Open browser developer tools to see the effect after the button is clicked.</small>
+<p class="my-italic" data-dd-class="$model.myKlases">Class my-italic will remain</p>
+<p class="my-italic" data-dd-class="$model.myKlases @@ replace">Class my-italic will be removed due to @@replace</p>
+
+
+<br><br>
+<h4>DATA-DD-STYLE</h4>
+<button data-dd-click="runSTYLE(21px, red)">run STYLE</button>
+<p style="font-weight:bold" data-dd-style="$model.myStajl">"font-weight:bold" will remain</p>
+<p style="font-weight:bold" data-dd-style="$model.myStajl @@ replace">"font-weight:bold" will be removed</p>
+
+
+<br><br>
+<h4>DATA-DD-ATTR</h4>
+<button data-dd-click="runATTR()">run ATTR</button>
+<br><a data-dd-attr="$model.someURL @@ href" data-dd-print="$model.someURL" target="_blank"></a>
+
+
+<br><br>
+<h4>DATA-DD-SRC</h4>
+<button data-dd-click="runSRC()">run SRC</button>
+<br><img data-dd-src="$model.imageURL" style="width:130px;height:130px;"> -hasn't defaultSrc
+<br><img data-dd-src="$model.imageURL @@ https://via.placeholder.com/130" style="width:130px;height:130px;"> -has defaultSrc
+
+
+<br><br><br>
+<h4>DATA-DD-MODEL & DATA-DD-PRINT</h4>
+<input type="text" data-dd-model="bander.name">
+&nbsp; <span data-dd-print="$model.bander.name"></span>
+
+<br>
+<br><select data-dd-model="bander.animal">
+  <option value="cat">cat</option>
+  <option value="dog">dog</option>
+  <option value="horse">horse</option>
+</select>
+&nbsp; <span data-dd-print="$model.bander.animal"></span>
+
+<br>
+<br><textarea data-dd-model="bander.article" cols="30" rows="10"></textarea>
+&nbsp; <span data-dd-print="$model.bander.article"></span>
+
+
+<br><br>
+<h4>DATA-DD-VALUE <button data-dd-click="setVALUES()">Set Values</button></h4>
+string -- <input type="text" style="width:210px" data-dd-value="$model.input_text01">
+<br>undefined -- <input type="text" style="width:210px" data-dd-value="$model.input_text_undefined">
+<br>object -- <input type="text" style="width:210px" data-dd-value="$model.input_text_obj">
+<br>string in number -- <input type="number" style="width:210px" data-dd-value="$model.input_numberAsString">
+<br>object in textrea <br><textarea data-dd-value="$model.input_text_obj" style="width:100px;height:80px;"></textarea>
+<br>
+
+
+<br><br>
+<h4>DATA-DD-CHECKED <button data-dd-click="setCHECKED()">Set Checked</button></h4>
+<input type="checkbox" name="my_chk1" value="Pin" data-dd-checked="$model.checks1">Pin &nbsp;&nbsp;
+<input type="checkbox" name="my_chk1" value="Rin" data-dd-checked="$model.checks1"> Rin &nbsp;&nbsp;
+<input type="checkbox" name="my_chk1" value="Tin" data-dd-checked="$model.checks1"> Tin
+
+<!-- This will also work
+  <input type="checkbox" name="my_chk1" data-dd-value="checks1.0" data-dd-checked="$model.checks1">Pin &nbsp;&nbsp;
+  <input type="checkbox" name="my_chk1" data-dd-value="checks1.1" data-dd-checked="$model.checks1"> Rin &nbsp;&nbsp;
+  <input type="checkbox" name="my_chk1" data-dd-value="checks1.2" data-dd-checked="$model.checks1"> Tin
+ -->
+
+
+
+<br><br>
+<h4>DATA-DD-SPINNER <button data-dd-click="toggleSPINNER()">Toggle Spinner</button></h4>
+<p data-dd-if="$model.showSpinner">SPINNER - VISIBLE</p>
+<p data-dd-if="$model.showSpinner $not()">SPINNER - HIDDEN</p>
+<div data-dd-spinner="$model.showSpinner" style="border:3px solid orange;height:400px;width:40%;margin-left:130px;">SPINNER CONTAINER (the text is not shown)</div>
+
+
+<br><br><br><br><br>

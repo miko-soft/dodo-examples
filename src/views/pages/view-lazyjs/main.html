@@ -1,0 +1,19 @@
+<h1>Page#lazyJS() Test</h1>
+<p>The example loads "jQuery", "Notify" and "Sweetalert" libraries lazyly i.e. after all html is rendered and the DOM is ready.
+  <br><i>NOTICE: The unlazy will remove SCRIPT tags but it will not unload JS file from the browser memory. So it will stay active.</i>
+</p>
+<br>
+<br><button data-dd-click="popup()">POPUP</button> - will not work unless the "LAZY LOAD LIBS" is clicked
+<br>
+<br><button data-dd-click="lazyAll()">LAZY LOAD LIBS</button> - load jQuery, Notify and Sweetalert libs after waitMS miliseconds
+<br>
+<br><button data-dd-click="unlazyAll()">UNLAZY ALL LIBS</button> - remove all SCRIPT tags with data-dd-lazyjs (the scripts are still in the browser memory)
+<br>
+<br><button data-dd-click="unlazySweetalert()">UNLAZY SWEETALERT</button> - remove the SCRIPT tag which loads Sweetalert (the script is still in the browser memory)
+<br>
+<br>
+<h3>unlayzy JS in destroy hook</h3>
+We can put "this.unlazyAllJS();" in the destroy hook if we want to unload JS files which are not needed on other pages.
+Actually it will remove JS files from DOM but it will be still active in browser's memory.
+If you want to remove it from the memory do something like this, for example in jQuery: "window.$ = undefined;"
+<br>To test this, click on <a href="/controller-hooks" data-dd-href>/controller-hooks</a> and watch Elements in Chrome DevTools.

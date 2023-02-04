@@ -12,6 +12,8 @@ import ControllerHooksCtrl from './controllers/ControllerHooksCtrl.js';
 import ModelCtrl from './controllers/ModelCtrl.js';
 import View_ddIncCtrl from './controllers/View_ddIncCtrl.js';
 import View_loadViewsCtrl from './controllers/View_loadViewsCtrl.js';
+import View_lazyJSCtrl from './controllers/View_lazyJSCtrl.js';
+import DataDdCtrl from './controllers/DataDdCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -23,6 +25,8 @@ const routes = [
   ['when', '/model', 'ModelCtrl'],
   ['when', '/view-ddinc', 'View_ddIncCtrl'],
   ['when', '/view-loadviews', 'View_loadViewsCtrl'],
+  ['when', '/view-lazyjs', 'View_lazyJSCtrl'],
+  ['when', '/datadd', 'DataDdCtrl'],
   ['notfound', 'NotfoundCtrl']
 ];
 
@@ -39,6 +43,8 @@ app
     ModelCtrl,
     View_ddIncCtrl,
     View_loadViewsCtrl,
+    View_lazyJSCtrl,
+    DataDdCtrl,
     NotfoundCtrl
   ]);
 
