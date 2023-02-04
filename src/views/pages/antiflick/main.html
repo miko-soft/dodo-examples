@@ -1,0 +1,11 @@
+<h1>Antiflick Test - experimental phase</h1>
+Test the anti flickering method by implementing ctrl.showViews() method.
+<br>Hide body content until all data is not fetched in init() and all data-dd- elements are not rendered in rend().
+<br>The showViews() can be used in the controller's load(), init() or rend(). Also it can be used in the app.preflight() and app.postflight() to affect all controllers.
+<br>BTN 1 - should be shown after rend()
+<br>BTN 2 - should be hidden after rend()
+
+<br><br><br>
+Button:
+<br><button data-dd-if="$model.showBtn">BTN 1</button> &rarr; data-dd-if="$model.showBtn"
+<br><button data-dd-if="$model.showBtn $not()">BTN 2</button> &rarr; data-dd-if="$model.showBtn $not()"

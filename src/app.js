@@ -23,6 +23,8 @@ import LoginDashboardCtrl from './controllers/LoginDashboardCtrl.js';
 import Navig1Ctrl from './controllers/Navig1Ctrl.js';
 import Navig2Ctrl from './controllers/Navig2Ctrl.js';
 import PaginatorCtrl from './controllers/PaginatorCtrl.js';
+import AntiflickCtrl from './controllers/AntiflickCtrl.js';
+import I18nCtrl from './controllers/I18nCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
 
@@ -49,6 +51,8 @@ const routes = [
   ['redirect', '/navig3', '/navig1'],
 
   ['when', '/paginator', 'PaginatorCtrl'],
+  ['when', '/antiflick', 'AntiflickCtrl'],
+  ['when', '/i18n', 'I18nCtrl'],
 
   ['notfound', 'NotfoundCtrl']
 ];
@@ -77,6 +81,8 @@ app
     Navig1Ctrl,
     Navig2Ctrl,
     PaginatorCtrl,
+    AntiflickCtrl,
+    I18nCtrl,
     NotfoundCtrl
   ]);
 
