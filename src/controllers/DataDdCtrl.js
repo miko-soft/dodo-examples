@@ -7,7 +7,7 @@ export default class DataDdCtrl extends Controller {
   }
 
   async loader(trx) {
-    this.setTitle('DataDd Test');
+    this.setTitle('DoDo - DataDd');
     this.addCSS(`
       .my-italic {
         font-style: italic;
