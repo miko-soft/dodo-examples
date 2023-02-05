@@ -7,22 +7,36 @@ const fsp = fs.promises;
 
 class CompileViews {
 
-  constructor(viewsPath) {
-    this.viewsDir = path.resolve(process.cwd(), viewsPath); // absolute path
+  /**
+   * @param {string} viewsDirRel - relative path of the views directory: 'src/views'
+   * @param {number} waitMS - wait period which prevents multiple views.js creation when multitple html files are added/removed [miliseconds]
+   */
+  constructor(viewsDirRel, waitMS = 3000) {
+    this.viewsDir = path.resolve(process.cwd(), viewsDirRel); // absolute path of the views dir
+    this.views;
+    this.viewPaths;
+    this.timeoutObj;
+    this.waitMS = waitMS;
   }
 
 
+  /**
+   * Initialise the compiler.
+   */
   async init() {
+    // check if /views/ folder exists
     const doesExist = await this.dirExists();
     if (!doesExist) { return console.log(`Views folder "${this.viewsDir}" doesn't exist.`); }
 
-    const views_imported = await import('../src/views.js').catch(console.log);
-    this.views = { ...views_imported }; // cole the object to prevent error: Cannot add property inc/layout.html, object is not extensible
-    if (!this.views) {
-      this.views = {};
-      await this.makeViewFile(this.views); // on error create views.js with empty object
-    }
+    // define initial this.views object: {"inc/footer.html": "<b>FOOTER</b>", "inc/navbar.html": "<b>NAVBAR</b>", ... }
+    const views_imported = await import('../src/views.js').catch(err => console.log('WARNING: The "views.js" doesnt exist or has errors. A new "views.js" file will be created.'));
+    this.views = !!views_imported ? { ...views_imported } : {}; // cole the object to prevent error: Cannot add property inc/layout.html, object is not extensible
+    this.views.default = undefined;
 
+    // init viewPaths (use Set to prevent duplicates)
+    this.viewPaths = new Set();
+
+    // watch the directory
     this.dirWatch();
   }
 
@@ -47,12 +61,29 @@ class CompileViews {
 
 
   /**
-   * Watch viewsDir recursively
+   * Watch viewsDir (src/views/) recursively
    */
   dirWatch() {
     const watcher = chokidar.watch(this.viewsDir, {
+      persistent: true, // if false event watcher will be closed
+
       ignored: /(^|[\/\\])\../, // ignore dotfiles
-      persistent: false
+      ignoreInitial: false,
+      followSymlinks: true,
+      cwd: '.',
+      disableGlobbing: false,
+
+      usePolling: false,
+      interval: 10,
+      binaryInterval: 30,
+      alwaysStat: false,
+      depth: 99,
+      awaitWriteFinish: {
+        stabilityThreshold: 100,
+        pollInterval: 10
+      },
+
+      ignorePermissionErrors: false,
     });
 
     watcher
@@ -62,38 +93,97 @@ class CompileViews {
   }
 
 
-  async onAdd(filePath) {
-    const filePath2 = this.shortenPath(filePath);
-    console.log(`   + ${filePath2}`);
 
-    let html = await this.getHTML(filePath);
-    html = this.minifyHTML(html);
-    html = this.correctHTML(html);
+  /**
+   * Callback on add event.
+   * @param {string} filePath - absolute view (html file) path
+   * @param {string} stats - chokidar statistics object
+   */
+  async onAdd(filePath, stats) {
+    const filePath2 = this._shortenPath(filePath);
+    console.log(`   + ${filePath2} [${stats.size} B]`);
+    this.viewPaths.add(filePath);
 
-    this.views[filePath2] = html;
-    await this.makeViewFile(this.views);
+    clearTimeout(this.timeoutObj);
+    this.timeoutObj = setTimeout(this.makeViewFile.bind(this), this.waitMS);
   }
 
 
-  async onChange(filePath) {
-    const filePath2 = this.shortenPath(filePath);
-    console.log(`  -+ ${filePath2}`);
+  /**
+   * Callback on change event.
+   * @param {string} filePath - absolute view (html file) path
+   * @param {string} stats - chokidar statistics object
+   */
+  async onChange(filePath, stats) {
+    const filePath2 = this._shortenPath(filePath);
+    console.log(`   -+ ${filePath2}  [${stats.size} B]`);
+    this.viewPaths.add(filePath);
 
-    let html = await this.getHTML(filePath);
-    html = this.minifyHTML(html);
-    html = this.correctHTML(html);
-
-    this.views[filePath2] = html;
-    await this.makeViewFile(this.views);
+    await this.updateViewFile(filePath);
   }
 
 
+  /**
+   * Callback on unlink event.
+   * @param {string} filePath - absolute view (html file) path
+   */
   async onUnlink(filePath) {
-    const filePath2 = this.shortenPath(filePath);
+    const filePath2 = this._shortenPath(filePath);
     console.log(`   - ${filePath2}`);
+    this.viewPaths.delete(filePath);
 
-    this.views[filePath2] = undefined;
-    await this.makeViewFile(this.views);
+    clearTimeout(this.timeoutObj);
+    this.timeoutObj = setTimeout(this.makeViewFile.bind(this), this.waitMS);
+  }
+
+
+  /**
+   * Create view.js file
+   */
+  async makeViewFile() {
+    console.log(`   ++++ Make view.js [${this.viewPaths.size}]\n`);
+    this.views = {};
+
+    for (const viewPath of this.viewPaths.values()) {
+      let html = await fsp.readFile(viewPath, { encoding: 'utf8' });
+      html = this._minifyHTML(html);
+      html = this._correctHTML(html);
+
+      const viewPath_short = this._shortenPath(viewPath);
+      this.views[viewPath_short] = html;
+    }
+
+    const views_json = JSON.stringify(this.views, null, 2);
+
+    const fileDest = path.resolve(process.cwd(), 'src/views.js');
+    const fileContent = `/*** Generated with $ node compileViews.js  ***  DON'T EDIT MANUALLY !!! ***/\n\nexport default ${views_json};`;
+    await fsp.writeFile(fileDest, fileContent, { encoding: 'utf8' });
+
+    // console.log(fileContent);
+  }
+
+
+  /**
+   * Update view.js file
+   * @param {string} viewPath - the absolute view path
+   */
+  async updateViewFile(viewPath) {
+    console.log(`   --++ Update view.js\n`);
+
+    let html = await fsp.readFile(viewPath, { encoding: 'utf8' });
+    html = this._minifyHTML(html);
+    html = this._correctHTML(html);
+
+    const viewPath_short = this._shortenPath(viewPath);
+    this.views[viewPath_short] = html;
+
+    const views_json = JSON.stringify(this.views, null, 2);
+
+    const fileDest = path.resolve(process.cwd(), 'src/views.js');
+    const fileContent = `/*** Generated with $ node compileViews.js  ***  DON'T EDIT MANUALLY !!! ***/\n\nexport default ${views_json};`;
+    await fsp.writeFile(fileDest, fileContent, { encoding: 'utf8' });
+
+    // console.log(fileContent);
   }
 
 
@@ -103,19 +193,8 @@ class CompileViews {
    * @param {string} filePath - file absolute path
    * @returns {string}
    */
-  shortenPath(filePath) {
+  _shortenPath(filePath) {
     return filePath.replace(/.*\/views\//, '');
-  }
-
-
-  /**
-   * Read HTML content from the file.
-   * @param {string} filePath - file absolute path
-   * @returns {string} - HTML
-   */
-  async getHTML(filePath) {
-    const html = await fsp.readFile(filePath, { encoding: 'utf8' });
-    return html;
   }
 
 
@@ -124,7 +203,7 @@ class CompileViews {
    * @param {string} html - HTML code
    * @return {string} - minified HTML
    */
-  minifyHTML(html) {
+  _minifyHTML(html) {
     html = html.replace(/\t+/g, ' ');
     html = html.replace(/\s+/g, ' ');
     html = html.replace(/\n+/g, '');
@@ -141,19 +220,8 @@ class CompileViews {
    * @param {string} html - HTML code
    * @return {string} - corrected HTML
    */
-  correctHTML(html) {
+  _correctHTML(html) {
     return html;
-  }
-
-
-  /**
-   * Create/update view.js file.
-   * @param {object} views - {'./main.html': '<b>something</b>', ...}
-   */
-  async makeViewFile(views) {
-    const fileDest = path.resolve(process.cwd(), 'src/views.js');
-    const fileContent = `/*** Generated with $ node compileViews.js  ***  DON'T EDIT MANUALLY !!! ***/\n\nexport default ${JSON.stringify(views, null, 2)};`;
-    await fsp.writeFile(fileDest, fileContent, { encoding: 'utf8' });
   }
 
 
@@ -162,6 +230,6 @@ class CompileViews {
 
 
 
-const compileViews = new CompileViews('src/views');
+const compileViews = new CompileViews('src/views', 1000);
 compileViews.init();
 
