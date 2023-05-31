@@ -1,6 +1,6 @@
 import { Controller, corelib } from '@mikosoft/dodo';
-import navbar from '../../../views/inc/navbar.html?raw';
-import libAuthLogin from '../../../views/pages/lib/auth/login.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import libAuthLogin from '/views/pages/lib/auth/login.html?raw';
 
 
 

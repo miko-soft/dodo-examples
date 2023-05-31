@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import ddlazyjs from '../../views/pages/view/ddlazyjs.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import ddlazyjs from '/views/pages/view/ddlazyjs.html?raw';
 
 
 

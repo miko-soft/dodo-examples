@@ -1,9 +1,9 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import grabFileContent from '../../views/pages/view/grabFileContent.html?raw';
-// import part1 from '../../views/pages/view/test/part1.html?raw';
-// import part2 from '../../views/pages/view/test/part2.html?raw';
-// import part3 from '../../views/pages/view/test/part3.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import grabFileContent from '/views/pages/view/grabFileContent.html?raw';
+// import part1 from '/views/pages/view/test/part1.html?raw';
+// import part2 from '/views/pages/view/test/part2.html?raw';
+// import part3 from '/views/pages/view/test/part3.html?raw';
 
 
 
@@ -23,7 +23,7 @@ export default class ViewGrabFileContentCtrl extends Controller {
     this.loadView('#main', grabFileContent);
 
     // get and load HTML strings
-    const part1 = await this.grabFileContent('/views/pages/view/test/part1.html'); // instead of using import part1 from '../../views/pages/view/test/part1.html?raw'
+    const part1 = await this.grabFileContent('/views/pages/view/test/part1.html'); // instead of using import part1 from '/views/pages/view/test/part1.html?raw'
     this.loadView('#part1', part1, 'sibling');
 
     const part2 = await this.grabFileContent('/views/pages/view/test/part2.html');

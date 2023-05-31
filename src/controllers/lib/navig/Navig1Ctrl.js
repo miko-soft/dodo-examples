@@ -1,6 +1,6 @@
 import { Controller, corelib } from '@mikosoft/dodo';
-import navbar from '../../../views/inc/navbar.html?raw';
-import navig1 from '../../../views/pages/lib/navig/navig1.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import navig1 from '/views/pages/lib/navig/navig1.html?raw';
 
 
 

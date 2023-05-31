@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import ddCheckedCheckboxes from '../../views/pages/dd/dd-checked-checkboxes.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import ddCheckedCheckboxes from '/views/pages/dd/dd-checked-checkboxes.html?raw';
 
 
 

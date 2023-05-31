@@ -1,7 +1,7 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import exejs from '../../views/pages/view/exejs.html?raw';
-import jsContent from '../../public/js/dom-test.js?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import exejs from '/views/pages/view/exejs.html?raw';
+import jsContent from '/public/js/dom-test.js?raw';
 
 
 

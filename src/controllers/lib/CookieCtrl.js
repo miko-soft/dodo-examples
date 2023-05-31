@@ -1,6 +1,6 @@
 import { Controller, corelib } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import cookie from '../../views/pages/lib/cookie.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import cookie from '/views/pages/lib/cookie.html?raw';
 
 
 

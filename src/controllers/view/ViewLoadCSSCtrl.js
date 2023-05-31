@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import loadcss from '../../views/pages/view/loadcss.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import loadcss from '/views/pages/view/loadcss.html?raw';
 
 
 

@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import ddStyle from '../../views/pages/dd/dd-style.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import ddStyle from '/views/pages/dd/dd-style.html?raw';
 
 
 

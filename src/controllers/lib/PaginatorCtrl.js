@@ -1,6 +1,6 @@
 import { Controller, corelib } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import paginator from '../../views/pages/lib/paginator.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import paginator from '/views/pages/lib/paginator.html?raw';
 
 export default class PaginatorCtrl extends Controller {
 

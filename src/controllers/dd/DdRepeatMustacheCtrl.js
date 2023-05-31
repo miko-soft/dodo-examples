@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import ddRepeatMustache from '../../views/pages/dd/dd-repeat-mustache.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import ddRepeatMustache from '/views/pages/dd/dd-repeat-mustache.html?raw';
 
 
 

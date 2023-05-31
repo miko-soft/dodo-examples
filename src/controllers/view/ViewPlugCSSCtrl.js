@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import plugcss from '../../views/pages/view/plugcss.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import plugcss from '/views/pages/view/plugcss.html?raw';
 
 
 

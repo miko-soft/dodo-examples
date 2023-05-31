@@ -1,5 +1,5 @@
 import { Controller, corelib } from '@mikosoft/dodo';
-import home from '../views/pages/home/home.html?raw';
+import home from '/views/pages/home/home.html?raw';
 
 
 

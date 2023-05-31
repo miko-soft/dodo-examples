@@ -1,6 +1,6 @@
 import { Controller, corelib } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import browserstorage from '../../views/pages/lib/browserstorage.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import browserstorage from '/views/pages/lib/browserstorage.html?raw';
 
 
 export default class BrowserStorageCtrl extends Controller {

@@ -1,7 +1,7 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import ddView from '../../views/pages/view/ddview.html?raw';
-import part from '../../views/pages/view/test/part.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import ddView from '/views/pages/view/ddview.html?raw';
+import part from '/views/pages/view/test/part.html?raw';
 
 
 

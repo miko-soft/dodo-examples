@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
-import navbar from '../../views/inc/navbar.html?raw';
-import ddModelMultilevelObject from '../../views/pages/model/multilevel-object.html?raw';
+import navbar from '/views/inc/navbar.html?raw';
+import ddModelMultilevelObject from '/views/pages/model/multilevel-object.html?raw';
 
 
 
