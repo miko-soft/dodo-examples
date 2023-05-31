@@ -1,0 +1,26 @@
+<h1>dd-foreach</h1>
+The dd-foreach will multiply element with the controller property value which should be array.
+
+
+<h3>Controller property</h3>
+<i>Example with pure controller property in the attribute value.</i>
+<br>dd-foreach="names --val,key" &rarr;
+<p dd-foreach="names --val,key">
+  <span dd-mustache>{{$$key + 1}}</span> <b>$$val</b>
+</p>
+
+
+
+<br><br>
+<h3>Model</h3>
+<i>
+  Example with pure model in the attribute value.
+  <br>Initial model value is undefined so cloned element is not displayed. (the undefined value is automatically convertd to empty array [] by the framework.)
+  <br>The <b>this.</b> will not cause error.
+</i>
+<br>
+<br><button dd-click="foreachTest()">change model value</button>
+<br>dd-foreach="$model.companies --val1,key1" &rarr;
+<p dd-foreach="$model.companies --val1,key1">
+  <span dd-mustache>{{$$key1 + 1}}</span> <b>$$val1.name</b> - <span>$$val1.size</span>
+</p>

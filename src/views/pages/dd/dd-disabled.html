@@ -1,0 +1,48 @@
+<h1>dd-disabled</h1>
+Disable elements by setting up <b>disabled</b> attribute.
+
+<h3>Controller property</h3>
+<i>Example with pure controller property in the attribute value.</i>
+<br>dd-disabled="myBool" &rarr; <button dd-disabled="myBool" dd-click="myAlert()">BUTTON 1</button>
+
+<br><br>
+<h3>Model</h3>
+<i>Example with pure model in the attribute value.
+  <br>Initial model value is undefined so element is disabled.
+  <br>The <b>this.</b> will not cause error.</i>
+<br>dd-disabled="$model.my.bool" &rarr; <input type="text" dd-disabled="$model.my.bool">
+<br>dd-disabled="this.$model.my.bool" &rarr; <input type="text" dd-disabled="this.$model.my.bool">
+<br><button dd-click="dis1()">change model value</button>
+
+<br><br>
+<h3>Expression</h3>
+<i>Expression must be enclosed in brackets. This example shows expression with static controller property.</i>
+<br>(this.x === 'This is X') <button dd-disabled="(this.x === 'This is X')">BUTTON 2</button>
+
+<br><br>
+<h3>Expression with model</h3>
+<i>Some complex examples with model in the expression.</i>
+<br>(this.$model.n1 > 6 && this.$model.n2 < 10) <input type="text" dd-disabled="(this.$model.n1 > 6 && this.$model.n2 < 10)">
+  <br>(this.$model.n1 > 6 && this.$model.n1 < 10) <input type="text" dd-disabled="(this.$model.n1 > 6 && this.$model.n2 < 10)">
+    <br><button dd-click="dis2()">change model value</button>
+
+
+    <br><br>
+    <h4>dd-disabled toggle</h4>
+    <button dd-click="toggleDIS()">toggle DISABLED</button>
+    <input type="text" dd-disabled="$model.disX">
+
+
+    <style scoped>
+      input {
+        height: 25px;
+        width: 210px;
+        margin-left: 13px;
+        font: 15px Verdana;
+      }
+
+      button[disabled] {
+        background: silver;
+        cursor: not-allowed;
+      }
+    </style>

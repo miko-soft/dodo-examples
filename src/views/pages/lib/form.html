@@ -1,0 +1,101 @@
+<h1>Form</h1>
+<p>A form example (add new user)</p>
+
+<form dd-form="testForm">
+
+  full name: <input type="text" name="fullName">
+  <button dd-click="setFullName() --preventDefault">set full name</button>
+  <button type="button" dd-click="getFullName()">get full name</button>
+  <button type="button" dd-click="resetFullName()">reset full name</button>
+
+
+  <br><br>age: <input name="age" type="number">
+  <button type="button" dd-click="setAge()">set age</button>
+  <button type="button" dd-click="getAge()">get age</button>
+  <button type="button" dd-click="resetAge()">reset age</button>
+
+
+  <br><br>country: <select name="country">
+    <option value="UK">UK</option>
+    <option value="US" selected>US</option>
+    <option value="Croatia">Croatia</option>
+    <option value="Kenya">Kenya</option>
+  </select>
+  <button type="button" dd-click="setCountry()">set country</button>
+  <button type="button" dd-click="getCountry()">get country</button>
+  <button type="button" dd-click="resetCountry()">reset country</button>
+
+
+  <br><br>family: <br><select name="family" size="4" multiple>
+    <option value="Mary">Mary</option>
+    <option value="Ann" selected>Ann</option>
+    <option value="Betty">Betty</option>
+    <option value="Lara">Lara</option>
+  </select>
+  <button type="button" dd-click="setFamily()">set family</button>
+  <button type="button" dd-click="getFamily()">get family</button>
+  <button type="button" dd-click="emptyFamily()">empty family</button>
+
+
+  <br><br>jobs:
+  <br><input type="checkbox" name="jobs" value="IT"> IT
+  <br><input type="checkbox" name="jobs" value="Construction"> Construction
+  <br><input type="checkbox" name="jobs" value="Marketing"> Marketing
+  <br><input type="checkbox" name="jobs" value="Commerce" checked> Commerce
+  <br><button type="button" dd-click="setJobs()">set jobs</button>
+  <button type="button" dd-click="getJobs()">get jobs</button>
+  <button type="button" dd-click="emptyJobs()">empty jobs</button>
+
+
+  <br><br>pet:
+  <br><input type="radio" name="pet" value="cat"> cat
+  <br><input type="radio" name="pet" value="dog"> dog
+  <br><input type="radio" name="pet" value="horse"> horse
+  <br><input type="radio" name="pet" value="monkey" checked> monkey
+  <br><button type="button" dd-click="setPet()">set pet</button>
+  <button type="button" dd-click="getPet()">get pet</button>
+  <button type="button" dd-click="emptyPet()">empty pet</button>
+
+
+  <br><br><br><button type="button" dd-click="generateAutos()">generate Autos</button> - generate SELECT/OPTION by dd-foreach and set the selected value
+  <br><br>autos: <select name="myAuto">
+    <option value=""></option>
+    <option dd-foreach="$model.autos --val,key" value="$$val.id">$$val.name</option>
+  </select>
+  <button type="button" dd-click="getAuto()">get auto</button>
+
+
+  <br><br><br><button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-foreach and <i>dd-mustache</i> and set the default value
+  <br><br>plants: <select name="myPlant">
+    <option value=""></option>
+    <option dd-foreach="$model.plants --val,key" value="$$val.id" dd-mustache>{{this.$model.plants[$$key].name}} -- price: ${{this.$model.plants[$$key].price}}</option>
+  </select>
+  <button type="button" dd-click="getPlant()">get plant</button>
+
+  <br><br><br>
+  <hr>
+  <button type="button" dd-click="setAll()">set all</button>
+
+  <br><br><br><button type="button" dd-click="setFruit()">set fruit</button> - use setControls() to set the INPUT with name="fruit.seller.name" i.e. with the subproperty
+  <br>fruit.name: <input type="text" name="fruit.name">
+  <br>fruit.seller.name: <input type="text" name="fruit.seller.name">
+
+</form>
+
+
+
+<style scoped>
+  select {
+    width: 400px;
+  }
+
+  select[multiple] {
+    height: 200px;
+    font-size: 17px;
+  }
+
+  textarea {
+    width: 500px;
+    height: 300px;
+  }
+</style>

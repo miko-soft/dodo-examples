@@ -1,0 +1,17 @@
+<h1>Model - Multilevel Object</h1>
+<br>Test $model with the 5 levels deep object.
+<br>
+<br>
+<br>
+<br>$model.car.x.y.z.w.year: <b dd-text="$model.car.x.y.z.w.year"></b>
+<br>
+<br><button dd-click="changeModel()">change model</button> - simply change $model with: <i>this.$model.car = { x: { y: { z: { w: { year: 2011 } } } } };</i>
+<br>
+<br><button dd-click="setValue_test()">change model - setValue</button> -- change $model with setValue: <i>this.$modeler.use('car').setValue(2015, 'x.y.z.w.year');</i>
+<br>
+<br><button dd-click="delValue_test()">change model - delValue</button> -- remove $model value with: <i>this.$modeler.use('car').delValue('x.y.z.w.year');</i>
+<br>
+<br>
+<br><button dd-click="getValue_carObj()">getValue - carObj</button> -- carObj = <b dd-text="$model.carObj"></b>
+<br>
+<br><button dd-click="getValue_carYear()">getValue - carYear</button> -- carYear = <b dd-text="$model.carYear"></b>

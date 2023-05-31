@@ -1,0 +1,48 @@
+<h1>BrowserStorage</h1>
+<p>The <b>BrowserStorage</b> library methods: put, putObject, get, getObject, getAll, getObjectAll, remove, removeAll, exists</p>
+
+<br><br>
+SELECT STORAGE TYPE:
+<select dd-model="storage_type">
+  <option value="local">local</option>
+  <option value="session">session</option>
+</select>
+&nbsp;&nbsp; &rarr; <b style="color:rgb(165, 12, 165)" dd-text="$model.storage_type"></b>
+<br><span dd-mustache>STORAGE VALUE: <b>{{typeof this.$model.storageValue === 'object' ? JSON.stringify(this.$model.storageValue) : this.$model.storageValue}}</b></span>
+
+<br>
+<hr>
+<br>
+
+<h3>put(name, value) , get(name) , delete(name)</h3>
+<b style="color:brown">full_name</b>: <input type="text" dd-set="full_name">
+<button type="button" dd-click="put_test()">put full_name in storage</button>
+<button type="button" dd-click="get_test()">get full_name from storage</button>
+<button type="button" dd-click="remove_test()">remove full_name from storage</button>
+
+<br><br><br>
+<h3>putObject(name, value) , getObject(name) , delete(name)</h3>
+<b style="color:brown">myObj</b>: <input type="text" value='{"x": 22}' dd-setinitial="myObj --convertType" dd-set="myObj --convertType">
+<button type="button" dd-click="putObject_test()">put myObj in storage</button>
+<button type="button" dd-click="getObject_test()">get myObj from storage</button>
+<button type="button" dd-click="remove_myObj_test()">remove myObj from storage</button>
+<br>
+<br>
+<b style="color:brown">myArr</b>: <input type="text" style="width:450px" value='["lorem ipsum", 88, true, {"x": 22, "y": "ABC"}]' dd-setinitial="myArr --convertType" dd-set="myArr --convertType">
+<button type="button" dd-click="putObject_test2()">put myArr in storage</button>
+<button type="button" dd-click="getObject_test2()">get myArr from storage</button>
+<button type="button" dd-click="remove_myArr_test()">remove myArr from storage</button>
+
+<br><br><br>
+<h3>getAll(), getObjectAll(), removeAll()</h3>
+<button type="button" dd-click="getAll_test()">getAll</button> - return array of objects (open browser console)
+<br>
+<br><button type="button" dd-click="getObjectAll_test1()">getObjectAll - convert types</button> - return object (open browser console)
+<br><button type="button" dd-click="getObjectAll_test2()">getObjectAll - don't convert types</button> - return object (open browser console)
+<br>
+<br><button type="button" dd-click="removeAll_test()">removeAll</button>
+
+<br><br><br>
+<h3>exists(name)</h3>
+storage name: <input type="text" value="full_name" dd-setinitial="storage_name" dd-set="storage_name">
+<button type="button" dd-click="exists_test()">check if the storage exists</button> - open browser console

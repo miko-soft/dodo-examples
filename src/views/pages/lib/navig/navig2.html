@@ -1,0 +1,23 @@
+<h1>navig</h1>
+<p>A library which saves pervious and current navigation object: <code>{uri, ctrl}</code></p>
+<br>
+<br>
+<h2 style="color:maroon;text-align:center;">Page 2</h2>
+<b>links with dd-href</b>
+<br><a href="/lib/navig2" dd-href>/lib/navig2</a>
+<br><a href="/lib/navig2#somehash" dd-href>/lib/navig2#somehash</a>
+<br><a href="/lib/navig2#somehash2" dd-href>/lib/navig2#somehash2</a>
+<br><a href="/lib/navig1" dd-href>/lib/navig1</a>
+<br><a href="/lib/navig1#somehash" dd-href>/lib/navig1#somehash</a>
+<br>
+<br>
+<b>navig methods</b>
+<br><button dd-click="runGOTO('/lib/navig1')">goto /lib/navig1</button>
+<button dd-click="runBACK()">back</button>
+<button dd-click="runFORWARD()">forward</button>
+<button dd-click="runRELOAD()">reload</button>
+<br>
+<br>
+<b>redirect</b>
+Redirect from '/lib/navig3' to '/lib/navig1' so Navig1Ctrl will be executed.
+<br><a href="/lib/navig3" dd-href>/lib/navig3</a>

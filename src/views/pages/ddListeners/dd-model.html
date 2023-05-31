@@ -1,0 +1,95 @@
+<h1>dd-model</h1>
+Set $model property with dd-model.
+<br>NOTICE: Use dd-setinitial to set initial model value i.e. the value when page is opened
+
+
+<br><br>
+<h3>INPUT TEXT</h3>
+The <i>this</i> and <i>$model</i> can be omitted in dd-model because it's always related to this.$model
+<br><input type="text" value="Saša" dd-model="this.$model.myMdl_100" dd-setinitial="this.$model.myMdl_100"> &nbsp;&nbsp; dd-model="this.$model.myMdl_100" dd-setinitial="this.$model.myMdl_100"&rarr; <b dd-text="$model.myMdl_100"></b>
+<br><input type="text" value="Saša" dd-model="$model.myMdl_101"> &nbsp;&nbsp; dd-model="$model.myMdl_101" &rarr; <b dd-text="$model.myMdl_101"></b>
+<br><input type="text" value="Saša" dd-model="myMdl_102"> &nbsp;&nbsp; dd-model="myMdl_102" &rarr; <b dd-text="$model.myMdl_102"></b>
+<br><button type="button" dd-click="setInputText()">set input-text</button> &nbsp; <button type="button" dd-click="resetInputText()">reset input-text</button>
+
+
+<br><br>
+<h3>INPUT NUMBER</h3>
+<input type="number" value="88.21" dd-model="myMdlNum"> &nbsp;&nbsp; <b dd-text="$model.myMdlNum"></b>
+<br><button type="button" dd-click="setInputNumber(52)">set input-number</button> &nbsp; <button type="button" dd-click="resetInputNumber()">reset input-number</button>
+
+
+<br><br>
+<h3>INPUT TEXT (--convertType)</h3>
+Type some numbers or JSON or boolean in the fields. Open browser console.
+<br> The <i>--convertType</i> option will correct datatype, for example "5" &rarr; 5
+<br>
+<input type="text" dd-model="myMdl_orig">
+<input type="text" dd-model="myMdl_converted --convertType" placeholder="--convertType">
+<button type="button" dd-click="seeConsole_convertType()">See in console</button>
+
+
+<br><br>
+<h3>INPUT RADIO</h3>
+<input type="radio" name="my_mdlRadio" dd-model="mdlRadio" value="YES"> YES &nbsp;&nbsp;
+<input type="radio" name="my_mdlRadio" dd-model="mdlRadio" value="NO" checked> NO
+&nbsp;&nbsp; <b dd-text="$model.mdlRadio"></b>
+<br><button type="button" dd-click="setRadio()">set radio</button> &nbsp; <button type="button" dd-click="resetRadio()">reset radio</button>
+
+
+<br><br>
+<h3>INPUT CHECKBOX</h3>
+Set the controller value on "input" JS DOM event i.e. on every input change.
+<br>
+<input type="checkbox" name="my_checkbox1" dd-model="myCheckbox" value="125"> 125 &nbsp;&nbsp;
+<input type="checkbox" name="my_checkbox1" dd-model="myCheckbox" value="sasa" checked> sasa &nbsp;&nbsp;
+<input type="checkbox" name="my_checkbox1" dd-model="myCheckbox" value="true"> true
+&nbsp;&nbsp; <b dd-text="$model.myCheckbox"></b>
+<br><button type="button" dd-click="setCheckboxes('125','true')">set checkbokes</button> &nbsp; <button type="button" dd-click="resetCheckboxes()">reset checkboxes</button>
+
+
+<br><br>
+<h3>SELECT with dd-setinitial</h3>
+<i>Notice: The "Dara" will be default value because of dd-setinitial.</i>
+<br><select dd-model="$model.mySelect" dd-setinitial="$model.mySelect">
+  <option value="Lara">Lara</option>
+  <option value="Dara" selected>Dara</option>
+  <option value="Mara">Mara</option>
+</select>
+&nbsp;&nbsp; <b dd-text="$model.mySelect"></b>
+<br><button type="button" dd-click="setSelect()">set select</button> &nbsp; <button type="button" dd-click="resetSelect()">reset select</button>
+
+
+<br><br>
+<h3>SELECT (multiple)</h3>
+<select dd-model="$model.mySelectMultiple" multiple>
+  <option value="225" selected>225</option>
+  <option value="18.923">18.923</option>
+  <option value="false" selected>false</option>
+  <option value='{"x": 22, "y":"something", "z": true}'>{"x": 22, "y":"something", "z": true}</option>
+  <option value="Tom">Tom</option>
+</select>
+&nbsp;&nbsp; <b dd-text="$model.mySelectMultiple"></b>
+<br><button type="button" dd-click="setSelectMultiple()">set select-multiple</button> &nbsp; <button type="button" dd-click="resetSelectMultiple()">reset select-multiple</button>
+
+
+<br><br>
+<h3>TEXTAREA</h3>
+<textarea dd-model="myTextarea"></textarea>
+&nbsp;&nbsp; <b dd-text="$model.myTextarea"></b>
+<br><button type="button" dd-click="setTextarea()">set select-multiple</button> &nbsp; <button type="button" dd-click="resetTextarea()">reset select-multiple</button>
+
+<style scoped>
+  select {
+    width: 400px;
+  }
+
+  select[multiple] {
+    height: 400px;
+    font-size: 17px;
+  }
+
+  textarea {
+    width: 500px;
+    height: 300px;
+  }
+</style>

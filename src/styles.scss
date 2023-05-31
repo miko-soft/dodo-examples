@@ -1,0 +1,92 @@
+@import './styles/navbar.scss';
+
+main {
+
+  font: 21px Verdana;
+  padding: 21px;
+
+  & h1 {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  & h2 {
+    margin: 34px 10px -10px 10px;
+    color: gray;
+  }
+
+  & h3 {
+    color: #555;
+  }
+
+  & h4 {
+    margin: 34px 10px 10px 10px;
+  }
+
+  & a {
+    color: #0070e2;
+  }
+
+  & a:hover {
+    color: #09447a;
+  }
+
+  & button {
+    background-color: #325a33;
+    border: none;
+    color: white;
+    padding: 8px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border: 1px solid Green;
+
+    &:hover {
+      background-color: #fff;
+      color: Black;
+      border: 1px solid Gray;
+    }
+  }
+
+  sup {
+    color: orangered;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  i {
+    font: 21px Times;
+  }
+
+  em {
+    font-family: Arial;
+    color: Orangered;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+input {
+  height: 25px;
+  line-height: 25px;
+  background: #fcfcfc;
+  font: 20px Arial;
+}
+
+select {
+  height: 30px;
+  line-height: 30px;
+  background: #fcfcfc;
+  font: 18px Arial;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 15px;
+  height: 15px;
+}

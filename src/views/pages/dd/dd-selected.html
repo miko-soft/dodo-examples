@@ -1,0 +1,41 @@
+<h1>dd-selected</h1>
+Set the "selected" attribute with the controller property value.
+<br>SELECT-MULTIPLE &rarr; controller value must be array of strings
+<br>SELECT-ONE &rarr; controller value must be a string
+
+<br><br>
+<h3>select-multiple</h3>
+<button dd-click="setUserNames()">Set User Names</button>
+<br>dd-selected="$model.user_names --multiple" &rarr;
+<br>
+<select dd-selected="$model.user_names --multiple" multiple>
+  <option value="Pin">Pin</option>
+  <option value="Rin">Rin</option>
+  <option value="Tin">Tin</option>
+</select>
+
+
+<br><br><br>
+<h3>select-one</h3>
+<button dd-click="setPositions()">Set Positions</button>
+<br>dd-selected="$model.positions" &rarr;
+<br>
+<select dd-selected="$model.positions">
+  <option value="engineer">engineer</option>
+  <option value="cto">cto</option>
+  <option value="ceo">ceo</option>
+</select>
+
+
+
+
+<style scoped>
+  select {
+    width: 400px;
+  }
+
+  select[multiple] {
+    height: 200px;
+    font-size: 17px;
+  }
+</style>

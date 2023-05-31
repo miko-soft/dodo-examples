@@ -1,0 +1,41 @@
+<h1>Cookie</h1>
+<p>The <b>Cookie</b> library methods: put, putObject, get, getObject, getAll, getObjectAll, remove, removeAll, exists</p>
+
+<br>
+<hr>
+<span dd-mustache>cookie value: <b>{{typeof this.$model.cookieValue === 'object' ? JSON.stringify(this.$model.cookieValue) : this.$model.cookieValue}}</b></span>
+<br>
+<br>
+
+<h3>put(name, value) , get(name) , delete(name)</h3>
+<b style="color:brown">full_name</b>: <input type="text" dd-set="full_name">
+<button type="button" dd-click="put_test()">put full_name in cookie</button>
+<button type="button" dd-click="get_test()">get full_name from cookie</button>
+<button type="button" dd-click="remove_test()">remove full_name from cookie</button>
+
+<br><br><br>
+<h3>putObject(name, value) , getObject(name) , delete(name)</h3>
+<b style="color:brown">myObj</b>: <input type="text" value='{"x": 22}' dd-setinitial="myObj --convertType" dd-set="myObj --convertType">
+<button type="button" dd-click="putObject_test()">put myObj in cookie</button>
+<button type="button" dd-click="getObject_test()">get myObj from cookie</button>
+<button type="button" dd-click="remove_myObj_test()">remove myObj from cookie</button>
+<br>
+<br>
+<b style="color:brown">myArr</b>: <input type="text" style="width:450px" value='["lorem ipsum", 88, true, {"x": 22, "y": "ABC"}]' dd-setinitial="myArr --convertType" dd-set="myArr --convertType">
+<button type="button" dd-click="putObject_test2()">put myArr in cookie</button>
+<button type="button" dd-click="getObject_test2()">get myArr from cookie</button>
+<button type="button" dd-click="remove_myArr_test()">remove myArr from cookie</button>
+
+<br><br><br>
+<h3>getAll(), getObjectAll(), removeAll()</h3>
+<button type="button" dd-click="getAll_test()">getAll</button> - returns cookie string (open browser console)
+<br>
+<br><button type="button" dd-click="getObjectAll_test1()">getObjectAll - convert types</button> - return object (open browser console)
+<br><button type="button" dd-click="getObjectAll_test2()">getObjectAll - don't convert types</button> - return object (open browser console)
+<br>
+<br><button type="button" dd-click="removeAll_test()">removeAll</button>
+
+<br><br><br>
+<h3>exists(name)</h3>
+cookie name: <input type="text" value="full_name" dd-setinitial="cookie_name" dd-set="cookie_name">
+<button type="button" dd-click="exists_test()">check if the cookie exists</button> - open browser console

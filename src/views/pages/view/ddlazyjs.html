@@ -1,0 +1,12 @@
+<h1>dd-lazyjs</h1>
+The attribute dd-lazyjs will load JS lazily i.e. after whole DOM is rendered, i.e. when all dd- elements are rendered.
+<br>To make this work just place dd-lazyjs attribute in the SCRIPT tag.
+
+<br><br>
+NOTIFY:
+<br>will not work &rarr; <i>&lt;script src="/assets/js/jq-test-module.js" <b style="color:red">type="module"</b> dd-lazyjs&gt;&lt;/script&gt;</i>
+<br>will work &rarr; <i>&lt;script src="/assets/js/jq-test.js" dd-lazyjs&gt;&lt;/script&gt;</i>
+
+<br><br>
+<hr>
+<b style="color:green" id="msgplace">MESSAGE PLACEHOLDER (message loaded from /assets/js/jq-test.js)</b>

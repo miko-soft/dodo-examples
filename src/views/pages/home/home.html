@@ -1,0 +1,95 @@
+<h1 style="font-size:55px;color:#ff2233;">
+  <img src="/public/img/dodo2.png" alt="DoDo Framework" style="width:130px">
+  <br>
+  DoDo Framework <br><small style="color:orangered;font-size:25px;;">EXAMPLES</small>
+</h1>
+
+<h2>Controller</h2>
+<ul>
+  <li><a href="/controller/hooks" dd-href>Controller Lifecycle Hooks</a> - shows in which order will be executed constructor, loader, init, postrender, destroy</li>
+</ul>
+
+<h2>View</h2>
+<ul>
+  <li><a href="/view/ddview-inner" dd-href>dd-view 'inner'</a> - test the loadView() method with 'inner' option</li>
+  <li><a href="/view/ddview-sibling" dd-href>dd-view 'sibling'</a> - test the loadView() method with 'sibling' option</li>
+  <li><a href="/view/ddview-prepend" dd-href>dd-view 'prepend'</a> - test the loadView() method with 'prepend' option</li>
+  <li><a href="/view/ddview-append" dd-href>dd-view 'append'</a> - test the loadView() method with 'append' option</li>
+  <li><a href="/view/ddview-nested" dd-href>dd-view (nested)</a> - nested <b>dd-view</b> elements</li>
+  <li><a href="/view/emptyview" dd-href>dd-view | emptyView()</a> - empty dd-view element with button</li>
+  <li>&nbsp;</li>
+  <li><a href="/view/grabfilecontent" dd-href>grabFileContent()</a> - fetch HTML content from server i.e. from URL and load it on the page</li>
+  <li>&nbsp;</li>
+  <li><a href="/view/loadjs" dd-href>loadJS(), unloadJS(), unloadAllJS()</a> - JS file loader</li>
+  <li><a href="/view/ddlazyjs" dd-href>dd-lazyjs | ddLazyjs()</a> - test dd-lazyjs directive</li>
+  <li><a href="/view/exejs" dd-href>exeJS()</a> - fetch js content and execute it</li>
+  <li>&nbsp;</li>
+  <li><a href="/view/loadcss" dd-href>loadCSS(), unloadCSS()</a> - create &lt;link rel = "stylesheet"&gt; tag and load CSS</li>
+  <li><a href="/view/plugcss" dd-href>plugCSS(), unplugCSS()</a> - create &lt;style dd-ref="#reference"&gt;&lt;/style&gt; tag in the &lt;head&gt;.</li>
+  <li>&nbsp;</li>
+  <li><a href="/view/headsetters" dd-href>HEAD setters</a> - setTitle(), setDescription(), setKeywords(), setLang()</li>
+</ul>
+
+<h2>General Directives</h2>
+<ul>
+  <li><a href="/dd/dd-show" dd-href>dd-show</a> - show/hide HTML elements with display or visibility CSS property</li>
+  <li><a href="/dd/dd-disabled" dd-href>dd-disabled</a> - disable the element</li>
+  <li><a href="/dd/dd-checked-checkboxes" dd-href>dd-checked (checkboxes)</a> - check the checkboxes with controller property</li>
+  <li><a href="/dd/dd-checked-radios" dd-href>dd-checked (radios)</a> - check the radios with controller property</li>
+  <li><a href="/dd/dd-selected" dd-href>dd-selected</a> - set selected attribute for select-one and select-multiple</li>
+  <li><a href="/dd/dd-class" dd-href>dd-class</a> - change class attribute</li>
+  <li><a href="/dd/dd-style" dd-href>dd-style</a> - change style attribute</li>
+  <li><a href="/dd/dd-src" dd-href>dd-src</a> - set src attribute</li>
+  <li><a href="/dd/dd-attr" dd-href>dd-attr</a> - set any element attribute</li>
+  <li><a href="/dd/dd-value" dd-href>dd-value</a> - set element value from controller property value</li>
+  <li><a href="/dd/dd-setinitial" dd-href>dd-setinitial</a> - set controller value from the element value</li>
+  <li><a href="/dd/dd-elem" dd-href>dd-elem</a> - pick up the DOM element</li>
+</ul>
+
+
+<h2>Cloner Directives</h2>
+<ul>
+  <li><a href="/dd/dd-text" dd-href>dd-text</a> - print text defined in the controller property</li>
+  <li><a href="/dd/dd-html" dd-href>dd-html</a> - embed HTML in the DOM</li>
+  <li><a href="/dd/dd-mustache" dd-href>dd-mustache</a> - solve {{ctrlProp}} or {{expression}} in the outerHTML</li>
+  <li><a href="/dd/dd-if" dd-href>dd-if , dd-elseif , dd-else</a> - create element when the if statement is truthy</li>
+  <li><a href="/dd/dd-foreach-simple" dd-href>dd-foreach simple</a> - simplest dd-foreach example</li>
+  <li><a href="/dd/dd-foreach" dd-href>dd-foreach</a> - multiply HTML element</li>
+  <li><a href="/dd/dd-foreach-nested" dd-href>dd-foreach (nested)</a> - nest one dd-foreach element in another -- $$company.$$field</li>
+  <li><a href="/dd/dd-foreach-nested2" dd-href>dd-foreach (nested2)</a> - nest one dd-foreach element in another -- $$company['$$field.prop']</li>
+  <li><a href="/dd/dd-foreach-if" dd-href>dd-foreach with dd-if</a> - dd-if inside dd-foreach</li>
+  <li><a href="/dd/dd-foreach-mustache" dd-href>dd-foreach with dd-mustache</a> - dd-foreach and dd-mustache in the same element</li>
+  <li><a href="/dd/dd-foreach-option" dd-href>dd-foreach in option</a> - multiply SELECT/OPTION with dd-foreach</li>
+  <li><a href="/dd/dd-repeat" dd-href>dd-repeat</a> - repeat the element based on number</li>
+  <li><a href="/dd/dd-repeat-mustache" dd-href>dd-repeat with dd-mustache</a> - dd-repeat and dd-mustache in the same element</li>
+</ul>
+
+<h2>Listener Directives</h2>
+<ul>
+  <li><a href="/ddlisteners/dd-href" dd-href>dd-href</a> - link to another page</li>
+  <li><a href="/ddlisteners/dd-click" dd-href>dd-click</a> - click event listener</li>
+  <li><a href="/ddlisteners/dd-keyup" dd-href>dd-keyup</a> - keyup event listener</li>
+  <li><a href="/ddlisteners/dd-change" dd-href>dd-change</a> - change event listener</li>
+  <li><a href="/ddlisteners/dd-evt" dd-href>dd-evt</a> - chain any event listener</li>
+  <li><a href="/ddlisteners/dd-set" dd-href>dd-set</a> - set the controller property value (single direction from dd-set element to controller)</li>
+  <li><a href="/ddlisteners/dd-model-dd-set" dd-href>dd-model &amp; dd-set</a> - dd-model as replacement for dd-set with dd-value</li>
+  <li><a href="/ddlisteners/dd-model" dd-href>dd-model</a> - use dd-model in different form tags: input, checkbox, radio, select, textarea</li>
+</ul>
+
+
+<h2>Model</h2>
+<ul>
+  <li><a href="/model/basic" dd-href>Model - Basic</a> - Test string, object and array in the $model. Test $modeler methods.</li>
+  <li><a href="/model/multilevel-object" dd-href>Model - Multilevel Object</a> - set and get multi level model object like $model.car.x.y.z.w.year</li>
+</ul>
+
+
+<h2>Lib</h2>
+<ul>
+  <li><a href="/lib/auth/login" dd-href>Auth</a> - test login, logout and route gurads: autoLogin, isLogged, hasRole</li>
+  <li><a href="/lib/form" dd-href>Form</a> - test Form library methods</li>
+  <li><a href="/lib/navig1" dd-href>navig</a> - test navig library methods</li>
+  <li><a href="/lib/cookie" dd-href>Cookie</a> - test Cookie library methods</li>
+  <li><a href="/lib/browserstorage" dd-href>BrowserStorage</a> - test BrowserStorage library methods</li>
+  <li><a href="/lib/paginator" dd-href>Paginator</a> - the pagination library</li>
+</ul>

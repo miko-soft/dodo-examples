@@ -1,0 +1,20 @@
+<h1>Login (corelib/Auth)</h1>
+
+<p>The login test i.e. test the <b>Auth</b> core library.
+  <br>
+  <br>1) Click <a href="/lib/auth/developer/dashboard" dd-href>/lib/auth/developer/dashboard</a> to test <b>Auth::isLogged()</b> and <b>Auth::hasRole()</b> route guards.
+  <br>If the user is already logged and has 'customer' role then the dashboard page will open. If not the route should redirect to the <i>afterBadlogin</i> URL.
+  <br>
+  <br>2) To test the method <b>Auth::autoLogin()</b> just <a href="/lib/auth/login" dd-href>reload this URL</a>.
+  If the user is logged redirect to <i>afterGoodLogin</i> URL.
+</p>
+
+<br><br><br>
+
+<div style="border:1px solid Silver;background:#eee;width:40%;padding:13px;">
+  <p>username: <input type="text" name="username" dd-set="username"></p>
+  <p>password: <input type="text" name="password" dd-set="password"></p>
+  <br>
+  <br><button type="button" dd-click="tryLogin()">Login</button>
+  <small style="color:gray;margin-left:13px;">demo:12345</small>
+</div>

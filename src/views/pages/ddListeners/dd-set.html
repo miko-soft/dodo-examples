@@ -1,0 +1,85 @@
+<h1>dd-set</h1>
+Set controller property from INPUT, TEXTAREA, SELECT tags.
+
+<br><br>
+<h3>INPUT TEXT</h3>
+<input type="text" value="Saša" dd-set="$model.mySet9"> &nbsp;&nbsp; <b dd-text="$model.mySet9"></b>
+
+
+<br><br>
+<h3>INPUT NUMBER</h3>
+<input type="number" value="88.21" dd-set="$model.mySet5"> &nbsp;&nbsp; <b dd-text="$model.mySet5"></b>
+
+
+<br><br>
+<h3>INPUT TEXT (--convertType)</h3>
+Type some numbers or JSON or boolean in the fields. Open browser console.
+<br> The <i>--convertType</i> option will correct datatype, for example "5" &rarr; 5
+<br>
+<input type="text" dd-set="$model.mySet_orig">
+<input type="text" dd-set="$model.mySet_converted --convertType" placeholder="--convertType">
+<button dd-click="setSeeConsole()">See in console</button>
+
+
+<br><br>
+<h3>INPUT RADIO</h3>
+<input type="radio" name="my_set4" dd-set="$model.mySet4" value="YES"> YES &nbsp;&nbsp;
+<input type="radio" name="my_set4" dd-set="$model.mySet4" value="NO" checked> NO
+&nbsp;&nbsp; <b dd-text="$model.mySet4"></b>
+
+
+<br><br>
+<h3>INPUT CHECKBOX</h3>
+Set the controller value on "input" JS DOM event i.e. on every input change.
+<br>
+<input type="checkbox" name="my_set1" dd-set="$model.mySet1" value="125"> 125 &nbsp;&nbsp;
+<input type="checkbox" name="my_set1" dd-set="$model.mySet1" value="sasa" checked> sasa &nbsp;&nbsp;
+<input type="checkbox" name="my_set1" dd-set="$model.mySet1" value="true"> true
+&nbsp;&nbsp; <b dd-text="$model.mySet1"></b>
+<br>
+<br>
+<br>Same as above but without <b>$model.</b> Open browser console to watch results.
+<br>NOTICE:
+<br> - render() is not triggered so view will not be refreshed.
+<br> - dd-click will not work because dd-click is executed before dd-set, so it should be: <i>dd-set="mySet1" <b>dd-evt="printInConsole() --input"</b></i>
+<br>
+<input type="checkbox" name="my_set2" value="125" dd-set="mySet1" dd-evt="printInConsole() --input"> 125 &nbsp;&nbsp;
+<input type="checkbox" name="my_set2" value="sasa" dd-set="mySet1" dd-evt="printInConsole() --input" checked> sasa &nbsp;&nbsp;
+<input type="checkbox" name="my_set2" value="true" dd-set="mySet1" dd-evt="printInConsole() --input"> true
+&nbsp;&nbsp; <b dd-text="mySet1"></b>
+
+
+<br><br>
+<h3>SELECT</h3>
+<select dd-set="$model.mySet2" size="5" multiple>
+  <option value="225" selected>225</option>
+  <option value="18.923">18.923</option>
+  <option value="false" selected>false</option>
+  <option value='{"x": 22, "y":"something", "z": true}'>{"x": 22, "y":"something", "z": true}</option>
+  <option value="Tom">Tom</option>
+</select>
+&nbsp;&nbsp; <b dd-text="$model.mySet2"></b>
+
+
+<br><br>
+<h3>SELECT with dd-setinitial</h3>
+<i>Notice: The "Dara" will be default value because of dd-setinitial.</i>
+<br><select dd-set="$model.mySet3" dd-setinitial="$model.mySet3">
+  <option value="Lara">Lara</option>
+  <option value="Dara" selected>Dara</option>
+  <option value="Mara">Mara</option>
+</select>
+&nbsp;&nbsp; <b dd-text="$model.mySet3"></b>
+
+
+
+<style scoped>
+  select {
+    width: 210px;
+  }
+
+  select[multiple] {
+    height: 200px;
+    font-size: 17px;
+  }
+</style>

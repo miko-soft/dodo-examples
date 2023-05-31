@@ -1,0 +1,17 @@
+<h1>Model - Basic</h1>
+Make tests when $model property is string, object or array.
+<br>Also test $modeler methods like: setValue, getValue, mpush, mpop, mshift, munshift
+
+<br>
+<button dd-click="str()">str</button> - test model as string
+<br>$model.first_name: <b dd-text="$model.first_name"></b>
+<br>
+<br>
+<button dd-click="obj()">obj</button> - test model as object
+<br>$model.user.name: <b dd-text="$model.user.name"></b>
+<br>$model.user.age: <b dd-text="$model.user.age"></b>
+<br>$model.user.isActive: <b dd-text="$model.user.isActive"></b>
+<br>
+<br>
+<button dd-click="arr()">arr</button> - test model as array
+<br>$model.pets: <b dd-text="$model.pets"></b>

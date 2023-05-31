@@ -1,0 +1,40 @@
+<h1>Controller Lifecycle Hooks</h1>
+Every time a new route is opened the controller is changed and new controller lifecycle starts.
+<br>This example shows in which order will be executed controller constructor and the lifecycle hooks.
+Lifecycle hooks are controller methods: __loader, __init, __rend, __postrend and __destroy
+<br>Open the browser console to see the constructor and hook arguments.
+<ol>
+  <li><b>constructor(app)</b> - Will be executed when browser page is reloaded.</li>
+  <li><b>__loader(trx)</b> - Load views via dd-inc and dd-view, load css, js, define title, keywords, description, etc.</li>
+  <li><b>__init(trx)</b> - Good place to initialise controller variables and fetch the API data via this.$httpClient.</li>
+  <li>__rend(trx) - This method shouldn't be used unless you want to improve the app speed.</li>
+  <li><b>__postrend(trx)</b> - Do some things after the HTML is erndered and DOM creation is finished.</li>
+  <li><b>__destroy(trx)</b> - Activated when a new route is opened and old controller died.</li>
+</ol>
+<i>app</i> is the App class instance
+<br><i>trx</i> is the Router transitional variable
+
+
+<br><br>
+<h3>A) Open another uri i.e. controller</h3>
+<a href="/" dd-href>HOME</a>
+<br>- open "HomeCtrl" controller
+<br>- execute the __destroy() method in the "ControllerHooksCtrl" controller
+
+<br><br>
+<h3>B) Open another uri but same controller</h3>
+<a href="/controller/hooks-same" dd-href>/controller/hooks-same</a>
+<br>- open "ControllerHooksCtrl" controller
+<br>- execute the __destroy() method in the "ControllerHooksCtrl" controller
+
+<br><br>
+<h3>C) Open same uri and same controller</h3>
+<a href="/controller/hooks" dd-href>/controller-hooks</a>
+<br>- open "ControllerHooksCtrl" controller
+<br>- execute the __destroy() method in the "ControllerHooksCtrl" controller
+
+<br><br>
+<h3>D) Open bad 404 URL</h3>
+<a href="/badurl" dd-href>/badurl</a>
+<br>- open "NotfoundCtrl" controller
+<br>- execute the __destroy() method in the "ControllerHooksCtrl" controller

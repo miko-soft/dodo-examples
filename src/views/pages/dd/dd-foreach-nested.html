@@ -1,0 +1,34 @@
+<h1>dd-foreach (nested)</h1>
+The dd-foreach is nested in another dd-foreach.
+<br>Used: <b>$$company.$$field</b>
+<br> The $$field is array of strings.
+
+
+<h3>Model</h3>
+<br><button dd-click="foreachNested()">change model value</button>
+<table>
+  <tr>
+    <th dd-foreach="fields --field">$$field</th>
+  </tr>
+  <tr dd-foreach="$model.companies --company">
+    <td dd-foreach="fields --field">$$company.$$field</td>
+  </tr>
+</table>
+
+
+<style scoped>
+  table {
+    width: 340px;
+    margin-top: 21px;
+  }
+
+  table td,
+  th {
+    border: 1px solid gray;
+    padding: 5px 3px;
+  }
+
+  table td:nth-child(3) {
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,17 @@
+<h1>dd-checked (checkboxes)</h1>
+Set the "checked" attribute with the controller property value (array of strings).
+
+<br><br>
+<h3>Checkboxes</h3>
+<br><button dd-click="setUserNames()">Set User Names</button>
+<br>dd-checked="$model.user_names" &rarr;
+<input type="checkbox" name="usernames" value="Pin" dd-checked="$model.user_names">Pin &nbsp;&nbsp;
+<input type="checkbox" name="usernames" value="Rin" dd-checked="$model.user_names"> Rin &nbsp;&nbsp;
+<input type="checkbox" name="usernames" value="Tin" dd-checked="$model.user_names"> Tin
+
+<br><br>
+<br><button dd-click="setPositions()">Set Positions</button>
+<br>dd-checked="$model.positions" &rarr;
+<input type="checkbox" name="positions" value="engineer" dd-checked="$model.positions">engineer &nbsp;&nbsp;
+<input type="checkbox" name="positions" value="cto" dd-checked="$model.positions"> cto &nbsp;&nbsp;
+<input type="checkbox" name="positions" value="ceo" dd-checked="$model.positions"> ceo

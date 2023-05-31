@@ -1,0 +1,23 @@
+<h1>dd-class</h1>
+Modify the "class" attribute with the controller property value.
+
+<br><br>
+<button dd-click="runCLASS()">runCLASS</button>
+<small>Open browser developer tools to see the effect after the button is clicked.</small>
+<p class="my-italic" dd-class="$model.myKlases">Class my-italic will remain</p>
+<p class="my-italic" dd-class="$model.myKlases --replace">Class my-italic will be removed due to --replace</p>
+
+
+<style scope>
+  .my-red {
+    color: red;
+  }
+
+  .my-font-size {
+    font-size: 25px;
+  }
+
+  .my-italic {
+    font-style: italic;
+  }
+</style>

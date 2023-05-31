@@ -1,0 +1,11 @@
+<h1>Dashboard (corelib/Auth)</h1>
+<p>This is the page after successful login.
+  <br>
+  <br>1) Test logout by clicking on the button
+  (cookies <b>auth_loggedUser</b> and <b>auth_jwtToken</b>) should be removed and page should be redirected to <i>afterLogout</i> URL.
+  <br>
+  <br>2) To test the method <b>Auth::autoLogin()</b> click <a href="/lib/auth/login" dd-href>/lib/auth/login</a>.
+  If the user is logged it will be redirect to <i>afterGoodLogin</i> URL.
+</p>
+<br>
+<br><button dd-click="tryLogout()">Logout</button>

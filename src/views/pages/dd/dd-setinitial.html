@@ -1,0 +1,27 @@
+<h1>dd-setinitial</h1>
+Get the element value and set the initial controller property value (when the controller is executed). The element is input, textarea or select tag.
+
+<br><br>
+
+<button dd-click="showInputValue()">show data types</button> -- open console to see the results.
+<br>
+<br>
+<h3>INPUT</h3>
+<input type="text" value="55" dd-setinitial="years_old"> --- dd-setinitial="years_old" [ NOTICE:incremented in __init() ] &rarr; <b dd-text="years_old"></b>
+<br><input type="text" value="true" dd-setinitial="$model.isValid --convertType"> --- dd-setinitial="$model.isValid --convertType" &rarr; <b dd-text="$model.isValid"></b>
+
+
+<br><br>
+<h3>TEXTAREA</h3>
+<textarea name="" id="" cols="30" rows="10" dd-setinitial="my_text">Lorem ipsum ...</textarea> --- dd-setinitial="my_text" &rarr; <b dd-text="my_text"></b>
+<br><textarea name="" id="" cols="30" rows="10" dd-setinitial="$model.my_num --convertType">157</textarea> --- dd-setinitial="$model.my_num --convertType" &rarr; <b dd-text="$model.my_num"></b>
+
+
+<br><br>
+<h3>SELECT</h3>
+<select dd-setinitial="my_select">
+  <option value="one">one</option>
+  <option value="two" selected>two</option>
+  <option value="three">three</option>
+</select>
+--- dd-setinitial="my_select" &rarr; <b dd-text="my_select"></b>

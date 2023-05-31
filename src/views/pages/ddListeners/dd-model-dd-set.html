@@ -1,0 +1,20 @@
+<h1>dd-model &amp; dd-set, dd-value</h1>
+Bind model value in both directions:
+<br>a) from controller to dd-model element
+<br>b) from dd-model element to controller
+
+
+<br><br><br><br>
+<input type="text" dd-model="$model.myMDL"> --- dd-model="$model.myMDL"
+<br>
+<br><input type="text" dd-value="$model.myMDL" dd-set="$model.myMDL"> ---- dd-value="$model.myMDL" dd-set="$model.myMDL"
+<br>
+<br><button dd-click="runMODEL()">Change controller value</button>
+<br>
+<br>Value is: <b dd-text="$model.myMDL"></b>
+<br>
+<br>
+
+<br><br><br><br>
+Go to <a href="/" dd-href>home</a> and press Back browser button to return on this page.
+If everything works good the $model should be reseted and INPUT tag should be empty.

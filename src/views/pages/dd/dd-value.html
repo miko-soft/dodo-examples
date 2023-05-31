@@ -1,0 +1,86 @@
+<h1>dd-value</h1>
+This directive takes controller property value and sets the element value.
+
+
+<br><br><br>
+<h3>INPUT, TEXTAREA</h3>
+<button dd-click="setValues()">Set Values</button>
+<br><i>undefined in input (text type)</i> -- dd-value="$model.input_text_undefined" &rarr; <input type="text" style="width:210px" dd-value="$model.input_text_undefined">
+<br><i>string in input (text type)</i> -- dd-value="$model.input_text01" &rarr; <input type="text" style="width:210px" dd-value="$model.input_text01">
+<br><i>string in input (number type)</i> -- dd-value="$model.input_numberAsString" &rarr; <input type="number" style="width:210px" dd-value="$model.input_numberAsString">
+<br><i>object in input</i> -- dd-value="$model.input_text_obj" &rarr; <input type="text" style="width:210px" dd-value="$model.input_text_obj">
+<br><i>object in textarea</i> -- dd-value="$model.input_text_obj" &rarr; <br><textarea dd-value="$model.input_text_obj" style="width:210px;height:130px;"></textarea>
+
+
+<br><br>
+<h3>SELECT</h3>
+<button dd-click="setCar()">Set Select</button>
+<br><select name="cars" id="cars" dd-value="$model.car" style="width: 210px">
+  <option value="BMW">BMW</option>
+  <option value="Audi">Audi</option>
+  <option value="WV">WV</option>
+  <option value="Toyote">Toyote</option>
+</select>
+
+
+<br><br>
+<h3>CHECKBOX</h3>
+<button dd-click="setUser()">Set Checkbox</button>
+<br><span dd-mustache>Selected users: <b>{{this.$model.usersSelected}}</b></span>
+<br>
+<input type="checkbox" name="users" dd-value="users[0]" dd-checked="$model.usersSelected"> Pin &nbsp;&nbsp;
+<input type="checkbox" name="users" dd-value="users[1]" dd-checked="$model.usersSelected"> Rin &nbsp;&nbsp;
+<input type="checkbox" name="users" dd-value="users[2]" dd-checked="$model.usersSelected"> Tin
+
+
+<br><br>
+<h3>RADIO</h3>
+The dd-foreach is used.
+<br><br>
+<button dd-click="setCountry()">Set Radio</button>
+<br><span dd-mustache>Selected country: <b>{{this.$model.countrySelected}}</b></span>
+
+
+<br><br>
+
+dd-value="countries.$$key" dd-checked="$model.countrySelected" &rarr;
+<p dd-foreach="countries --country,key">
+  <input type="radio" name="country" dd-value="countries[$$key]" dd-checked="$model.countrySelected"> $$country &nbsp;&nbsp;
+</p>
+
+<br><br>
+
+value="$$country" dd-checked="$model.countrySelected" &rarr;
+<p dd-foreach="countries --country">
+  <input type="radio" name="country2" value="$$country" dd-checked="$model.countrySelected"> $$country &nbsp;&nbsp;
+</p>
+
+
+
+<br><br><br>
+<h2>Complex Cases</h2>
+
+<br>
+<h3>controller property name with mustache</h3>
+dd-value="continent_{{this.continentID + 1}}" &rarr; <input type="text" dd-value="continent_{{this.continentID + 1}}">
+
+
+<br><br>
+<h3>expression</h3>
+dd-value="(155)" &rarr; <input type="text" dd-value="(155)">
+<br>dd-value="(this.users[1] + ' - user')" &rarr; <input type="text" dd-value="(this.users[1] + ' - user')">
+
+
+<br><br>
+<h3>expression with mustache</h3>
+First is solved mustache {{...}} then expression (...).
+<br>dd-value="(this.continent_{{this.continentID + 0}} + ' is my continent')" &rarr; <input type="text" dd-value="(this.continent_{{this.continentID + 0}} + ' is my continent')">
+
+
+<br><br>
+<h3>expression, mustache and doubledollar</h3>
+First is solved doubledollar $$, then mustache {{...}}, then expression (...).
+<br>dd-value="(this.$$ctrlField[{{this.userID + 1}}])" &rarr;
+<p dd-foreach="controllerFields --ctrlField">
+  <input type="text" dd-value="(this.$$ctrlField[{{this.userID + 1}}])">
+</p>

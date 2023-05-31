@@ -1,0 +1,13 @@
+<h1>dd-href</h1>
+Href listeners and changing URLs (browser history states).
+<br>
+NOTICE: The click on dd-href element will destroy current controller i.e. ddUNLISTEN() will be invoked.
+
+<br><br>
+<a href="/">LINK1 -- href="/"</a> - This will reload the page because no <b>dd-href</b> attribute.
+<br><a href="/" dd-href>LINK2 -- href="/" dd-href</a> - This will not reload the page and will act as single page app link.
+<br><a href="" dd-href="/">LINK3 -- href="" dd-href="/"</a> - This will not reload the page and will act as single page app link.
+
+<h4>history</h4>
+Click on the button to get the history data. Open the browser dev tools console.
+<br><button dd-click="historyData()">Show window.history</button>

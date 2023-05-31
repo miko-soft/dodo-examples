@@ -1,0 +1,13 @@
+<h1>dd-mustache</h1>
+<i>Show HTML mixed with controller variables and expressions.</i>
+
+<br><br>
+<h3>with controller property</h3>
+The product name is {{this.product_name}} made by {{this.$model.company_name}} &rarr; <em dd-mustache>The product name is {{this.product_name}} made by {{this.$model.company_name}}</em>
+
+
+<br><br>
+<h3>with JS expression</h3>
+{{this.$model.num + Math.pow(this.$model.num, 2)}} &rarr; <em dd-mustache>result: <b style="color:Green">{{this.$model.num + Math.pow(this.$model.num, 2)}}</b></em>
+<br>
+<br><button type="button" dd-click="changeNum(5)">change num to 5</button> &nbsp; <button type="button" dd-click="changeNum(3)">change num to 3</button>

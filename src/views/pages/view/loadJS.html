@@ -1,0 +1,22 @@
+<h1>loadJS(), unloadJS, unloadAllJS</h1>
+<p>The example loads "jQuery", "Notify" and "Sweetalert" libraries.
+  <br><i>NOTICE: The unloadJS() will remove SCRIPT tag but it will not unload JS file from the browser memory. So it will stay active.</i>
+</p>
+<br>
+<br><button dd-click="popup()">POPUP</button> - will not work unless the "load JS LIBS" is clicked
+<br>
+<br><button dd-click="loadJS_test()">load JS LIBS</button> - load jQuery, Notify and Sweetalert libs
+<br>
+<br><button dd-click="unloadSweetalert_test()">Unload SWEETALERT</button> - remove the SCRIPT tag with Sweetalert URL (the script will stay active in the browser memory)
+<br>
+<br><button dd-click="unloadAllJS_test()">Unload ALL LIBS</button> - remove all SCRIPT tags with dd-lazyjs (the scripts are still in the browser memory)
+<br>
+<br>
+<br>
+<h3>unloadJS() in __destroy() hook</h3>
+We can put "this.unloadAllJS();" in the destroy hook if we want to unload JS files which are not needed on other pages.
+<br>It will remove JS files from DOM but it will be still active in browser's memory.
+<br>If you want to remove it from the memory too, use <code>corelib.navig.reload()</code> to reload the page.
+<br>
+<br>To test this, click on <a href="/controller/hooks" dd-href>/controller/hooks</a> and watch Elements in Chrome DevTools.
+Return to this page and click POPUP button. The popup will work because JS libs are not removed from browser memory.

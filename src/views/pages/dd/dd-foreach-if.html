@@ -1,0 +1,34 @@
+<h1>dd-foreach with dd-if</h1>
+The dd-foreach loop which has dd-if conditions.
+
+
+<br>
+<br><button dd-click="foreach1()">change model value</button>
+<br>
+<table>
+  <tr dd-foreach="$model.companies --val1,key1">
+    <td><b>$$val1.name</b></td>
+
+    <td dd-if="($$val1.size > 50)">$$val1.size</td>
+    <td dd-else>Less than 50</td>
+  </tr>
+</table>
+
+
+
+<style scoped>
+  table {
+    width: 340px;
+    margin-top: 21px;
+  }
+
+  table td,
+  th {
+    border: 1px solid gray;
+    padding: 5px 3px;
+  }
+
+  table td:nth-child(3) {
+    text-align: center;
+  }
+</style>
