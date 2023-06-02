@@ -4,6 +4,8 @@ export default defineConfig({
   root: 'src',
   mode: 'development',
   publicDir: 'public',
+  envDir: '', // relative to root
+  envPrefix: 'DODO_',
   logLevel: 'info',
   clearScreen: true,
   appType: 'spa',
