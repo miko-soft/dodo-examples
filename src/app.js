@@ -28,6 +28,7 @@ import ViewExeJSCtrl from './controllers/view/ViewExeJSCtrl.js';
 import ViewLoadCSSCtrl from './controllers/view/ViewLoadCSSCtrl.js';
 import ViewPlugCSSCtrl from './controllers/view/ViewPlugCSSCtrl.js';
 import ViewHeadSettersCtrl from './controllers/view/ViewHeadSettersCtrl.js';
+import ViewLoadI18nCtrl from './controllers/view/ViewLoadI18nCtrl.js';
 
 import DdShowCtrl from './controllers/dd/DdShowCtrl.js';
 import DdDisabledCtrl from './controllers/dd/DdDisabledCtrl.js';
@@ -101,6 +102,7 @@ const $routes = [
   ['when', '/view/loadcss', ViewLoadCSSCtrl],
   ['when', '/view/plugcss', ViewPlugCSSCtrl],
   ['when', '/view/headsetters', ViewHeadSettersCtrl],
+  ['when', '/view/loadi18n', ViewLoadI18nCtrl],
 
   ['when', '/dd/dd-show', DdShowCtrl],
   ['when', '/dd/dd-disabled', DdDisabledCtrl],
@@ -156,13 +158,20 @@ const $routes = [
 
 
 // app
-const app = new App('dodoExamples');
-app
-  .auth($auth)
-  .httpClient($httpClient)
-  .debug($debugOpts);
+const initApp = async () => {
+  const app = new App('dodoExamples');
 
-app
-  .routes($routes)
-  .listen();
+  await app.i18n();
+
+  app
+    .auth($auth)
+    .httpClient($httpClient)
+    .debug($debugOpts)
+    .routes($routes)
+    .listen();
+};
+
+initApp().catch(console.error);
+
+
 

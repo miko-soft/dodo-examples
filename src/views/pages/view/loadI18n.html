@@ -1,0 +1,25 @@
+<h1>loadI18n(langCode)</h1>
+Change the language and and load the text from language file by using
+<br>- <b>App.i18n()</b> method
+<br>- <b>View.loadI18n()</b> method
+
+<br><br><br>
+<span style="color:maroon">select language:</span> <select id="lang" dd-set="language" dd-change="setPageLanguage(this.language)">
+  <option value="en" selected>en</option>
+  <option value="hr">hr</option>
+  <option value="de">de</option>
+  <option value="ru">ru</option>
+</select>
+
+<br><br><br>
+
+<h4 dd-text="$model.$i18n.page.PRODUCT_NAME"></h4>
+<small dd-text="$model.$i18n.page.PRODUCT_DESCRIPTION"></small>
+<ol>
+  <li dd-foreach="$model.$i18n.page.PRODUCT_COUNTRIES --val,key">$$val</li>
+</ol>
+<br><i dd-text="$model.$i18n.common.USERNAME"></i>: &nbsp; <input type="text" placeholder="{{this.$model.$i18n.common.USERNAME}}" dd-mustache>
+
+
+<style scoped>
+</style>
