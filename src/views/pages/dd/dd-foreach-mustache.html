@@ -5,23 +5,25 @@
 <h3>A) dd-mustache inside dd-foreach element</h3>
 Use it most often.
 <p dd-foreach="animals --val,key">
-  <b dd-mustache>{{$$key + 1}}</b>. $$val.name
+  <b dd-mustache>{{${key} + 1}}</b>. ${val.name}
 </p>
+
 
 <br><br>
 <h3>B) dd-mustache and dd-foreach in the same element</h3>
 <p dd-foreach="animals --val,key" dd-mustache>
-  {{$$key + 1}}. $$val.name
+  {{${key} + 1}}. ${val.name}
 </p>
+
 
 <br><br>
 <h3>C) dd-mustache is wrapping dd-foreach</h3>
-Use it rarely because it has double elements than case A).
+Use it rarely because it has double elements than in the case A).
 <br>
 <p><button dd-click="foreachTestMustache()">change model value</button></p>
 <div dd-mustache>
-  <p dd-foreach="$model.companies --val1,key1" class="kolor_{{$$key1 + 1}}">
-    <i>{{$$key1 + 1}}</i> <b>$$val1.name</b> - $$val1.size - {{this.$model.myText}}
+  <p dd-foreach="$model.companies --val1,key1" class="kolor_{{${key1} + 1}}">
+    <i>{{${key1} + 1}}</i> <b>${val1.name}</b> - ${val1.size} - {{this.$model.myText}}
   </p>
 </div>
 

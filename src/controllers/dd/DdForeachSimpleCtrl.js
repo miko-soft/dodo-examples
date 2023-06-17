@@ -21,11 +21,22 @@ export default class DdForeachDdTextCtrl extends Controller {
   }
 
   async __init(trx) {
-    this.names = [
-      { id: 1, name: 'Mirko', age: 21 },
-      { id: 2, name: 'Žarko', age: 38 },
-      { id: 3, name: 'Josip', age: 42 },
+    this.customers = [
+      { id: 1, name: 'Mirko', age: 21, active: true },
+      { id: 2, name: 'Žarko', age: 38, active: false },
+      { id: 3, name: 'Josip', age: 42, active: true },
     ];
+
+    this.someNumber = 5;
+  }
+
+
+  printCustomerName(name) {
+    console.log('name::', name);
+  }
+
+  printObject(customer) {
+    console.log('customer::', customer);
   }
 
 }

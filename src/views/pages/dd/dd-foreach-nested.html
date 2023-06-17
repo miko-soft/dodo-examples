@@ -1,17 +1,32 @@
 <h1>dd-foreach (nested)</h1>
 The dd-foreach is nested in another dd-foreach.
-<br>Used: <b>$$company.$$field</b>
-<br> The $$field is array of strings.
+<br>Used: <b>$1{company.$0{field}}</b> where $0 and $1 are interpolator marks defined by option --$0 and --$1
+<br> The "field" is array of strings.
 
 
-<h3>Model</h3>
-<br><button dd-click="foreachNested()">change model value</button>
+<br><br>
+<h4>Code</h4>
+<pre><code>
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th dd-foreach="fields --field"&gt;${field}&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr dd-foreach="$model.companies --company --$1"&gt;
+      &lt;td dd-foreach="fields --field --$0"&gt;$1{company.$0{field}}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+</code></pre>
+
+
+<br><br>
+<h3>Example with $model</h3>
+<button dd-click="foreachNested()">change model value</button>
 <table>
   <tr>
-    <th dd-foreach="fields --field">$$field</th>
+    <th dd-foreach="fields --field">${field}</th>
   </tr>
-  <tr dd-foreach="$model.companies --company">
-    <td dd-foreach="fields --field">$$company.$$field</td>
+  <tr dd-foreach="$model.companies --company --$1">
+    <td dd-foreach="fields --field --$0">$1{company.$0{field}}</td>
   </tr>
 </table>
 

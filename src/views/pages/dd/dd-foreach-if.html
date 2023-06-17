@@ -7,9 +7,9 @@ The dd-foreach loop which has dd-if conditions.
 <br>
 <table>
   <tr dd-foreach="$model.companies --val1,key1">
-    <td><b>$$val1.name</b></td>
+    <td><b>${val1.name}</b></td>
 
-    <td dd-if="($$val1.size > 50)">$$val1.size</td>
+    <td dd-if="(${val1.size} > 50)">${val1.size}</td>
     <td dd-else>Less than 50</td>
   </tr>
 </table>

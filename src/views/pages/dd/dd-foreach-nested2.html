@@ -1,14 +1,14 @@
 <h1>dd-foreach (nested2)</h1>
 The dd-foreach is nested in another dd-foreach.
-<br>Used: <b>$$company['$$field.prop']</b>
-<br> The $$field is array of objects.
+<br>Used: <b>$1{company['${field.prop}']}</b>
+<br> The "field" is array of objects.
 
 
-<h3>Model</h3>
+<br><br><br>
 <br><button dd-click="foreachNested()">change model value</button>
 <table>
-  <tr dd-foreach="$model.companies --company">
-    <td dd-foreach="fields --field">$$company['$$field.prop']</td>
+  <tr dd-foreach="$model.companies --company --$1">
+    <td dd-foreach="fields --field">$1{company['${field.prop}']}</td>
   </tr>
 </table>
 
