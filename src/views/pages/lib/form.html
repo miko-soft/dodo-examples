@@ -60,15 +60,15 @@
   <br><br><br><button type="button" dd-click="generateAutos()">generate Autos</button> - generate SELECT/OPTION by dd-foreach and set the selected value
   <br><br>autos: <select name="myAuto">
     <option value=""></option>
-    <option dd-foreach="$model.autos --val,key" value="$$val.id">$$val.name</option>
+    <option dd-foreach="$model.autos --val,key" value="${val.id}">${val.name}</option>
   </select>
   <button type="button" dd-click="getAuto()">get auto</button>
 
 
   <br><br><br><button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-foreach and <i>dd-mustache</i> and set the default value
   <br><br>plants: <select name="myPlant">
-    <option value=""></option>
-    <option dd-foreach="$model.plants --val,key" value="$$val.id" dd-mustache>{{this.$model.plants[$$key].name}} -- price: ${{this.$model.plants[$$key].price}}</option>
+    <option value="" selected></option>
+    <option dd-foreach="$model.plants --val,key" value="${val.id}" dd-mustache>{{this.$model.plants[${key}].name}} -- price: $ {{this.$model.plants[${key}].price}}</option>
   </select>
   <button type="button" dd-click="getPlant()">get plant</button>
 

@@ -43,16 +43,16 @@ The dd-foreach is used.
 
 <br><br>
 
-dd-value="countries.$$key" dd-checked="$model.countrySelected" &rarr;
+dd-value="countries.${key}" dd-checked="$model.countrySelected" &rarr;
 <p dd-foreach="countries --country,key">
-  <input type="radio" name="country" dd-value="countries[$$key]" dd-checked="$model.countrySelected"> $$country &nbsp;&nbsp;
+  <input type="radio" name="country" dd-value="countries[${key}]" dd-checked="$model.countrySelected"> ${country} &nbsp;&nbsp;
 </p>
 
 <br><br>
 
-value="$$country" dd-checked="$model.countrySelected" &rarr;
+value="${country}" dd-checked="$model.countrySelected" &rarr;
 <p dd-foreach="countries --country">
-  <input type="radio" name="country2" value="$$country" dd-checked="$model.countrySelected"> $$country &nbsp;&nbsp;
+  <input type="radio" name="country2" value="${country}" dd-checked="$model.countrySelected"> ${country} &nbsp;&nbsp;
 </p>
 
 
@@ -78,9 +78,9 @@ First is solved mustache {{...}} then expression (...).
 
 
 <br><br>
-<h3>expression, mustache and doubledollar</h3>
-First is solved doubledollar $$, then mustache {{...}}, then expression (...).
-<br>dd-value="(this.$$ctrlField[{{this.userID + 1}}])" &rarr;
+<h3>dd-foreach with expression, mustache and string intrpolation ${}</h3>
+First is solved string intrpolation ${}, then mustache {{...}}, then expression (...).
+<br>dd-value="(this.${ctrlField}[{{this.userID + 1}}])" &rarr;
 <p dd-foreach="controllerFields --ctrlField">
-  <input type="text" dd-value="(this.$$ctrlField[{{this.userID + 1}}])">
+  <input type="text" dd-value="(this.${ctrlField}[{{this.userID + 1}}])">
 </p>

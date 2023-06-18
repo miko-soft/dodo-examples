@@ -57,13 +57,13 @@ Ordinary controller property should be initialised in the __init() hook. For exa
 
 <br><br><br>
 <h3>dd-text inside dd-foreach</h3>
-dd-foreach="animals --val,key" dd-text="animals[$$key]" &rarr;
+<code>dd-foreach="animals --val,key" dd-text="animals[${key}]"</code>
 <ol>
-  <li dd-foreach="animals --val,key" dd-text="animals[$$key]"></li>
+  <li dd-foreach="animals --val,key" dd-text="animals[${key}]"></li>
 </ol>
 
 <br><br>
-SHORTER WAY - &lt;li dd-foreach="animals --val"&gt;$$val&lt;/li&gt;
+&rarr; <code>&lt;li dd-foreach="animals --val"&gt;${val}&lt;/li&gt;</code> &larr; SHORTER WAY
 <ul>
-  <li dd-foreach="animals --val">$$val</li>
+  <li dd-foreach="animals --val">${val}</li>
 </ul>

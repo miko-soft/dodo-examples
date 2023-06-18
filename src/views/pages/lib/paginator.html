@@ -8,10 +8,10 @@
   </div>
   <div dd-foreach="$model.results --val,key">
     <span class="w3-text-green w3-margin-right" dd-mustache>
-      {{this.paginator.ordCalc(this.currentPage, this.itemsPerPage, $$key)}}
+      {{this.paginator.ordCalc(this.currentPage, this.itemsPerPage, ${key})}}
     </span>
-    <span class="w3-margin-right">$$val.name</span> &middot;
-    <span style="color:gray">age: $$val.age</span>
+    <span class="w3-margin-right">${val.name}</span> &middot;
+    <span style="color:gray">age: ${val.age}</span>
   </div>
 </div>
 
@@ -24,7 +24,7 @@
       <div class="w3-center">
         <div class="w3-bar">
           <a href="" class="w3-button" dd-click="openPage(1, $element) --preventDefault">&laquo;</a>
-          <a href="" class="w3-button" dd-foreach="$model.pageLinks --val,key" class="$$val.c" dd-click="openPage($$val.i) --preventDefault">$$val.i</a>
+          <a href="" class="w3-button" dd-foreach="$model.pageLinks --val,key" class="${val.c}" dd-click="openPage(${val.i}) --preventDefault">${val.i}</a>
           <a href="" class="w3-button" dd-click="openPage(this.pagesTotal, $element) --preventDefault">&raquo;</a>
         </div>
       </div>

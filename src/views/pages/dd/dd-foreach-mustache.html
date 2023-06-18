@@ -22,7 +22,8 @@ Use it rarely because it has double elements than in the case A).
 <br>
 <p><button dd-click="foreachTestMustache()">change model value</button></p>
 <div dd-mustache>
-  <p dd-foreach="$model.companies --val1,key1" class="kolor_{{${key1} + 1}}">
+  <!-- <p dd-foreach="$model.companies --val1,key1" class="kolor_{{${key1} + 1}}"> This will also work-->
+  <p dd-foreach="$model.companies --val1,key1" class="kolor_${key1 + 1}">
     <i>{{${key1} + 1}}</i> <b>${val1.name}</b> - ${val1.size} - {{this.$model.myText}}
   </p>
 </div>

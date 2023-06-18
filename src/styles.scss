@@ -92,8 +92,10 @@ input[type="radio"] {
 }
 
 
-pre>code {
+code {
   color: purple;
-  font: 14px Courier;
+  font: 15px Courier;
   font-weight: bold;
+  padding: 3px;
+  background-color: #eee;
 }
