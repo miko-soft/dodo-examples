@@ -2,6 +2,6 @@
 This example has dd-repeat and dd-mustache in the same element.
 
 <br>
-<br>dd-repeat="3" dd-mustache &rarr; <b dd-repeat="(3)" dd-mustache>{{this.$model.myArr[1]}} </span></b>
+<br>dd-repeat="3" dd-mustache &rarr; <b dd-repeat="(3)" dd-mustache="--selfremove">{{this.$model.myArr[1]}} </span></b>
 <br><br>
 <br><button dd-click="changeModel()">change model</button>

@@ -5,13 +5,13 @@
 <h3>A) dd-mustache inside dd-foreach element</h3>
 Use it most often.
 <p dd-foreach="animals --val,key">
-  <b dd-mustache>{{${key} + 1}}</b>. ${val.name}
+  <b dd-mustache="--selfremove">{{${key} + 1}}</b>. ${val.name}
 </p>
 
 
 <br><br>
 <h3>B) dd-mustache and dd-foreach in the same element</h3>
-<p dd-foreach="animals --val,key" dd-mustache>
+<p dd-foreach="animals --val,key" dd-mustache="--selfremove">
   {{${key} + 1}}. ${val.name}
 </p>
 
