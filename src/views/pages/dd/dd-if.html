@@ -12,6 +12,7 @@ Create an element when the if statement is truthy.
 <br><br>
 <h3>Model</h3>
 <i>Example with pure model in the attribute value. Initial model value is undefined so dd-else is cloned. The <b>this.</b> will not cause error.</i>
+<br>NOTICE: if group is separated with SPAN tag from other if groups.
 <br>dd-if="$model.my.bool" ; else &rarr;
 <span>
   <b dd-if="$model.my.bool">OK</b>
@@ -33,22 +34,21 @@ Create an element when the if statement is truthy.
 <br><br>
 <h3>Expression with model</h3>
 <i>Some complex examples with model in the expression.</i>
-<br>(this.$model.n1 > 6 && this.$model.n2 < 10) &rarr;
-<span>
-<b dd-if="(this.$model.n1 > 6 && this.$model.n2 > 10)">n1 > 6 and n2 > 10</b>
+<br>(this.$model.n1 > 6 && this.$model.n2 < 10) &rarr; <span>
+  <b dd-if="(this.$model.n1 > 6 && this.$model.n2 > 10)">n1 > 6 and n2 > 10</b>
   <b dd-elseif="(this.$model.n1 < 6)">n1 < 6</b>
-  <b dd-elseif="(this.$model.n2 < 10)">n2 < 10</b>
-  <b dd-else>ELSE</b>
-</span>
-<br><button dd-click="if2A()">change model value</button>
-<button dd-click="if2B()">change model value</button>
-<button dd-click="if2C()">change model value</button>
+      <b dd-elseif="(this.$model.n2 < 10)">n2 < 10</b>
+          <b dd-else>ELSE</b>
+          </span>
+          <br><button dd-click="if2A()">change model value</button>
+          <button dd-click="if2B()">change model value</button>
+          <button dd-click="if2C()">change model value</button>
 
 
-<br><br>
-<h4>dd-if toggle</h4>
-<button dd-click="toggleIF()">toggle IF</button>
-<br>PREFIX
-<span dd-if="$model.showX" style="color:green">My Text</span>
-<span dd-else style="color:orange">Alternative Text</span>
-SUFIX
+          <br><br>
+          <h4>dd-if toggle</h4>
+          <button dd-click="toggleIF()">toggle IF</button>
+          <br>PREFIX
+          <span dd-if="$model.showX" style="color:green">My Text</span>
+          <span dd-else style="color:orange">Alternative Text</span>
+          SUFIX

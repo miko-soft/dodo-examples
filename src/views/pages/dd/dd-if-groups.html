@@ -1,0 +1,34 @@
+<h1>dd-if groups</h1>
+The best practice is to wrap if groups with some tag (like it is done in previous examples <a href="/dd/dd-if" dd-href>/dd/dd-if</a>).
+<br>But it should also work when two or morw groups are within same parent element as it is case here.
+
+<br><br><br>
+<button dd-click="if1()">change model value</button>
+<br>
+
+<span style="font-size:smaller;color:Gray;">
+  <p>&raquo; First if group</p>
+  <b dd-if="(this.$model.varX === 5)">varX is 5</b>
+  <b dd-elseif="(!this.$model.varX)">varX is undefined</b>
+  <b dd-elseif="(this.$model.varX > 5)">varX is>5</b>
+  <b dd-else>something else X</b>
+  <br>
+  <br>
+  <br>
+  &raquo; Second if group (has same parent tag &lt;span&gt; as the first if group)
+  <br>
+  <i dd-if="(!this.$model.varY)">varY is undefined</i>
+  <i dd-elseif="(this.$model.varY === 'Peter')">varY is Peter</i>
+  <i dd-else>something else Y</i>
+</span>
+
+
+<style scoped>
+  span>b {
+    color: green;
+  }
+
+  span>i {
+    color: mediumseagreen;
+  }
+</style>
