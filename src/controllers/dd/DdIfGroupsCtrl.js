@@ -27,6 +27,7 @@ export default class DdIfCtrl extends Controller {
   if1() {
     this.$model.varX = 5;
     this.$model.varY = 'Peter';
+    this.$model.varZ = 10;
   }
 
 
