@@ -10,3 +10,9 @@ dd-foreach in the option tag.
   <option value=""></option>
   <option dd-foreach="$model.autos --val,key" value="${val.id}">${val.name}</option>
 </select>
+
+
+<select name="autosN">
+  <option value=""></option>
+  <option dd-foreach="$model.autos --val,key" value="${val.id}" dd-mustache="--selfremove">{{this.$model.autos[${key}].name}}</option>
+</select>
