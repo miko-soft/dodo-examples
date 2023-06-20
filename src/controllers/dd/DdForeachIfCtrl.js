@@ -26,6 +26,8 @@ export default class DdForeachIfCtrl extends Controller {
       { name: 'Koji Ltd', size: 3 },
       { name: 'Kojak Ltd', size: 55 }
     ];
+
+    this.$model.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   }
 
 
@@ -40,6 +42,11 @@ export default class DdForeachIfCtrl extends Controller {
       { name: 'Gen Ltd', size: this.getRnd() },
       { name: 'Ren Ltd', size: this.getRnd() }
     ];
+  }
+
+
+  foreach2() {
+    this.$model.numbers = [1, 9];
   }
 
   getRnd() {
