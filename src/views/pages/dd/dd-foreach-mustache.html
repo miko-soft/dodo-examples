@@ -1,6 +1,5 @@
 <h1>dd-foreach with dd-mustache</h1>
 
-
 <br><br>
 <h3>A) dd-mustache inside dd-foreach element</h3>
 Use it most often.
@@ -18,16 +17,24 @@ Use it most often.
 
 <br><br>
 <h3>C) dd-mustache is wrapping dd-foreach</h3>
-Use it rarely because it has double elements than in the case A).
-<br>
-<p><button dd-click="foreachTestMustache()">change model value</button></p>
+NOTICE 1: The class can be written with mustache <code>class="kolor_{{${key1} + 1}}"</code> or simplier <code>class="kolor_${key1 + 1}"</code>
+<br>NOTICE 2: The mustache can contain string interpolation ${...} <b>{{ ${...} }}</b>, for example: <code>{{${key1} + 1}}</code> what is equivalent to <code>${key1 + 1}</code>
+<br><br>
+<button dd-click="foreachTestMustache()">change model value</button>
 <div dd-mustache>
-  <!-- <p dd-foreach="$model.companies --val1,key1" class="kolor_{{${key1} + 1}}"> This will also work-->
-  <p dd-foreach="$model.companies --val1,key1" class="kolor_${key1 + 1}">
-    <i>{{${key1} + 1}}</i> <b>${val1.name}</b> - ${val1.size} - {{this.$model.myText}}
+  <p dd-foreach="$model.companies --val1,key1" class="kolor_{{${key1} + 1}}">
+    <i>{{${key1} + 1}}.</i> <b>${val1.name}</b> - ${val1.size} - {{this.$model.myText}}
   </p>
 </div>
 
+
+<br><br>
+<h3>D) dd-mustache in OPTION</h3>
+<button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-foreach and <i>dd-mustache</i> and set the default value
+<br><br>plants: <select name="myPlant">
+  <option value="" selected></option>
+  <option dd-foreach="$model.plants --val,key" value="${val.id}" dd-mustache>{{this.$model.plants[${key}].name}} -- price: $ {{this.$model.plants[${key}].price}}</option>
+</select>
 
 
 

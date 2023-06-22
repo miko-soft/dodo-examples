@@ -1,0 +1,24 @@
+<h1>dd-foreach with dd-text</h1>
+
+<br><br>
+<h3>A) dd-text inside dd-foreach element</h3>
+<li dd-foreach="ids --id">
+  <b dd-text="names[${id}]"></b>
+</li>
+
+
+<br><br>
+<h3>B) dd-text in same element with dd-foreach</h3>
+<li dd-foreach="ids --id" dd-text="names[${id}]"></li>
+
+
+<br><br>
+<h3>C1) dd-text in same element with dd-foreach and dd-if</h3>
+<li dd-foreach="ids --id" dd-if="(${id} === 1)" dd-text="names[${id}]"></li>
+
+
+<br><br>
+<h3>C2) dd-text inside dd-foreach/dd-if element</h3>
+<li dd-foreach="ids --id" dd-if="(${id} === 1)">
+  <b dd-text="names[${id}]"></b>
+</li>

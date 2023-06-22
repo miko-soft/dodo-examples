@@ -11,8 +11,8 @@ export default class DdForeachMustacheCtrl extends Controller {
   }
 
   async __loader(trx) {
-    //  this.$debugOpts.ddForeach = true;
-    //  this.$debugOpts.ddMustache = true;
+    // this.$debugOpts.ddForeach = true;
+    // this.$debugOpts.ddMustache = true;
     this.setTitle('dd-foreach dd-mustache');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
@@ -35,6 +35,8 @@ export default class DdForeachMustacheCtrl extends Controller {
       { id: 3, name: 'horse' },
       { id: 4, name: 'cow' }
     ];
+
+    this.$model.plants = [];
   }
 
 
@@ -50,6 +52,18 @@ export default class DdForeachMustacheCtrl extends Controller {
       { name: 'Ren Ltd', size: 83 }
     ];
     this.$model.myText = 'my second text !';
+  }
+
+
+  // plants - generated options with dd-foreach & dd-mustache
+  generatePlants() {
+    this.$model.plants = [
+      { id: 1, name: 'Corn', price: 8000 },
+      { id: 2, name: 'Ananas', price: 4000 },
+      { id: 3, name: 'Banana', price: 6000 },
+      { id: 4, name: 'Potato', price: 1000 },
+      { id: 5, name: 'Apple', price: 5000 }
+    ];
   }
 
 

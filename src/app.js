@@ -54,6 +54,8 @@ import DdForeachNestedCtrl from './controllers/dd/DdForeachNestedCtrl.js';
 import DdForeachNested2Ctrl from './controllers/dd/DdForeachNested2Ctrl.js';
 import DdForeachIfCtrl from './controllers/dd/DdForeachIfCtrl.js';
 import DdForeachMustacheCtrl from './controllers/dd/DdForeachMustacheCtrl.js';
+import DdForeachTextCtrl from './controllers/dd/DdForeachTextCtrl.js';
+import DdForeachHtmlCtrl from './controllers/dd/DdForeachHtmlCtrl.js';
 import DdForeachOptionCtrl from './controllers/dd/DdForeachOptionCtrl.js';
 import DdRepeatCtrl from './controllers/dd/DdRepeatCtrl.js';
 import DdRepeatMustacheCtrl from './controllers/dd/DdRepeatMustacheCtrl.js';
@@ -129,6 +131,8 @@ const $routes = [
   ['when', '/dd/dd-foreach-nested2', DdForeachNested2Ctrl],
   ['when', '/dd/dd-foreach-if', DdForeachIfCtrl],
   ['when', '/dd/dd-foreach-mustache', DdForeachMustacheCtrl],
+  ['when', '/dd/dd-foreach-text', DdForeachTextCtrl],
+  ['when', '/dd/dd-foreach-html', DdForeachHtmlCtrl],
   ['when', '/dd/dd-foreach-option', DdForeachOptionCtrl],
   ['when', '/dd/dd-repeat', DdRepeatCtrl],
   ['when', '/dd/dd-repeat-mustache', DdRepeatMustacheCtrl],
