@@ -47,9 +47,7 @@ export default class DdTextCtrl extends Controller {
     this.product_124_2 = 'This is product 124_2';
     this.product_62 = 'This is product 62';
 
-    this.productX = {};
-
-    // this.$model.first_name = 'John Doe'; // will be rendered correctly but with double rendering: 1st in __init() next in __rend() hook
+    this.$model.job = {};
 
     this.animals = ['rabbit', 'dog', 'cat', 'cow', 'aligator'];
   }
@@ -61,6 +59,13 @@ export default class DdTextCtrl extends Controller {
 
   changeFirstName() {
     this.$model.first_name = 'Ann Doe';
+  }
+
+
+  changeJob() {
+    this.$model.job = {
+      country: 'Croatia'
+    };
   }
 
 }

@@ -30,9 +30,7 @@ export default class DdHtmlCtrl extends Controller {
     this.product_123 = '<b style="color:maroon">This is product 123</b>';
     this.product_124 = '<b style="color:orange">This is another product 124</b>';
 
-    this.productX = {};
-
-    // this.$model.myHTML = '<b>bold text</b>'; // will be rendered correctly but with double rendering: 1st in __init() next in __rend() hook
+    this.$model.job = {};
   }
 
   async __postrend() {
@@ -42,6 +40,12 @@ export default class DdHtmlCtrl extends Controller {
 
   changeMyHtml() {
     this.$model.myHTML = '<b style="color:#00b5ed">bold text changed</b>';
+  }
+
+  changeJob() {
+    this.$model.job = {
+      country: '<b style="color:green">Croatia</b>'
+    };
   }
 
 }

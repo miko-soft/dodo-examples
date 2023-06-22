@@ -45,7 +45,12 @@ dd-text="product.name" &rarr; <em dd-text="product.name" style="color:gray">PLAC
 <br><br><br>
 <h3>Initial value is undefined</h3>
 <i>If the initial controller's value is undefined or null the element will not be cloned.</i>
-<br>dd-text="productX.name" &rarr; Start<em dd-text="productX.name">PLACEHOLDER2</em>End
+<br><button type="button" dd-click="changeJob()">change job</button>
+<br>dd-text="$model.job.country" &rarr; Start<em dd-text="$model.job.country">INNER TEXT</em>End
+<br>dd-text="$model.job.country" --overwrite &rarr; Start<em dd-text="$model.job.country --overwrite">INNER TEXT</em>End
+<br>dd-text="$model.job.country" --remain &rarr; Start<em dd-text="$model.job.country --remain">INNER TEXT</em>End
+<br>dd-text="$model.job.country" --append &rarr; Start<em dd-text="$model.job.country --append">INNER TEXT</em>End
+<br>dd-text="$model.job.country" --prepend &rarr; Start<em dd-text="$model.job.country --prepend">INNER TEXT</em>End
 
 
 <br><br><br>
