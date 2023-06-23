@@ -18,6 +18,16 @@ export default class ViewDdLazyjsCtrl extends Controller {
     this.setLang('en');
     this.loadView('#navbar', navbar);
     this.loadView('#main', ddlazyjs);
+    console.log('++++++ HOOK __loader()');
+  }
+
+
+  async __init() {
+    console.log('\n++++++ HOOK __init()');
+  }
+
+  async __postrend() {
+    console.log('\n++++++ HOOK __postrend()');
   }
 
 

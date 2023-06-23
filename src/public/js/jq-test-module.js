@@ -4,7 +4,7 @@ console.log('jQuery loaded::', $);
 
 
 $(document).ready(function () {
-  const msg = 'Custom text from /public/js/jq-test.js';
+  const msg = 'Custom text from /public/js/jq-test-module.js';
   console.log(msg);
   $('#msgplace').text(msg);
 });
