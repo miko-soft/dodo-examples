@@ -62,7 +62,7 @@
     <option value=""></option>
     <option dd-foreach="$model.autos --val,key" value="${val.id}">${val.name}</option>
   </select>
-  <button type="button" dd-click="getAuto()">get auto</button>
+  <button type="button" dd-click="getAuto()">get auto ID</button>
 
 
   <br><br><br><button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-foreach and <i>dd-mustache</i> and set the default value
@@ -70,7 +70,7 @@
     <option value="" selected></option>
     <option dd-foreach="$model.plants --val,key" value="${val.id}" dd-mustache>{{this.$model.plants[${key}].name}} -- price: $ {{this.$model.plants[${key}].price}}</option>
   </select>
-  <button type="button" dd-click="getPlant()">get plant</button>
+  <button type="button" dd-click="getPlant()">get plant ID</button>
 
   <br><br><br>
   <hr>

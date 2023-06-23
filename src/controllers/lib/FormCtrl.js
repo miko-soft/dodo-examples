@@ -112,7 +112,7 @@ export default class FormCtrl extends Controller {
 
 
   // autos - generated options with dd-foreach
-  async generateAutos() {
+  generateAutos() {
     this.$model.autos = [
       { id: 1, name: 'Toyota', price: 8000 },
       { id: 2, name: 'WV', price: 4000 },
@@ -120,7 +120,6 @@ export default class FormCtrl extends Controller {
       { id: 4, name: 'Fiat', price: 1000 },
       { id: 5, name: 'Audi', price: 5000 }
     ];
-    await this.sleep(400);
     this.testForm.setControl('myAuto', '4'); // set selected value
   }
   getAuto() {
@@ -138,8 +137,7 @@ export default class FormCtrl extends Controller {
       { id: 4, name: 'Potato', price: 1000 },
       { id: 5, name: 'Apple', price: 5000 }
     ];
-    await this.sleep(400);
-    this.testForm.setControl('myPlant', 3); // set selected value
+    this.testForm.setControl('myPlant', '3'); // set selected value
   }
   getPlant() {
     const myPlant = this.testForm.getControl('myPlant');
@@ -156,8 +154,8 @@ export default class FormCtrl extends Controller {
       family: ['Mary', 'Betty'],
       jobs: ['IT'],
       pet: 'horse',
-      myAuto: 5,
-      myPlant: 5,
+      myAuto: '5',
+      myPlant: '5',
     });
   }
 
