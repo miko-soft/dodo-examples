@@ -12,7 +12,7 @@ export default class DdIfCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddIf = true;
-    this.setTitle('dd-if-groups');
+    this.setTitle('dd-if groups');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');

@@ -34,15 +34,15 @@ Create an element when the if statement is truthy.
 <br><br>
 <h3>Expression with model</h3>
 <i>Some complex examples with model in the expression.</i>
-<br>(this.$model.n1 > 6 && this.$model.n2 < 10) &rarr; <span>
+<br>(this.$model.n1 > 6 && this.$model.n2 < 10) | (this.$model.n1 < 6) | (this.$model.n2 < 10) &rarr; <span>
   <b dd-if="(this.$model.n1 > 6 && this.$model.n2 > 10)">n1 > 6 and n2 > 10</b>
   <b dd-elseif="(this.$model.n1 < 6)">n1 < 6</b>
       <b dd-elseif="(this.$model.n2 < 10)">n2 < 10</b>
           <b dd-else>ELSE</b>
           </span>
-          <br><button dd-click="if2A()">change model value</button>
-          <button dd-click="if2B()">change model value</button>
-          <button dd-click="if2C()">change model value</button>
+          <br><button dd-click="if2A()">n1=8 n2=11</button>
+          <button dd-click="if2B()">n1=5 n2=11</button>
+          <button dd-click="if2C()">n1=8 n2=9</button>
 
 
           <br><br>

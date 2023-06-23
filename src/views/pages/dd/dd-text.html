@@ -55,9 +55,7 @@ dd-text="product.name" &rarr; <em dd-text="product.name" style="color:gray">PLAC
 
 <br><br><br>
 <h3>Model</h3>
-Ordinary controller property should be initialised in the __init() hook. For example: <i>this.product.name = 'BMW'</i>
-<br>Model property should be initialised in the __postrend() hook to prevent double rendering. For example: <i>this.$model.first_name = 'John Doe'</i>
-<br>dd-text="$model.first_name" &rarr; <em dd-text="$model.first_name"></em> <button type="button" dd-click="changeFirstName()">change</button>
+dd-text="$model.first_name" &rarr; <em dd-text="$model.first_name"></em> <button type="button" dd-click="changeFirstName()">change</button>
 
 
 <br><br><br>
