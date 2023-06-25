@@ -1,0 +1,49 @@
+<h1>dd-if (nested)</h1>
+This example has one if group nested in the parent if element.
+
+
+<br><br>
+change varA:
+<select dd-model="$model.varA --convertType">
+  <option value="true">true</option>
+  <option value="false">false</option>
+</select>
+
+<br><br>
+change varB:
+<select dd-model="$model.varB --convertType">
+  <option value="3">3</option>
+  <option value="5">5</option>
+  <option value="8">8</option>
+</select>
+
+
+<br><br>
+<p dd-if="$model.varA">
+  varA is true<br>
+  <b dd-if="(this.$model.varB < 5)"> varB &lt; 5</b>
+  <b dd-elseif="(this.$model.varB === 5)"> varB === 5</b>
+  <b dd-else> varB &gt; 5</b>
+</p>
+<p dd-else>
+  varA is false<br>
+  <i dd-if="(this.$model.varB < 5)"> varB &lt; 5</i>
+  <i dd-elseif="(this.$model.varB === 5)"> varB === 5</i>
+  <i dd-else> varB &gt; 5</i>
+</p>
+
+
+
+<style scoped>
+  p {
+    font: 17px Times;
+  }
+
+  p>b {
+    color: cornflowerblue;
+  }
+
+  p>i {
+    color: tomato;
+  }
+</style>

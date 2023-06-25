@@ -1,10 +1,9 @@
 <h1>dd-text</h1>
 Print pure text.
 
-<h3>Destinations: overwrite, remain, append, prepend</h3>
+<h3>Destinations: overwrite, append, prepend</h3>
 dd-text="product.name" &rarr; <em dd-text="product.name" style="color:gray">PLACEHOLDER (notice: style will stay on the element unchanged)</em>
 <br>dd-text="product.name --overwrite" &rarr; <em dd-text="product.name --overwrite">PLACEHOLDER</em>
-<br>dd-text="product.name --remain" &rarr; <em dd-text="product.name --remain">My dog loves meat</em>
 <br>dd-text="product.name --append" &rarr; <em dd-text="product.name --append">product.name: </em>
 <br>dd-text="product.name --prepend" &rarr; <em dd-text="product.name --prepend"> is the product name</em>
 
@@ -48,7 +47,6 @@ dd-text="product.name" &rarr; <em dd-text="product.name" style="color:gray">PLAC
 <br><button type="button" dd-click="changeJob()">change job</button>
 <br>dd-text="$model.job.country" &rarr; Start<em dd-text="$model.job.country">INNER TEXT</em>End
 <br>dd-text="$model.job.country" --overwrite &rarr; Start<em dd-text="$model.job.country --overwrite">INNER TEXT</em>End
-<br>dd-text="$model.job.country" --remain &rarr; Start<em dd-text="$model.job.country --remain">INNER TEXT</em>End
 <br>dd-text="$model.job.country" --append &rarr; Start<em dd-text="$model.job.country --append">INNER TEXT</em>End
 <br>dd-text="$model.job.country" --prepend &rarr; Start<em dd-text="$model.job.country --prepend">INNER TEXT</em>End
 
