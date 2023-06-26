@@ -6,7 +6,7 @@ the double dollar <b>$$val</b> will be replaced with val name (for example: $$co
 
 
 <br><br>
-<h4>Code</h4>
+<h4>Example 1</h4>
 <pre><code>
   &lt;table&gt;
     &lt;tr dd-foreach="$model.companies --company,key"&gt;
@@ -30,6 +30,29 @@ the double dollar <b>$$val</b> will be replaced with val name (for example: $$co
 
 <br><br>
 selected company: <b dd-text="$model.company"></b>
+
+
+
+<br><br><br>
+<h4>Example 2</h4>
+<pre><code>
+  &lt;select dd-model="$model.selectedCompany --convertType"&gt;
+    &lt;option dd-foreach="$model.companies --company,key" dd-value="$$company"&gt;${company.name}&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br&gt;selected company: &lt;span dd-text="$model.selectedCompany.name"&gt;&lt;/span&gt;
+</code></pre>
+
+<br>NOTICE:
+The <code>dd-value="(this.$$company)"</code> will also work because $$company will be replaced with <i>$model.companies[0]</i> by dd-foreach.
+Besides that the <code>dd-value="$model.companies[${key}]"</code> will work.
+<br><br>
+<select dd-model="$model.selectedCompany --convertType">
+  <option dd-foreach="$model.companies --company,key" dd-value="$$company">${company.name}</option>
+</select>
+<br>selected company: <span dd-text=" $model.selectedCompany.name"></span>
+
+
+<br><br><br>
 
 
 <style scoped>

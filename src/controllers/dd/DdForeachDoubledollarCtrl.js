@@ -12,6 +12,7 @@ export default class DdForeachDoubledollarCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddForeach = true;
+    this.$debugOpts.ddText = true;
     this.setTitle('dd-foreach (Doubledollar)');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
@@ -25,6 +26,7 @@ export default class DdForeachDoubledollarCtrl extends Controller {
       { name: 'Cloud Ltd', size: 3 },
       { name: 'Roto Ltd', size: 5 }
     ];
+    this.$model.selectedCompany = { name: 'not selected', size: 0 };
   }
 
 
