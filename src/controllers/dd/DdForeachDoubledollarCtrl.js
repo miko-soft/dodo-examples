@@ -12,7 +12,7 @@ export default class DdForeachDoubledollarCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddForeach = true;
-    this.$debugOpts.ddText = true;
+    // this.$debugOpts.ddText = true;
     this.setTitle('dd-foreach (Doubledollar)');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
