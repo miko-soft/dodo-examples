@@ -49,7 +49,7 @@ Besides that the <code>dd-value="$model.companies[${key}]"</code> will work.
 <select dd-model="$model.selectedCompany --convertType">
   <option dd-foreach="$model.companies --company,key" dd-value="$$company">${company.name}</option>
 </select>
-<br>selected company: <span dd-text=" $model.selectedCompany.name"></span>
+<br>selected company: <span dd-text="$model.selectedCompany.name"></span>
 
 
 <br><br><br>

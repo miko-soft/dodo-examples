@@ -43,6 +43,11 @@ export default class DdIfCtrl extends Controller {
     this.$model.n1 = 8;
     this.$model.n2 = 9;
   }
+  if2D() {
+    this.$model.n1 = undefined;
+    this.$model.n2 = undefined;
+  }
+
 
   toggleIF() {
     this.$model.showX = !this.$model.showX;

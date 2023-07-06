@@ -44,7 +44,7 @@ export default class DdForeachDoubledollarCtrl extends Controller {
 
 
   selectCompany($$company) {
-    console.log($$company);
+    console.log('selected company::', $$company);
     this.$model.company = $$company;
   }
 

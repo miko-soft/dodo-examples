@@ -21,17 +21,17 @@ export default class DdRepeatCtrl extends Controller {
   }
 
   async __init(trx) {
-    this.$model.myNumber1 = 2;
-    this.$model.myNumber2 = 2;
+    this.$model.myNumberA = 2;
+    this.$model.myNumberB = 2;
   }
 
 
   changeModel1() {
-    this.$model.myNumber1 = 4;
+    this.$model.myNumberA = 4;
   }
 
   changeModel2() {
-    this.$model.myNumber2 = 3;
+    this.$model.myNumberB = 3;
   }
 
 

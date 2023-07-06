@@ -14,7 +14,22 @@ The product name is {{this.product_name}} made by {{this.$model.company_name}} &
 
 
 <br><br><br>
-<h3>HTML tag attribute</h3>
-Change the placeholder attribute.
-<br><input type="text" placeholder="{{this.$model.placeHolder}}" dd-mustache>
-<button type="button" dd-click="changePlaceholder()">change placeholder</button>
+<h3>mustache in HTML attribute</h3>
+The mustache in HTML attribute will be also solved.
+<br><button type="button" dd-click="changeAttrs()">change attributes</button>
+<br>
+<i dd-mustache>
+  <span class="klasa_{{this.$model.classNum}}">classNum is {{this.$model.classNum}}</span>
+  <br> <input type="text" placeholder="{{this.$model.myPlaceholder}}">
+</i>
+
+
+<style scoped>
+  .klasa_5 {
+    color: red;
+  }
+
+  .klasa_6 {
+    color: green;
+  }
+</style>

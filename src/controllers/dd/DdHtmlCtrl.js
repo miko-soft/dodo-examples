@@ -34,7 +34,7 @@ export default class DdHtmlCtrl extends Controller {
   }
 
   async __postrend() {
-    this.$model.myHTML = '<b>bold text</b>'; // init models in the __postrend()
+    this.$model.myHTML = '<b>bold text</b>';
   }
 
 

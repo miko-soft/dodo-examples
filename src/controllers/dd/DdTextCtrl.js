@@ -12,7 +12,7 @@ export default class DdTextCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddText = true;
-    // this.$debugOpts.model = false;
+    // this.$debugOpts.model = true;
     this.setTitle('dd-text');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
@@ -53,7 +53,7 @@ export default class DdTextCtrl extends Controller {
   }
 
   async __postrend() {
-    this.$model.first_name = 'John Doe'; // one time rendering: only in __postrend()
+    this.$model.first_name = 'John Doe';
   }
 
 

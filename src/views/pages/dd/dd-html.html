@@ -1,14 +1,9 @@
 <h1>dd-html</h1>
 Print text with HTML tags.
 
-<h3>Destinations: inner, outer, sibling, prepend, append</h3>
+<h3>Overwrite innerHTML</h3>
 <i>Open Chrome Dev Tools &rarr; Elements</i>
 <br>dd-html="product.name" &rarr; <span dd-html="product.name">PLACEHOLDER</span>
-<br>dd-html="product.name --inner" &rarr; <span dd-html="product.name --inner">PLACEHOLDER</span>
-<br>dd-html="product.name --outer" &rarr; <p dd-html="product.name --outer">product.name: </p> <!-- p will be replaced with span due to --outer -->
-<br>dd-html="product.name --sibling" &rarr; <span dd-html="product.name --sibling">product.name: </span>
-<br>dd-html="product.name --append" &rarr; <span dd-html="product.name --append">product.name: </span>
-<br>dd-html="product.name --prepend" &rarr; <span dd-html="product.name --prepend"> is the product name</span>
 
 <br><br><br>
 <h3>Dynamic Controller Property Name</h3>
@@ -19,13 +14,8 @@ Print text with HTML tags.
 <br><br><br>
 <h3>Initial value is undefined</h3>
 <i>If the initial controller's value is undefined or null the element will not be cloned i.e. will not be shown.</i>
-<br><button type="button" dd-click="changeJob()">change job</button>
+<br><button type="button" dd-click="changeJob()">change job country</button>
 <br>dd-html="$model.job.country" &rarr; Start<em dd-html="$model.job.country">INNER TEXT</em>End
-<br>dd-html="$model.job.country" --inner &rarr; Start<em dd-html="$model.job.country --inner">INNER TEXT</em>End
-<br>dd-html="$model.job.country" --outer &rarr; Start<em dd-html="$model.job.country --outer">INNER TEXT</em>End
-<br>dd-html="$model.job.country" --sibling &rarr; Start<em dd-html="$model.job.country --sibling">INNER TEXT</em>End
-<br>dd-html="$model.job.country" --append &rarr; Start<em dd-html="$model.job.country --append">INNER TEXT</em>End
-<br>dd-html="$model.job.country" --prepend &rarr; Start<em dd-html="$model.job.country --prepend">INNER TEXT</em>End
 
 
 <br><br><br>

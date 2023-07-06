@@ -1,11 +1,8 @@
 <h1>dd-text</h1>
 Print pure text.
 
-<h3>Destinations: overwrite, append, prepend</h3>
+<h3>Overwrite contentText</h3>
 dd-text="product.name" &rarr; <em dd-text="product.name" style="color:gray">PLACEHOLDER (notice: style will stay on the element unchanged)</em>
-<br>dd-text="product.name --overwrite" &rarr; <em dd-text="product.name --overwrite">PLACEHOLDER</em>
-<br>dd-text="product.name --append" &rarr; <em dd-text="product.name --append">product.name: </em>
-<br>dd-text="product.name --prepend" &rarr; <em dd-text="product.name --prepend"> is the product name</em>
 
 
 <br><br><br>
@@ -46,9 +43,6 @@ dd-text="product.name" &rarr; <em dd-text="product.name" style="color:gray">PLAC
 <i>If the initial controller's value is undefined or null the element will not be cloned.</i>
 <br><button type="button" dd-click="changeJob()">change job</button>
 <br>dd-text="$model.job.country" &rarr; Start<em dd-text="$model.job.country">INNER TEXT</em>End
-<br>dd-text="$model.job.country" --overwrite &rarr; Start<em dd-text="$model.job.country --overwrite">INNER TEXT</em>End
-<br>dd-text="$model.job.country" --append &rarr; Start<em dd-text="$model.job.country --append">INNER TEXT</em>End
-<br>dd-text="$model.job.country" --prepend &rarr; Start<em dd-text="$model.job.country --prepend">INNER TEXT</em>End
 
 
 <br><br><br>
@@ -58,9 +52,12 @@ dd-text="$model.first_name" &rarr; <em dd-text="$model.first_name"></em> <button
 
 <br><br><br>
 <h3>dd-text inside dd-foreach</h3>
-<code>dd-foreach="animals --val,key" dd-text="animals[${key}]"</code>
+<code>dd-foreach="animals --val,key" dd-text="animals[${key}]"</code> or shorter
+<code>dd-foreach="animals --val,key" dd-text="$$val"</code> or
+<code>dd-foreach="animals --val,key" dd-text="(this.$$val)"</code> or also
+<code>dd-foreach="animals --val,key" dd-text="(this.$$val + ' is animal')"</code>
 <ol>
-  <li dd-foreach="animals --val,key" dd-text="animals[${key}]"></li>
+  <li dd-foreach="animals --val,key" dd-text="(this.$$val + ' is animal')"></li>
 </ol>
 
 <br><br>

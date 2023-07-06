@@ -34,7 +34,20 @@
 
 <h2>General Directives</h2>
 <ul>
-  <li><a href="/dd/dd-show" dd-href>dd-show</a> - show/hide HTML elements with display or visibility CSS property</li>
+  <li><a href="/dd/dd-setinitial" dd-href>dd-setinitial</a> - set controller value from the element value</li>
+  <li><a href="/dd/dd-elem" dd-href>dd-elem</a> - pick up the DOM element</li>
+  <br>
+  <b>WRITERS</b>
+  <li><a href="/dd/dd-text" dd-href>dd-text</a> - print text defined in the controller property</li>
+  <li><a href="/dd/dd-html" dd-href>dd-html</a> - embed HTML in the DOM</li>
+  <li><a href="/dd/dd-mustache" dd-href>dd-mustache</a> - solve {{ctrlProp}} or {{expression}} in the innerHTML</li>
+  <br>
+  <b>ATTRIBUTERS</b>
+  <li><a href="/dd/dd-if" dd-href>dd-if , dd-elseif , dd-else</a> - show element when the if statement is truthy</li>
+  <li><a href="/dd/dd-if-groups" dd-href>dd-if groups</a> - two if groups within same parent element</li>
+  <li><a href="/dd/dd-if-nested" dd-href>dd-if (nested)</a> - nest one if in another if element</li>
+  <li><a href="/dd/dd-visible" dd-href>dd-visible</a> - show/hide HTML elements with visibility:visible|hidden CSS property</li>
+  <li><a href="/dd/dd-value" dd-href>dd-value</a> - set element value from controller property value</li>
   <li><a href="/dd/dd-disabled" dd-href>dd-disabled</a> - disable the element</li>
   <li><a href="/dd/dd-checked-checkboxes" dd-href>dd-checked (checkboxes)</a> - check the checkboxes with controller property</li>
   <li><a href="/dd/dd-checked-radios" dd-href>dd-checked (radios)</a> - check the radios with controller property</li>
@@ -43,20 +56,11 @@
   <li><a href="/dd/dd-style" dd-href>dd-style</a> - change style attribute</li>
   <li><a href="/dd/dd-src" dd-href>dd-src</a> - set src attribute</li>
   <li><a href="/dd/dd-attr" dd-href>dd-attr</a> - set any element attribute</li>
-  <li><a href="/dd/dd-value" dd-href>dd-value</a> - set element value from controller property value</li>
-  <li><a href="/dd/dd-setinitial" dd-href>dd-setinitial</a> - set controller value from the element value</li>
-  <li><a href="/dd/dd-elem" dd-href>dd-elem</a> - pick up the DOM element</li>
 </ul>
 
 
 <h2>Cloner Directives</h2>
 <ul>
-  <li><a href="/dd/dd-text" dd-href>dd-text</a> - print text defined in the controller property</li>
-  <li><a href="/dd/dd-html" dd-href>dd-html</a> - embed HTML in the DOM</li>
-  <li><a href="/dd/dd-mustache" dd-href>dd-mustache</a> - solve {{ctrlProp}} or {{expression}} in the outerHTML</li>
-  <li><a href="/dd/dd-if" dd-href>dd-if , dd-elseif , dd-else</a> - create element when the if statement is truthy</li>
-  <li><a href="/dd/dd-if-groups" dd-href>dd-if groups</a> - two if groups within same parent element</li>
-  <li><a href="/dd/dd-if-nested" dd-href>dd-if (nested)</a> - nest one if in another if element</li>
   <li><a href="/dd/dd-foreach-simple" dd-href>dd-foreach simple</a> - simplest dd-foreach example</li>
   <li><a href="/dd/dd-foreach" dd-href>dd-foreach</a> - multiply HTML element</li>
   <li><a href="/dd/dd-foreach-nested" dd-href>dd-foreach (nested)</a> - nest one dd-foreach element in another dd-foreach element &rarr; $1{company.$0{field}}</li>

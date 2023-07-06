@@ -1,0 +1,36 @@
+<h1>dd-visible</h1>
+<b>dd-visible="ctrlProp"</b> &rarr; Show/hide elements by setting up <b>visibility:visible|hidden</b> inline CSS style.
+
+<br><br>
+<h3>Controller property</h3>
+<i>Example with pure controller property in the attribute value.</i>
+<br>dd-visible="myBool" &rarr; <b dd-visible="myBool">OK</b>
+<br>dd-visible="this.myBool" &rarr; <b dd-visible="this.myBool">OK</b>
+
+<br><br>
+<h3>Model</h3>
+<i>Example with pure model in the attribute value.
+  Initial model value is undefined so element is not displayed.
+  The <b>this.</b> will not cause error.</i>
+<br>dd-visible="$model.my.bool" <b dd-visible="$model.my.bool">OK</b>
+<br>dd-visible="this.$model.my.bool" <b dd-visible="this.$model.my.bool">OK</b>
+<br><button dd-click="show1()">change model value</button>
+
+<br><br>
+<h3>Expression</h3>
+<i>Expression must be enclosed in brackets. This example shows expression with static controller property.</i>
+<br>(this.x === 'This is X') <b dd-visible="(this.x === 'This is X')">OK</b>
+
+<br><br>
+<h3>Expression with model</h3>
+<i>Some complex examples with model in the expression.</i>
+<br>(this.$model.n1 > 6 && this.$model.n2 < 10) <b dd-visible="(this.$model.n1 > 6 && this.$model.n2 < 10)">OK</b>
+  <br><button dd-click="show2()">change model value</button>
+
+
+  <br><br>
+  <h3>Toggle</h3>
+  <i>Toggle visibility with the button.</i>
+  <br>dd-visible="$model.visX"
+  <br><button dd-click="toggleVisible()">toggle Visible</button>
+  <br>PREFIX <span dd-visible="$model.visX" style="color:green">My Text</span> SUFIX

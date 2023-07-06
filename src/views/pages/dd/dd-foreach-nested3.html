@@ -4,9 +4,9 @@ This example show how simply make 3-dimensional data. Print three 2-dimensional 
 <br><br>
 <button dd-click="foreachNested()">change model value</button>
 
-<table dd-foreach="tables --table --$2">
-  <tr dd-foreach="$model.companies --company,key --$1">
-    <td dd-foreach="columns --column --$0">$1{company}[$1{key}].${column}</td>
+<table dd-foreach="tables --table --$2" dd-priority="2">
+  <tr dd-foreach="$model.companies --company,key --$1" dd-priority="1">
+    <td dd-foreach="columns --column --$0" dd-priority="3">$1{company}[$1{key}].${column}</td>
   </tr>
 </table>
 

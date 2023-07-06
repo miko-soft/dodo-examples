@@ -9,6 +9,7 @@ Create an element when the if statement is truthy.
   <b dd-else>NOT OK</b>
 </span>
 
+
 <br><br>
 <h3>Model</h3>
 <i>Example with pure model in the attribute value. Initial model value is undefined so dd-else is cloned. The <b>this.</b> will not cause error.</i>
@@ -34,7 +35,7 @@ Create an element when the if statement is truthy.
 <br><br>
 <h3>Expression with model</h3>
 <i>Some complex examples with model in the expression.</i>
-<br>(this.$model.n1 > 6 && this.$model.n2 < 10) | (this.$model.n1 < 6) | (this.$model.n2 < 10) &rarr; <span>
+<br>if(this.$model.n1 > 6 && this.$model.n2 > 10) | elseif(this.$model.n1 < 6) | elseif(this.$model.n2 < 10) &rarr; <span>
   <b dd-if="(this.$model.n1 > 6 && this.$model.n2 > 10)">n1 > 6 and n2 > 10</b>
   <b dd-elseif="(this.$model.n1 < 6)">n1 < 6</b>
       <b dd-elseif="(this.$model.n2 < 10)">n2 < 10</b>
@@ -43,6 +44,7 @@ Create an element when the if statement is truthy.
           <br><button dd-click="if2A()">n1=8 n2=11</button>
           <button dd-click="if2B()">n1=5 n2=11</button>
           <button dd-click="if2C()">n1=8 n2=9</button>
+          <button dd-click="if2D()">n1=undef n2=undef</button>
 
 
           <br><br>

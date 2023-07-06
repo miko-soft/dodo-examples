@@ -30,7 +30,7 @@ import ViewPlugCSSCtrl from './controllers/view/ViewPlugCSSCtrl.js';
 import ViewHeadSettersCtrl from './controllers/view/ViewHeadSettersCtrl.js';
 import ViewLoadI18nCtrl from './controllers/view/ViewLoadI18nCtrl.js';
 
-import DdShowCtrl from './controllers/dd/DdShowCtrl.js';
+import DdVisibleCtrl from './controllers/dd/DdVisibleCtrl.js';
 import DdDisabledCtrl from './controllers/dd/DdDisabledCtrl.js';
 import DdCheckedCheckboxesCtrl from './controllers/dd/DdCheckedCheckboxesCtrl.js';
 import DdCheckedRadiosCtrl from './controllers/dd/DdCheckedRadiosCtrl.js';
@@ -110,7 +110,7 @@ const $routes = [
   ['when', '/view/headsetters', ViewHeadSettersCtrl],
   ['when', '/view/loadi18n', ViewLoadI18nCtrl],
 
-  ['when', '/dd/dd-show', DdShowCtrl],
+  ['when', '/dd/dd-visible', DdVisibleCtrl],
   ['when', '/dd/dd-disabled', DdDisabledCtrl],
   ['when', '/dd/dd-checked-checkboxes', DdCheckedCheckboxesCtrl],
   ['when', '/dd/dd-checked-radios', DdCheckedRadiosCtrl],

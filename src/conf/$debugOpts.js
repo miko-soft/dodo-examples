@@ -9,20 +9,22 @@ const $debugOpts = {
   model: false,
 
   // View.js
-  ddInc: false,
   loadView: false,
-  emptyView: false,
+  unloadView: false,
   ddLazyjs: false,
-  loadHead: false,
 
   // Dd.js
   ddSetinitial: false,
   ddElem: false,
+  ddIf: false,
+  ddVisible: false,
+  ddText: false,
+  ddHtml: false,
+  ddMustache: false,
   ddValue: false,
-  ddShow: false,
-  // attribute managers
   ddDisabled: false,
   ddChecked: false,
+  ddSelected: false,
   ddClass: false,
   ddStyle: false,
   ddSrc: false,
@@ -31,10 +33,6 @@ const $debugOpts = {
   // DdCloners.js
   ddForeach: false,
   ddRepeat: false,
-  ddIf: false,
-  ddText: false,
-  ddHtml: false,
-  ddMustache: false,
 
   // DdListeners.js
   ddUNLISTEN: false,

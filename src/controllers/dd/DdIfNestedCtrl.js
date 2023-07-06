@@ -12,6 +12,7 @@ export default class DdIfNestedCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddIf = true;
+    // this.$debugOpts.ddModel = true;
     this.setTitle('dd-if (nested)');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');

@@ -20,6 +20,10 @@ export default class DdAttrCtrl extends Controller {
     this.loadView('#main', ddAttr);
   }
 
+  __init() {
+    this.$model.placeHolder = 'username';
+  }
+
 
   runATTR1() {
     this.$model.someURL = 'https://www.adsuu.com';
@@ -27,6 +31,10 @@ export default class DdAttrCtrl extends Controller {
 
   runATTR2() {
     this.$model.someURL = 'https://www.yahoo.com';
+  }
+
+  changePlaceholder() {
+    this.$model.placeHolder = 'nutzername';
   }
 
 }

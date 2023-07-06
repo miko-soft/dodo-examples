@@ -25,9 +25,9 @@ export default class DdElemCtrl extends Controller {
   runELEM() {
     this.toggle = !this.toggle;
     if (this.toggle) {
-      this.$dd.elems.myElem.style.color = 'blue';
+      this.$elem.myElem.style.color = 'blue';
     } else {
-      this.$dd.elems.myElem.style.color = 'silver';
+      this.$elem.myElem.style.color = 'silver';
     }
   }
 

@@ -19,7 +19,7 @@ This directive takes controller property value and sets the element value.
   <option value="BMW">BMW</option>
   <option value="Audi">Audi</option>
   <option value="WV">WV</option>
-  <option value="Toyote">Toyote</option>
+  <option value="Toyota">Toyota</option>
 </select>
 
 
@@ -45,7 +45,7 @@ The dd-foreach is used.
 
 dd-value="countries.${key}" dd-checked="$model.countrySelected" &rarr;
 <p dd-foreach="countries --country,key">
-  <input type="radio" name="country" dd-value="countries[${key}]" dd-checked="$model.countrySelected"> ${country} &nbsp;&nbsp;
+  <input type="radio" name="country" dd-value="$$country" dd-checked="$model.countrySelected"> ${country} &nbsp;&nbsp;
 </p>
 
 <br><br>

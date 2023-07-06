@@ -11,11 +11,12 @@ The dd-foreach is nested in another dd-foreach.
     &lt;tr&gt;
       &lt;th dd-foreach="fields --field"&gt;${field}&lt;/th&gt;
     &lt;/tr&gt;
-    &lt;tr dd-foreach="$model.companies --company --$1"&gt;
-      &lt;td dd-foreach="fields --field --$0"&gt;$1{company.$0{field}}&lt;/td&gt;
+    &lt;tr dd-foreach="$model.companies --company --$1" dd-priority="0"&gt;
+      &lt;td dd-foreach="fields --field --$0" dd-priority="1"&gt;$1{company.$0{field}}&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/table&gt;
 </code></pre>
+<br>NOTICE: The highest priority will be executed first.
 
 
 <br><br>
@@ -25,8 +26,8 @@ The dd-foreach is nested in another dd-foreach.
   <tr>
     <th dd-foreach="fields --field">${field}</th>
   </tr>
-  <tr dd-foreach="$model.companies --company --$1">
-    <td dd-foreach="fields --field --$0">$1{company.$0{field}}</td>
+  <tr dd-foreach="$model.companies --company --$1" dd-priority="0">
+    <td dd-foreach="fields --field --$0" dd-priority="1">$1{company.$0{field}}</td>
   </tr>
 </table>
 
