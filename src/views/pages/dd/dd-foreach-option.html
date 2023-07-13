@@ -8,11 +8,19 @@ dd-foreach in the option tag.
 <br>autos:
 <select name="autosN">
   <option value=""></option>
-  <option dd-foreach="$model.autos --val,key" value="${val.id}">${val.name}</option>
+  <option dd-foreach="$model.autos --auto,key" value="${auto.id}">${auto.name} - price: $${auto.price}</option>
 </select>
 
 
-<select name="autosN">
+<br><br>
+<br>autos: <select name="autosN">
   <option value=""></option>
-  <option dd-foreach="$model.autos --val,key" value="${val.id}" dd-mustache>{{this.$model.autos[${key}].name}}</option>
+  <option dd-foreach="$model.autos --auto,key" value="${auto.id}" dd-text="($$auto.name + '- price: $' + $$auto.price)"></option>
+</select>
+
+
+<br><br>
+<br>autos: <select name="autosN">
+  <option value=""></option>
+  <option dd-foreach="$model.autos --auto,key" value="${auto.id}" dd-text="(this.$model.autos[${key}].name)"></option>
 </select>

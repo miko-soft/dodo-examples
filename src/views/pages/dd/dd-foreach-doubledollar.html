@@ -2,23 +2,21 @@
 This is dd-foreach example where a double dollar is used.
 <br>
 <br>While string interpolation <b>${val}</b> will be replaced with iteration val value,
-the double dollar <b>$$val</b> will be replaced with val name (for example: $$company will be replaced with $model.companies[0]).
+the double dollar <b>$$val</b> will be replaced with val name (for example: $$company will be replaced with <b style="color:maroon">this.$model.companies[0]</b>).
 
 
 <br><br>
 <h4>Example 1</h4>
-<pre><code>
-  &lt;table&gt;
-    &lt;tr dd-foreach="$model.companies --company,key"&gt;
-      &lt;td&gt;${company.name}&lt;/td&gt;
-      &lt;td&gt;${company.size}&lt;/td&gt;
-      &lt;td&gt;&lt;button type="button" dd-click="selectCompany()"&gt;select&lt;/button&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
+<pre><code>&lt;table&gt;
+  &lt;tr dd-foreach="$model.companies --company,key"&gt;
+    &lt;td&gt;${company.name}&lt;/td&gt;
+    &lt;td&gt;${company.size}&lt;/td&gt;
+    &lt;td&gt;&lt;button type="button" dd-click="selectCompany()"&gt;select&lt;/button&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 </code></pre>
 
-
-<br><br>
+<br>
 <button type="button" dd-click="changeCompanies()">change companies</button>
 <table>
   <tr dd-foreach="$model.companies --company,key">
@@ -28,18 +26,16 @@ the double dollar <b>$$val</b> will be replaced with val name (for example: $$co
   </tr>
 </table>
 
-<br><br>
-selected company: <b dd-text="$model.company"></b>
+<br>selected company: <b dd-text="$model.company"></b>
 
 
 
 <br><br><br>
 <h4>Example 2</h4>
-<pre><code>
-  &lt;select dd-model="$model.selectedCompany --convertType"&gt;
-    &lt;option dd-foreach="$model.companies --company,key" dd-value="$$company"&gt;${company.name}&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;br&gt;selected company: &lt;span dd-text="$model.selectedCompany.name"&gt;&lt;/span&gt;
+<pre><code>&lt;select dd-model="$model.selectedCompany --convertType"&gt;
+  &lt;option dd-foreach="$model.companies --company,key" dd-value="$$company"&gt;${company.name}&lt;/option&gt;
+&lt;/select&gt;
+&lt;br&gt;selected company: &lt;span dd-text="$model.selectedCompany.name"&gt;&lt;/span&gt;
 </code></pre>
 
 <br>NOTICE:
@@ -53,6 +49,36 @@ Besides that the <code>dd-value="$model.companies[${key}]"</code> will work.
 
 
 <br><br><br>
+<h3>Example 3</h3>
+NOTICE: The class can be written with <code>class="kolor_${key1 + 1}"</code>
+<br><br>
+<button dd-click="changeCities()">change cities</button>
+<div>
+  <p dd-foreach="$model.cities --val1,key1">
+    <span class="kolor_${key1 + 1}">${key1 + 1}. ${val1.name} - ${val1.size} -- ${this.myText}</span>
+  </p>
+</div>
+
+
+
+<br><br>
+<h3>Example 4</h3>
+<button type="button" dd-click="generatePlants()">generate plants</button> - generate SELECT/OPTION by dd-foreach and set the default value with dd-value
+<br><br>plants: <select name="plant" dd-value="myPlant">
+  <option value="" selected></option>
+  <option dd-foreach="$model.plants --plant,key" value="${plant.id}">${plant.name} -- price: $ ${this.$model.plants[key].price}</option>
+</select>
+
+
+<br><br>
+<h3>Example 5</h3>
+<button type="button" dd-click="(this.$model.myAnimal = 'cow')">change to cow</button> - generate SELECT/OPTION by dd-foreach and set the default value with dd-model
+<br><br>animals: <select name="animal" dd-model="myAnimal">
+  <option value="" selected></option>
+  <option dd-foreach="animals --animal,key" value="${animal}">${animal}</option>
+</select>
+
+
 
 
 <style scoped>
@@ -69,5 +95,14 @@ Besides that the <code>dd-value="$model.companies[${key}]"</code> will work.
 
   table td:nth-child(3) {
     text-align: center;
+  }
+
+
+  .kolor_1 {
+    color: Blue;
+  }
+
+  .kolor_2 {
+    color: maroon;
   }
 </style>

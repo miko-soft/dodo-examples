@@ -9,7 +9,7 @@ export default class DdMustacheCtrl extends Controller {
   }
 
   async __loader(trx) {
-    this.$debugOpts.ddMustache = true;
+    // this.$debugOpts.ddMustache = true;
     // this.$debugOpts.model = true;
     this.setTitle('dd-mustache');
     this.setDescription('The examples which shows how to use the DoDo Framework.');

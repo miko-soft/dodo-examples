@@ -3,7 +3,7 @@ The dd-foreach loop which has dd-if conditions.
 
 
 <br>
-<br><button dd-click="foreach1()">change companies</button>
+<br><button dd-click="changeCompanies()">change companies</button>
 <br>
 <table>
   <tr dd-foreach="$model.companies --val1,key1">
@@ -14,13 +14,13 @@ The dd-foreach loop which has dd-if conditions.
   </tr>
 </table>
 
-<!--
+
 <br>
-<br><button dd-click="foreach2()">change numbers</button>
+<br><button dd-click="changeNumbers()">change numbers</button>
 <br>
 <ul>
   <li dd-foreach="$model.numbers --val2,key2" dd-if="(${val2} < 5)">${val2} &lt; 5</li>
-</ul> -->
+</ul>
 
 
 

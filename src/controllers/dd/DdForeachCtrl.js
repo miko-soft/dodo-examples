@@ -12,6 +12,7 @@ export default class DdForeachCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddForeach = true;
+    // this.$debugOpts.ddMustache = true;
     this.setTitle('dd-foreach');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
@@ -26,7 +27,7 @@ export default class DdForeachCtrl extends Controller {
   }
 
 
-  foreachTest() {
+  setCompanies() {
     this.$model.companies = [
       { name: 'Cloud Ltd', size: 3 },
       { name: 'Roto Ltd', size: 5 },

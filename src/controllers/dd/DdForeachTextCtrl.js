@@ -23,8 +23,13 @@ export default class DdForeachTextCtrl extends Controller {
   }
 
   async __init(trx) {
-    this.ids = [1, 3, 5];
+    this.$model.ids = [1, 2, 3];
     this.names = ['Marko', 'Saša', 'Robert', 'Peter', 'Toni'];
+  }
+
+
+  changeIds() {
+    this.$model.ids = [1, 3, 5];
   }
 
 

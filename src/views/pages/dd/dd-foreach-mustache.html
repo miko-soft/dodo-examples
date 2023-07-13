@@ -1,8 +1,11 @@
-<h1>dd-foreach with dd-mustache</h1>
+<h1>dd-foreach and dd-mustache</h1>
+The element dd-mustache shouldn't be in same dd-foreach element or as chilc of dd-foreach.
+<br> Use string interpolator <code>${...}</code> instead of mustache <code>{{...}}</code>.
+
 
 <br><br>
 <h3>A) dd-mustache inside dd-foreach element</h3>
-Use it most often.
+<i>This will cause the error! Open console to see the error</i>
 <p dd-foreach="animals --val,key">
   <b dd-mustache>{{${key} + 1}}</b>. ${val.name}
 </p>
@@ -10,47 +13,7 @@ Use it most often.
 
 <br><br>
 <h3>B) dd-mustache and dd-foreach in the same element</h3>
+<i>This will cause the error! Open console to see the error</i>
 <p dd-foreach="animals --val,key" dd-mustache>
   {{${key} + 1}}. ${val.name}
 </p>
-
-<br><br>
-<h3>C) dd-foreach and dd-mustache in the same element</h3>
-NOTICE 1: The class can be written with mustache <code>class="kolor_{{${key1} + 1}}"</code> or simplier <code>class="kolor_${key1 + 1}"</code>
-<br>NOTICE 2: The mustache can contain string interpolation ${...} <b>{{ ${...} }}</b>, for example: <code>{{${key1} + 1}}</code> what is equivalent to <code>${key1 + 1}</code>
-<br><br>
-<button dd-click="foreachTestMustache()">change model value</button>
-<div>
-  <p dd-foreach="$model.companies --val1,key1" dd-mustache>
-    <span class="kolor_{{${key1} + 1}}">{{${key1} + 1}}. ${val1.name} - ${val1.size} -- {{this.$model.myText}}</span>
-  </p>
-</div>
-
-<br><br>
-<h3>D) dd-foreach is inside dd-mustache</h3>
-dd-mustache shouldn't contain dd-foreach as a child because it will solve mustache in innerHTML which has dd-render-block.
-<br>Open console to see the error.
-<div dd-mustache>
-  <p dd-foreach="$model.companies --company">${company.name} --- {{this.$model.myText}}</p>
-</div>
-
-
-<br><br>
-<h3>E) dd-mustache in OPTION</h3>
-<button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-foreach and <i>dd-mustache</i> and set the default value
-<br><br>plants: <select name="myPlant">
-  <option value="" selected></option>
-  <option dd-foreach="$model.plants --plant,key" value="${plant.id}" dd-mustache>{{this.$model.plants[${key}].name}} -- price: $ {{this.$model.plants[${key}].price}}</option>
-</select>
-
-
-
-<style scoped>
-  .kolor_1 {
-    color: Blue;
-  }
-
-  .kolor_2 {
-    color: maroon;
-  }
-</style>
