@@ -12,7 +12,7 @@ export default class DdVisibleCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddVisible = true;
-    this.setTitle('dd-show');
+    this.setTitle('dd-visible');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');

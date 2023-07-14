@@ -30,6 +30,9 @@ export default class FormCtrl extends Controller {
       delControls: false
     };
 
+    this.$model.autos = [];
+    this.$model.plants = [];
+
     this.sleep = corelib.util.sleep;
   }
 
