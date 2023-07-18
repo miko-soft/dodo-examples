@@ -31,21 +31,34 @@ export default class DdHtmlCtrl extends Controller {
     this.product_124 = '<b style="color:orange">This is another product 124</b>';
 
     this.$model.job = {};
+
+    this.$model.myHTML = '<b>bold text</b>';
+
+    this.htmlWithDD = '<p dd-foreach="$model.pets --pet">${pet} <button dd-click="showPet(\'${pet}\')">show</button></p>';
   }
 
   async __postrend() {
-    this.$model.myHTML = '<b>bold text</b>';
+    this.$model.pets = ['cat', 'rabbit', 'dog'];
   }
+
 
 
   changeMyHtml() {
     this.$model.myHTML = '<b style="color:#00b5ed">bold text changed</b>';
   }
 
+
   changeJob() {
     this.$model.job = {
       country: '<b style="color:green">Croatia</b>'
     };
   }
+
+
+  showPet(pet) {
+    console.log(pet);
+    alert(pet);
+  }
+
 
 }
