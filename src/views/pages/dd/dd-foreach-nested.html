@@ -1,22 +1,22 @@
 <h1>dd-foreach (nested)</h1>
-The dd-foreach is nested in another dd-foreach.
-<br>Used: <b>$1{company.$0{field}}</b> where $0 and $1 are interpolator marks defined by option --$0 and --$1
-<br> The "field" is array of strings.
+The dd-foreach is nested in another dd-foreach with <b>dd-foreach-child</b>.
+<br>Used: <b>${company[field]}</b> where "company" is array of objects and "field" is array of strings.
 
 
 <br><br>
 <h4>Code</h4>
-<pre><code>
-  &lt;table&gt;
+<pre><code>&lt;table&gt;
     &lt;tr&gt;
       &lt;th dd-foreach="fields --field"&gt;${field}&lt;/th&gt;
     &lt;/tr&gt;
-    &lt;tr dd-foreach="$model.companies --company --$1" dd-priority="0"&gt;
-      &lt;td dd-foreach="fields --field --$0" dd-priority="1"&gt;$1{company.$0{field}}&lt;/td&gt;
+    &lt;tr dd-foreach="$model.companies --company"&gt;
+      &lt;td dd-foreach-child="this.fields --field"&gt;${company[field]}&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/table&gt;
 </code></pre>
-<br>NOTICE: The highest priority will be executed first.
+
+NOTICE: Use <b>this.fields</b> instead of <b>fields</b> because it is controller property.
+<br>In <b>dd-foreach</b> it s not required to use <i>this</i>, but in <b>dd-foreach-child</b> it must be used to distinguish controller property from the forEach() argument.
 
 
 <br><br>
@@ -26,8 +26,8 @@ The dd-foreach is nested in another dd-foreach.
   <tr>
     <th dd-foreach="fields --field">${field}</th>
   </tr>
-  <tr dd-foreach="$model.companies --company --$1" dd-priority="0">
-    <td dd-foreach="fields --field --$0" dd-priority="1">$1{company.$0{field}}</td>
+  <tr dd-foreach="$model.companies --company">
+    <td dd-foreach-child="this.fields --field">${company[field]}</td>
   </tr>
 </table>
 

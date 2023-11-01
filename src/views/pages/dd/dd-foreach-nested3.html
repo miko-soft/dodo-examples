@@ -1,23 +1,18 @@
 <h1>dd-foreach (nested3)</h1>
-This example show how simply make 3-dimensional data. Print three 2-dimensional tables.
+This example show how simply show 3-dimensional data.
 
 <br><br>
-<button dd-click="foreachNested()">change model value</button>
+<button dd-click="changeRows()">change model value</button>
 
-<table dd-foreach="tables --table --$2" dd-priority="2">
-  <tr dd-foreach="$model.companies --company,key --$1" dd-priority="1">
-    <td dd-foreach="columns --column --$0" dd-priority="3">$1{company}[$1{key}].${column}</td>
+
+<table>
+  <tr dd-foreach="$model.rows --row">
+    <td dd-foreach-child="row --cell">
+      <span dd-foreach-grandchild="cell --spanData">${spanData},</span>
+    </td>
   </tr>
 </table>
 
-<!--
-  <tr>
-    <th colspan="3">table: ${table}</th>
-  </tr>
-  <tr>
-    <th dd-foreach="columns --column">${column}</th>
-  </tr>
- -->
 
 <style scoped>
   table {
@@ -29,9 +24,5 @@ This example show how simply make 3-dimensional data. Print three 2-dimensional 
   th {
     border: 1px solid gray;
     padding: 5px 3px;
-  }
-
-  table td:nth-child(3) {
-    text-align: center;
   }
 </style>

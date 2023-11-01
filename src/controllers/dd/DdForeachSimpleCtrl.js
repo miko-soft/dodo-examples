@@ -11,7 +11,7 @@ export default class DdForeachDdTextCtrl extends Controller {
   }
 
   async __loader(trx) {
-    // this.$debugOpts.ddForeach = true;
+    this.$debugOpts.ddForeach = true;
     this.setTitle('dd-foreach simple');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
@@ -21,22 +21,7 @@ export default class DdForeachDdTextCtrl extends Controller {
   }
 
   async __init(trx) {
-    this.customers = [
-      { id: 1, name: 'Mirko', age: 21, active: true },
-      { id: 2, name: 'Žarko', age: 38, active: false },
-      { id: 3, name: 'Josip', age: 42, active: true },
-    ];
-
-    this.someNumber = 5;
-  }
-
-
-  printCustomerName(name) {
-    console.log('name::', name);
-  }
-
-  printObject(customer) {
-    console.log('customer::', customer);
+    this.pets = ['dog', 'cat'];
   }
 
 }

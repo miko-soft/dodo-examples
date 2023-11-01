@@ -1,22 +1,3 @@
 <h1>dd-foreach Simple Example</h1>
 
-<h4>dd-foreach properties</h4>
-<ul>
-  <li>define template variables with option --val,key</li>
-  <li>use string interpolations ${}</li>
-  <li>use JS functions inside string interpolation, for example: ${Math.random() + key} or ${JSON.stringify(val)}</li>
-  <li>use controller properties in the string interpolation, ${key + <b style="color:maroon">this.</b>someNumber} or ${val.name + ' is the name'} &rarr; NOTICE: <b>this</b> is related to controller instance</li>
-</ul>
-
-
-<br><br>
-Example: <small>(open browser console)</small>
-<p dd-foreach="customers --customer,key" class="${customer.id}">
-  ${key + this.someNumber}. |
-  ${customer.id} |
-  <a href="" dd-click="printCustomerName('${customer.name}') --preventDefault" title="print customer name">${customer['name']}</a> |
-  ${customer.age} |
-  ${customer.active} |
-  <button dd-click="printObject($$customer)">print customer object</button>
-  <br><small style="color:gray">${JSON.stringify(customer)}</small>
-</p>
+<p dd-foreach="pets --pet,key">${key} - ${pet}</p>

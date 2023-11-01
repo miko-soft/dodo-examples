@@ -92,10 +92,15 @@ input[type="radio"] {
 }
 
 
+pre:has(code) {
+  background-color: #eee;
+  padding: 5px;
+  border: 1px solid gray;
+  width: 50%;
+}
+
 code {
   color: purple;
   font: 15px Courier;
   font-weight: bold;
-  padding: 3px;
-  background-color: #eee;
 }

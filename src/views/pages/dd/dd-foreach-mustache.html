@@ -1,11 +1,9 @@
 <h1>dd-foreach &amp; dd-mustache</h1>
-If dd-foreach contains dd-mustache it will <b style="color:red">cause the error</b>.
-<br> Use string interpolator <code>${...}</code> instead of mustache <code>{{...}}</code> in dd-repeat element and its childrens.
+<br> RECOMMENDATION: Use string interpolator <code>${...}</code> instead of mustache <code>{{...}}</code> in dd-foreach element.
 
 
 <br><br>
-<h3>A) dd-mustache inside dd-foreach element</h3>
-<i>This will cause the error! Open console to see the error</i>
+<h3>A) dd-mustache as child of the dd-foreach element</h3>
 <p dd-foreach="animals --val,key">
   <b dd-mustache>{{${key} + 1}}</b>. ${val.name}
 </p>
@@ -13,7 +11,6 @@ If dd-foreach contains dd-mustache it will <b style="color:red">cause the error<
 
 <br><br>
 <h3>B) dd-mustache and dd-foreach in the same element</h3>
-<i>This will cause the error! Open console to see the error</i>
 <p dd-foreach="animals --val,key" dd-mustache>
   {{${key} + 1}}. ${val.name}
 </p>

@@ -51,9 +51,11 @@ import DdIfGroupsCtrl from './controllers/dd/DdIfGroupsCtrl.js';
 import DdIfNestedCtrl from './controllers/dd/DdIfNestedCtrl.js';
 import DdForeachCtrl from './controllers/dd/DdForeachCtrl.js';
 import DdForeachSimpleCtrl from './controllers/dd/DdForeachSimpleCtrl.js';
+import DdForeachSimpleObjCtrl from './controllers/dd/DdForeachSimpleObjCtrl.js';
 import DdForeachNestedCtrl from './controllers/dd/DdForeachNestedCtrl.js';
 import DdForeachNested2Ctrl from './controllers/dd/DdForeachNested2Ctrl.js';
 import DdForeachNested3Ctrl from './controllers/dd/DdForeachNested3Ctrl.js';
+import DdForeachNested4Ctrl from './controllers/dd/DdForeachNested4Ctrl.js';
 import DdForeachDoubledollarCtrl from './controllers/dd/DdForeachDoubledollarCtrl.js';
 import DdForeachIfCtrl from './controllers/dd/DdForeachIfCtrl.js';
 import DdForeachMustacheCtrl from './controllers/dd/DdForeachMustacheCtrl.js';
@@ -131,9 +133,11 @@ const $routes = [
   ['when', '/dd/dd-if-nested', DdIfNestedCtrl],
   ['when', '/dd/dd-foreach', DdForeachCtrl],
   ['when', '/dd/dd-foreach-simple', DdForeachSimpleCtrl],
+  ['when', '/dd/dd-foreach-simple-obj', DdForeachSimpleObjCtrl],
   ['when', '/dd/dd-foreach-nested', DdForeachNestedCtrl],
   ['when', '/dd/dd-foreach-nested2', DdForeachNested2Ctrl],
   ['when', '/dd/dd-foreach-nested3', DdForeachNested3Ctrl],
+  ['when', '/dd/dd-foreach-nested4', DdForeachNested4Ctrl],
   ['when', '/dd/dd-foreach-doubledollar', DdForeachDoubledollarCtrl],
   ['when', '/dd/dd-foreach-if', DdForeachIfCtrl],
   ['when', '/dd/dd-foreach-mustache', DdForeachMustacheCtrl],

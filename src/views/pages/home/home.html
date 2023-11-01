@@ -24,7 +24,7 @@
   <li><a href="/view/ddlazyjs" dd-href>dd-lazyjs | ddLazyjs()</a> - test dd-lazyjs directive</li>
   <li><a href="/view/exejs" dd-href>exeJS()</a> - fetch js content and execute it</li>
   <li>&nbsp;</li>
-  <li><a href="/view/loadcss" dd-href>loadCSS(), unloadCSS()</a> - create &lt;link rel = "stylesheet"&gt; tag and load CSS</li>
+  <li><a href="/view/loadcss" dd-href>loadCSS(), unloadCSS()</a> - create &lt;link rel="stylesheet"&gt; tag and load CSS</li>
   <li><a href="/view/plugcss" dd-href>plugCSS(), unplugCSS()</a> - create &lt;style dd-ref="#reference"&gt;&lt;/style&gt; tag in the &lt;head&gt;.</li>
   <li>&nbsp;</li>
   <li><a href="/view/loadi18n" dd-href>loadI18n</a> - load the specific language in the page</li>
@@ -62,10 +62,12 @@
 <ul>
   <li><a href="/dd/dd-mustache" dd-href>dd-mustache</a> - solve {{ctrlProp}} or {{expression}} in the innerHTML and element attributes</li>
   <li><a href="/dd/dd-foreach-simple" dd-href>dd-foreach simple</a> - simplest dd-foreach example</li>
+  <li><a href="/dd/dd-foreach-simple-obj" dd-href>dd-foreach simple obj</a> - simple dd-foreach example with object</li>
   <li><a href="/dd/dd-foreach" dd-href>dd-foreach</a> - multiply HTML element</li>
-  <li><a href="/dd/dd-foreach-nested" dd-href>dd-foreach (nested)</a> - nest one dd-foreach element in another dd-foreach element &rarr; $1{company.$0{field}}</li>
+  <li><a href="/dd/dd-foreach-nested" dd-href>dd-foreach (nested)</a> - nest one dd-foreach element in another dd-foreach element &rarr; ${company[field]}</li>
   <li><a href="/dd/dd-foreach-nested2" dd-href>dd-foreach (nested2)</a> - nest one dd-foreach element in another dd-foreach element &rarr; $1{company['${field.prop}']}</li>
   <li><a href="/dd/dd-foreach-nested3" dd-href>dd-foreach (nested3)</a> - example with 3-dimensional data</li>
+  <li><a href="/dd/dd-foreach-nested4" dd-href>dd-foreach (nested4)</a> - apply foreach on main array of objects, then on array which is the object property</li>
   <li><a href="/dd/dd-foreach-doubledollar" dd-href>dd-foreach (doubledollar)</a> - use double dollar mark, $$company instead $model.companies[${key}]</li>
   <li><a href="/dd/dd-foreach-if" dd-href>dd-foreach with dd-if</a> - dd-if inside dd-foreach</li>
   <li><a href="/dd/dd-foreach-mustache" dd-href>dd-foreach and dd-mustache</a></li>

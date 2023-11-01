@@ -1,0 +1,32 @@
+<h1>dd-foreach (nested4)</h1>
+Let the array have objects of companies. Each object has a property with an array called 'workers': <code>[{name, workers: [...]}, ...]</code>
+<br>The dd-foreach should first iterate through the companies, and after that dd-foreach-child through workers.
+<br><br>
+
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Workers</th>
+  </tr>
+  <tr dd-foreach="this.companies --company">
+    <td>${company.name}</td>
+    <td>
+      <span dd-foreach-child="company.workers --worker">${worker},</span>
+    </td>
+  </tr>
+</table>
+
+
+
+<style scoped>
+  td {
+    padding: 8px;
+    border: 1px solid silver;
+  }
+
+  td>span {
+    color: gray;
+    font-size: smaller;
+  }
+</style>

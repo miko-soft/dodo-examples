@@ -62,6 +62,7 @@ export default class DdForeachDoubledollarCtrl extends Controller {
   selectCompany($$company) {
     console.log('selected company::', $$company);
     this.$model.company = $$company;
+    this.$model.selectedCompany = $$company; // update SELECT tag in Example 2
   }
 
   changeCities() {

@@ -11,7 +11,7 @@ export default class DdForeachNestedCtrl extends Controller {
   }
 
   async __loader(trx) {
-    // this.$debugOpts.ddForeach = true;
+    this.$debugOpts.ddForeach = true;
     this.setTitle('dd-foreach (nested)');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');

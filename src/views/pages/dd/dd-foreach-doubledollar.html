@@ -11,7 +11,7 @@ the double dollar <b>$$val</b> will be replaced with val name (for example: $$co
   &lt;tr dd-foreach="$model.companies --company,key"&gt;
     &lt;td&gt;${company.name}&lt;/td&gt;
     &lt;td&gt;${company.size}&lt;/td&gt;
-    &lt;td&gt;&lt;button type="button" dd-click="selectCompany()"&gt;select&lt;/button&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;button type="button" dd-click="selectCompany($$company)"&gt;select&lt;/button&gt;&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
@@ -58,7 +58,6 @@ NOTICE: The class can be written with <code>class="kolor_${key1 + 1}"</code>
     <span class="kolor_${key1 + 1}">${key1 + 1}. ${val1.name} - ${val1.size} -- ${this.myText}</span>
   </p>
 </div>
-
 
 
 <br><br>
