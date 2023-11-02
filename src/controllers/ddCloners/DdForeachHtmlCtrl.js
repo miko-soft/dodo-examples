@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachHtml from '/views/pages/dd/dd-foreach-html.html?raw';
+import ddForeachHtml from '/views/pages/ddCloners/dd-foreach-html.html?raw';
 
 
 

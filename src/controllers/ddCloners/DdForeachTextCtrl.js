@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachText from '/views/pages/dd/dd-foreach-text.html?raw';
+import ddForeachText from '/views/pages/ddCloners/dd-foreach-text.html?raw';
 
 
 
@@ -12,7 +12,7 @@ export default class DdForeachTextCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddForeach = true;
-    this.$debugOpts.ddText = true;
+    // this.$debugOpts.ddText = true;
     // this.$debugOpts.ddIf = true;
     this.setTitle('dd-foreach dd-text');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
@@ -30,7 +30,6 @@ export default class DdForeachTextCtrl extends Controller {
 
   changeIds() {
     this.$model.ids = [1, 3, 5];
-    console.log(this.names);
   }
 
 

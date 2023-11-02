@@ -27,9 +27,9 @@
   <li><a href="/view/loadcss" dd-href>loadCSS(), unloadCSS()</a> - create &lt;link rel="stylesheet"&gt; tag and load CSS</li>
   <li><a href="/view/plugcss" dd-href>plugCSS(), unplugCSS()</a> - create &lt;style dd-ref="#reference"&gt;&lt;/style&gt; tag in the &lt;head&gt;.</li>
   <li>&nbsp;</li>
-  <li><a href="/view/loadi18n" dd-href>loadI18n</a> - load the specific language in the page</li>
-  <li>&nbsp;</li>
   <li><a href="/view/headsetters" dd-href>HEAD setters</a> - setTitle(), setDescription(), setKeywords(), setLang()</li>
+  <li>&nbsp;</li>
+  <li><a href="/view/loadi18n" dd-href>loadI18n</a> - load the specific language in the page</li>
 </ul>
 
 <h2>General Directives</h2>
@@ -45,7 +45,9 @@
   <li><a href="/dd/dd-if" dd-href>dd-if , dd-elseif , dd-else</a> - show element when the if statement is truthy</li>
   <li><a href="/dd/dd-if-groups" dd-href>dd-if groups</a> - two if groups within same parent element</li>
   <li><a href="/dd/dd-if-nested" dd-href>dd-if (nested)</a> - nest one if in another if element</li>
+  <br>
   <li><a href="/dd/dd-visible" dd-href>dd-visible</a> - show/hide HTML elements with visibility:visible|hidden CSS property</li>
+  <br>
   <li><a href="/dd/dd-value" dd-href>dd-value</a> - set element value from controller property value</li>
   <li><a href="/dd/dd-disabled" dd-href>dd-disabled</a> - disable the element</li>
   <li><a href="/dd/dd-checked-checkboxes" dd-href>dd-checked (checkboxes)</a> - check the checkboxes with controller property</li>
@@ -60,22 +62,28 @@
 
 <h2>Cloner Directives</h2>
 <ul>
-  <li><a href="/dd/dd-mustache" dd-href>dd-mustache</a> - solve {{ctrlProp}} or {{expression}} in the innerHTML and element attributes</li>
-  <li><a href="/dd/dd-foreach-simple" dd-href>dd-foreach simple</a> - simplest dd-foreach example</li>
-  <li><a href="/dd/dd-foreach-simple-obj" dd-href>dd-foreach simple obj</a> - simple dd-foreach example with object</li>
   <li><a href="/dd/dd-foreach" dd-href>dd-foreach</a> - multiply HTML element</li>
-  <li><a href="/dd/dd-foreach-nested" dd-href>dd-foreach (nested)</a> - nest one dd-foreach element in another dd-foreach element &rarr; ${company[field]}</li>
-  <li><a href="/dd/dd-foreach-nested2" dd-href>dd-foreach (nested2)</a> - nest one dd-foreach element in another dd-foreach element &rarr; $1{company['${field.prop}']}</li>
-  <li><a href="/dd/dd-foreach-nested3" dd-href>dd-foreach (nested3)</a> - example with 3-dimensional data</li>
-  <li><a href="/dd/dd-foreach-nested4" dd-href>dd-foreach (nested4)</a> - apply foreach on main array of objects, then on array which is the object property</li>
+  <li><a href="/dd/dd-foreach-simple" dd-href>dd-foreach simple</a> - simplest dd-foreach example, no child, no grandchild</li>
+  <li><a href="/dd/dd-foreach-obj" dd-href>dd-foreach obj</a> - dd-foreach example with object, no child, no grandchild</li>
   <li><a href="/dd/dd-foreach-doubledollar" dd-href>dd-foreach (doubledollar)</a> - use double dollar mark, $$company instead $model.companies[${key}]</li>
-  <li><a href="/dd/dd-foreach-if" dd-href>dd-foreach with dd-if</a> - dd-if inside dd-foreach</li>
-  <li><a href="/dd/dd-foreach-mustache" dd-href>dd-foreach and dd-mustache</a></li>
+  <li><a href="/dd/dd-foreach-if" dd-href>dd-foreach and dd-if</a> - dd-if nested within the dd-foreach and dd-if in same element with dd-foreach</li>
+  <li><a href="/dd/dd-foreach-mustache" dd-href>dd-foreach and dd-mustache</a> - dd-mustache nested within the dd-foreach and dd-mustache in same element with dd-foreach</li>
   <li><a href="/dd/dd-foreach-text" dd-href>dd-foreach with dd-text</a> - dd-foreach and dd-text combinations</li>
   <li><a href="/dd/dd-foreach-html" dd-href>dd-foreach with dd-html</a> - dd-foreach and dd-html combinations</li>
   <li><a href="/dd/dd-foreach-option" dd-href>dd-foreach in option</a> - multiply SELECT/OPTION with dd-foreach</li>
+  <br>
+  <li><a href="/dd/dd-foreach-child" dd-href>dd-foreach-child</a> - nest dd-foreach-child element within dd-foreach element &rarr; ${company[field]} where field is array of strings</li>
+  <li><a href="/dd/dd-foreach-child-obj" dd-href>dd-foreach-child obj</a> - nest dd-foreach-child element within dd-foreach element &rarr; ${company[field]} where field is array of strings</li>
+  <li><a href="/dd/dd-foreach-child-arg" dd-href>dd-foreach-child arg</a> - use dd-foreach option argument as dd-foreach base value</li>
+  <li><a href="/dd/dd-foreach-grandchild" dd-href>dd-foreach-grandchild</a> - use dd-foreach-grandchild to show 3-dimensional data</li>
+  <br>
+  <li><a href="/dd/dd-each" dd-href>dd-each</a> - multiply HTML element much fster than dd-foreach, but no kids</li>
+  <li><a href="/dd/dd-each-simple" dd-href>dd-each simple</a> - very simple dd-each example</li>
+  <br>
   <li><a href="/dd/dd-repeat" dd-href>dd-repeat</a> - repeat the element based on number</li>
   <li><a href="/dd/dd-repeat-mustache" dd-href>dd-repeat and dd-mustache</a></li>
+  <br>
+  <li><a href="/dd/dd-mustache" dd-href>dd-mustache</a> - solve {{ctrlProp}} or {{expression}} in the innerHTML and element attributes</li>
 </ul>
 
 <h2>Listener Directives</h2>
@@ -86,8 +94,8 @@
   <li><a href="/ddlisteners/dd-change" dd-href>dd-change</a> - change event listener</li>
   <li><a href="/ddlisteners/dd-evt" dd-href>dd-evt</a> - chain any event listener</li>
   <li><a href="/ddlisteners/dd-set" dd-href>dd-set</a> - set the controller property value (single direction from dd-set element to controller)</li>
-  <li><a href="/ddlisteners/dd-model-dd-set" dd-href>dd-model &amp; dd-set</a> - dd-model as replacement for dd-set with dd-value</li>
   <li><a href="/ddlisteners/dd-model" dd-href>dd-model</a> - use dd-model in different form tags: input, checkbox, radio, select, textarea</li>
+  <li><a href="/ddlisteners/dd-model-dd-set" dd-href>dd-model &amp; dd-set</a> - dd-model as replacement for dd-set with dd-value</li>
 </ul>
 
 

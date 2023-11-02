@@ -1,12 +1,12 @@
-<h1>dd-foreach</h1>
-The dd-foreach will multiply element with the controller property value which should be array.
+<h1>dd-each</h1>
+Generate multiple HTML elements based on an array stored in a controller property.
 
 
 <h3>Controller property</h3>
 <i>Example with pure controller property in the attribute value:</i>
-<br><code>dd-foreach="names --val,key"</code>
+<br><code>dd-each="names --val,key"</code>
 <br>
-<p dd-foreach="names --val,key">
+<p dd-each="names --val,key">
   <span>${key + 5}</span> <b>${val}</b>
 </p>
 
@@ -19,9 +19,9 @@ The dd-foreach will multiply element with the controller property value which sh
   <br>Initial model value is undefined so cloned element is not displayed.
   <br>The <b>this.</b> will not cause error.
 </i>
-<br><code>dd-foreach="$model.companies --val1,key1"</code>
+<br><code>dd-each="$model.companies --val1,key1"</code>
 <br>
 <br><button dd-click="setCompanies()">set companies</button>
-<p dd-foreach="$model.companies --val1,key1">
+<p dd-each="$model.companies --val1,key1">
   <span>${key1 + 1}</span> <b>${val1.name}</b> - <span>${val1.size}</span>
 </p>

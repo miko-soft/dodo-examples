@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachDoubledollar from '/views/pages/dd/dd-foreach-doubledollar.html?raw';
+import ddForeachDoubledollar from '/views/pages/ddCloners/dd-foreach-doubledollar.html?raw';
 
 
 
@@ -13,7 +13,7 @@ export default class DdForeachDoubledollarCtrl extends Controller {
   async __loader(trx) {
     // this.$debugOpts.ddForeach = true;
     // this.$debugOpts.ddText = true;
-    this.setTitle('dd-foreach (Doubledollar)');
+    this.setTitle('dd-foreach doubledollar $$');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');

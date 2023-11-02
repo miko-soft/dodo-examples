@@ -1,23 +1,23 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachNested3 from '/views/pages/dd/dd-foreach-nested3.html?raw';
+import ddForeachGrandchild from '/views/pages/ddCloners/dd-foreach-grandchild.html?raw';
 
 
 
-export default class DdForeachNested3Ctrl extends Controller {
+export default class DdForeachGrandchildCtrl extends Controller {
 
   constructor(app) {
     super();
   }
 
   async __loader(trx) {
-    this.$debugOpts.ddForeach = true;
-    this.setTitle('dd-foreach (nested3)');
+    // this.$debugOpts.ddForeach = true;
+    this.setTitle('dd-foreach-grandchild');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');
     this.loadView('#navbar', navbar);
-    this.loadView('#main', ddForeachNested3);
+    this.loadView('#main', ddForeachGrandchild);
   }
 
   async __init(trx) {

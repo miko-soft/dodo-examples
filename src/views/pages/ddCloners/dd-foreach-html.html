@@ -1,7 +1,7 @@
 <h1>dd-foreach with dd-html</h1>
 
 <br><br>
-<h3>A) dd-html inside dd-foreach element</h3>
+<h3>A) dd-html within dd-foreach element</h3>
 <li dd-foreach="ids --id">
   <span dd-html="names[${id}]"></span>
 </li>
@@ -18,7 +18,7 @@
 
 
 <br><br>
-<h3>C2) dd-html inside dd-foreach/dd-if element</h3>
+<h3>C2) dd-html within dd-foreach/dd-if element</h3>
 <li dd-foreach="ids --id" dd-if="(${id} === 1)">
   <span dd-html="names[${id}]"></span>
 </li>

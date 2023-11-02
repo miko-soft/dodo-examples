@@ -13,12 +13,14 @@ const hasRole = $auth.hasRole.bind($auth);
 import HomeCtrl from './controllers/HomeCtrl.js';
 import NotfoundCtrl from './controllers/NotfoundCtrl.js';
 
+// controller
 import ControllerHooksCtrl from './controllers/controller/ControllerHooksCtrl.js';
 
+// view directives
 import ViewDdViewInnerCtrl from './controllers/view/ViewDdViewInnerCtrl.js';
+import ViewDdViewSiblingCtrl from './controllers/view/ViewDdViewSiblingCtrl.js';
 import ViewDdViewPrependCtrl from './controllers/view/ViewDdViewPrependCtrl.js';
 import ViewDdViewAppendCtrl from './controllers/view/ViewDdViewAppendCtrl.js';
-import ViewDdViewSiblingCtrl from './controllers/view/ViewDdViewSiblingCtrl.js';
 import ViewDdViewNestedCtrl from './controllers/view/ViewDdViewNestedCtrl.js';
 import ViewEmptyViewCtrl from './controllers/view/ViewEmptyViewCtrl.js';
 import ViewGrabFileContentCtrl from './controllers/view/ViewGrabFileContentCtrl.js';
@@ -30,7 +32,21 @@ import ViewPlugCSSCtrl from './controllers/view/ViewPlugCSSCtrl.js';
 import ViewHeadSettersCtrl from './controllers/view/ViewHeadSettersCtrl.js';
 import ViewLoadI18nCtrl from './controllers/view/ViewLoadI18nCtrl.js';
 
+
+// general directives
+import DdSetinitialCtrl from './controllers/dd/DdSetinitialCtrl.js';
+import DdElemCtrl from './controllers/dd/DdElemCtrl.js';
+
+import DdTextCtrl from './controllers/dd/DdTextCtrl.js';
+import DdHtmlCtrl from './controllers/dd/DdHtmlCtrl.js';
+
+import DdIfCtrl from './controllers/dd/DdIfCtrl.js';
+import DdIfGroupsCtrl from './controllers/dd/DdIfGroupsCtrl.js';
+import DdIfNestedCtrl from './controllers/dd/DdIfNestedCtrl.js';
+
 import DdVisibleCtrl from './controllers/dd/DdVisibleCtrl.js';
+
+import DdValueCtrl from './controllers/dd/DdValueCtrl.js';
 import DdDisabledCtrl from './controllers/dd/DdDisabledCtrl.js';
 import DdCheckedCheckboxesCtrl from './controllers/dd/DdCheckedCheckboxesCtrl.js';
 import DdCheckedRadiosCtrl from './controllers/dd/DdCheckedRadiosCtrl.js';
@@ -39,32 +55,34 @@ import DdClassCtrl from './controllers/dd/DdClassCtrl.js';
 import DdStyleCtrl from './controllers/dd/DdStyleCtrl.js';
 import DdSrcCtrl from './controllers/dd/DdSrcCtrl.js';
 import DdAttrCtrl from './controllers/dd/DdAttrCtrl.js';
-import DdValueCtrl from './controllers/dd/DdValueCtrl.js';
-import DdSetinitialCtrl from './controllers/dd/DdSetinitialCtrl.js';
-import DdElemCtrl from './controllers/dd/DdElemCtrl.js';
 
-import DdTextCtrl from './controllers/dd/DdTextCtrl.js';
-import DdMustacheCtrl from './controllers/dd/DdMustacheCtrl.js';
-import DdHtmlCtrl from './controllers/dd/DdHtmlCtrl.js';
-import DdIfCtrl from './controllers/dd/DdIfCtrl.js';
-import DdIfGroupsCtrl from './controllers/dd/DdIfGroupsCtrl.js';
-import DdIfNestedCtrl from './controllers/dd/DdIfNestedCtrl.js';
-import DdForeachCtrl from './controllers/dd/DdForeachCtrl.js';
-import DdForeachSimpleCtrl from './controllers/dd/DdForeachSimpleCtrl.js';
-import DdForeachSimpleObjCtrl from './controllers/dd/DdForeachSimpleObjCtrl.js';
-import DdForeachNestedCtrl from './controllers/dd/DdForeachNestedCtrl.js';
-import DdForeachNested2Ctrl from './controllers/dd/DdForeachNested2Ctrl.js';
-import DdForeachNested3Ctrl from './controllers/dd/DdForeachNested3Ctrl.js';
-import DdForeachNested4Ctrl from './controllers/dd/DdForeachNested4Ctrl.js';
-import DdForeachDoubledollarCtrl from './controllers/dd/DdForeachDoubledollarCtrl.js';
-import DdForeachIfCtrl from './controllers/dd/DdForeachIfCtrl.js';
-import DdForeachMustacheCtrl from './controllers/dd/DdForeachMustacheCtrl.js';
-import DdForeachTextCtrl from './controllers/dd/DdForeachTextCtrl.js';
-import DdForeachHtmlCtrl from './controllers/dd/DdForeachHtmlCtrl.js';
-import DdForeachOptionCtrl from './controllers/dd/DdForeachOptionCtrl.js';
-import DdRepeatCtrl from './controllers/dd/DdRepeatCtrl.js';
-import DdRepeatMustacheCtrl from './controllers/dd/DdRepeatMustacheCtrl.js';
 
+// cloner directives
+import DdForeachSimpleCtrl from './controllers/ddCloners/DdForeachSimpleCtrl.js';
+import DdForeachObjCtrl from './controllers/ddCloners/DdForeachObjCtrl.js';
+import DdForeachCtrl from './controllers/ddCloners/DdForeachCtrl.js';
+import DdForeachDoubledollarCtrl from './controllers/ddCloners/DdForeachDoubledollarCtrl.js';
+import DdForeachIfCtrl from './controllers/ddCloners/DdForeachIfCtrl.js';
+import DdForeachMustacheCtrl from './controllers/ddCloners/DdForeachMustacheCtrl.js';
+import DdForeachTextCtrl from './controllers/ddCloners/DdForeachTextCtrl.js';
+import DdForeachHtmlCtrl from './controllers/ddCloners/DdForeachHtmlCtrl.js';
+import DdForeachOptionCtrl from './controllers/ddCloners/DdForeachOptionCtrl.js';
+
+import DdForeachChildCtrl from './controllers/ddCloners/DdForeachChildCtrl.js';
+import DdForeachChildObjCtrl from './controllers/ddCloners/DdForeachChildObjCtrl.js';
+import DdForeachChildArgCtrl from './controllers/ddCloners/DdForeachChildArgCtrl.js';
+import DdForeachGrandchildCtrl from './controllers/ddCloners/DdForeachGrandchildCtrl.js';
+
+import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
+import DdEachSimpleCtrl from './controllers/ddCloners/DdEachSimpleCtrl.js';
+
+import DdRepeatCtrl from './controllers/ddCloners/DdRepeatCtrl.js';
+import DdRepeatMustacheCtrl from './controllers/ddCloners/DdRepeatMustacheCtrl.js';
+
+import DdMustacheCtrl from './controllers/ddCloners/DdMustacheCtrl.js';
+
+
+// listener directives
 import DdHrefCtrl from './controllers/ddListeners/DdHrefCtrl.js';
 import DdClickCtrl from './controllers/ddListeners/DdClickCtrl.js';
 import DdKeyupCtrl from './controllers/ddListeners/DdKeyupCtrl.js';
@@ -74,9 +92,13 @@ import DdSetCtrl from './controllers/ddListeners/DdSetCtrl.js';
 import DdModelCtrl from './controllers/ddListeners/DdModelCtrl.js';
 import DdModelDdSetCtrl from './controllers/ddListeners/DdModelDdSetCtrl.js';
 
+
+// model
 import ModelBasicCtrl from './controllers/model/ModelBasicCtrl.js';
 import ModelMultilevelObjectCtrl from './controllers/model/ModelMultilevelObjectCtrl.js';
 
+
+// lib
 import AuthLoginCtrl from './controllers/lib/auth/AuthLoginCtrl.js';
 import AuthDashboardCtrl from './controllers/lib/auth/AuthDashboardCtrl.js';
 import FormCtrl from './controllers/lib/FormCtrl.js';
@@ -94,13 +116,15 @@ import PaginatorCtrl from './controllers/lib/PaginatorCtrl.js';
 const $routes = [
   ['when', '/', HomeCtrl],
 
+  // controller
   ['when', '/controller/hooks', ControllerHooksCtrl],
   ['when', '/controller/hooks-same', ControllerHooksCtrl],
 
+  // view
   ['when', '/view/ddview-inner', ViewDdViewInnerCtrl],
+  ['when', '/view/ddview-sibling', ViewDdViewSiblingCtrl],
   ['when', '/view/ddview-prepend', ViewDdViewPrependCtrl],
   ['when', '/view/ddview-append', ViewDdViewAppendCtrl],
-  ['when', '/view/ddview-sibling', ViewDdViewSiblingCtrl],
   ['when', '/view/ddview-nested', ViewDdViewNestedCtrl],
   ['when', '/view/emptyview', ViewEmptyViewCtrl],
   ['when', '/view/grabfilecontent', ViewGrabFileContentCtrl],
@@ -112,7 +136,19 @@ const $routes = [
   ['when', '/view/headsetters', ViewHeadSettersCtrl],
   ['when', '/view/loadi18n', ViewLoadI18nCtrl],
 
+
+  // general directives
+  ['when', '/dd/dd-setinitial', DdSetinitialCtrl],
+  ['when', '/dd/dd-elem', DdElemCtrl],
+
+  ['when', '/dd/dd-text', DdTextCtrl],
+  ['when', '/dd/dd-html', DdHtmlCtrl],
+
+  ['when', '/dd/dd-if', DdIfCtrl],
+  ['when', '/dd/dd-if-groups', DdIfGroupsCtrl],
+  ['when', '/dd/dd-if-nested', DdIfNestedCtrl],
   ['when', '/dd/dd-visible', DdVisibleCtrl],
+  ['when', '/dd/dd-value', DdValueCtrl],
   ['when', '/dd/dd-disabled', DdDisabledCtrl],
   ['when', '/dd/dd-checked-checkboxes', DdCheckedCheckboxesCtrl],
   ['when', '/dd/dd-checked-radios', DdCheckedRadiosCtrl],
@@ -121,32 +157,34 @@ const $routes = [
   ['when', '/dd/dd-style', DdStyleCtrl],
   ['when', '/dd/dd-src', DdSrcCtrl],
   ['when', '/dd/dd-attr', DdAttrCtrl],
-  ['when', '/dd/dd-value', DdValueCtrl],
-  ['when', '/dd/dd-setinitial', DdSetinitialCtrl],
-  ['when', '/dd/dd-elem', DdElemCtrl],
 
-  ['when', '/dd/dd-text', DdTextCtrl],
-  ['when', '/dd/dd-mustache', DdMustacheCtrl],
-  ['when', '/dd/dd-html', DdHtmlCtrl],
-  ['when', '/dd/dd-if', DdIfCtrl],
-  ['when', '/dd/dd-if-groups', DdIfGroupsCtrl],
-  ['when', '/dd/dd-if-nested', DdIfNestedCtrl],
+
+  // cloner directives
   ['when', '/dd/dd-foreach', DdForeachCtrl],
   ['when', '/dd/dd-foreach-simple', DdForeachSimpleCtrl],
-  ['when', '/dd/dd-foreach-simple-obj', DdForeachSimpleObjCtrl],
-  ['when', '/dd/dd-foreach-nested', DdForeachNestedCtrl],
-  ['when', '/dd/dd-foreach-nested2', DdForeachNested2Ctrl],
-  ['when', '/dd/dd-foreach-nested3', DdForeachNested3Ctrl],
-  ['when', '/dd/dd-foreach-nested4', DdForeachNested4Ctrl],
+  ['when', '/dd/dd-foreach-obj', DdForeachObjCtrl],
   ['when', '/dd/dd-foreach-doubledollar', DdForeachDoubledollarCtrl],
   ['when', '/dd/dd-foreach-if', DdForeachIfCtrl],
   ['when', '/dd/dd-foreach-mustache', DdForeachMustacheCtrl],
   ['when', '/dd/dd-foreach-text', DdForeachTextCtrl],
   ['when', '/dd/dd-foreach-html', DdForeachHtmlCtrl],
   ['when', '/dd/dd-foreach-option', DdForeachOptionCtrl],
+
+  ['when', '/dd/dd-foreach-child', DdForeachChildCtrl],
+  ['when', '/dd/dd-foreach-child-obj', DdForeachChildObjCtrl],
+  ['when', '/dd/dd-foreach-child-arg', DdForeachChildArgCtrl],
+  ['when', '/dd/dd-foreach-grandchild', DdForeachGrandchildCtrl],
+
+  ['when', '/dd/dd-each', DdEachCtrl],
+  ['when', '/dd/dd-each-simple', DdEachSimpleCtrl],
+
   ['when', '/dd/dd-repeat', DdRepeatCtrl],
   ['when', '/dd/dd-repeat-mustache', DdRepeatMustacheCtrl],
 
+  ['when', '/dd/dd-mustache', DdMustacheCtrl],
+
+
+  // listener directives
   ['when', '/ddlisteners/dd-href', DdHrefCtrl],
   ['when', '/ddlisteners/dd-click', DdClickCtrl],
   ['when', '/ddlisteners/dd-keyup', DdKeyupCtrl],
@@ -156,9 +194,13 @@ const $routes = [
   ['when', '/ddlisteners/dd-model', DdModelCtrl],
   ['when', '/ddlisteners/dd-model-dd-set', DdModelDdSetCtrl],
 
+
+  // model
   ['when', '/model/basic', ModelBasicCtrl],
   ['when', '/model/multilevel-object', ModelMultilevelObjectCtrl],
 
+
+  // lib
   ['when', '/lib/auth/login', AuthLoginCtrl, { authGuards: [autoLogin] }],
   ['when', '/lib/auth/developer/dashboard', AuthDashboardCtrl, { authGuards: [isLogged, hasRole] }],
   ['when', '/lib/form', FormCtrl],
@@ -168,6 +210,7 @@ const $routes = [
   ['when', '/lib/cookie', CookieCtrl],
   ['when', '/lib/browserstorage', BrowserStorageCtrl],
   ['when', '/lib/paginator', PaginatorCtrl],
+
 
   ['notfound', NotfoundCtrl]
 ];

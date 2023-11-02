@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachSimple from '/views/pages/dd/dd-foreach-simple.html?raw';
+import ddForeachSimple from '/views/pages/ddCloners/dd-foreach-simple.html?raw';
 
 
 
@@ -11,7 +11,7 @@ export default class DdForeachDdTextCtrl extends Controller {
   }
 
   async __loader(trx) {
-    this.$debugOpts.ddForeach = true;
+    // this.$debugOpts.ddForeach = true;
     this.setTitle('dd-foreach simple');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');

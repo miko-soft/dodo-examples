@@ -1,5 +1,5 @@
 <h1>dd-foreach &amp; dd-mustache</h1>
-<br> RECOMMENDATION: Use string interpolator <code>${...}</code> instead of mustache <code>{{...}}</code> in dd-foreach element.
+<br> RECOMMENDATION: Use string interpolator <code>${...}</code> instead of mustache <code>{{...}}</code> within the dd-foreach element.
 
 
 <br><br>
@@ -12,5 +12,9 @@
 <br><br>
 <h3>B) dd-mustache and dd-foreach in the same element</h3>
 <p dd-foreach="animals --val,key" dd-mustache>
-  {{${key} + 1}}. ${val.name}
+  <b>{{${key} + 1}}</b>. ${val.name}
 </p>
+
+
+<br><br>
+NOTICE: Both examples give same result.

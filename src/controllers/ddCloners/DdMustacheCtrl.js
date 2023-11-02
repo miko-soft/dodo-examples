@@ -1,6 +1,6 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddMustache from '/views/pages/dd/dd-mustache.html?raw';
+import ddMustache from '/views/pages/ddCloners/dd-mustache.html?raw';
 
 export default class DdMustacheCtrl extends Controller {
 

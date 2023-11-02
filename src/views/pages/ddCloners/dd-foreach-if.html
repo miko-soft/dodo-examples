@@ -1,13 +1,15 @@
 <h1>dd-foreach with dd-if</h1>
 The dd-foreach loop which has dd-if conditions.
 
-
+<br><br>
+<h3>Example 1</h3>
+Element dd-if is nested within dd-foreach.
 <br>
-<br><button dd-click="changeCompanies()">change companies</button>
+<br><button dd-click="changeCompanies()">change companies</button> - <small>click this button multiple times</small>
 <br>
 <table>
   <tr dd-foreach="$model.companies --val1,key1">
-    <td><b>${val1.name}</b> - ${val1.size}</td>
+    <td><b>${val1.name}</b></td>
 
     <td dd-if="(${val1.size} > 50)">${val1.size}</td>
     <td dd-else>Less than 50</td>
@@ -15,6 +17,9 @@ The dd-foreach loop which has dd-if conditions.
 </table>
 
 
+<br><br>
+<h3>Example 2</h3>
+Directives dd-if and dd-foreach are in the same element.
 <br>
 <br><button dd-click="changeNumbers()">change numbers</button>
 <br>

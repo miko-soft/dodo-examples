@@ -4,8 +4,9 @@
 <ul>
   <li>define template variables with option --val,key</li>
   <li>use string interpolations ${}</li>
-  <li>use JS functions inside string interpolation, for example: ${Math.random() + key} or ${JSON.stringify(val)}</li>
-  <li>use controller properties in the string interpolation, ${key + <b style="color:maroon">this.</b>someNumber} or ${val.name + ' is the name'} &rarr; NOTICE: <b>this</b> is related to controller instance</li>
+  <li>use JS functions in the string interpolation, for example: ${Math.random() + key} or ${JSON.stringify(val)}</li>
+  <li>use string concatenation in the interpolation, for example: ${val.name + ' is the name'}</li>
+  <li>use controller properties in the string interpolation, ${key + <b style="color:maroon">this.</b>someNumber} &rarr; NOTICE: <b>this</b> is related to controller instance</li>
 </ul>
 
 

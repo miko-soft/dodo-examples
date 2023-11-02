@@ -1,9 +1,19 @@
-<h1>dd-foreach (nested4)</h1>
+<h1>dd-foreach-child-arg</h1>
 Let the array have objects of companies. Each object has a property with an array called 'workers': <code>[{name, workers: [...]}, ...]</code>
 <br>The dd-foreach should first iterate through the companies, and after that dd-foreach-child through workers.
 <br><br>
+The equivalent code will be:
+<pre><code>this.companies.forEach(company => {
+
+  company.workers.forEach(worker => {
+
+  });
+
+});</code></pre>
 
 
+<br><br>
+<h3>Example</h3>
 <table>
   <tr>
     <th>Company</th>
@@ -20,7 +30,8 @@ Let the array have objects of companies. Each object has a property with an arra
 
 
 <style scoped>
-  td {
+  td,
+  th {
     padding: 8px;
     border: 1px solid silver;
   }

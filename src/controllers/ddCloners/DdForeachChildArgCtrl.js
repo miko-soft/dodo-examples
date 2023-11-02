@@ -1,10 +1,10 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachNested4 from '/views/pages/dd/dd-foreach-nested4.html?raw';
+import ddForeachChildArg from '/views/pages/ddCloners/dd-foreach-child-arg.html?raw';
 
 
 
-export default class DdForeachNested4Ctrl extends Controller {
+export default class DdForeachChildArgCtrl extends Controller {
 
   constructor(app) {
     super();
@@ -12,12 +12,12 @@ export default class DdForeachNested4Ctrl extends Controller {
 
   async __loader(trx) {
     this.$debugOpts.ddForeach = true;
-    this.setTitle('dd-foreach (nested4)');
+    this.setTitle('dd-foreach-child arg');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');
     this.loadView('#navbar', navbar);
-    this.loadView('#main', ddForeachNested4);
+    this.loadView('#main', ddForeachChildArg);
   }
 
   async __init(trx) {
