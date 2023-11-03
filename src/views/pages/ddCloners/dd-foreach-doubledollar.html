@@ -40,7 +40,7 @@ the double dollar <b>$$val</b> will be replaced with val name (for example: $$co
 
 <br>NOTICE:
 The <code>dd-value="(this.$$company)"</code> will also work because $$company will be replaced with <i>$model.companies[0]</i> by dd-foreach.
-Besides that the <code>dd-value="$model.companies[${key}]"</code> will work.
+Besides that the <code>dd-value="$model.companies[key]"</code> will work.
 <br><br>
 <select dd-model="$model.selectedCompany --convertType">
   <option dd-foreach="$model.companies --company,key" dd-value="$$company">${company.name}</option>

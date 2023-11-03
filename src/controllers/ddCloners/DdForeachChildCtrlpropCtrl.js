@@ -1,10 +1,10 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachChildObj from '/views/pages/ddCloners/dd-foreach-child-obj.html?raw';
+import ddForeachChildCtrlprop from '/views/pages/ddCloners/dd-foreach-child-ctrlprop.html?raw';
 
 
 
-export default class DdForeachChildObjCtrl extends Controller {
+export default class DdForeachChildCtrlpropCtrl extends Controller {
 
   constructor(app) {
     super();
@@ -17,7 +17,7 @@ export default class DdForeachChildObjCtrl extends Controller {
     this.setKeywords('dodo, examples');
     this.setLang('en');
     this.loadView('#navbar', navbar);
-    this.loadView('#main', ddForeachChildObj);
+    this.loadView('#main', ddForeachChildCtrlprop);
   }
 
   async __init(trx) {

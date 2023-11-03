@@ -65,16 +65,16 @@
   <li><a href="/dd/dd-foreach" dd-href>dd-foreach</a> - multiply HTML element</li>
   <li><a href="/dd/dd-foreach-simple" dd-href>dd-foreach simple</a> - simplest dd-foreach example, no child, no grandchild</li>
   <li><a href="/dd/dd-foreach-obj" dd-href>dd-foreach obj</a> - dd-foreach example with object, no child, no grandchild</li>
-  <li><a href="/dd/dd-foreach-doubledollar" dd-href>dd-foreach (doubledollar)</a> - use double dollar mark, $$company instead $model.companies[${key}]</li>
+  <li><a href="/dd/dd-foreach-doubledollar" dd-href>dd-foreach (doubledollar)</a> - use double dollar mark, $$company instead $model.companies[key]</li>
   <li><a href="/dd/dd-foreach-if" dd-href>dd-foreach and dd-if</a> - dd-if nested within the dd-foreach and dd-if in same element with dd-foreach</li>
   <li><a href="/dd/dd-foreach-mustache" dd-href>dd-foreach and dd-mustache</a> - dd-mustache nested within the dd-foreach and dd-mustache in same element with dd-foreach</li>
   <li><a href="/dd/dd-foreach-text" dd-href>dd-foreach with dd-text</a> - dd-foreach and dd-text combinations</li>
   <li><a href="/dd/dd-foreach-html" dd-href>dd-foreach with dd-html</a> - dd-foreach and dd-html combinations</li>
   <li><a href="/dd/dd-foreach-option" dd-href>dd-foreach in option</a> - multiply SELECT/OPTION with dd-foreach</li>
   <br>
-  <li><a href="/dd/dd-foreach-child" dd-href>dd-foreach-child</a> - nest dd-foreach-child element within dd-foreach element &rarr; ${company[field]} where field is array of strings</li>
-  <li><a href="/dd/dd-foreach-child-obj" dd-href>dd-foreach-child obj</a> - nest dd-foreach-child element within dd-foreach element &rarr; ${company[field]} where field is array of strings</li>
-  <li><a href="/dd/dd-foreach-child-arg" dd-href>dd-foreach-child arg</a> - use dd-foreach option argument as dd-foreach base value</li>
+  <li><a href="/dd/dd-foreach-child" dd-href>dd-foreach-child</a> - nest dd-foreach-child element within dd-foreach element &rarr; &lt;td dd-foreach-child="this.fields --field"&gt;${company[field]}&lt;/td&gt; where field is array of strings</li>
+  <li><a href="/dd/dd-foreach-child-ctrlprop" dd-href>dd-foreach-child ctrl prop</a> - nest dd-foreach-child element within dd-foreach element &rarr; dd-foreach-child="this.fields --field" where field is controller property</li>
+  <li><a href="/dd/dd-foreach-child-arg" dd-href>dd-foreach-child arg</a> - nest dd-foreach-child element within dd-foreach element &rarr; dd-foreach-child="company.workers --worker" where worker is dd-foreach argument</li>
   <li><a href="/dd/dd-foreach-grandchild" dd-href>dd-foreach-grandchild</a> - use dd-foreach-grandchild to show 3-dimensional data</li>
   <br>
   <li><a href="/dd/dd-each" dd-href>dd-each</a> - multiply HTML element much fster than dd-foreach, but no kids</li>
