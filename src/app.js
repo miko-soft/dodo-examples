@@ -162,30 +162,30 @@ const $routes = [
 
 
   // cloner directives
-  ['when', '/dd/dd-foreach', DdForeachCtrl],
-  ['when', '/dd/dd-foreach-simple', DdForeachSimpleCtrl],
-  ['when', '/dd/dd-foreach-obj', DdForeachObjCtrl],
-  ['when', '/dd/dd-foreach-doubledollar', DdForeachDoubledollarCtrl],
-  ['when', '/dd/dd-foreach-if', DdForeachIfCtrl],
-  ['when', '/dd/dd-foreach-mustache', DdForeachMustacheCtrl],
-  ['when', '/dd/dd-foreach-text', DdForeachTextCtrl],
-  ['when', '/dd/dd-foreach-html', DdForeachHtmlCtrl],
-  ['when', '/dd/dd-foreach-option', DdForeachOptionCtrl],
+  ['when', '/ddcloners/dd-foreach', DdForeachCtrl],
+  ['when', '/ddcloners/dd-foreach-simple', DdForeachSimpleCtrl],
+  ['when', '/ddcloners/dd-foreach-obj', DdForeachObjCtrl],
+  ['when', '/ddcloners/dd-foreach-doubledollar', DdForeachDoubledollarCtrl],
+  ['when', '/ddcloners/dd-foreach-if', DdForeachIfCtrl],
+  ['when', '/ddcloners/dd-foreach-mustache', DdForeachMustacheCtrl],
+  ['when', '/ddcloners/dd-foreach-text', DdForeachTextCtrl],
+  ['when', '/ddcloners/dd-foreach-html', DdForeachHtmlCtrl],
+  ['when', '/ddcloners/dd-foreach-option', DdForeachOptionCtrl],
 
-  ['when', '/dd/dd-foreach-child', DdForeachChildCtrl],
-  ['when', '/dd/dd-foreach-child-ctrlprop', DdForeachChildCtrlpropCtrl],
-  ['when', '/dd/dd-foreach-child-arg', DdForeachChildArgCtrl],
-  ['when', '/dd/dd-foreach-child-doubledollar', DdForeachChildDoubledollarCtrl],
+  ['when', '/ddcloners/dd-foreach-child', DdForeachChildCtrl],
+  ['when', '/ddcloners/dd-foreach-child-ctrlprop', DdForeachChildCtrlpropCtrl],
+  ['when', '/ddcloners/dd-foreach-child-arg', DdForeachChildArgCtrl],
+  ['when', '/ddcloners/dd-foreach-child-doubledollar', DdForeachChildDoubledollarCtrl],
 
-  ['when', '/dd/dd-foreach-grandchild', DdForeachGrandchildCtrl],
+  ['when', '/ddcloners/dd-foreach-grandchild', DdForeachGrandchildCtrl],
 
-  ['when', '/dd/dd-each', DdEachCtrl],
-  ['when', '/dd/dd-each-simple', DdEachSimpleCtrl],
+  ['when', '/ddcloners/dd-each', DdEachCtrl],
+  ['when', '/ddcloners/dd-each-simple', DdEachSimpleCtrl],
 
-  ['when', '/dd/dd-repeat', DdRepeatCtrl],
-  ['when', '/dd/dd-repeat-mustache', DdRepeatMustacheCtrl],
+  ['when', '/ddcloners/dd-repeat', DdRepeatCtrl],
+  ['when', '/ddcloners/dd-repeat-mustache', DdRepeatMustacheCtrl],
 
-  ['when', '/dd/dd-mustache', DdMustacheCtrl],
+  ['when', '/ddcloners/dd-mustache', DdMustacheCtrl],
 
 
   // listener directives
