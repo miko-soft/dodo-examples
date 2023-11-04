@@ -1,0 +1,15 @@
+<h1>dd-foreach-child (doubledollar)</h1>
+The dd-foreach-child is nested in dd-foreach with <b>dd-foreach-child</b> and doubledollar is used $$var.
+
+
+<br><br>
+<br><button dd-click="getFieldvalue()">get field value</button>
+<br><br>
+<div dd-foreach="fields --field">
+  <select dd-set="$$field.value --convertType" dd-if="($$field.name === 'robot_id')">
+    <option dd-foreach-child="this.$model.robots --robot" dd-value="$$robot._id">${robot._id} - ${robot.name}</option>
+  </select>
+</div>
+
+<br><br><br>
+TODO: dd-value="$$robot._id" is causing error

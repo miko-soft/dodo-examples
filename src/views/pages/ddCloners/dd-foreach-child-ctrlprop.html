@@ -6,7 +6,7 @@ The dd-foreach-child is nested in dd-foreach with <b>dd-foreach-child</b>.
 <br><br><br>
 <br><button dd-click="foreachNested()">change model value</button>
 <table>
-  <tr dd-foreach="$model.companies --company --$1">
+  <tr dd-foreach="$model.companies --company">
     <td dd-foreach-child="this.fields --field">${company[field.prop]}</td>
   </tr>
 </table>

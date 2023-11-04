@@ -71,6 +71,8 @@ import DdForeachOptionCtrl from './controllers/ddCloners/DdForeachOptionCtrl.js'
 import DdForeachChildCtrl from './controllers/ddCloners/DdForeachChildCtrl.js';
 import DdForeachChildCtrlpropCtrl from './controllers/ddCloners/DdForeachChildCtrlpropCtrl.js';
 import DdForeachChildArgCtrl from './controllers/ddCloners/DdForeachChildArgCtrl.js';
+import DdForeachChildDoubledollarCtrl from './controllers/ddCloners/DdForeachChildDoubledollarCtrl.js';
+
 import DdForeachGrandchildCtrl from './controllers/ddCloners/DdForeachGrandchildCtrl.js';
 
 import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
@@ -173,6 +175,8 @@ const $routes = [
   ['when', '/dd/dd-foreach-child', DdForeachChildCtrl],
   ['when', '/dd/dd-foreach-child-ctrlprop', DdForeachChildCtrlpropCtrl],
   ['when', '/dd/dd-foreach-child-arg', DdForeachChildArgCtrl],
+  ['when', '/dd/dd-foreach-child-doubledollar', DdForeachChildDoubledollarCtrl],
+
   ['when', '/dd/dd-foreach-grandchild', DdForeachGrandchildCtrl],
 
   ['when', '/dd/dd-each', DdEachCtrl],

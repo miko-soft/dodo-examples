@@ -11,6 +11,7 @@ export default class DdTextCtrl extends Controller {
   }
 
   async __loader(trx) {
+    // this.$debugOpts.ddEach = true;
     // this.$debugOpts.ddText = true;
     // this.$debugOpts.model = true;
     this.setTitle('dd-text');
