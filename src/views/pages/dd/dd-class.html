@@ -6,6 +6,7 @@ Modify the "class" attribute with the controller property value.
 <small>Open browser developer tools to see the effect after the button is clicked.</small>
 <p class="my-italic" dd-class="$model.myKlases">Class my-italic will remain</p>
 <p class="my-italic" dd-class="$model.myKlases --replace">Class my-italic will be removed due to --replace</p>
+<p class="my-green my-font-size" dd-class="$model.myKlases_empty --replace">The "class" attribute will be removed because <b>$model.myKlases_empty</b> is empty array.</p>
 
 
 <style scope>
@@ -19,5 +20,9 @@ Modify the "class" attribute with the controller property value.
 
   .my-italic {
     font-style: italic;
+  }
+
+  .my-green {
+    color: green;
   }
 </style>

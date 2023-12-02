@@ -24,6 +24,7 @@ export default class DdClassCtrl extends Controller {
   // add CSS classes 'my-red' and 'my-font-size' to the element dd-class="myKlases"
   runCLASS() {
     this.$model.myKlases = ['my-red', 'my-font-size'];
+    this.$model.myKlases_empty = []; // empty array in combination with --replace will remove class attribute
   }
 
 }
