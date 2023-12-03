@@ -57,6 +57,13 @@
   <button type="button" dd-click="emptyPet()">empty pet</button>
 
 
+  <br><br>description:
+  <br><textarea name="desc" cols="30" rows="3"></textarea>
+  <br><button type="button" dd-click="setDesc()">set desc</button>
+  <button type="button" dd-click="getDesc()">get desc</button>
+  <button type="button" dd-click="emptyDesc()">empty desc</button>
+
+
   <br><br><br><button type="button" dd-click="generateAutos()">generate Autos</button> - generate SELECT/OPTION by dd-foreach and set the selected value
   <br><br>autos: <select name="myAuto">
     <option value=""></option>
@@ -75,6 +82,7 @@
   <br><br><br>
   <hr>
   <button type="button" dd-click="setAll()">set all</button>
+  <button type="button" dd-click="delAll()" style="margin-left:21px;background-color: brown;">del all</button>
 
   <br><br><br><button type="button" dd-click="setFruit()">set fruit</button> - use setControls() to set the INPUT with name="fruit.seller.name" i.e. with the subproperty
   <br>fruit.name: <input type="text" name="fruit.name">

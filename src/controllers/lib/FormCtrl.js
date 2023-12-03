@@ -114,6 +114,18 @@ export default class FormCtrl extends Controller {
   }
 
 
+  setDesc() {
+    this.testForm.setControl('desc', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
+  }
+  getDesc() {
+    const desc = this.testForm.getControl('desc');
+    console.log('desc::', desc);
+  }
+  emptyDesc() {
+    this.testForm.delControls(['desc']);
+  }
+
+
   // autos - generated options with dd-foreach
   generateAutos() {
     this.$model.autos = [
@@ -177,6 +189,11 @@ export default class FormCtrl extends Controller {
 
     this.testForm.setControl('fruit.name', fruit.name);
     this.testForm.setControl('fruit.seller.name', fruit.seller.name);
+  }
+
+
+  delAll() {
+    this.testForm.delAllControls();
   }
 
 
