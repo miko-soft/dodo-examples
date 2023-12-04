@@ -161,21 +161,6 @@ export default class FormCtrl extends Controller {
 
 
 
-  setAll() {
-    this.testForm.setControls({
-      fullName: 'Petar Pan',
-      age: 48,
-      country: 'Kenya',
-      family: ['Mary', 'Betty'],
-      jobs: ['IT'],
-      pet: 'horse',
-      myAuto: '5',
-      myPlant: '5',
-    });
-  }
-
-
-
   // set control with name="fruit.seller.name"
   setFruit() {
     const fruit = {
@@ -191,10 +176,44 @@ export default class FormCtrl extends Controller {
     this.testForm.setControl('fruit.seller.name', fruit.seller.name);
   }
 
+  getFruit() {
+    const form_obj = this.testForm.getControls(['fruit.name']);
+    console.log('form_obj::', form_obj);
+  }
+
+
+
+  setAll() {
+    this.testForm.setControls({
+      fullName: 'Petar Pan',
+      age: 48,
+      country: 'Kenya',
+      family: ['Mary', 'Betty'],
+      jobs: ['IT'],
+      pet: 'horse',
+      desc: 'Lorem ipsum donot rea...',
+      myAuto: '5',
+      myPlant: '5',
+      fruit: {
+        name: 'indian banana',
+        seller: {
+          name: 'Big Joe'
+        }
+      }
+    });
+  }
+
+
+  getAll() {
+    const obj = this.testForm.getAllControls();
+    console.log('getAll() result:', obj);
+  }
+
 
   delAll() {
     this.testForm.delAllControls();
   }
+
 
 
 
