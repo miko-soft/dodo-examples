@@ -1,5 +1,10 @@
 <h1>dd-foreach with dd-text</h1>
+This is example where dd-text is used within or in same element where is dd-foreach directive.
 
+NOTICE: The option <b>--forceRender</b> is used.
+It tells framework to render the dd- directive every time render() method is trigered when the $model is changed.
+Explanation: When $model.ids is changed it will render directives with $model.ids and directives with some JS expression (...).
+Besides that the framework will reder direcitves with --forceRender directive.
 
 <br><br>
 <button type="button" dd-click="changeIds()">change IDs</button>
@@ -7,22 +12,22 @@
 <br><br>
 <h3>A) dd-text as child of dd-foreach element</h3>
 <li dd-foreach="$model.ids --id">
-  [id: ${id}] <b dd-text="names[${id}]"></b>
+  [id: ${id}] <b dd-text="names[${id}] --forceRender"></b>
 </li>
 
 
 <br><br>
 <h3>B) dd-text in same element with dd-foreach</h3>
-<li dd-foreach="$model.ids --id" dd-text="names[${id}]"></li>
+<li dd-foreach="$model.ids --id" dd-text="names[${id}] --forceRender"></li>
 
 
 <br><br>
 <h3>C1) dd-text in same element with dd-foreach and dd-if</h3>
-<li dd-foreach="$model.ids --id" dd-if="(${id} === 1)" dd-text="names[${id}]"></li>
+<li dd-foreach="$model.ids --id" dd-if="(${id} === 1)" dd-text="names[${id}] --forceRender"></li>
 
 
 <br><br>
 <h3>C2) dd-text as child of dd-foreach/dd-if element</h3>
 <li dd-foreach="$model.ids --id" dd-if="(${id} === 1)">
-  <b dd-text="names[${id}]"></b>
+  <b dd-text="names[${id}] --forceRender"></b>
 </li>
