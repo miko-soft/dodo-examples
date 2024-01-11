@@ -22,6 +22,7 @@ export default class ModelBasicCtrl extends Controller {
 
   async __init(trx) {
     this.$model.user = { name: 'John Doe', age: 11 }; // this will not trigger render() method because the $model is initialised in __init()
+    this.$model.pets = [];
     console.log('this.$model::', this.$model);
   }
 

@@ -20,6 +20,12 @@ export default class DdHrefCtrl extends Controller {
     this.loadView('#main', ddHref);
   }
 
+  __init() {
+    this.homePageURL = '/';
+    this.ddElemURL = '/dd/dd-elem';
+    this.partOfURL = 'dd-elem';
+  }
+
 
   // show the history
   historyData() {

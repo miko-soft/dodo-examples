@@ -47,7 +47,7 @@ export default class DdClickCtrl extends Controller {
 
 
   async callAPI() {
-    const answer = await this.$httpClient.askJSON('api.dex8.com');
+    const answer = await this.$httpClient.askJSON('https://api.dex8.com');
     // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/todos/1', 'GET');
     // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/posts?userId=1', 'GET');
     // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/posts', 'POST', {title: 'foo', body: 'bar', userId: 1});
