@@ -58,12 +58,12 @@ dd-text="$model.first_name" &rarr; <em dd-text="$model.first_name"></em> <button
 <br><code>dd-foreach="animals --val,key" dd-text="(this.$$val + ' is animal')"</code> or without this.
 <br><code>dd-foreach="animals --val,key" dd-text="($$val + ' is animal')"</code>
 <ol>
-  <li dd-each="animals --val,key" dd-text="(this.$$val + ' is animal')"></li>
+    <li dd-each="animals --val,key" dd-text="(this.$$val + ' is animal')"></li>
 </ol>
 
 <br><br>
 <h3>dd-foreach with string interpolation</h3>
 <code>&lt;li dd-foreach="animals --val"&gt;${val}&lt;/li&gt;</code>
 <ul>
-  <li dd-foreach="animals --val">${val}</li>
+    <li dd-foreach="animals --val">${val}</li>
 </ul>
