@@ -20,20 +20,28 @@ export default class DdIfCtrl extends Controller {
     this.loadView('#main', ddIfGroups);
   }
 
-  async __init(trx) {
-  }
 
-
-  if1() {
+  setVars() {
     this.$model.varX = 5;
     this.$model.varY = 'Peter';
     this.$model.varZ = 10;
   }
 
 
-  toggleIF() {
-    this.$model.showX = !this.$model.showX;
-    // console.log('toggleSHOW::', this.$model.showX);
+  check_varX(opt) {
+    if (opt === 'if' && this.$model.varX === 5) { return true; }
+    if (opt === 'elseif1' && !this.$model.varX) { return true; }
+    if (opt === 'elseif2' && this.$model.varX > 5) { return true; }
+  }
+
+  check_varY(opt) {
+    if (opt === 'if' && !this.$model.varY) { return true; }
+    if (opt === 'elseif' && this.$model.varY === 'Peter') { return true; }
+  }
+
+  check_varZ(opt) {
+    if (opt === 'if1' && this.$model.varZ === 10) { return true; }
+    if (opt === 'if2' && this.$model.varZ > 5) { return true; }
   }
 
 }

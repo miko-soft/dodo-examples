@@ -11,7 +11,7 @@ export default class DdTextCtrl extends Controller {
   }
 
   async __loader(trx) {
-    // this.$debugOpts.ddEach = true;
+    // this.$debugOpts.ddForeach = true;
     // this.$debugOpts.ddText = true;
     // this.$debugOpts.model = true;
     this.setTitle('dd-text');
@@ -34,23 +34,14 @@ export default class DdTextCtrl extends Controller {
 
     this.textWithHtml = '<b>some bold text</b>';
 
+    // --pipe:
     this.longText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.';
 
     // automatic data type conversion
     this.obj4json = { x: 555 };
     this.bool = false;
 
-    // dynamic controller name dd-text="product___{{pid}}"
-    this.pid = 123; // product id
-    this.pid2 = 2;
-    this.product_123 = 'This is product 123';
-    this.product_124 = 'This is another product 124';
-    this.product_124_2 = 'This is product 124_2';
-    this.product_62 = 'This is product 62';
-
     this.$model.job = {};
-
-    this.animals = ['rabbit', 'dog', 'cat', 'cow', 'aligator'];
   }
 
   async __postrend() {

@@ -7,9 +7,9 @@ The dd-foreach-child is nested in dd-foreach with <b>dd-foreach-child</b> and do
 <br><br>
 <div dd-foreach="fields --field">
   <select dd-set="$$field.value --convertType" dd-if="($$field.name === 'robot_id')">
-    <option dd-foreach-child="this.$model.robots --robot" dd-value="$$robot._id">${robot._id} - ${robot.name}</option>
+    <option dd-foreach-child="this.$model.robots --robot" dd-value="($$robot._id)">${robot._id} - ${robot.name}</option>
   </select>
 </div>
 
 <br><br><br>
-<h2 style="color:red">TODO: dd-value="$$robot._id" is causing error</h2>
+<h2 style="color:red">KNOWN ISSUE: dd-value="$$robot._id" is causing error, so use value="${robot._id}"</h2>

@@ -23,12 +23,27 @@ export default class DdIfCtrl extends Controller {
   async __init(trx) {
     this.myBool = true;
     this.$model.my = {};
-    this.x = 2;
+    this.x = 5;
+    this.$model.n1;
+    this.$model.n2;
+    this.$model.showX = false;
   }
 
 
-  if1() {
-    this.$model.my = { bool: true };
+  toggle() {
+    this.$model.my = this.$model.my.bool ? { bool: false } : { bool: true };
+  }
+
+
+  x_equal(n) {
+    return this.x === n;
+  }
+
+
+  check_numbers(option) {
+    if (option === 'A' && this.$model.n1 > 6 && this.$model.n2 > 10) { return true; }
+    if (option === 'B' && this.$model.n1 < 6) { return true; }
+    if (option === 'C' && this.$model.n2 < 10) { return true; }
   }
 
   if2A() {
@@ -37,10 +52,10 @@ export default class DdIfCtrl extends Controller {
   }
   if2B() {
     this.$model.n1 = 5;
-    this.$model.n2 = 11;
+    this.$model.n2 = undefined;
   }
   if2C() {
-    this.$model.n1 = 8;
+    this.$model.n1 = undefined;
     this.$model.n2 = 9;
   }
   if2D() {

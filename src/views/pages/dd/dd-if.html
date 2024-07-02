@@ -12,45 +12,47 @@ Create an element when the if statement is truthy.
 
 <br><br>
 <h3>Model</h3>
-<i>Example with pure model in the attribute value. Initial model value is undefined so dd-else is cloned. The <b>this.</b> will not cause error.</i>
+<i>Example with pure model in the attribute value. Initial model value is undefined so dd-else is shown. The <b>this.</b> will not cause error.</i>
 <br>NOTICE: if group is separated with SPAN tag from other if groups.
 <br>dd-if="$model.my.bool" ; else &rarr;
 <span>
   <b dd-if="$model.my.bool">OK</b>
   <b dd-else>NOT OK</b>
 </span>
-<br><button dd-click="if1()">change model value</button>
+<br><button dd-click="toggle()">toggle model value</button>
 
 
-<h3>Expression</h3>
-<i>Expression must be enclosed in brackets. This example shows expression with static controller property.</i>
-<br>dd-if="(this.x === 2)" ; dd-elseif="(this.x === 5)" ; dd-else &rarr;
+<br><br>
+<h3>Controller method</h3>
+<i>The controller method should return boolean or thruthy/falsy value.</i>
+<br>dd-if="x_equal(2)" ; dd-elseif="x_equal(5)" ; dd-else &rarr;
 <span>
-  <b dd-if="(this.x === 2)" style="color:green">2</b>
-  <b dd-elseif="(this.x === 5)" style="color:maroon">5</b>
-  <b dd-else>not 2, not 5</b>
+  <b dd-if="x_equal(2)" style="color:green">2</b>
+  <b dd-elseif="x_equal(5)" style="color:maroon">5</b>
+  <b dd-else style="color:silver">not 2, not 5</b>
 </span>
 
 
 <br><br>
 <h3>Expression with model</h3>
 <i>Some complex examples with model in the expression.</i>
-<br>if(this.$model.n1 > 6 && this.$model.n2 > 10) | elseif(this.$model.n1 < 6) | elseif(this.$model.n2 < 10) &rarr; <span>
-  <b dd-if="(this.$model.n1 > 6 && this.$model.n2 > 10)">n1 > 6 and n2 > 10</b>
-  <b dd-elseif="(this.$model.n1 < 6)">n1 < 6</b>
-      <b dd-elseif="(this.$model.n2 < 10)">n2 < 10</b>
-          <b dd-else>ELSE</b>
-          </span>
-          <br><button dd-click="if2A()">n1=8 n2=11</button>
-          <button dd-click="if2B()">n1=5 n2=11</button>
-          <button dd-click="if2C()">n1=8 n2=9</button>
-          <button dd-click="if2D()">n1=undef n2=undef</button>
+<br>dd-if="check_numbers('A')" | dd-elseif="check_numbers('B')" | dd-elseif="check_numbers('C')" | else &rarr;
+<span>
+  <b dd-if="check_numbers('A')">n1 &gt; 6 and n2 &gt; 10</b>
+  <b dd-elseif="check_numbers('B')">n1 &lt; 6</b>
+  <b dd-elseif="check_numbers('C')">n2 &lt; 10</b>
+  <b dd-else>ELSE</b>
+</span>
+<br><button dd-click="if2A()">n1=8 n2=11</button>
+<button dd-click="if2B()">n1=5 n2=undef</button>
+<button dd-click="if2C()">n1=undef n2=9</button>
+<button dd-click="if2D()">n1=undef n2=undef</button>
 
 
-          <br><br>
-          <h4>dd-if toggle</h4>
-          <button dd-click="toggleIF()">toggle IF</button>
-          <br>PREFIX
-          <span dd-if="$model.showX" style="color:green">My Text</span>
-          <span dd-else style="color:orange">Alternative Text</span>
-          SUFIX
+<br><br>
+<h4>dd-if toggle</h4>
+<button dd-click="toggleIF()">toggle IF</button>
+<br>PREFIX
+<span dd-if="$model.showX" style="color:green">My Text</span>
+<span dd-else style="color:orange">Alternative Text</span>
+SUFIX

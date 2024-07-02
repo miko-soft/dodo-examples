@@ -26,6 +26,10 @@ export default class DdIfNestedCtrl extends Controller {
     this.$model.varB = 5;
   }
 
+  check_varB(opt) {
+    if (opt === 'if' && this.$model.varB < 5) { return true; }
+    if (opt === 'elseif' && this.$model.varB === 5) { return true; }
+  }
 
 
 }

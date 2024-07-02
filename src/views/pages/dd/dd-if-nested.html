@@ -23,14 +23,14 @@ change varB:
 <br><br>
 <p dd-if="$model.varA">
   varA is true<br>
-  <b dd-if="(this.$model.varB < 5)"> varB &lt; 5</b>
-  <b dd-elseif="(this.$model.varB === 5)"> varB === 5</b>
+  <b dd-if="check_varB('if')"> varB &lt; 5</b>
+  <b dd-elseif="check_varB('elseif')"> varB === 5</b>
   <b dd-else> varB &gt; 5</b>
 </p>
 <p dd-else>
   varA is false<br>
-  <i dd-if="(this.$model.varB < 5)"> varB &lt; 5</i>
-  <i dd-elseif="(this.$model.varB === 5)"> varB === 5</i>
+  <i dd-if="check_varB('if')"> varB &lt; 5</i>
+  <i dd-elseif="check_varB('elseif')"> varB === 5</i>
   <i dd-else> varB &gt; 5</i>
 </p>
 

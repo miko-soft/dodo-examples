@@ -6,14 +6,13 @@ Print text with HTML tags.
 <br>dd-html="product.name" &rarr; <span dd-html="product.name">PLACEHOLDER</span>
 
 <br><br><br>
-<h3>Dynamic Controller Property Name</h3>
-<i>When the app requires dynamic controller property name in the dd-html directive use mustaches {{}}</i>
-<br>dd-html="product_{{this.pid}}" &rarr; <span dd-html="product_{{this.pid}}"></span>
-<br>dd-html="product_{{this.pid + 1}}" &rarr; <span dd-html="product_{{this.pid + 1}}"></span>
+<h3>Controller Method</h3>
+<i>The controller method returns HTML string.</i>
+<br>dd-html="showHTML('I m the author.')" &rarr; <span dd-html="showHTML('I m the author.')">PLACEHOLDER</span>
 
 <br><br><br>
 <h3>Initial value is undefined</h3>
-<i>If the initial controller's value is undefined or null the element will not be cloned i.e. will not be shown.</i>
+<i>If the initial controller's value is undefined or null the content will be an empty string.</i>
 <br><button type="button" dd-click="changeJob()">change job country</button>
 <br>dd-html="$model.job.country" &rarr; Start<em dd-html="$model.job.country">INNER TEXT</em>End
 
@@ -23,7 +22,8 @@ Print text with HTML tags.
 dd-html="$model.myHTML" &rarr; <em dd-html="$model.myHTML"></em> <button type="button" dd-click="changeMyHtml()">change</button>
 
 
+
 <br><br><br>
 <h3>dd-html with dd- elements</h3>
-<code>&lt;div dd-html="htmlWithDD"&gt;&lt;/div&gt;</code>
+<i>HTML with Dodo dd- directives:</i> <code>&lt;div dd-html="htmlWithDD"&gt;&lt;/div&gt;</code>
 <div dd-html="htmlWithDD"></div>

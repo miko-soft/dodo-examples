@@ -3,22 +3,22 @@ The best practice is to wrap if groups with some tag (like it is done in previou
 <br>But it should also work when two or more groups are within same parent element as it is case here.
 
 <br><br><br>
-<button dd-click="if1()">change model value</button>
+<button dd-click="setVars()">change model values</button>
 <br>
 
 <span style="font-size:smaller;color:Gray;">
   <p>&raquo; First if group</p>
-  <b dd-if="(this.$model.varX === 5)">varX is 5</b>
-  <b dd-elseif="(!this.$model.varX)">varX is undefined</b>
-  <b dd-elseif="(this.$model.varX > 5)">varX is &gt;5</b>
+  <b dd-if="check_varX('if')">varX is 5</b>
+  <b dd-elseif="check_varX('elseif1')">varX is undefined</b>
+  <b dd-elseif="('elseif2')">varX is &gt;5</b>
   <b dd-else>something else X</b>
   <br>
   <br>
   <br>
   &raquo; Second if group (has same parent tag &lt;span&gt; as the first if group)
   <br>
-  <i dd-if="(!this.$model.varY)">varY is undefined</i>
-  <i dd-elseif="(this.$model.varY === 'Peter')">varY is Peter</i>
+  <i dd-if="check_varY('if')">varY is undefined</i>
+  <i dd-elseif="check_varY('elseif')"">varY is Peter</i>
   <i dd-else>something else Y</i>
 </span>
 
@@ -27,18 +27,18 @@ The best practice is to wrap if groups with some tag (like it is done in previou
 <hr>
 <br><br>
 
-<span style="font-size:smaller;">
-  varZ = <span dd-text="$model.varZ"></span>
-  <p>&raquo; First if group</p>
-  <b dd-if="(this.$model.varZ === 10)">varZ is 10</b>
-  <br>
-  <br>
-  <br>
-  &raquo; Second if group (has same parent tag &lt;span&gt; as the first if group)
-  <br>
-  <i dd-if="(this.$model.varZ < 5)">varZ isless than 5</i>
-  <i dd-else>varZ is not less than 5</i>
-  <br>
+<span style=" font-size:smaller;">
+    varZ = <span dd-text="$model.varZ"></span>
+    <p>&raquo; First if group</p>
+    <b dd-if="check_varZ('if1')">varZ is 10</b>
+    <br>
+    <br>
+    <br>
+    &raquo; Second if group (has same parent tag &lt;span&gt; as the first if group)
+    <br>
+    <i dd-if="check_varZ('if2')">varZ is greater than 5</i>
+    <i dd-else>varZ is undefined</i>
+    <br>
 </span>
 
 

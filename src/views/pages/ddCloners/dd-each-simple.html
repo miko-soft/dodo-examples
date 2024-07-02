@@ -2,4 +2,10 @@
 The simplest each example.
 <br><br>
 
-<p dd-each="pets --pet,key">${key} - ${pet}</p>
+<table>
+  <tbody>
+    <tr dd-each="pets --pet,key">
+      <td>${key} - ${pet}</td>
+    </tr>
+  </tbody>
+</table>
