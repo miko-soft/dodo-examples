@@ -1,5 +1,5 @@
 <h1>dd-value</h1>
-This directive takes controller property value and sets the element value.
+This directive takes controller property value or controller method returned value and sets the element value.
 
 
 <br><br><br>
@@ -35,7 +35,7 @@ This directive takes controller property value and sets the element value.
 
 <br><br>
 <h3>RADIO</h3>
-The dd-foreach is used.
+The dd-each is used.
 <br><br>
 <button dd-click="setCountry()">Set Radio</button>
 <br><span dd-mustache>Selected country: <b>{{this.$model.countrySelected}}</b></span>
@@ -43,44 +43,28 @@ The dd-foreach is used.
 
 <br><br>
 
-dd-value="countries.${key}" dd-checked="$model.countrySelected" &rarr;
-<p dd-foreach="countries --country,key">
-  <input type="radio" name="country" dd-value="$$country" dd-checked="$model.countrySelected"> ${country} &nbsp;&nbsp;
+dd-value="$$country" dd-checked="$model.countrySelected" &rarr;
+<p dd-each="countries --country,key">
+  <input type="radio" name="country" dd-value="$$country" dd-checked="$model.countrySelected"> {{country}} &nbsp;&nbsp;
 </p>
 
 <br><br>
 
-value="${country}" dd-checked="$model.countrySelected" &rarr;
-<p dd-foreach="countries --country">
-  <input type="radio" name="country2" value="${country}" dd-checked="$model.countrySelected"> ${country} &nbsp;&nbsp;
+value="{{country}}" dd-checked="$model.countrySelected" &rarr;
+<p dd-each="countries --country">
+  <input type="radio" name="country2" value="{{country}}" dd-checked="$model.countrySelected"> {{country}} &nbsp;&nbsp;
 </p>
 
 
-
-<br><br><br>
-<h2>Complex Cases</h2>
-
-<br>
-<h3>controller property name with mustache</h3>
-dd-value="continent_{{this.continentID + 1}}" &rarr; <input type="text" dd-value="continent_{{this.continentID + 1}}">
+<br><br>
+<h3>Controller method</h3>
+dd-value="valueNumber(155)" &rarr; <input type="number" dd-value="valueNumber(155)">
+<br>dd-value="valueText(this.users[1], ' - user')" &rarr; <input type="text" dd-value="valueText(this.users[1], 'is an user')">
 
 
 <br><br>
-<h3>expression</h3>
-dd-value="(155)" &rarr; <input type="text" dd-value="(155)">
-<br>dd-value="(this.users[1] + ' - user')" &rarr; <input type="text" dd-value="(this.users[1] + ' - user')">
-
-
-<br><br>
-<h3>expression with mustache</h3>
-First is solved mustache {{...}} then expression (...).
-<br>dd-value="(this.continent_{{this.continentID + 0}} + ' is my continent')" &rarr; <input type="text" dd-value="(this.continent_{{this.continentID + 0}} + ' is my continent')">
-
-
-<br><br>
-<h3>dd-foreach with expression, mustache and string intrpolation ${}</h3>
-First is solved string intrpolation ${}, then mustache {{...}}, then expression (...).
-<br>dd-value="(this.${ctrlField}[{{this.userID + 1}}])" &rarr;
-<p dd-foreach="controllerFields --ctrlField">
-  <input type="text" dd-value="(this.${ctrlField}[{{this.userID + 1}}])">
+<h3>dd-each with controller method</h3>
+First is solved mustache placeholder {{ctrlField}}, then function in dd-value="valueUser({{ctrlField}})" &rarr;
+<p dd-each="controllerFields --ctrlField">
+  <input type="text" dd-value="valueUser({{ctrlField}})">
 </p>

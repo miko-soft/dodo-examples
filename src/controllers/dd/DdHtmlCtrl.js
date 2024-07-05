@@ -33,7 +33,7 @@ export default class DdHtmlCtrl extends Controller {
 
     this.$model.myHTML = '<b>bold text</b>';
 
-    this.htmlWithDD = '<p dd-foreach="$model.pets --pet">{{pet}} <button dd-click="showPet(\'{{pet}}\')">show</button></p>';
+    this.htmlWithDD = '<p dd-each="$model.pets --pet">{{pet}} <button dd-click="showPet(\'{{pet}}\')">show</button></p>';
   }
 
   async __postrend() {

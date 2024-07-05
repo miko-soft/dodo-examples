@@ -25,14 +25,8 @@ export default class DdValueCtrl extends Controller {
   async __init(trx) {
     this.users = ['Tin', 'Rin', 'Pin'];
     this.countries = ['USA', 'UK', 'Croatia', 'Germany'];
-
-    // complex cases
-    this.continent_1 = 'Europe';
-    this.continent_2 = 'Asia';
-    this.continentID = 1;
-
     this.controllerFields = ['users', 'countries'];
-    this.userID = 0;
+    this.id = 0;
   }
 
 
@@ -55,5 +49,21 @@ export default class DdValueCtrl extends Controller {
   setCountry() {
     this.$model.countrySelected = 'Croatia';
   }
+
+
+  valueNumber(n) {
+    return n;
+  }
+
+  valueText(user, txt) {
+    return `"${user}" ${txt}`;
+  }
+
+
+  // ctrlField:: users | countries
+  valueUser(ctrlField) {
+    return ctrlField ? ctrlField[this.id + 1] : '';
+  }
+
 
 }

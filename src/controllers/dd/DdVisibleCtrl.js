@@ -33,10 +33,12 @@ export default class DdVisibleCtrl extends Controller {
     this.$model.my = { bool: true };
   }
 
-  show2() {
-    this.$model.n1 = 8;
-    this.$model.n2 = 8;
+  isVisible() {
+    return this.x === 'This is X';
   }
+
+
+
 
   // show/hide elements with button click
   toggleVisible() {

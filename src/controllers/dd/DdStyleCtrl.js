@@ -28,4 +28,10 @@ export default class DdStyleCtrl extends Controller {
   }
 
 
+
+  setStyle() {
+    return { font: '13px Verdana', color: 'orangered' };
+  }
+
+
 }

@@ -2,8 +2,8 @@
 Set the "checked" attribute with the controller property value (array of strings).
 
 <br><br>
-<h3>Checkboxes</h3>
-<br><button dd-click="setUserNames()">Set User Names</button>
+<h3>Controller property</h3>
+<button dd-click="setUserNames()">Set User Names</button>
 <br>dd-checked="$model.user_names" &rarr;
 <input type="checkbox" name="usernames" value="Pin" dd-checked="$model.user_names">Pin &nbsp;&nbsp;
 <input type="checkbox" name="usernames" value="Rin" dd-checked="$model.user_names"> Rin &nbsp;&nbsp;
@@ -15,3 +15,11 @@ Set the "checked" attribute with the controller property value (array of strings
 <input type="checkbox" name="positions" value="engineer" dd-checked="$model.positions">engineer &nbsp;&nbsp;
 <input type="checkbox" name="positions" value="cto" dd-checked="$model.positions"> cto &nbsp;&nbsp;
 <input type="checkbox" name="positions" value="ceo" dd-checked="$model.positions"> ceo
+
+
+<br><br><br>
+<h3>Controller method</h3>
+dd-checked="checkUsers('Pin', 'Rin')" &rarr;
+<input type="checkbox" name="usernames" value="Pin" dd-checked="checkUsers('Pin', 'Rin')">Pin &nbsp;&nbsp;
+<input type="checkbox" name="usernames" value="Rin" dd-checked="checkUsers('Pin', 'Rin')"> Rin &nbsp;&nbsp;
+<input type="checkbox" name="usernames" value="Tin" dd-checked="checkUsers('Pin', 'Rin')"> Tin

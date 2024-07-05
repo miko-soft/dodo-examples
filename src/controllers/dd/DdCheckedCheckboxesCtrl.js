@@ -36,4 +36,9 @@ export default class DdCheckedCheckboxesCtrl extends Controller {
   }
 
 
+  checkUsers(...selectedUsers) {
+    return selectedUsers; // ['Pin', 'Rin']
+  }
+
+
 }

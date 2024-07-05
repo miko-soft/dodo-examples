@@ -25,8 +25,7 @@ export default class DdDisabledCtrl extends Controller {
 
     this.x = 'This is X';
 
-    this.$model.n1 = 5;
-    this.$model.n2 = 8;
+    this.$model.n1 = 0;
 
     this.$model.my = {};
   }
@@ -36,14 +35,23 @@ export default class DdDisabledCtrl extends Controller {
     this.$model.my = { bool: true };
   }
 
+  isDisabled() {
+    return this.x === 'This is X';
+  }
+
+
   dis2() {
     this.$model.n1 = 8;
-    this.$model.n2 = 8;
   }
+  isDisabled2() {
+    return this.$model.n1 > 6 && this.$model.n1 < 10;
+  }
+
 
   toggleDIS() {
     this.$model.disX = !this.$model.disX;
   }
+
 
   myAlert() {
     console.log('My Alert');

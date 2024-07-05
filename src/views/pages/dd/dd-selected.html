@@ -3,8 +3,9 @@ Set the "selected" attribute with the controller property value.
 <br>SELECT-MULTIPLE &rarr; controller value must be array of strings
 <br>SELECT-ONE &rarr; controller value must be a string
 
+
 <br><br>
-<h3>select-multiple</h3>
+<h3>Controller property (select-multiple)</h3>
 <button dd-click="setUserNames()">Set User Names</button>
 <br>dd-selected="$model.user_names --multiple" &rarr;
 <br>
@@ -16,7 +17,7 @@ Set the "selected" attribute with the controller property value.
 
 
 <br><br><br>
-<h3>select-one</h3>
+<h3>Controller property (select-one)</h3>
 <button dd-click="setPositions()">Set Positions</button>
 <br>dd-selected="$model.positions" &rarr;
 <br>
@@ -26,6 +27,16 @@ Set the "selected" attribute with the controller property value.
   <option value="ceo">ceo</option>
 </select>
 
+
+<br><br><br>
+<h3>Controller method (select-one)</h3>
+<br>dd-selected="setAnimal('dog')" &rarr;
+<br>
+<select dd-selected="setAnimal('dog')">
+  <option value="cat">cat</option>
+  <option value="dog">dog</option>
+  <option value="rabbit">rabbit</option>
+</select>
 
 
 

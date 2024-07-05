@@ -27,4 +27,9 @@ export default class DdClassCtrl extends Controller {
     this.$model.myKlases_empty = []; // empty array in combination with --replace will remove class attribute
   }
 
+
+  setClass() {
+    return ['my-red', 'my-font-size-small'];
+  }
+
 }

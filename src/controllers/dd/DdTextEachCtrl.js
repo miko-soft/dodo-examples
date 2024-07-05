@@ -1,10 +1,10 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddTextForeach from '/views/pages/dd/dd-text-foreach.html?raw';
+import ddTextEach from '/views/pages/dd/dd-text-each.html?raw';
 
 
 
-export default class DdTextCtrl extends Controller {
+export default class DdTextEachCtrl extends Controller {
 
   constructor(app) {
     super();
@@ -12,12 +12,12 @@ export default class DdTextCtrl extends Controller {
 
 
   async __loader(trx) {
-    this.setTitle('dd-text-foreach');
+    this.setTitle('dd-text-each');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');
     this.loadView('#navbar', navbar);
-    this.loadView('#main', ddTextForeach);
+    this.loadView('#main', ddTextEach);
   }
 
 

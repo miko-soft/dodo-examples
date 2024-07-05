@@ -26,12 +26,17 @@ export default class DdCheckedRadiosCtrl extends Controller {
 
 
   setPet() {
-    this.$model.pet = 'cat';
+    this.$model.pet = 'dog';
   }
 
 
   setNumber() {
     this.$model.number = '3'; // must be a string
+  }
+
+
+  selectUser(usr) {
+    return usr; // Marko
   }
 
 }

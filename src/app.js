@@ -39,7 +39,7 @@ import DdElemCtrl from './controllers/dd/DdElemCtrl.js';
 
 import DdTextCtrl from './controllers/dd/DdTextCtrl.js';
 import DdTextMethCtrl from './controllers/dd/DdTextMethCtrl.js';
-import DdTextForeachCtrl from './controllers/dd/DdTextForeachCtrl.js';
+import DdTextEachCtrl from './controllers/dd/DdTextEachCtrl.js';
 import DdHtmlCtrl from './controllers/dd/DdHtmlCtrl.js';
 
 import DdIfCtrl from './controllers/dd/DdIfCtrl.js';
@@ -147,7 +147,7 @@ const $routes = [
 
   ['when', '/dd/dd-text', DdTextCtrl],
   ['when', '/dd/dd-text-meth', DdTextMethCtrl],
-  ['when', '/dd/dd-text-foreach', DdTextForeachCtrl],
+  ['when', '/dd/dd-text-each', DdTextEachCtrl],
   ['when', '/dd/dd-html', DdHtmlCtrl],
 
   ['when', '/dd/dd-if', DdIfCtrl],

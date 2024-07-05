@@ -37,4 +37,9 @@ export default class DdAttrCtrl extends Controller {
     this.$model.placeHolder = 'nutzername';
   }
 
+
+  setLink(prop) {
+    return { title: 'DEX8', url: 'https://www.dex8.com' }[prop];
+  }
+
 }

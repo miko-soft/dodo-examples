@@ -33,4 +33,8 @@ export default class DdSelectedCtrl extends Controller {
     this.$model.positions = 'cto';
   }
 
+  setAnimal(anim) {
+    return anim;
+  }
+
 }

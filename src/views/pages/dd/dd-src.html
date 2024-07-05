@@ -2,6 +2,12 @@
 Modify the "src" attribute with the controller property value. Controller property must be string.
 
 <br><br>
+<h3>Controller property</h3>
 <button dd-click="runSRC()">run SRC</button>
 <br><img dd-src="$model.imageURL" style="width:130px;height:130px;"> -hasn't defaultSrc
 <br><img dd-src="$model.imageURL --https://via.placeholder.com/130" style="width:130px;height:130px;"> -has defaultSrc
+
+
+<br><br><br>
+<h3>Controller method</h3>
+<img dd-src="setImage('url')" dd-style="setImage('size')">

@@ -2,7 +2,14 @@
 Modify the "style" attribute with the controller property value. Controller property must be object or null.
 
 <br><br>
+<h3>Controller property</h3>
 <button dd-click="toggleSTYLE()">Toggle Style</button>
 <br>
 <br>dd-style="$model.myStajl" &rarr; <span style="font-weight:bold" dd-style="$model.myStajl">"font-weight:bold" will remain</span>
 <br>dd-style="$model.myStajl --replace" &rarr; <span style="font-weight:bold" dd-style="$model.myStajl --replace">"font-weight:bold" will be removed</span>
+
+
+<br><br><br>
+<h3>Controller method</h3>
+style="font-style: italic;" dd-style="setStyle() --replace" &rarr;
+<p style="font-style: italic;" dd-style="setStyle() --replace">font: '13px Verdana', color: 'orangered' (font-style: italic is removed due to --replace)</p>

@@ -1,12 +1,25 @@
 <h1>dd-class</h1>
 Modify the "class" attribute with the controller property value.
 
+
 <br><br>
+<h3>Controller property</h3>
 <button dd-click="runCLASS()">runCLASS</button>
 <small>Open browser developer tools to see the effect after the button is clicked.</small>
 <p class="my-italic" dd-class="$model.myKlases">Class my-italic will remain</p>
 <p class="my-italic" dd-class="$model.myKlases --replace">Class my-italic will be removed due to --replace</p>
 <p class="my-green my-font-size" dd-class="$model.myKlases_empty --replace">The "class" attribute will be removed because <b>$model.myKlases_empty</b> is empty array.</p>
+
+
+<br><br><br>
+<h3>Controller method</h3>
+class="my-italic" dd-class="setClass()" &rarr;
+<p class="my-italic" dd-class="setClass()">Class my-italic will not be removed</p>
+<br><br>
+class="my-italic" dd-class="setClass() --replace" &rarr;
+<p class="my-italic" dd-class="setClass() --replace">Class my-italic will be removed due to --replace</p>
+
+
 
 
 <style scope>
@@ -15,7 +28,11 @@ Modify the "class" attribute with the controller property value.
   }
 
   .my-font-size {
-    font-size: 25px;
+    font-size: 21px;
+  }
+
+  .my-font-size-small {
+    font-size: 13px;
   }
 
   .my-italic {

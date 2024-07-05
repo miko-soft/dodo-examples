@@ -26,4 +26,9 @@ export default class DdSrcCtrl extends Controller {
     this.$model.imageURL = 'http://cdn.dex8.com/img/turnkey_tasks/scraper_free.png';
   }
 
+  setImage(prop) {
+    const obj = { size: { width: '130px', height: '130px' }, url: 'https://cdn.dex8.com/img/mascot/Image-01.png' };
+    return obj[prop];
+  }
+
 }

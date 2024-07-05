@@ -14,35 +14,31 @@ Disable elements by setting up <b>disabled</b> attribute.
 <br>dd-disabled="this.$model.my.bool" &rarr; <input type="text" dd-disabled="this.$model.my.bool">
 <br><button dd-click="dis1()">change model value</button>
 
-<br><br>
-<h3>Expression</h3>
-<i>Expression must be enclosed in brackets. This example shows expression with static controller property.</i>
-<br>(this.x === 'This is X') <button dd-disabled="(this.x === 'This is X')">BUTTON 2</button>
+<br>
+<br><button dd-click="toggleDIS()">toggle DISABLED</button>
+<input type="text" dd-disabled="$model.disX">
 
 <br><br>
-<h3>Expression with model</h3>
-<i>Some complex examples with model in the expression.</i>
-<br>(this.$model.n1 > 6 && this.$model.n2 < 10) <input type="text" dd-disabled="(this.$model.n1 > 6 && this.$model.n2 < 10)">
-  <br>(this.$model.n1 > 6 && this.$model.n1 < 10) <input type="text" dd-disabled="(this.$model.n1 > 6 && this.$model.n2 < 10)">
-    <br><button dd-click="dis2()">change model value</button>
+<h3>Controller method</h3>
+<i>This example shows expression with controller method.</i>
+<br>dd-disabled="isDisabled()" &rarr; <button dd-disabled="isDisabled()">BUTTON 2</button>
+
+<br><br>
+<h3>Controller method with model</h3>
+dd-disabled="isDisabled2()" &rarr; <input type="text" dd-disabled="isDisabled2()">
+<br><button dd-click="dis2()">change model value</button>
 
 
-    <br><br>
-    <h4>dd-disabled toggle</h4>
-    <button dd-click="toggleDIS()">toggle DISABLED</button>
-    <input type="text" dd-disabled="$model.disX">
+<style scoped>
+  input {
+    height: 25px;
+    width: 210px;
+    margin-left: 13px;
+    font: 15px Verdana;
+  }
 
-
-    <style scoped>
-      input {
-        height: 25px;
-        width: 210px;
-        margin-left: 13px;
-        font: 15px Verdana;
-      }
-
-      button[disabled] {
-        background: silver;
-        cursor: not-allowed;
-      }
-    </style>
+  button[disabled] {
+    background: silver;
+    cursor: not-allowed;
+  }
+</style>

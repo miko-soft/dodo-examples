@@ -2,16 +2,24 @@
 Set the "checked" attribute with the controller property value (single string value).
 
 <br><br>
-<h3>Radios</h3>
-<br><button dd-click="setPet()">Set a Pet</button>
+<h3>Controller property</h3>
+<button dd-click="setPet()">Set a Pet</button>
 <br>dd-checked="$model.pet" &rarr;
-<input type="radio" name="pet" value="dog" dd-checked="$model.pet">dog &nbsp;&nbsp;
+<input type="radio" name="pet" value="dog" dd-checked="$model.pet"> dog &nbsp;&nbsp;
 <input type="radio" name="pet" value="cat" dd-checked="$model.pet"> cat &nbsp;&nbsp;
 <input type="radio" name="pet" value="rabbit" dd-checked="$model.pet"> rabbit
 
 <br><br>
 <br><button dd-click="setNumber()">Set a Number</button>
 <br>dd-checked="$model.number" &rarr;
-<input type="radio" name="number" value="1" dd-checked="$model.number">1 &nbsp;&nbsp;
+<input type="radio" name="number" value="1" dd-checked="$model.number"> 1 &nbsp;&nbsp;
 <input type="radio" name="number" value="2" dd-checked="$model.number"> 2 &nbsp;&nbsp;
 <input type="radio" name="number" value="3" dd-checked="$model.number"> 3
+
+
+<br><br><br><br>
+<h3>Controller method</h3>
+dd-checked="selectUser('Marko')" &rarr;
+<input type="radio" name="user" value="Janko" dd-checked="selectUser('Marko')"> Janko &nbsp;&nbsp;
+<input type="radio" name="user" value="Marko" dd-checked="selectUser('Marko')"> Marko &nbsp;&nbsp;
+<input type="radio" name="user" value="Ivan" dd-checked="selectUser('Marko')"> Ivan
