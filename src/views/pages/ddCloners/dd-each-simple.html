@@ -1,11 +1,5 @@
 <h1>dd-each Simple Example</h1>
-The simplest each example.
-<br><br>
-
-<table>
-  <tbody>
-    <tr dd-each="pets --pet,key">
-      <td>${key} - ${pet}</td>
-    </tr>
-  </tbody>
-</table>
+The simplest example with dd-each directive.
+<br>
+<br>
+<p dd-each="pets --pet,key">{{key}} - {{pet}}</p>

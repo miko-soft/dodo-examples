@@ -17,31 +17,26 @@ Directive dd-text in combination with dd-each.
 
 <br><br>
 
-<code>dd-each="animals --val,key" dd-text="$$val"</code>
+<code>dd-each="animals --val,key" dd-text="printAnimal({{key}})"</code>
 <ul>
-  <li dd-each="animals --val,key" dd-text="$$val"></li>
+  <li dd-each="animals --val,key" dd-text="printAnimal({{key}})"></li>
 </ul>
 
 <br><br>
 
-<code>dd-each="animals --val,key" dd-text="printAnimal(animals[{{key}}], {{key}})"</code>
+<code>dd-each="animals --val,key" dd-text="printAnimal2(animals[{{key}}], {{key}})"</code>
 <ul>
-  <li dd-each="animals --val,key" dd-text="printAnimal(animals[{{key}}], {{key}})"></li>
+  <li dd-each="animals --val,key" dd-text="printAnimal2(animals[{{key}}], {{key}})"></li>
 </ul>
 
 <br><br>
 
-<code>dd-each="animals --val,key" dd-text="printAnimal(animals.{{key}}, {{key}})"</code>
+<code>dd-each="animals --val,key" dd-text="printAnimal2(animals.{{key}}, {{key}})"</code>
 <ul>
-  <li dd-each="animals --val,key" dd-text="printAnimal(animals.{{key}}, {{key}})"></li>
+  <li dd-each="animals --val,key" dd-text="printAnimal2(animals.{{key}}, {{key}})"></li>
 </ul>
 
 <br><br>
-
-<code>dd-each="animals --val,key" dd-text="printAnimal($$val, {{key}})"</code>
-<ul>
-  <li dd-each="animals --val,key" dd-text="printAnimal($$val, {{key}})"></li>
-</ul>
 
 
 <br><br>
@@ -50,7 +45,7 @@ Directive dd-text in combination with dd-each.
 <code>dd-each="animals --val,key"  > dd-text="printAnimal($$val, {{key}})"</code>
 <ul>
   <li dd-each="animals --val,key">
-    <i dd-text="printAnimal($$val, {{key}})"></i>
+    <i dd-text="printAnimal({{key}})"></i>
   </li>
 </ul>
 
@@ -58,5 +53,5 @@ Directive dd-text in combination with dd-each.
 
 <br><br>
 <h3>dd-each with template placeholders {{ ... }}</h3>
-<code>&lt;p dd-each="animals --val,key"&gt;{{key}}. {{val}}&lt;/p&gt;</code>
+<i>In this example the mustaches are used instead of dd-text:</i> <code>&lt;p dd-each="animals --val,key"&gt;{{key}}. {{val}}&lt;/p&gt;</code>
 <p dd-each="animals --val,key">{{key}}. {{val}}</p>

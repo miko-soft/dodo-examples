@@ -60,25 +60,9 @@ import DdAttrCtrl from './controllers/dd/DdAttrCtrl.js';
 
 
 // cloner directives
-import DdForeachSimpleCtrl from './controllers/ddCloners/DdForeachSimpleCtrl.js';
-import DdForeachObjCtrl from './controllers/ddCloners/DdForeachObjCtrl.js';
-import DdForeachCtrl from './controllers/ddCloners/DdForeachCtrl.js';
-import DdForeachDoubledollarCtrl from './controllers/ddCloners/DdForeachDoubledollarCtrl.js';
-import DdForeachIfCtrl from './controllers/ddCloners/DdForeachIfCtrl.js';
-import DdForeachMustacheCtrl from './controllers/ddCloners/DdForeachMustacheCtrl.js';
-import DdForeachTextCtrl from './controllers/ddCloners/DdForeachTextCtrl.js';
-import DdForeachHtmlCtrl from './controllers/ddCloners/DdForeachHtmlCtrl.js';
-import DdForeachOptionCtrl from './controllers/ddCloners/DdForeachOptionCtrl.js';
-
-import DdForeachChildCtrl from './controllers/ddCloners/DdForeachChildCtrl.js';
-import DdForeachChildCtrlpropCtrl from './controllers/ddCloners/DdForeachChildCtrlpropCtrl.js';
-import DdForeachChildArgCtrl from './controllers/ddCloners/DdForeachChildArgCtrl.js';
-import DdForeachChildDoubledollarCtrl from './controllers/ddCloners/DdForeachChildDoubledollarCtrl.js';
-
-import DdForeachGrandchildCtrl from './controllers/ddCloners/DdForeachGrandchildCtrl.js';
-
-import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
 import DdEachSimpleCtrl from './controllers/ddCloners/DdEachSimpleCtrl.js';
+import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
+import DdEachOptionCtrl from './controllers/ddCloners/DdEachOptionCtrl.js';
 
 import DdRepeatCtrl from './controllers/ddCloners/DdRepeatCtrl.js';
 import DdRepeatMustacheCtrl from './controllers/ddCloners/DdRepeatMustacheCtrl.js';
@@ -166,25 +150,9 @@ const $routes = [
 
 
   // cloner directives
-  ['when', '/ddcloners/dd-foreach', DdForeachCtrl],
-  ['when', '/ddcloners/dd-foreach-simple', DdForeachSimpleCtrl],
-  ['when', '/ddcloners/dd-foreach-obj', DdForeachObjCtrl],
-  ['when', '/ddcloners/dd-foreach-doubledollar', DdForeachDoubledollarCtrl],
-  ['when', '/ddcloners/dd-foreach-if', DdForeachIfCtrl],
-  ['when', '/ddcloners/dd-foreach-mustache', DdForeachMustacheCtrl],
-  ['when', '/ddcloners/dd-foreach-text', DdForeachTextCtrl],
-  ['when', '/ddcloners/dd-foreach-html', DdForeachHtmlCtrl],
-  ['when', '/ddcloners/dd-foreach-option', DdForeachOptionCtrl],
-
-  ['when', '/ddcloners/dd-foreach-child', DdForeachChildCtrl],
-  ['when', '/ddcloners/dd-foreach-child-ctrlprop', DdForeachChildCtrlpropCtrl],
-  ['when', '/ddcloners/dd-foreach-child-arg', DdForeachChildArgCtrl],
-  ['when', '/ddcloners/dd-foreach-child-doubledollar', DdForeachChildDoubledollarCtrl],
-
-  ['when', '/ddcloners/dd-foreach-grandchild', DdForeachGrandchildCtrl],
-
-  ['when', '/ddcloners/dd-each', DdEachCtrl],
   ['when', '/ddcloners/dd-each-simple', DdEachSimpleCtrl],
+  ['when', '/ddcloners/dd-each', DdEachCtrl],
+  ['when', '/ddcloners/dd-each-option', DdEachOptionCtrl],
 
   ['when', '/ddcloners/dd-repeat', DdRepeatCtrl],
   ['when', '/ddcloners/dd-repeat-mustache', DdRepeatMustacheCtrl],

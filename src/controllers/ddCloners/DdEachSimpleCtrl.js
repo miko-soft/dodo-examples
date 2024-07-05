@@ -11,7 +11,7 @@ export default class DdEachDdTextCtrl extends Controller {
   }
 
   async __loader(trx) {
-    this.$debugOpts.ddEach = true;
+    // this.$debugOpts.ddEach = true;
     this.setTitle('dd-each simple');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');

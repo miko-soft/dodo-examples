@@ -1,23 +1,23 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddForeachOption from '/views/pages/ddCloners/dd-foreach-option.html?raw';
+import ddEachOption from '/views/pages/ddCloners/dd-each-option.html?raw';
 
 
 
-export default class DdForeachOptionCtrl extends Controller {
+export default class DdEachOptionCtrl extends Controller {
 
   constructor(app) {
     super();
   }
 
   async __loader(trx) {
-    // this.$debugOpts.ddForeach = true;
-    this.setTitle('dd-foreach select option');
+    // this.$debugOpts.ddEach = true;
+    this.setTitle('dd-each-option');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');
     this.loadView('#navbar', navbar);
-    this.loadView('#main', ddForeachOption);
+    this.loadView('#main', ddEachOption);
   }
 
   async __init(trx) {
@@ -33,6 +33,13 @@ export default class DdForeachOptionCtrl extends Controller {
       { id: 4, name: 'Fiat', price: 1000 },
       { id: 5, name: 'Audi', price: 5000 }
     ];
+    this.$model.selected_id = '4'; // must be strin, not number because value="" is string
+  }
+
+
+  setOptionText_1(key) {
+    const auto = this.$model.autos[key];
+    return auto?.name + '- price: $' + auto?.price;
   }
 
 

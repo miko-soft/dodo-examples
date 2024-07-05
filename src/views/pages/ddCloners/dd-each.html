@@ -4,24 +4,58 @@ Generate multiple HTML elements based on an array stored in a controller propert
 
 <h3>Controller property</h3>
 <i>Example with pure controller property in the attribute value:</i>
-<br><code>dd-each="names --val,key"</code>
+<br><code>dd-each="names --val,key" AND dd-text="printKey({{key}})"</code>
 <br>
 <p dd-each="names --val,key">
-  <span>${key + 5}</span> <b>${val}</b>
+  <span dd-text="printKey({{key}})"></span> <b>{{val}}</b>
 </p>
 
 
-
-<br><br>
-<h3>Model</h3>
+<br>
+<h4>Model</h4>
 <i>
   Example with pure model in the attribute value.
-  <br>Initial model value is undefined so cloned element is not displayed.
+  <br>Initial model value is undefined so cloned elements are not displayed.
   <br>The <b>this.</b> will not cause error.
 </i>
-<br><code>dd-each="$model.companies --val1,key1"</code>
+<br><code>dd-each="$model.companies --company,ind"</code>
 <br>
 <br><button dd-click="setCompanies()">set companies</button>
-<p dd-each="$model.companies --val1,key1">
-  <span>${key1 + 1}</span> <b>${val1.name}</b> - <span>${val1.size}</span>
+<p dd-each="$model.companies --company,ind">
+  <span dd-text="printKey2({{ind}})"></span> <b>{{company.name}}</b> - <span>{{company.size}}</span>
 </p>
+
+
+<br><br><br>
+<h3>Controller method</h3>
+<i>Example 1: List all cars</i>
+<p dd-each="getCars() --car,ind">{{ind}}. <b>{{car.name}}</b> - {{car.year}}</p>
+
+<br><br>
+<i>Example 2: Print car names only.</i>
+<button dd-each="cars --car" dd-click="popupCarName('{{car.name}}')">{{car.name}} </button>
+
+
+
+<br><br><br>
+<h3>dd-each and dd-html</h3>
+<i>Create table with dd-each and dd-html.</i>
+<table>
+  <tr dd-each="cars --car,key" dd-html="tableCells({{key}})"></tr>
+</table>
+
+
+<br><br><br>
+<h3>dd-each and dd-if</h3>
+<i>Element dd-if is nested within dd-foreach.</i>
+<br>
+<br><button dd-click="changeCompanies()">change companies</button> - <small>click this button multiple times</small>
+<br>
+<table>
+  <tr dd-each="$model.companies --val1,key1">
+    <td><b>{{val1.name}}</b></td>
+
+    <td dd-if="compareSize({{val1.size}})">{{val1.size}}</td>
+    <td dd-else>Less than 50</td>
+  </tr>
+</table>

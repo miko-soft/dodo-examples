@@ -1,0 +1,26 @@
+<h1>dd-each select option</h1>
+dd-each in the option tag.
+<br><b>NOTICE:</b> The first option tag must be empty: <i>&lt;option value=""&gt;&lt;/option&gt;</i>
+<br><br>
+
+<button type="button" dd-click="generateAutos()">generate Autos</button>
+<br>
+<br>autos:
+<select name="autosN">
+  <option value=""></option>
+  <option dd-each="$model.autos --auto,key" value="{{auto.id}}">{{auto.name}} - price: ${{auto.price}}</option>
+</select>
+
+
+<br><br>
+<br>autos: <select name="autosN" dd-selected="$model.selected_id">
+  <option value=""></option>
+  <option dd-each="$model.autos --auto,key" value="{{auto.id}}" dd-text="setOptionText_1({{key}})"></option>
+</select>
+
+
+<br><br>
+<br>autos: <select name="autosN">
+  <option value=""></option>
+  <option dd-each="$model.autos --auto,key" value="{{auto.id}}" dd-text="$model.autos[{{key}}].name"></option>
+</select>

@@ -26,7 +26,12 @@ export default class DdTextEachCtrl extends Controller {
   }
 
 
-  printAnimal(val, key) {
+  printAnimal(key) {
+    return `${key + 1} - ${this.animals[key]} is an animal`;
+  }
+
+
+  printAnimal2(val, key) {
     return `${key + 1} - ${val} is an animal`;
   }
 
