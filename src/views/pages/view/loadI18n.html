@@ -16,10 +16,6 @@ Change the language and and load the text from language file by using
 <h4 dd-text="$model.$i18n.page.PRODUCT_NAME"></h4>
 <small dd-text="$model.$i18n.page.PRODUCT_DESCRIPTION"></small>
 <ol>
-  <li dd-each="$model.$i18n.page.PRODUCT_COUNTRIES --val,key">${val}</li>
+  <li dd-each="$model.$i18n.page.PRODUCT_COUNTRIES --val,key">{{val}}</li>
 </ol>
 <br><i dd-text="$model.$i18n.common.USERNAME"></i>: &nbsp; <input type="text" dd-attr="$model.$i18n.common.USERNAME --placeholder">
-
-
-<style scoped>
-</style>
