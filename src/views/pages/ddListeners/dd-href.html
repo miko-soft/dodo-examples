@@ -7,8 +7,7 @@ NOTICE: The click on dd-href element will destroy current controller i.e. ddUNLI
 <a href="/">LINK1 -- href="/"</a> - This will reload the page because no <b>dd-href</b> attribute.
 <br><a href="/" dd-href>LINK2 -- href="/" dd-href</a> - This will not reload the page and will act as single page app link.
 <br><a href="" dd-href="homePageURL">LINK3 -- href="" dd-href="homePageURL"</a> - This will not reload the page and will act as single page app link. The attribute value is controller property.
-<br><a href="" dd-href="(this.ddElemURL)">LINK4 -- href="" dd-href="(this.ddElemURL)"</a> - This will not reload the page and will act as single page app link. The attribute value is JS expression.
-<br><a href="" dd-href="(`/dd/${this.partOfURL}`)">LINK5 -- href="" dd-href="(`/dd/${this.partOfURL}`)"</a> - This will not reload the page and will act as single page app link. The attribute value is JS expression.
+<br><a href="" dd-href="setUrl()">LINK4 -- href="" dd-href="setUrl()"</a> - This will not reload the page and will act as single page app link. The controller method is used.
 
 <h4>history</h4>
 Click on the button to get the history data. Open the browser dev tools console.

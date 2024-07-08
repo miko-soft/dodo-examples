@@ -38,4 +38,15 @@ export default class DdEvtCtrl extends Controller {
   }
 
 
+  onKlik(opt) {
+    if (opt === 1) {
+      this.$model.changed_text2 = this.products[1].name;
+    } else if (opt == 2) {
+      this.$model.changed_text3 = this.$model.cats[0];
+    } else if (opt == 3) {
+      this.$model.changed_text4 = this.$model.cats[1];
+    }
+  }
+
+
 }

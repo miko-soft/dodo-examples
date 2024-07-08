@@ -19,7 +19,7 @@ export default class PaginatorCtrl extends Controller {
   }
 
   async __init(trx) {
-    this.paginator = new corelib.Paginator(3, ['w3-gray']);
+    this.paginator = new corelib.Paginator(3, ['w3-red']);
     await this.openPage(1);
   }
 
@@ -84,6 +84,15 @@ export default class PaginatorCtrl extends Controller {
     const end = limit + skip;
     this.$model.results = results.slice(start, end);
     this.$model.itemsTotal = 22;
+  }
+
+
+  ddtextOrderNumber(key) {
+    return this.paginator.ordCalc(this.currentPage, this.itemsPerPage, key);
+  }
+
+  ddclassSetActive(key) {
+    return this.$model.pageLinks[key]?.c;
   }
 
 

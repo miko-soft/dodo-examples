@@ -2,12 +2,13 @@
 The change event listener.
 
 
-<br><br>
-<h4>DD-CHANGE (controller method)</h4>
+<br><br><br><br>
 Execute controller method on element's "change" event.
 <br>
 <br>1) Type and press enter: <input type="text" dd-change="runCHANGE(1, $value)"> <b dd-text="$model.change1"></b>
 <br>
+<br>
+
 <br>2) Change the value in SELECT:
 <select dd-change="runCHANGE(2, $value)" dd-setinitial="$model.change2">
   <option value="one">one</option>
@@ -21,13 +22,10 @@ Execute controller method on element's "change" event.
 </ol>
 <div>
   Selected value is: <b dd-text="$model.change2"></b>
-  <p dd-visible="(this.$model.change2 === 'three')" style="color:blueviolet">The selected <b dd-mustache>value is {{this.$model.change2}}.</b> The dd-if is used here.</p>
+  <p dd-visible="(this.$model.change2 === 'three')" style="color:blueviolet">The selected value is <b dd-text="$model.change2"></b>. The dd-if is used here.</p>
 </div>
 
-
-<br><br>
-<h4>DD-CHANGE (expression)</h4>
-This example shows when INPUT value is changed the $model is assigned to the element value
-<br><code>dd-elem="myProdElem" dd-change="(this.$model.changed_text = this.$elem.myProdElem.value)"</code>
+<br>3) This example shows when INPUT value is changed the $model is assigned to the element value
+<br><code>dd-elem="myProdElem" dd-change="onChange()"</code>
 <br>
-<br><input type="text" dd-elem="myProdElem" dd-change="(this.$model.changed_text = this.$elem.myProdElem.value)"> <b dd-text="$model.changed_text"></b>
+<br><input type="text" dd-elem="myProdElem" dd-change="onChange()"> <b dd-text="$model.changed_text"></b>

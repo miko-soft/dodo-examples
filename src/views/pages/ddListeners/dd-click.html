@@ -20,21 +20,6 @@ Click event listener.
 <br><button dd-click="runCLICK5a('My friend');runCLICK5b(88)">CLICK 5</button> - run two controller methods
 
 
-<br><br>
-<h4>DD-CLICK (execute JS expression)</h4>
-The examples show how to assign values to $model directly in the HTML without use of functions i.e. controller methods. <b>dd-click="$model.ass_4 = products.1.name"</b>
-<p><button dd-click="(this.$model.ass_1 = 8888)">CLICK assignment 1</button> --- $model.ass_1 = <b dd-text="$model.ass_1"></b></p>
-<p><button dd-click="(this.$model.ass_2 = 'single quote')">CLICK assignment 2</button> --- <b dd-mustache>$model.ass_2 = {{this.$model.ass_2}}</b></p>
-<p><button dd-click='(this.$model.ass_2b = "double quote")'>CLICK assignment 2b</button> --- $model.ass_2b = <b dd-text="$model.ass_2b"></b></p>
-<p><button dd-click="(this.$model.ass_3 = this.$model.cats[1])">CLICK assignment 3</button> --- $model.ass_3 = <b dd-text="$model.ass_3"></b></p>
-<p><button dd-click="(this.$model.ass_3b = this.$model.cats[1])">CLICK assignment 3b</button> --- $model.ass_3b = <b dd-text="$model.ass_3b"></b></p>
-<p><button dd-click="(this.$model.ass_4 = this.products[1].name)">CLICK assignment 4</button> --- $model.ass_4 = <b dd-text="$model.ass_4"></b></p>
-<p><button dd-click="(this.$model.ass_5 = this.products[0])">CLICK assignment 5</button> --- $model.ass_5 = <b dd-mustache>{{this.$model.ass_5.name}} - {{this.$model.ass_5.price}}</b></p>
-
-<br>
-<br><button dd-click="(alert('some alert'))">ALERT</button> -- dd-click="(alert('some alert'))"
-
-
 <style scoped>
   small {
     font: 15px veradana;

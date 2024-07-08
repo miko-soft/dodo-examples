@@ -47,14 +47,13 @@ export default class DdClickCtrl extends Controller {
 
 
   async callAPI() {
-    const answer = await this.$httpClient.askJSON('https://api.dex8.com');
-    // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/todos/1', 'GET');
-    // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/posts?userId=1', 'GET');
-    // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/posts', 'POST', {title: 'foo', body: 'bar', userId: 1});
-    // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/posts/1', 'PUT', {id: 1, title: 'foogoo', body: 'barboo', userId: 3});
-    // const answer = await this.httpClient.askJSON('https://jsonplaceholder.typicode.com/posts/1', 'DELETE');
-    // const answer = await this.httpClient.askJSON('https://api.dex8.com?q=my str'); // test encodeURI
-    // const answer = await this.httpClient.ask('api.dex8.com'); // to test 408 timeout set opts:: timeout:10,retry:5,retryDelay:1300
+    const answer = await this.$httpClient.askJSON('https://jsonplaceholder.typicode.com/todos/1', 'GET');
+    // const answer = await this.$httpClient.askJSON('https://jsonplaceholder.typicode.com/posts?userId=1', 'GET');
+    // const answer = await this.$httpClient.askJSON('https://jsonplaceholder.typicode.com/posts', 'POST', {title: 'foo', body: 'bar', userId: 1});
+    // const answer = await this.$httpClient.askJSON('https://jsonplaceholder.typicode.com/posts/1', 'PUT', {id: 1, title: 'foogoo', body: 'barboo', userId: 3});
+    // const answer = await this.$httpClient.askJSON('https://jsonplaceholder.typicode.com/posts/1', 'DELETE');
+    // const answer = await this.$httpClient.askJSON('https://api.dex8.com?q=my str'); // test encodeURI
+    // const answer = await this.$httpClient.ask('api.dex8.com'); // to test 408 timeout set opts:: timeout:10,retry:5,retryDelay:1300
     return answer;
   }
 

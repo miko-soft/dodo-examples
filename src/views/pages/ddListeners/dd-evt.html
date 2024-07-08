@@ -3,7 +3,7 @@ Chain multiple event listeners.
 
 
 <br><br>
-<h4>DD-EVT (controller method)</h4>
+<h4>Example 1</h4>
 Chained multiple commands.
 
 <br><br>
@@ -20,12 +20,12 @@ runEVT($element, $event, 'blue') --click
   ">mouseenter, mouseleave and click this text</span>
 
 <br><br>
-<h4>DD-EVT (expression)</h4>
+<h4>Example 2</h4>
 This example shows when text in U tag is clicked the $model is assigned with the controller value
-<i>dd-evt="(this.$model.changed_text2 = this.products.1.name) --click"</i>
-<br><u type="text" dd-evt="(this.$model.changed_text2 = this.products[1].name) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text2"></b>
-<br><u type="text" dd-evt="(this.$model.changed_text3 = this.$model.cats[0]) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text3"></b>
-<br><u type="text" dd-evt="(this.$model.changed_text4 = this.$model.cats[1]) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text4"></b>
+<i>dd-evt="onKlik(1) --click"</i>
+<br><u type="text" dd-evt="onKlik(1) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text2"></b>
+<br><u type="text" dd-evt="onKlik(2) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text3"></b>
+<br><u type="text" dd-evt="onKlik(3) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text4"></b>
 
 
 

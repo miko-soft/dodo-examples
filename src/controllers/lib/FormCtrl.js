@@ -126,7 +126,7 @@ export default class FormCtrl extends Controller {
   }
 
 
-  // autos - generated options with dd-foreach
+  // autos - generated options with dd-each
   generateAutos() {
     this.$model.autos = [
       { id: 1, name: 'Toyota', price: 8000 },
@@ -143,7 +143,7 @@ export default class FormCtrl extends Controller {
   }
 
 
-  // plants - generated options with dd-foreach & dd-mustache
+  // plants - generated options with dd-each
   async generatePlants() {
     this.$model.plants = [
       { id: 1, name: 'Corn', price: 8000 },

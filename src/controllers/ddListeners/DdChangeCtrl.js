@@ -31,4 +31,9 @@ export default class DdChangeCtrl extends Controller {
   }
 
 
+  onChange() {
+    this.$model.changed_text = this.$elem.myProdElem.value;
+  }
+
+
 }

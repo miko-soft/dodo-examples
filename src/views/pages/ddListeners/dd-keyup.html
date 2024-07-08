@@ -7,11 +7,3 @@ The keyup event listener.
 Focus the INPUT field, type some letters and press enter. (Open console to watch the result.)
 <br><input type="text" style="width:210" dd-keyup="runKEYUP($element, $value, $event)"> - bind to all keyup event codes
 <br><input type="text" value="123.45" style="width:210" dd-keyup="runKEYUP($element, $value, $event) --enter"> - bind to "enter" keyup event.code
-
-
-<br><br>
-<h4>DD-KEYUP (expression)</h4>
-Type number and press enter. The SPAN will be filled with text from $element.value.
-<br>
-<i>dd-elem="myElement" dd-keyup="(this.$model.ass_num1 = this.$elem.myElement.value) --enter"</i> &rarr;
-<input type="number" dd-elem="myElement" dd-keyup="(this.$model.ass_num1 = this.$elem.myElement.value) --enter"> $model.ass_num1 = <span dd-text="$model.ass_num1"></span>

@@ -8,7 +8,7 @@ SELECT STORAGE TYPE:
   <option value="session">session</option>
 </select>
 &nbsp;&nbsp; &rarr; <b style="color:rgb(165, 12, 165)" dd-text="$model.storage_type"></b>
-<br><span dd-mustache>STORAGE VALUE: <b>{{typeof this.$model.storageValue === 'object' ? JSON.stringify(this.$model.storageValue) : this.$model.storageValue}}</b></span>
+<br><span>STORAGE VALUE: <b dd-text="$model.storageValue"></b></span>
 
 <br>
 <hr>

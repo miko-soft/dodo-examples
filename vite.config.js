@@ -11,7 +11,7 @@ export default defineConfig({
   appType: 'spa',
   server: {
     host: '127.0.0.1',
-    port: 3001,
+    port: 3456,
     strictPort: true,
     https: false,
     cors: false,

@@ -22,8 +22,11 @@ export default class DdHrefCtrl extends Controller {
 
   __init() {
     this.homePageURL = '/';
-    this.ddElemURL = '/dd/dd-elem';
-    this.partOfURL = 'dd-elem';
+  }
+
+
+  setUrl() {
+    return '/dd/dd-elem';
   }
 
 

@@ -63,11 +63,7 @@ import DdAttrCtrl from './controllers/dd/DdAttrCtrl.js';
 import DdEachSimpleCtrl from './controllers/ddCloners/DdEachSimpleCtrl.js';
 import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
 import DdEachOptionCtrl from './controllers/ddCloners/DdEachOptionCtrl.js';
-
 import DdRepeatCtrl from './controllers/ddCloners/DdRepeatCtrl.js';
-import DdRepeatMustacheCtrl from './controllers/ddCloners/DdRepeatMustacheCtrl.js';
-
-import DdMustacheCtrl from './controllers/ddCloners/DdMustacheCtrl.js';
 
 
 // listener directives
@@ -153,11 +149,7 @@ const $routes = [
   ['when', '/ddcloners/dd-each-simple', DdEachSimpleCtrl],
   ['when', '/ddcloners/dd-each', DdEachCtrl],
   ['when', '/ddcloners/dd-each-option', DdEachOptionCtrl],
-
   ['when', '/ddcloners/dd-repeat', DdRepeatCtrl],
-  ['when', '/ddcloners/dd-repeat-mustache', DdRepeatMustacheCtrl],
-
-  ['when', '/ddcloners/dd-mustache', DdMustacheCtrl],
 
 
   // listener directives

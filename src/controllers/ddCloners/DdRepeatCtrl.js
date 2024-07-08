@@ -22,7 +22,7 @@ export default class DdRepeatCtrl extends Controller {
 
   async __init(trx) {
     this.$model.myNumberA = 2;
-    this.$model.myNumberB = 2;
+    this.$model.myNumberB = 4;
   }
 
 
@@ -30,8 +30,12 @@ export default class DdRepeatCtrl extends Controller {
     this.$model.myNumberA = 4;
   }
 
+
   changeModel2() {
-    this.$model.myNumberB = 3;
+    this.$model.myNumberB = 1;
+  }
+  setNumbers(n = 0) {
+    return this.$model.myNumberB + n;
   }
 
 

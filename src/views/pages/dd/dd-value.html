@@ -26,7 +26,7 @@ This directive takes controller property value or controller method returned val
 <br><br>
 <h3>CHECKBOX</h3>
 <button dd-click="setUser()">Set Checkbox</button>
-<br><span dd-mustache>Selected users: <b>{{this.$model.usersSelected}}</b></span>
+<br><span>Selected users: <b dd-text="$model.usersSelected"></b></span>
 <br>
 <input type="checkbox" name="users" dd-value="users[0]" dd-checked="$model.usersSelected"> Pin &nbsp;&nbsp;
 <input type="checkbox" name="users" dd-value="users[1]" dd-checked="$model.usersSelected"> Rin &nbsp;&nbsp;
@@ -38,7 +38,7 @@ This directive takes controller property value or controller method returned val
 The dd-each is used.
 <br><br>
 <button dd-click="setCountry()">Set Radio</button>
-<br><span dd-mustache>Selected country: <b>{{this.$model.countrySelected}}</b></span>
+<br><span>Selected country: <b dd-text="$model.countrySelected"></b></span>
 
 
 <br><br>

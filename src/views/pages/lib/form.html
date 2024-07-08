@@ -64,18 +64,18 @@
   <button type="button" dd-click="emptyDesc()">empty desc</button>
 
 
-  <br><br><br><button type="button" dd-click="generateAutos()">generate Autos</button> - generate SELECT/OPTION by dd-foreach and set the selected value
+  <br><br><br><button type="button" dd-click="generateAutos()">generate Autos</button> - generate SELECT/OPTION by dd-each and set the selected value
   <br><br>autos: <select name="myAuto">
     <option value=""></option>
-    <option dd-foreach="$model.autos --val,key" value="${val.id}">${val.name}</option>
+    <option dd-each="$model.autos --val,key" value="{{val.id}}">{{val.name}}</option>
   </select>
   <button type="button" dd-click="getAuto()">get auto ID</button>
 
 
-  <br><br><br><button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-foreach and set the default value
+  <br><br><br><button type="button" dd-click="generatePlants()">generate Plants</button> - generate SELECT/OPTION by dd-each and set the default value
   <br><br>plants: <select name="myPlant">
     <option value="" selected></option>
-    <option dd-foreach="$model.plants --plant,key" value="${plant.id}">${plant.name} -- price: $ ${plant.price}</option>
+    <option dd-each="$model.plants --plant,key" value="{{plant.id}}">{{plant.name}} -- price: ${{plant.price}}</option>
   </select>
   <button type="button" dd-click="getPlant()">get plant ID</button>
 

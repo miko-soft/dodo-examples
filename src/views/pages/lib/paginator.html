@@ -6,12 +6,10 @@
   <div dd-if="$model.itemsTotal">
     <h3>Results: <small><span dd-text="$model.results.length"></span> of <span dd-text="$model.itemsTotal"></span></small></h3>
   </div>
-  <div dd-foreach="$model.results --val,key">
-    <span class="w3-text-green w3-margin-right">
-      ${this.paginator.ordCalc(this.currentPage, this.itemsPerPage, key)}
-    </span>
-    <span class="w3-margin-right">${val.name}</span> &middot;
-    <span style="color:gray">age: ${val.age}</span>
+  <div dd-each="$model.results --val,key">
+    <span class="w3-text-green w3-margin-right" dd-text="ddtextOrderNumber({{key}})"></span>
+    <span class="w3-margin-right">{{val.name}}</span> &middot;
+    <span style="color:gray">age: {{val.age}}</span>
   </div>
 </div>
 
@@ -24,7 +22,7 @@
       <div class="w3-center">
         <div class="w3-bar">
           <a href="" class="w3-button" dd-click="openPage(1, $element) --preventDefault">&laquo;</a>
-          <a href="" class="w3-button" dd-foreach="$model.pageLinks --pageLink,key" class="${pageLink.c}" dd-click="openPage(${pageLink.i}) --preventDefault">${pageLink.i}</a>
+          <a href="" class="w3-button" dd-each="$model.pageLinks --pageLink,key" dd-class="ddclassSetActive({{key}})" dd-click="openPage({{pageLink.i}}) --preventDefault">{{pageLink.i}}</a>
           <a href="" class="w3-button" dd-click="openPage(this.pagesTotal, $element) --preventDefault">&raquo;</a>
         </div>
       </div>
