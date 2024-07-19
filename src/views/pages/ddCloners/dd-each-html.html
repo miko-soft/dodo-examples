@@ -1,0 +1,40 @@
+<h1>dd-each &amp; dd-html</h1>
+More complex dd-each example in combination with dd-html.
+
+
+<br><br>
+<button dd-click="changeCompanies()">change companies</button> - click multiple times
+<table>
+  <tr>
+    <th dd-each="fields --field">{{field}}</th>
+  </tr>
+  <tr dd-each="$model.companies --company,companyKey" dd-html="ddhtmlCompanies({{companyKey}})"></tr>
+</table>
+
+
+<br><br><br>
+<i>The HTML code is very simple</i>
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th dd-each="fields --field"&gt;{{field}}&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr dd-each="$model.companies --company,companyKey" dd-html="ddhtmlCompanies({{companyKey}})"&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+
+<style scoped>
+  table {
+    width: 340px;
+    margin-top: 21px;
+  }
+
+  table td,
+  th {
+    border: 1px solid gray;
+    padding: 5px 3px;
+  }
+
+  table td:nth-child(3) {
+    text-align: center;
+  }
+</style>

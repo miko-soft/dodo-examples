@@ -1,0 +1,23 @@
+<h1>dd-each 3D Data</h1>
+This example show how show 3-dimensional data by using dd-each and dd-html.
+
+<br><br>
+<button dd-click="changeRows()">change model value</button>
+
+<table>
+  <tr dd-each="$model.rows --row,rowKey" dd-html="ddhtml({{rowKey}})"></tr>
+</table>
+
+
+<style scoped>
+  table {
+    width: 340px;
+    margin-top: 21px;
+  }
+
+  table td,
+  th {
+    border: 1px solid gray;
+    padding: 5px 3px;
+  }
+</style>

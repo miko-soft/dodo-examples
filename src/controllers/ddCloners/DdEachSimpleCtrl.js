@@ -4,7 +4,7 @@ import ddEachSimple from '/views/pages/ddCloners/dd-each-simple.html?raw';
 
 
 
-export default class DdEachDdTextCtrl extends Controller {
+export default class DdEachDdSimpleCtrl extends Controller {
 
   constructor(app) {
     super();

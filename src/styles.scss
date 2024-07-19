@@ -44,6 +44,12 @@ main {
     transition-duration: 0.4s;
     border: 1px solid Green;
 
+    &.btn-small {
+      height: 21px;
+      padding: 3px;
+      font: 13px Verdana;
+    }
+
     &:hover {
       background-color: #fff;
       color: Black;
