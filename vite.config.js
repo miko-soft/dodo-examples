@@ -20,7 +20,7 @@ export default defineConfig({
   },
   build: {
     outDir: '../dist',
-    assetsDir: 'dodo',
+    assetsDir: 'dodoBuild',
     emptyOutDir: true
   },
 });

@@ -4,7 +4,7 @@ const httpOpts = {
   staticDir: 'dist',
   indexFile: 'index.html',
   urlRewrite: {},
-  port: process.env.PORT || 3991,
+  port: process.env.PORT || 3457,
   timeout: 5 * 60 * 1000, // if 0 never timeout
   acceptEncoding: 'gzip', // gzip, deflate or ''
   headers: {
@@ -17,7 +17,7 @@ const httpOpts = {
   ssr: 'all', // none, all, botsonly
   ssrConsole: false, // frontend JS logs in the backend
   ssrModifier: null,
-  debug: true,
+  debug: false,
   debugHTML: false
 };
 const httpServer = new HTTPServer(httpOpts);

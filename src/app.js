@@ -3,6 +3,9 @@ import { App } from '@mikosoft/dodo';
 // conf
 import { $debugOpts, $auth, $httpClient } from './conf/index.js';
 
+// language files
+import $i18n from './i18n/index.js';
+
 // auth gurads
 const autoLogin = $auth.autoLogin.bind($auth);
 const isLogged = $auth.isLogged.bind($auth);
@@ -189,20 +192,14 @@ const $routes = [
 
 
 // app
-const initApp = async () => {
-  const app = new App('dodoExamples');
-
-  await app.i18n();
-
-  app
-    .auth($auth)
-    .httpClient($httpClient)
-    .debug($debugOpts)
-    .routes($routes)
-    .listen();
-};
-
-initApp().catch(console.error);
+const app = new App('dodoExamples');
+app
+  .httpClient($httpClient)
+  .auth($auth)
+  .i18n($i18n)
+  .debug($debugOpts)
+  .routes($routes)
+  .listen();
 
 
 
