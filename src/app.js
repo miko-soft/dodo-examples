@@ -64,6 +64,7 @@ import DdAttrCtrl from './controllers/dd/DdAttrCtrl.js';
 
 // cloner directives
 import DdEachSimpleCtrl from './controllers/ddCloners/DdEachSimpleCtrl.js';
+import DdEachDoubledollarCtrl from './controllers/ddCloners/DdEachDoubledollarCtrl.js';
 import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
 import DdEachOptionCtrl from './controllers/ddCloners/DdEachOptionCtrl.js';
 import DdEachHtmlCtrl from './controllers/ddCloners/DdEachHtmlCtrl.js';
@@ -152,6 +153,7 @@ const $routes = [
 
   // cloner directives
   ['when', '/ddcloners/dd-each-simple', DdEachSimpleCtrl],
+  ['when', '/ddcloners/dd-each-doubledollar', DdEachDoubledollarCtrl],
   ['when', '/ddcloners/dd-each', DdEachCtrl],
   ['when', '/ddcloners/dd-each-option', DdEachOptionCtrl],
   ['when', '/ddcloners/dd-each-html', DdEachHtmlCtrl],

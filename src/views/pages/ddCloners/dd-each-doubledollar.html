@@ -1,0 +1,11 @@
+<h1>dd-each Doubledollar Example</h1>
+The example with doubledollar <b>$$val</b> in outerHTML of the dd-each directive.
+<br>
+<br>
+<p dd-each="companies --company,key">
+  {{key}} <b>{{company.name}}</b> <button dd-click="selectCompany($$company, {{key}})">select</button>
+</p>
+
+<br>
+<hr>
+SELECTED COMPANY:: <p dd-text="$model.selectedCompany"></p>
