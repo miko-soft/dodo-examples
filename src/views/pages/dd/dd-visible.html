@@ -25,6 +25,13 @@ dd-visible="isVisible()" <b dd-visible="isVisible()">OK</b>
 
 
 <br><br>
+<h3>Expression/condition</h3>
+<button dd-click="changeNumber(3)">set $model.a=3</button> &nbsp; <button dd-click="changeNumber(30)">set $model.a=30</button>
+<b dd-visible="($model.a <= 10)">$model.a &lt;= 10</b>
+<b dd-visible="($model.a > 10)">$model.a > 10</b>
+
+
+<br><br>
 <h3>Toggle</h3>
 <i>Toggle visibility with the button.</i>
 <br>dd-visible="$model.visX"

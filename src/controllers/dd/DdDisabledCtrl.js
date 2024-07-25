@@ -22,12 +22,10 @@ export default class DdDisabledCtrl extends Controller {
 
   async __init(trx) {
     this.myBool = true;
-
     this.x = 'This is X';
-
     this.$model.n1 = 0;
-
     this.$model.my = {};
+    this.$model.a = 10;
   }
 
 
@@ -50,6 +48,11 @@ export default class DdDisabledCtrl extends Controller {
 
   toggleDIS() {
     this.$model.disX = !this.$model.disX;
+  }
+
+
+  changeNumber(n) {
+    this.$model.a = n;
   }
 
 

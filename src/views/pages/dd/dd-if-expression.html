@@ -1,0 +1,85 @@
+<h1>dd-if expression</h1>
+<p>
+  Example with used condition in expression.
+<pre><code>dd-if="(this.x > 5)" or dd-if="(x > 5)"</code></pre>
+<pre><code>dd-if="!this.isActive"</code></pre>
+</p>
+<br><br><br>
+
+Initial values used in this example:
+<pre>this.a = 5;
+this.b = '88';
+this.c = 'some string';
+this.d = 100;
+this.e = false;
+this.isActive = false;
+this.$model.x = 1000;
+
+this.bool1 = true;
+this.bool2 = true;
+this.bool3 = false;</pre>
+
+<br>
+<h3 style="margin-top:34px">Negation - <span style="color:maroon">!</span></h3>
+<p dd-if="(!isActive)">User is not active</p>
+<p dd-else>User is active</p>
+
+
+<br>
+<h3 style="margin-top:21px">Strict equal - <span style="color:maroon">===</span></h3>
+<p dd-if="(a === 5)">a is 5</p>
+<p dd-if="(b === 88)">b is 88</p>
+<p dd-if="(c === 'some string')">c is some string</p>
+<p dd-if="(e === false)">e is false</p>
+<p dd-if="(1000 === $model.x)">1000 === $model.x</p>
+<p dd-if="($model.x === this.$model.x)">$model.x === this.$model.x</p>
+
+
+<br>
+<h3 style="margin-top:21px">Equal - <span style="color:maroon">==</span></h3>
+<p dd-if="(a == 5)">a is 5</p>
+<p dd-if="(b == 88)">b is 88</p>
+<p dd-if="(c == 'some string')">c is some string</p>
+<p dd-if="(e == false)">e is false</p>
+
+
+<br>
+<h3 style="margin-top:21px">Greater or equal than - <span style="color:maroon">&gt;=</span></h3>
+<p dd-if="(a >= 3)">a &gt;&equals; 3</p>
+<p dd-if="(d >= a)">d &gt;&equals; a</p>
+
+<br>
+<h3 style="margin-top:21px">Greater than - <span style="color:maroon">&gt;</span></h3>
+<p dd-if="(a > 3)">a &gt; 3</p>
+<p dd-if="($model.x > this.a)">$model.x &gt; a</p>
+
+
+<br>
+<h3 style="margin-top:21px">Less or equal than - <span style="color:maroon">&lt;=</span></h3>
+<p dd-if="(5 <= a)">5 &lt;&equals; a</p>
+<p dd-if="(a <= d)">a &lt;&equals; d</p>
+
+<br>
+<h3 style="margin-top:21px">Less than - <span style="color:maroon">&lt;</span></h3>
+<p dd-if="(3 < a)">3 &lt; a</p>
+<p dd-if="(a < $model.x)">a &lt; $model.x</p>
+
+
+<br>
+<h3 style="margin-top:21px">Not equal value or not equal type - <span style="color:maroon">!==</span></h3>
+<p dd-if="(b !== 88)">b !== 88</p>
+
+
+<br>
+<h3 style="margin-top:21px">Not equal - <span style="color:maroon">!=</span></h3>
+<p dd-if="(b != 88)">b != 88</p>
+
+
+<br>
+<h3 style="margin-top:21px">And - <span style="color:maroon">&&</span></h3>
+<p dd-if="(bool1 && bool2)">bool1 && bool2</p>
+
+
+<br>
+<h3 style="margin-top:21px">Or - <span style="color:maroon">||</span></h3>
+<p dd-if="(bool1 || bool3)">bool1 || bool3</p>

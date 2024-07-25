@@ -26,6 +26,7 @@ export default class DdVisibleCtrl extends Controller {
     this.x = 'This is X';
     this.$model.n1 = 5;
     this.$model.n2 = 8;
+    this.$model.a = 10;
   }
 
 
@@ -37,7 +38,9 @@ export default class DdVisibleCtrl extends Controller {
     return this.x === 'This is X';
   }
 
-
+  changeNumber(n) {
+    this.$model.a = n;
+  }
 
 
   // show/hide elements with button click

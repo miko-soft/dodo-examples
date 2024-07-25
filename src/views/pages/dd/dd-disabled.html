@@ -29,6 +29,12 @@ dd-disabled="isDisabled2()" &rarr; <input type="text" dd-disabled="isDisabled2()
 <br><button dd-click="dis2()">change model value</button>
 
 
+<br><br>
+<h3>Expression/condition</h3>
+<button dd-click="changeNumber(3)">set $model.a=3 [DISABLE]</button> &nbsp; <button dd-click="changeNumber(30)">set $model.a=30 [ENABLE]</button>
+<input type="text" dd-disabled="($model.a <= 10)">
+
+
 <style scoped>
   input {
     height: 25px;

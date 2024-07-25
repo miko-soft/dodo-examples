@@ -46,6 +46,7 @@ import DdTextEachCtrl from './controllers/dd/DdTextEachCtrl.js';
 import DdHtmlCtrl from './controllers/dd/DdHtmlCtrl.js';
 
 import DdIfCtrl from './controllers/dd/DdIfCtrl.js';
+import DdIfExpressionCtrl from './controllers/dd/DdIfExpressionCtrl.js';
 import DdIfGroupsCtrl from './controllers/dd/DdIfGroupsCtrl.js';
 import DdIfNestedCtrl from './controllers/dd/DdIfNestedCtrl.js';
 
@@ -137,6 +138,7 @@ const $routes = [
   ['when', '/dd/dd-html', DdHtmlCtrl],
 
   ['when', '/dd/dd-if', DdIfCtrl],
+  ['when', '/dd/dd-if-expression', DdIfExpressionCtrl],
   ['when', '/dd/dd-if-groups', DdIfGroupsCtrl],
   ['when', '/dd/dd-if-nested', DdIfNestedCtrl],
   ['when', '/dd/dd-visible', DdVisibleCtrl],
