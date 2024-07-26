@@ -1,0 +1,25 @@
+<h1>dd-text math expression</h1>
+Solve math expression in dd-text. For example <code>dd-text="(a + b * 3)"</code>.
+
+<br><br><br>
+Initial variables:
+<pre>
+  this.a = 10;
+  this.$model.b = 20;
+  this.product = { size: 25 };
+</pre>
+
+
+<br><br>
+<h3>Plus &amp; minus <small>+ , -</small></h3>
+a + 3 - $model.b + product.size = <b dd-text="(a + 3 - $model.b + product.size)"></b>
+
+
+<br><br>
+<h3>Multiplication &amp; division <small>* , /</small></h3>
+a / 2 + this.$model.b = <b dd-text="(a / 2 + this.$model.b)"></b>
+
+
+<br><br>
+<h3>Round brackets <small>()</small></h3>
+(a + 2) * $model.b = <b dd-text="((a + 2) * $model.b)"></b>

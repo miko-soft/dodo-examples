@@ -1,17 +1,17 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddTextMeth from '/views/pages/dd/dd-text-method.html?raw';
+import ddTextMeth from '/views/pages/dd/dd-text-math.html?raw';
 
 
 
-export default class DdTextMethodCtrl extends Controller {
+export default class DdTextMathCtrl extends Controller {
 
   constructor(app) {
     super();
   }
 
   async __loader(trx) {
-    this.setTitle('dd-text method');
+    this.setTitle('dd-text math');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');
@@ -21,25 +21,9 @@ export default class DdTextMethodCtrl extends Controller {
 
 
   async __init(trx) {
-    this.$model.user = { name: 'John Doe', age: 25 };
-  }
-
-  fileName(file) {
-    return file + '.jpg';
-  }
-
-  calculate(a) {
-    return a + 5;
-  }
-
-
-  getUser() {
-    return this.$model.user;
-  }
-
-
-  getUserName() {
-    return this.$model.user.name;
+    this.a = 10;
+    this.$model.b = 20;
+    this.product = { size: 25 };
   }
 
 
