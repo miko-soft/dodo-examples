@@ -1,10 +1,10 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import ddTextMeth from '/views/pages/dd/dd-text-meth.html?raw';
+import ddTextMeth from '/views/pages/dd/dd-text-method.html?raw';
 
 
 
-export default class DdTextCtrl extends Controller {
+export default class DdTextMethodCtrl extends Controller {
 
   constructor(app) {
     super();
