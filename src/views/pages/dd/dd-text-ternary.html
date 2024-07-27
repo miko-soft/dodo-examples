@@ -1,0 +1,24 @@
+<h1>dd-text ternary condition</h1>
+Solve a ternary condition. For example <code>dd-text="(this.isActive ? 'YES' : 'NO')"</code>.
+
+<br><br><br>
+Initial variables:
+<pre>
+  this.isActive = false;
+  this.a = 10;
+  this.$model.b = 20;
+  this.product = { size: 25 };
+</pre>
+
+
+<br><br>
+<br>isActive ? 'YES' : 'NO' &rarr; <b dd-text="(isActive ? 'YES' : 'NO')"></b>
+<br>!isActive ? 'YES' : 'NO' &rarr; <b dd-text="(!isActive ? 'YES' : 'NO')"></b>
+<br>
+<br>a > 3 ? {color: 'green'} : {color: 'red'} &rarr; <b dd-text="(a > 3 ? {color: 'green'} : {color: 'red'})"></b>
+<br>
+<br>$model.b &lt;= 3 ? 'YES' : 'NO' &rarr; <b dd-text="($model.b <= 3 ? 'YES' : 'NO')"></b>
+<br>$model.b &lt;= product.size ? 'YES' : 'NO' &rarr; <b dd-text="($model.b <= product.size ? 'YES' : 'NO')"></b>
+<br>
+<br>true &lt;= product.size ? 'YES' : 'NO' &rarr; <b dd-text="(true ? 'YES' : 'NO')"></b>
+<br>false &lt;= product.size ? 'YES' : 'NO' &rarr; <b dd-text="(false ? 'YES' : 'NO')"></b>
