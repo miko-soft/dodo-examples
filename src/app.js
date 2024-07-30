@@ -44,11 +44,13 @@ import DdTextCtrl from './controllers/dd/DdTextCtrl.js';
 import DdTextMethodCtrl from './controllers/dd/DdTextMethodCtrl.js';
 import DdTextMathCtrl from './controllers/dd/DdTextMathCtrl.js';
 import DdTextTernaryCtrl from './controllers/dd/DdTextTernaryCtrl.js';
+import DdTextConcatCtrl from './controllers/dd/DdTextConcatCtrl.js';
 import DdTextEachCtrl from './controllers/dd/DdTextEachCtrl.js';
 import DdHtmlCtrl from './controllers/dd/DdHtmlCtrl.js';
 
 import DdIfCtrl from './controllers/dd/DdIfCtrl.js';
 import DdIfExpressionCtrl from './controllers/dd/DdIfExpressionCtrl.js';
+import DdIfExpressionArrCtrl from './controllers/dd/DdIfExpressionArrCtrl.js';
 import DdIfGroupsCtrl from './controllers/dd/DdIfGroupsCtrl.js';
 import DdIfNestedCtrl from './controllers/dd/DdIfNestedCtrl.js';
 
@@ -68,6 +70,7 @@ import DdAttrCtrl from './controllers/dd/DdAttrCtrl.js';
 // cloner directives
 import DdEachSimpleCtrl from './controllers/ddCloners/DdEachSimpleCtrl.js';
 import DdEachDoubledollarCtrl from './controllers/ddCloners/DdEachDoubledollarCtrl.js';
+import DdEachDoubledollarSubpropertyCtrl from './controllers/ddCloners/DdEachDoubledollarSubpropertyCtrl.js';
 import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
 import DdEachOptionCtrl from './controllers/ddCloners/DdEachOptionCtrl.js';
 import DdEachHtmlCtrl from './controllers/ddCloners/DdEachHtmlCtrl.js';
@@ -138,11 +141,13 @@ const $routes = [
   ['when', '/dd/dd-text-method', DdTextMethodCtrl],
   ['when', '/dd/dd-text-math', DdTextMathCtrl],
   ['when', '/dd/dd-text-ternary', DdTextTernaryCtrl],
+  ['when', '/dd/dd-text-concat', DdTextConcatCtrl],
   ['when', '/dd/dd-text-each', DdTextEachCtrl],
   ['when', '/dd/dd-html', DdHtmlCtrl],
 
   ['when', '/dd/dd-if', DdIfCtrl],
   ['when', '/dd/dd-if-expression', DdIfExpressionCtrl],
+  ['when', '/dd/dd-if-expression-arr', DdIfExpressionArrCtrl],
   ['when', '/dd/dd-if-groups', DdIfGroupsCtrl],
   ['when', '/dd/dd-if-nested', DdIfNestedCtrl],
   ['when', '/dd/dd-visible', DdVisibleCtrl],
@@ -160,6 +165,7 @@ const $routes = [
   // cloner directives
   ['when', '/ddcloners/dd-each-simple', DdEachSimpleCtrl],
   ['when', '/ddcloners/dd-each-doubledollar', DdEachDoubledollarCtrl],
+  ['when', '/ddcloners/dd-each-doubledollar-subproperty', DdEachDoubledollarSubpropertyCtrl],
   ['when', '/ddcloners/dd-each', DdEachCtrl],
   ['when', '/ddcloners/dd-each-option', DdEachOptionCtrl],
   ['when', '/ddcloners/dd-each-html', DdEachHtmlCtrl],

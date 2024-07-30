@@ -1,0 +1,58 @@
+<h1>dd-each Doubledollar with subproperty</h1>
+This example will show how to assign subproperty of double dollar value by using <b>dd-set</b>.
+<br><code>dd-each="companies --company,key"     dd-set="$$company.note"</code>
+<br>
+<br>
+<table>
+  <tr>
+    <th>name</th>
+    <th>size</th>
+    <th>note</th>
+    <th></th>
+  </tr>
+  <tr dd-each="companies --company,key">
+    <td>{{company.name}}</td>
+    <td>{{company.size}}</td>
+    <td><input type="text" dd-set="$$company.note"></td>
+    <td><button dd-click="selectCompany($$company)">select</button></td>
+  </tr>
+</table>
+
+<br><br><br>
+<br>Also <b>dd-model</b> can be used.
+<br><code>dd-each="$model.companies --company,key"     dd-model="$$company.note"</code>
+<br>
+<br>
+<table>
+  <tr>
+    <th>name</th>
+    <th>size</th>
+    <th>note</th>
+    <th></th>
+  </tr>
+  <tr dd-each="$model.companies --company,key">
+    <td>{{company.name}}</td>
+    <td>{{company.size}}</td>
+    <td><input type="text" dd-model="$$company.note"></td>
+    <td><button dd-click="selectCompany($$company)">select</button></td>
+  </tr>
+</table>
+
+<br>
+<hr>
+SELECTED COMPANY::
+<br><small>Observe the note subproperty!</small>
+<p dd-text="$model.selectedCompany"></p>
+
+
+<style scoped>
+  th,
+  td {
+    width: 210px;
+    text-align: center;
+  }
+
+  th {
+    border-bottom: 1px solid gray;
+  }
+</style>

@@ -1,0 +1,65 @@
+<h1>dd-if expression array</h1>
+<p>
+  More complex example with used expression and array of objects.
+<pre><code>dd-if="($model.companie[0].opened)"</code></pre>
+</p>
+<br><br><br>
+
+Initial value used in this example:
+<pre>this.$model.companies = [
+  { _id: 1, name: 'John Doe Store', opened: false, rate: -5 },
+  { _id: 2, name: 'Jane Store', opened: true, rate: 100 }
+];
+];</pre>
+
+<br>
+<h3 style="margin-top:34px">Negation - <span style="color:maroon">!</span></h3>
+<p dd-if="(!$model.companies[0].opened)">!$model.companies[0].opened</p>
+
+<br>
+<h3 style="margin-top:34px">Double Negation - <span style="color:maroon">!!</span></h3>
+<p dd-if="(!!$model.companies[1].opened)">!!$model.companies[1].opened</p>
+
+<br>
+<h3 style="margin-top:34px">Variable value</h3>
+<p dd-if="($model.companies[1].opened)">$model.companies[1].opened</p>
+
+<br>
+<h3 style="margin-top:21px">Strict equal - <span style="color:maroon">===</span></h3>
+<p dd-if="($model.companies[1]._id === 2)">$model.companies[1]._id === 2</p>
+
+<br>
+<h3 style="margin-top:21px">Equal - <span style="color:maroon">==</span></h3>
+<p dd-if="($model.companies[1]._id == '2')">$model.companies[1]._id == '2'</p>
+
+<br>
+<h3 style="margin-top:21px">Greater or equal than - <span style="color:maroon">&gt;=</span></h3>
+<p dd-if="($model.companies[1].rate >= $model.companies[0].rate)">$model.companies[1].rate &gt;= $model.companies[0].rate</p>
+
+<br>
+<h3 style="margin-top:21px">Greater than - <span style="color:maroon">&gt;</span></h3>
+<p dd-if="($model.companies[1].rate > 50)">$model.companies[1].rate &gt; 50</p>
+
+<br>
+<h3 style="margin-top:21px">Less or equal than - <span style="color:maroon">&lt;=</span></h3>
+<p dd-if="($model.companies[0].rate <= 0)">$model.companies[0].rate &lt;= 0</p>
+
+<br>
+<h3 style="margin-top:21px">Less than - <span style="color:maroon">&lt;</span></h3>
+<p dd-if="($model.companies[0].rate < 0)">$model.companies[0].rate &lt; 0</p>
+
+<br>
+<h3 style="margin-top:21px">Not equal value or not equal type - <span style="color:maroon">!==</span></h3>
+<p dd-if="($model.companies[1].rate !== $model.companies[0].rate)">$model.companies[1].rate !== $model.companies[0].rate</p>
+
+<br>
+<h3 style="margin-top:21px">Not equal value - <span style="color:maroon">!=</span></h3>
+<p dd-if="($model.companies[1].rate != $model.companies[0].rate)">$model.companies[1].rate != $model.companies[0].rate</p>
+
+<br>
+<h3 style="margin-top:21px">And - <span style="color:maroon">&&</span></h3>
+<p dd-if="($model.companies[0].opened && $model.companies[1].opened)">$model.companies[0].opened && $model.companies[1].opened</p>
+
+<br>
+<h3 style="margin-top:21px">Or - <span style="color:maroon">||</span></h3>
+<p dd-if="($model.companies[0].opened || $model.companies[1].opened)">$model.companies[0].opened || $model.companies[1].opened</p>

@@ -2,7 +2,8 @@
 <p>
   Example with used condition in expression.
 <pre><code>dd-if="(this.x > 5)" or dd-if="(x > 5)"</code></pre>
-<pre><code>dd-if="!this.isActive"</code></pre>
+<pre><code>dd-if="!isActive"</code></pre>
+<pre><code>dd-if="!!isActive" or just dd-if="isActive"</code></pre>
 </p>
 <br><br><br>
 
@@ -12,6 +13,7 @@ this.b = '88';
 this.c = 'some string';
 this.d = 100;
 this.e = false;
+this.f = 123.44;
 this.isActive = false;
 this.$model.x = 1000;
 
@@ -24,22 +26,35 @@ this.bool3 = false;</pre>
 <p dd-if="(!isActive)">User is not active</p>
 <p dd-else>User is active</p>
 
+<br>
+<h3 style="margin-top:34px">Double Negation - <span style="color:maroon">!!</span></h3>
+<p dd-if="(!!isActive)">User is not active</p>
+<p dd-else>User is active</p>
+
+<br>
+<h3 style="margin-top:34px">Variable value</h3>
+<p dd-if="(isActive)">User is not active</p>
+<p dd-else>User is active</p>
+
 
 <br>
 <h3 style="margin-top:21px">Strict equal - <span style="color:maroon">===</span></h3>
 <p dd-if="(a === 5)">a is 5</p>
-<p dd-if="(b === 88)">b is 88</p>
-<p dd-if="(c === 'some string')">c is some string</p>
+<p dd-if="(b === 88)">b is 88</p> <!-- false -->
+<p dd-if="(c === 'some string čćžšđ')">c is some string čćžšđ</p>
 <p dd-if="(e === false)">e is false</p>
 <p dd-if="(1000 === $model.x)">1000 === $model.x</p>
 <p dd-if="($model.x === this.$model.x)">$model.x === this.$model.x</p>
+<p dd-if="(f === 123.44)">f === 123.44</p>
+<p dd-if="(f === '123.44')">f === 123.44</p> <!-- false -->
+<p dd-if="(123.44 === f)">123.44 === f</p>
 
 
 <br>
 <h3 style="margin-top:21px">Equal - <span style="color:maroon">==</span></h3>
 <p dd-if="(a == 5)">a is 5</p>
 <p dd-if="(b == 88)">b is 88</p>
-<p dd-if="(c == 'some string')">c is some string</p>
+<p dd-if="(c == 'some string čćžšđ')">c is some string čćžšđ</p>
 <p dd-if="(e == false)">e is false</p>
 
 
@@ -51,7 +66,7 @@ this.bool3 = false;</pre>
 <br>
 <h3 style="margin-top:21px">Greater than - <span style="color:maroon">&gt;</span></h3>
 <p dd-if="(a > 3)">a &gt; 3</p>
-<p dd-if="($model.x > this.a)">$model.x &gt; a</p>
+<p dd-if="($model.x > this.a)">$model.x &gt; this.a</p>
 
 
 <br>
@@ -72,7 +87,8 @@ this.bool3 = false;</pre>
 
 <br>
 <h3 style="margin-top:21px">Not equal - <span style="color:maroon">!=</span></h3>
-<p dd-if="(b != 88)">b != 88</p>
+<p dd-if="(b != 88)">b != 88</p> <!-- false because b is '88' -->
+<p dd-else>b is '88'</p>
 
 
 <br>

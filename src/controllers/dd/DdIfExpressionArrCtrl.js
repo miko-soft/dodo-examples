@@ -1,10 +1,10 @@
 import { Controller } from '@mikosoft/dodo';
 import navbar from '/views/inc/navbar.html?raw';
-import main from '/views/pages/dd/dd-if-expression.html?raw';
+import main from '/views/pages/dd/dd-if-expression-arr.html?raw';
 
 
 
-export default class DdIfExpressionCtrl extends Controller {
+export default class DdIfExpressionArrCtrl extends Controller {
 
   constructor(app) {
     super();
@@ -12,7 +12,7 @@ export default class DdIfExpressionCtrl extends Controller {
 
   async __loader(trx) {
     // this.$debugOpts.ddIf = true;
-    this.setTitle('dd-if expression');
+    this.setTitle('dd-if expression array');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
     this.setLang('en');
@@ -21,18 +21,11 @@ export default class DdIfExpressionCtrl extends Controller {
   }
 
   async __init(trx) {
-    this.a = 5;
-    this.b = '88';
-    this.c = 'some string čćžšđ';
-    this.d = 100;
-    this.e = false;
-    this.f = 123.44;
-    this.isActive = false;
-    this.$model.x = 1000;
-
-    this.bool1 = true;
-    this.bool2 = true;
-    this.bool3 = false;
+    // array of objects
+    this.$model.companies = [
+      { _id: 1, name: 'John Doe Store', opened: false, rate: -5 },
+      { _id: 2, name: 'Jane Store', opened: true, rate: 100 }
+    ];
   }
 
 }
