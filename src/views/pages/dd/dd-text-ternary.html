@@ -12,6 +12,9 @@ Initial variables:
 
 
 <br><br>
+<h3>Strings</h3>
+<i>Examples where second and third operators are pure strings.</i>
+<br>
 <br>isActive ? 'YES' : 'NO' &rarr; <b dd-text="(isActive ? 'YES' : 'NO')"></b>
 <br>!isActive ? 'YES' : 'NO' &rarr; <b dd-text="(!isActive ? 'YES' : 'NO')"></b>
 <br>
@@ -22,3 +25,12 @@ Initial variables:
 <br>
 <br>true &lt;= product.size ? 'YES' : 'NO' &rarr; <b dd-text="(true ? 'YES' : 'NO')"></b>
 <br>false &lt;= product.size ? 'YES' : 'NO' &rarr; <b dd-text="(false ? 'YES' : 'NO')"></b>
+
+
+<br><br>
+<h3>Controller properties</h3>
+<i>Examples where second and/or third operator is controller property.</i>
+<br>
+<br>isActive ? product.size : 'NO' &rarr; <b dd-text="(isActive ? product.size : 'NO')"></b>
+<br>isActive ? product.size : $model.b &rarr; <b dd-text="(isActive ? product.size : $model.b)"></b>
+<br>!isActive ? product.size : $model.b &rarr; <b dd-text="(!isActive ? product.size : $model.b)"></b>
