@@ -14,7 +14,7 @@ const httpOpts = {
     'Access-Control-Allow-Methods': 'OPTIONS, GET',
     'Access-Control-Max-Age': '3600'
   },
-  ssr: 'all', // none, all, botsonly
+  ssr: 'none', // none, all, botsonly
   ssrConsole: false, // frontend JS logs in the backend
   ssrModifier: null,
   debug: false,
