@@ -15,11 +15,11 @@
     "dev": "npx vite --config vite.config.js",
     "prod": "npx vite --config vite.config.js --mode production",
     "build": "npx vite build --mode production",
-    "server": "export PORT=9000 && pm2 start server/index.js --name dodo-app",
+    "server": "export PORT=3457 && pm2 start server/index.js --name dodo-examples",
     "nodemon": "nodemon server"
   },
   "dependencies": {
-    "@mikosoft/dodo": "0.9.5",
+    "@mikosoft/dodo": "0.9.7",
     "@mikosoft/spa-server": "^2.0.2"
   },
   "devDependencies": {
