@@ -1,9 +1,9 @@
 <h1>dd-lazyjs</h1>
 The attribute dd-lazyjs will load JS lazily. To make this work simply put <i>dd-lazyjs</i> attribute in the SCRIPT tag.
-<br>There are two options: <b>dd-lazyjs="--after__loader"</b> or <b>dd-lazyjs="--after__rend"</b>
+<br>There are three options: <b>dd-lazyjs="--after__loader"</b> or <b>dd-lazyjs="--after__rend"</b> or <b>dd-lazyjs="--after__postrend"</b>
 
 <br><br>
-<p>To test when lazy load will haeppen tund on debugging: <code>this.$debugOpts.ddLazyjs = true;</code></p>
+<p>To test when the lazy loading occurs, enable debugging by setting: <code>this.$debugOpts.ddLazyjs = true;</code>. This will provide detailed logs about the lazy loading process.</p>
 
 <br>
 NOTICE:
@@ -15,5 +15,6 @@ NOTICE:
 <b style="color:green" id="msgplace">MESSAGE PLACEHOLDER</b>
 
 
+<script src="/js/jq-test-module.js" type="module" dd-lazyjs="--after__loader"></script>
 <!-- <script src="/public/js/jq-test.js" dd-lazyjs="--after__rend"></script> -->
-<script src="/js/jq-test-module.js" type="module" dd-lazyjs></script>
+<!-- <script src="/public/js/jq-test.js" dd-lazyjs="--after__postrend"></script> -->

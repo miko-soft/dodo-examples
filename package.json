@@ -1,6 +1,6 @@
 {
   "name": "dodo-examples",
-  "version": "0.9.5",
+  "version": "0.9.12",
   "title": "Dodo Examples",
   "description": "The examples which shows how to use the DoDo Framework.",
   "author": "Mikodanic Sasa <smikodanic@gmail.com>",
@@ -19,11 +19,11 @@
     "nodemon": "nodemon server"
   },
   "dependencies": {
-    "@mikosoft/dodo": "0.9.7",
+    "@mikosoft/dodo": "../dodo",
     "@mikosoft/spa-server": "^2.0.2"
   },
   "devDependencies": {
-    "sass": "^1.62.1",
-    "vite": "^4.5.2"
+    "sass": "^1.90.0",
+    "vite": "^6.3.5"
   }
 }

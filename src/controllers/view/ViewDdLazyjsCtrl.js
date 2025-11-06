@@ -11,7 +11,7 @@ export default class ViewDdLazyjsCtrl extends Controller {
   }
 
   async __loader(trx) {
-    // this.$debugOpts.ddLazyjs = true;
+    this.$debugOpts.ddLazyjs = true;
     this.setTitle('dd-lazyjs');
     this.setDescription('The examples which shows how to use the DoDo Framework.');
     this.setKeywords('dodo, examples');
