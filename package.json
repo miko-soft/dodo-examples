@@ -1,12 +1,13 @@
 {
   "name": "dodo-examples",
-  "version": "0.9.12",
+  "version": "0.9.22",
   "title": "Dodo Examples",
-  "description": "The examples which shows how to use the DoDo Framework.",
+  "description": "Examples that show how to use the DoDo Framework.",
   "author": "Mikodanic Sasa <smikodanic@gmail.com>",
   "homepage": "http://dodo.mikosoft.info",
   "license": "MIT",
   "keywords": [
+    "dodo framework",
     "dodo examples"
   ],
   "type": "module",
@@ -19,8 +20,8 @@
     "nodemon": "nodemon server"
   },
   "dependencies": {
-    "@mikosoft/dodo": "~0.9.12",
-    "@mikosoft/spa-server": "^2.0.2"
+    "@mikosoft/dodo": "~0.9.22",
+    "@mikosoft/spa-server": "^2.1.0"
   },
   "devDependencies": {
     "sass": "^1.90.0",

@@ -3,6 +3,18 @@ Directive dd-text in combination with dd-each.
 
 <h3>dd-text and dd-each in the same element</h3>
 
+<br><br>
+
+In most cases you should use doubledollar sign <code>$$</code> to access the current value within dd-each.
+<br>
+<code>dd-each="animals --val,key" dd-text="$$val"</code>
+<ul>
+  <li dd-each="animals --val,key" dd-text="$$val"></li>
+</ul>
+
+<br><br><br><br>
+But also you can use other ways to access the current value within dd-each:
+<br>
 <code>dd-each="animals --val,key" dd-text="animals[{{key}}]"</code>
 <ul>
   <li dd-each="animals --val,key" dd-text="animals[{{key}}]"></li>
@@ -40,7 +52,7 @@ Directive dd-text in combination with dd-each.
 
 
 <br><br>
-<h3>dd-text within dd-each</h3>
+<h3>dd-text element inside dd-each element</h3>
 
 <code>dd-each="animals --val,key"  > dd-text="printAnimal($$val, {{key}})"</code>
 <ul>
@@ -54,4 +66,4 @@ Directive dd-text in combination with dd-each.
 <br><br>
 <h3>dd-each with template placeholders {{ ... }}</h3>
 <i>In this example the mustaches are used instead of dd-text:</i> <code>&lt;p dd-each="animals --val,key"&gt;{{key}}. {{val}}&lt;/p&gt;</code>
-<p dd-each="animals --val,key">{{key}}. {{val}}</p>
+<p dd-each="animals --val,key" style="margin:0;padding:0;">{{key}}. {{val}}</p>

@@ -15,6 +15,7 @@ const httpOpts = {
     'Access-Control-Max-Age': '3600'
   },
   ssr: 'none', // none, all, botsonly
+  ssrDomMutuationTimeout: 2000, // ms to wait for DOM mutations, increase if your single page app is slow
   ssrConsole: false, // frontend JS logs in the backend
   ssrModifier: null,
   debug: false,

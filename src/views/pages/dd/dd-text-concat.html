@@ -5,10 +5,22 @@ For example <code>dd-text="(first_name + ' ' + last_name`)"</code>.
 
 <br><br>
 <ol>
-  <li dd-text="(pet + ' is my pet')"></li>
-  <li dd-text="(n + ' is twenty two')"></li>
-  <li dd-text="('Employer's name:: ' + $model.first_name )"></li>
-  <li dd-text="('Product size:: ' + product.size )"></li>
-  <li dd-text="($model.companies[0].name + ' &rarr; ' + $model.companies[0].size)"></li>
-  <li dd-text="(badVar + ' is bad controller property')"></li>
+  <li>
+    dd-text="(pet + ' is my pet')" -> <b dd-text="(pet + ' is my pet')"></b>
+  </li>
+  <li>
+    dd-text="(n + ' is twenty two')" -> <b dd-text="(n + ' is twenty two')"></b>
+  </li>
+  <li>
+    dd-text="('Employer\'s name:: ' + $model.first_name)" -> <b dd-text="('Employer\'s name:: ' + $model.first_name)"></b>
+  </li>
+  <li>
+    dd-text="('Product size:: ' + product.size)" -> <b dd-text="('Product size:: ' + product.size)"></b>
+  </li>
+  <li>
+    dd-text="($model.companies[0].name + ' &rarr; ' + $model.companies[0].size)" -> <b dd-text="($model.companies[0].name + ' &rarr; ' + $model.companies[0].size)"></b>
+  </li>
+  <li>
+    dd-text="(badVar + ' is bad controller property')" -> <b dd-text="(badVar + ' is bad controller property')"></b>
+  </li>
 </ol>
