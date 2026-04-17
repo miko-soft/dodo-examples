@@ -1,15 +1,15 @@
 <h1>dd-disabled</h1>
-Disable elements by setting up <b>disabled</b> attribute.
+Disables elements by setting the <b>disabled</b> attribute.
 
 <h3>Controller property</h3>
-<i>Example with pure controller property in the attribute value.</i>
+<i>Example using a controller property directly as the attribute value.</i>
 <br>dd-disabled="myBool" &rarr; <button dd-disabled="myBool" dd-click="myAlert()">BUTTON 1</button>
 
 <br><br>
 <h3>Model</h3>
-<i>Example with pure model in the attribute value.
-  <br>Initial model value is undefined so element is disabled.
-  <br>The <b>this.</b> will not cause error.</i>
+<i>Example using a model property as the attribute value.
+  <br>The initial model value is undefined, so the element is disabled.
+  <br>Using the <b>this.</b> prefix will not cause an error.</i>
 <br>dd-disabled="$model.my.bool" &rarr; <input type="text" dd-disabled="$model.my.bool">
 <br>dd-disabled="this.$model.my.bool" &rarr; <input type="text" dd-disabled="this.$model.my.bool">
 <br><button dd-click="dis1()">change model value</button>
@@ -20,7 +20,7 @@ Disable elements by setting up <b>disabled</b> attribute.
 
 <br><br>
 <h3>Controller method</h3>
-<i>This example shows expression with controller method.</i>
+<i>This example demonstrates a controller method call.</i>
 <br>dd-disabled="isDisabled()" &rarr; <button dd-disabled="isDisabled()">BUTTON 2</button>
 
 <br><br>

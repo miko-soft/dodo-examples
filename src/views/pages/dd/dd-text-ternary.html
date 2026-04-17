@@ -1,5 +1,5 @@
 <h1>dd-text ternary condition</h1>
-Solve a ternary condition. For example <code>dd-text="(this.isActive ? 'YES' : 'NO')"</code>.
+Evaluates a ternary expression. For example <code>dd-text="(this.isActive ? 'YES' : 'NO')"</code>.
 
 <br><br><br>
 Initial variables:
@@ -13,7 +13,7 @@ Initial variables:
 
 <br><br>
 <h3>Strings</h3>
-<i>Examples where second and third operators are pure strings.</i>
+<i>Examples where the second and third operands are plain strings.</i>
 <br>
 <br>isActive ? 'YES' : 'NO' &rarr; <b dd-text="(isActive ? 'YES' : 'NO')"></b>
 <br>!isActive ? 'YES' : 'NO' &rarr; <b dd-text="(!isActive ? 'YES' : 'NO')"></b>
@@ -29,7 +29,7 @@ Initial variables:
 
 <br><br>
 <h3>Controller properties</h3>
-<i>Examples where second and/or third operator is controller property.</i>
+<i>Examples where the second and/or third operand is a controller property.</i>
 <br>
 <br>isActive ? product.size : 'NO' &rarr; <b dd-text="(isActive ? product.size : 'NO')"></b>
 <br>isActive ? product.size : $model.b &rarr; <b dd-text="(isActive ? product.size : $model.b)"></b>

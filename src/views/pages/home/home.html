@@ -6,107 +6,114 @@
 
 <h2>Controller</h2>
 <ul>
-  <li><a href="/controller/hooks" dd-href>Controller Lifecycle Hooks</a> - shows in which order will be executed constructor(), __loader(), __init(), __postrend(), __destroy()</li>
+  <li><a href="/controller/hooks" dd-href>Controller Lifecycle Hooks</a> - shows the execution order of constructor(), __loader(), __init(), __postrend(), and __destroy()</li>
 </ul>
 
 <h2>View</h2>
 <ul>
-  <li><a href="/view/ddview-inner" dd-href>dd-view 'inner'</a> - test the loadView() method with 'inner' option</li>
-  <li><a href="/view/ddview-sibling" dd-href>dd-view 'sibling'</a> - test the loadView() method with 'sibling' option</li>
-  <li><a href="/view/ddview-prepend" dd-href>dd-view 'prepend'</a> - test the loadView() method with 'prepend' option</li>
-  <li><a href="/view/ddview-append" dd-href>dd-view 'append'</a> - test the loadView() method with 'append' option</li>
+  <li><a href="/view/ddview-inner" dd-href>dd-view 'inner'</a> - demonstrates loadView() with the 'inner' option</li>
+  <li><a href="/view/ddview-sibling" dd-href>dd-view 'sibling'</a> - demonstrates loadView() with the 'sibling' option</li>
+  <li><a href="/view/ddview-prepend" dd-href>dd-view 'prepend'</a> - demonstrates loadView() with the 'prepend' option</li>
+  <li><a href="/view/ddview-append" dd-href>dd-view 'append'</a> - demonstrates loadView() with the 'append' option</li>
   <li><a href="/view/ddview-nested" dd-href>dd-view (nested)</a> - nested <b>dd-view</b> elements</li>
-  <li><a href="/view/emptyview" dd-href>dd-view | emptyView()</a> - empty dd-view element with button</li>
+  <li><a href="/view/emptyview" dd-href>dd-view | emptyView()</a> - empties a dd-view element using a button</li>
   <li>&nbsp;</li>
-  <li><a href="/view/grabfilecontent" dd-href>grabFileContent()</a> - fetch HTML content from server i.e. from URL and load it on the page</li>
+  <li><a href="/view/grabfilecontent" dd-href>grabFileContent()</a> - fetches HTML content from a server URL and injects it into the page</li>
   <li>&nbsp;</li>
-  <li><a href="/view/loadjs" dd-href>loadJS(), unloadJS(), unloadAllJS()</a> - JS file loader</li>
-  <li><a href="/view/ddlazyjs" dd-href>dd-lazyjs | ddLazyjs()</a> - test dd-lazyjs directive</li>
-  <li><a href="/view/exejs" dd-href>exeJS()</a> - fetch js content and execute it</li>
+  <li><a href="/view/loadjs" dd-href>loadJS(), unloadJS(), unloadAllJS()</a> - JavaScript file loader</li>
+  <li><a href="/view/ddlazyjs" dd-href>dd-lazyjs | ddLazyjs()</a> - demonstrates the dd-lazyjs directive</li>
+  <li><a href="/view/exejs" dd-href>exeJS()</a> - fetches JavaScript content and executes it</li>
   <li>&nbsp;</li>
-  <li><a href="/view/loadcss" dd-href>loadCSS(), unloadCSS()</a> - create &lt;link rel="stylesheet"&gt; tag and load CSS</li>
-  <li><a href="/view/plugcss" dd-href>plugCSS(), unplugCSS()</a> - create &lt;style dd-ref="#reference"&gt;&lt;/style&gt; tag in the &lt;head&gt;.</li>
+  <li><a href="/view/loadcss" dd-href>loadCSS(), unloadCSS()</a> - creates a &lt;link rel="stylesheet"&gt; tag and loads CSS</li>
+  <li><a href="/view/unloadallcss" dd-href>unloadAllCSS()</a> - removes all &lt;link rel="stylesheet"&gt; tags from &lt;head&gt; at once</li>
+  <li><a href="/view/plugcss" dd-href>plugCSS(), unplugCSS()</a> - inserts a &lt;style dd-ref="#reference"&gt;&lt;/style&gt; tag into the &lt;head&gt;</li>
+  <li><a href="/view/setcssvar" dd-href>setCSSVar()</a> - sets a CSS custom property on :root or a scoped element</li>
   <li>&nbsp;</li>
   <li><a href="/view/headsetters" dd-href>HEAD setters</a> - setTitle(), setDescription(), setKeywords(), setLang()</li>
+  <li><a href="/view/setfavicon" dd-href>setFavicon()</a> - sets/replaces the &lt;link rel="icon"&gt; favicon tag</li>
+  <li><a href="/view/setmetatag" dd-href>setMetaTag(), removeMetaTag()</a> - adds, updates or removes &lt;meta&gt; tags (name= and property= supported)</li>
+  <li><a href="/view/preloadlink" dd-href>preloadLink()</a> - adds &lt;link rel="preload"&gt; resource hints to &lt;head&gt;</li>
   <li>&nbsp;</li>
-  <li><a href="/view/loadi18n" dd-href>loadI18n</a> - load the specific language in the page</li>
+  <li><a href="/view/scrollto" dd-href>scrollTo()</a> - scrolls to a DOM element via CSS selector with ScrollIntoViewOptions</li>
+  <li>&nbsp;</li>
+  <li><a href="/view/loadi18n" dd-href>loadI18n</a> - loads the selected language into the page</li>
 </ul>
 
 <h2>General Directives</h2>
 <ul>
-  <li><a href="/dd/dd-setinitial" dd-href>dd-setinitial</a> - set controller value from the element value</li>
-  <li><a href="/dd/dd-elem" dd-href>dd-elem</a> - pick up the DOM element</li>
+  <li><a href="/dd/dd-setinitial" dd-href>dd-setinitial</a> - sets the initial controller value from an element's value</li>
+  <li><a href="/dd/dd-elem" dd-href>dd-elem</a> - captures a DOM element and stores it in the controller</li>
   <br>
   <b>WRITERS</b>
-  <li><a href="/dd/dd-text" dd-href>dd-text</a> - print text defined in the controller property</li>
-  <li><a href="/dd/dd-text-method" dd-href>dd-text method</a> - print text returned from the controller method</li>
-  <li><a href="/dd/dd-text-math" dd-href>dd-text math</a> - solve Math expression and print the result in dd-text element</li>
-  <li><a href="/dd/dd-text-ternary" dd-href>dd-text ternary</a> - solve the ternary condition</li>
-  <li><a href="/dd/dd-text-concat" dd-href>dd-text concat</a> - solve the string concatenate expression</li>
-  <li><a href="/dd/dd-text-each" dd-href>dd-text-each</a> - dd-text within dd-each</li>
-  <li><a href="/dd/dd-html" dd-href>dd-html</a> - embed HTML in the DOM</li>
+  <li><a href="/dd/dd-text" dd-href>dd-text</a> - renders text from a controller property</li>
+  <li><a href="/dd/dd-text-method" dd-href>dd-text method</a> - renders text returned by a controller method</li>
+  <li><a href="/dd/dd-text-math" dd-href>dd-text math</a> - evaluates a math expression and renders the result</li>
+  <li><a href="/dd/dd-text-ternary" dd-href>dd-text ternary</a> - evaluates a ternary expression</li>
+  <li><a href="/dd/dd-text-concat" dd-href>dd-text concat</a> - evaluates a string concatenation expression</li>
+  <li><a href="/dd/dd-text-each" dd-href>dd-text-each</a> - dd-text used inside a dd-each loop</li>
+  <li><a href="/dd/dd-html" dd-href>dd-html</a> - embeds raw HTML into the DOM</li>
   <br>
   <b>ATTRIBUTERS</b>
-  <li><a href="/dd/dd-if" dd-href>dd-if , dd-elseif , dd-else</a> - show element when the if statement is truthy</li>
-  <li><a href="/dd/dd-if-expression" dd-href>dd-if expression</a> - if with condition within expression, dd-if="(this.a &gt; 6)"</li>
-  <li><a href="/dd/dd-if-expression-arr" dd-href>dd-if expression array</a> - if with condition within expression and array of objects, dd-if="($model.companie[0].opened)"</li>
-  <li><a href="/dd/dd-if-groups" dd-href>dd-if groups</a> - two if groups within same parent element</li>
-  <li><a href="/dd/dd-if-nested" dd-href>dd-if (nested)</a> - nest one if in another if element</li>
+  <li><a href="/dd/dd-if" dd-href>dd-if , dd-elseif , dd-else</a> - renders an element when the condition is truthy</li>
+  <li><a href="/dd/dd-if-expression" dd-href>dd-if expression</a> - conditional rendering using an expression, dd-if="(this.a &gt; 6)"</li>
+  <li><a href="/dd/dd-if-expression-arr" dd-href>dd-if expression array</a> - conditional rendering using an expression with an array of objects, dd-if="($model.companie[0].opened)"</li>
+  <li><a href="/dd/dd-if-groups" dd-href>dd-if groups</a> - two if-groups sharing the same parent element</li>
+  <li><a href="/dd/dd-if-nested" dd-href>dd-if (nested)</a> - an if-group nested inside another if element</li>
   <br>
-  <li><a href="/dd/dd-visible" dd-href>dd-visible</a> - show/hide HTML elements with visibility:visible|hidden CSS property</li>
+  <li><a href="/dd/dd-visible" dd-href>dd-visible</a> - shows or hides elements using the CSS visibility property</li>
   <br>
-  <li><a href="/dd/dd-value" dd-href>dd-value</a> - set element value from controller property value</li>
-  <li><a href="/dd/dd-disabled" dd-href>dd-disabled</a> - disable the element</li>
-  <li><a href="/dd/dd-checked-checkboxes" dd-href>dd-checked (checkboxes)</a> - check the checkboxes with controller property</li>
-  <li><a href="/dd/dd-checked-radios" dd-href>dd-checked (radios)</a> - check the radios with controller property</li>
-  <li><a href="/dd/dd-selected" dd-href>dd-selected</a> - set selected attribute for select-one and select-multiple</li>
-  <li><a href="/dd/dd-class" dd-href>dd-class</a> - change class attribute</li>
-  <li><a href="/dd/dd-style" dd-href>dd-style</a> - change style attribute</li>
-  <li><a href="/dd/dd-src" dd-href>dd-src</a> - set src attribute</li>
-  <li><a href="/dd/dd-attr" dd-href>dd-attr</a> - set any element attribute</li>
+  <li><a href="/dd/dd-value" dd-href>dd-value</a> - sets an element's value from a controller property</li>
+  <li><a href="/dd/dd-disabled" dd-href>dd-disabled</a> - disables an element</li>
+  <li><a href="/dd/dd-checked-checkboxes" dd-href>dd-checked (checkboxes)</a> - checks checkboxes using a controller property</li>
+  <li><a href="/dd/dd-checked-radios" dd-href>dd-checked (radios)</a> - checks radio buttons using a controller property</li>
+  <li><a href="/dd/dd-selected" dd-href>dd-selected</a> - sets the selected attribute on single or multiple select elements</li>
+  <li><a href="/dd/dd-class" dd-href>dd-class</a> - modifies the class attribute</li>
+  <li><a href="/dd/dd-style" dd-href>dd-style</a> - modifies the style attribute</li>
+  <li><a href="/dd/dd-src" dd-href>dd-src</a> - sets the src attribute</li>
+  <li><a href="/dd/dd-attr" dd-href>dd-attr</a> - sets any element attribute</li>
 </ul>
 
 
 <h2>Cloner Directives</h2>
 <ul>
-  <li><a href="/ddcloners/dd-each-simple" dd-href>dd-each simple</a> - very simple dd-each example with mustaches {{...}}</li>
-  <li><a href="/ddcloners/dd-each-doubledollar" dd-href>dd-each doubledollar</a> - how to use $$val in dd-each's outerHTML</li>
-  <li><a href="/ddcloners/dd-each-doubledollar-subproperty" dd-href>dd-each doubledollar subproperty</a> - how to set subproperty of $$val with dd-set</li>
-  <li><a href="/ddcloners/dd-each" dd-href>dd-each</a> - multiply HTML element with controller property or returned value from controller method</li>
-  <li><a href="/ddcloners/dd-each-option" dd-href>dd-each option</a> - generate SELECT > OPTION</li>
-  <li><a href="/ddcloners/dd-each-html" dd-href>dd-each & dd-html</a> - more complex dd-each usage in combination with dd-html</li>
-  <li><a href="/ddcloners/dd-each-3d-data" dd-href>dd-each 3D data</a> - print 3D data with dd-each and dd-html</li>
-  <li><a href="/ddcloners/dd-each2" dd-href>dd-each2</a> - iterate a nested sub-array within dd-each</li>
-  <li><a href="/ddcloners/dd-each2complex" dd-href>dd-each2 complex</a> - iterate a nested sub-array within dd-each with complex data</li>
-  <li><a href="/ddcloners/dd-repeat" dd-href>dd-repeat</a> - repeat the element based on number</li>
+  <li><a href="/ddcloners/dd-each-simple" dd-href>dd-each simple</a> - a minimal dd-each example using mustache templates {{...}}</li>
+  <li><a href="/ddcloners/dd-each-doubledollar" dd-href>dd-each doubledollar</a> - how to use $$val within a dd-each element's outerHTML</li>
+  <li><a href="/ddcloners/dd-each-doubledollar-subproperty" dd-href>dd-each doubledollar subproperty</a> - how to set a sub-property of $$val using dd-set</li>
+  <li><a href="/ddcloners/dd-each" dd-href>dd-each</a> - repeats an HTML element based on a controller property or method return value</li>
+  <li><a href="/ddcloners/dd-each-option" dd-href>dd-each option</a> - generates SELECT and OPTION elements</li>
+  <li><a href="/ddcloners/dd-each-html" dd-href>dd-each & dd-html</a> - a more complex dd-each example combined with dd-html</li>
+  <li><a href="/ddcloners/dd-each-3d-data" dd-href>dd-each 3D data</a> - renders three-dimensional data using dd-each and dd-html</li>
+  <li><a href="/ddcloners/dd-each2" dd-href>dd-each2</a> - iterates a nested sub-array within dd-each</li>
+  <li><a href="/ddcloners/dd-each2complex" dd-href>dd-each2 complex</a> - iterates a nested sub-array within dd-each using complex data</li>
+  <li><a href="/ddcloners/dd-repeat" dd-href>dd-repeat</a> - repeats an element a specified number of times</li>
 </ul>
 
 <h2>Listener Directives</h2>
 <ul>
-  <li><a href="/ddlisteners/dd-href" dd-href>dd-href</a> - link to another page</li>
+  <li><a href="/ddlisteners/dd-href" dd-href>dd-href</a> - navigates to another page</li>
   <li><a href="/ddlisteners/dd-click" dd-href>dd-click</a> - click event listener</li>
   <li><a href="/ddlisteners/dd-keyup" dd-href>dd-keyup</a> - keyup event listener</li>
   <li><a href="/ddlisteners/dd-change" dd-href>dd-change</a> - change event listener</li>
-  <li><a href="/ddlisteners/dd-evt" dd-href>dd-evt</a> - chain any event listener</li>
-  <li><a href="/ddlisteners/dd-set" dd-href>dd-set</a> - set the controller property value (single direction from dd-set element to controller)</li>
-  <li><a href="/ddlisteners/dd-model" dd-href>dd-model</a> - use dd-model in different form tags: input, checkbox, radio, select, textarea</li>
-  <li><a href="/ddlisteners/dd-model-dd-set" dd-href>dd-model &amp; dd-set</a> - dd-model as replacement for dd-set with dd-value</li>
+  <li><a href="/ddlisteners/dd-evt" dd-href>dd-evt</a> - chains multiple event listeners on one element</li>
+  <li><a href="/ddlisteners/dd-set" dd-href>dd-set</a> - sets a controller property from an input element (one-way binding)</li>
+  <li><a href="/ddlisteners/dd-model" dd-href>dd-model</a> - two-way binding with various form elements: input, checkbox, radio, select, textarea</li>
+  <li><a href="/ddlisteners/dd-model-dd-set" dd-href>dd-model &amp; dd-set</a> - using dd-model as a replacement for the dd-set + dd-value combination</li>
 </ul>
 
 
 <h2>Model</h2>
 <ul>
-  <li><a href="/model/basic" dd-href>Model - Basic</a> - Test string, object and array in the $model. Test $modeler methods.</li>
-  <li><a href="/model/multilevel-object" dd-href>Model - Multilevel Object</a> - set and get multi level model object like $model.car.x.y.z.w.year</li>
+  <li><a href="/model/basic" dd-href>Model - Basic</a> - tests $model with string, object, and array values, and exercises $modeler methods</li>
+  <li><a href="/model/multilevel-object" dd-href>Model - Multilevel Object</a> - gets and sets a deeply nested model property such as $model.car.x.y.z.w.year</li>
 </ul>
 
 
 <h2>Lib</h2>
 <ul>
-  <li><a href="/lib/auth/login" dd-href>Auth</a> - test login, logout and route gurads: autoLogin, isLogged, hasRole</li>
-  <li><a href="/lib/form" dd-href>Form</a> - test Form library methods</li>
-  <li><a href="/lib/navig1" dd-href>navig</a> - test navig library methods</li>
-  <li><a href="/lib/cookie" dd-href>Cookie</a> - test Cookie library methods</li>
-  <li><a href="/lib/browserstorage" dd-href>BrowserStorage</a> - test BrowserStorage library methods</li>
-  <li><a href="/lib/paginator" dd-href>Paginator</a> - the pagination library</li>
+  <li><a href="/lib/auth/login" dd-href>Auth</a> - tests login, logout, and route guards: autoLogin, isLogged, hasRole</li>
+  <li><a href="/lib/form" dd-href>Form</a> - tests Form library methods</li>
+  <li><a href="/lib/navig1" dd-href>navig</a> - tests navig library methods</li>
+  <li><a href="/lib/cookie" dd-href>Cookie</a> - tests Cookie library methods</li>
+  <li><a href="/lib/browserstorage" dd-href>BrowserStorage</a> - tests BrowserStorage library methods</li>
+  <li><a href="/lib/paginator" dd-href>Paginator</a> - demonstrates the Paginator library</li>
 </ul>

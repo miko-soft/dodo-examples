@@ -1,5 +1,5 @@
 <h1>dd-set</h1>
-Set controller property from INPUT, TEXTAREA, SELECT tags.
+Sets a controller property from an INPUT, TEXTAREA, or SELECT element.
 
 <br><br>
 <h3>INPUT TEXT</h3>
@@ -13,8 +13,8 @@ Set controller property from INPUT, TEXTAREA, SELECT tags.
 
 <br><br>
 <h3>INPUT TEXT (--convertType)</h3>
-Type some numbers or JSON or boolean in the fields. Open browser console.
-<br> The <i>--convertType</i> option will correct datatype, for example "5" &rarr; 5
+Type a number, JSON object, or boolean value. Open the browser console to inspect the results.
+<br> The <i>--convertType</i> option corrects the data type, e.g. converts "5" to 5.
 <br>
 <input type="text" dd-set="$model.mySet_orig">
 <input type="text" dd-set="$model.mySet_converted --convertType" placeholder="--convertType">
@@ -30,7 +30,7 @@ Type some numbers or JSON or boolean in the fields. Open browser console.
 
 <br><br>
 <h3>INPUT CHECKBOX</h3>
-Set the controller value on "input" JS DOM event i.e. on every input change.
+Sets the controller value on the input DOM event — i.e., on every change.
 <br>
 <input type="checkbox" name="my_set1" dd-set="$model.mySet1" value="125"> 125 &nbsp;&nbsp;
 <input type="checkbox" name="my_set1" dd-set="$model.mySet1" value="sasa" checked> sasa &nbsp;&nbsp;
@@ -38,10 +38,10 @@ Set the controller value on "input" JS DOM event i.e. on every input change.
 &nbsp;&nbsp; <b dd-text="$model.mySet1"></b>
 <br>
 <br>
-<br>Same as above but without <b>$model.</b> Open browser console to watch results.
-<br>NOTICE:
-<br> - render() is not triggered so view will not be refreshed.
-<br> - dd-click will not work because dd-click is executed before dd-set, so it should be: <i>dd-set="mySet1" <b>dd-evt="printInConsole() --input"</b></i>
+<br>Same as above but without the <b>$model.</b> prefix. Open the browser console to observe the results.
+<br>Note:
+<br> - render() is not triggered, so the view will not refresh.
+<br> - dd-click will not work here because dd-click is executed before dd-set — use dd-evt instead: <i>dd-set="mySet1" <b>dd-evt="printInConsole() --input"</b></i>
 <br>
 <input type="checkbox" name="my_set2" value="125" dd-set="mySet1" dd-evt="printInConsole() --input"> 125 &nbsp;&nbsp;
 <input type="checkbox" name="my_set2" value="sasa" dd-set="mySet1" dd-evt="printInConsole() --input" checked> sasa &nbsp;&nbsp;
@@ -63,7 +63,7 @@ Set the controller value on "input" JS DOM event i.e. on every input change.
 
 <br><br>
 <h3>SELECT with dd-setinitial</h3>
-<i>Notice: The "Dara" will be default value because of dd-setinitial.</i>
+<i>Note: "Dara" is the default value because of dd-setinitial.</i>
 <br><select dd-set="$model.mySet3" dd-setinitial="$model.mySet3">
   <option value="Lara">Lara</option>
   <option value="Dara" selected>Dara</option>

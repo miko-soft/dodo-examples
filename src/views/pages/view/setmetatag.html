@@ -1,0 +1,18 @@
+<h1>setMetaTag(), removeMetaTag()</h1>
+<p>
+  <br>setMetaTag() adds or updates a &lt;meta&gt; tag in &lt;head&gt;. Supports both <code>name=</code> and <code>property=</code> attributes (e.g. Open Graph).
+  <br>removeMetaTag() removes a &lt;meta&gt; tag by its name or property value.
+  <br>Open DevTools &rarr; Elements &rarr; &lt;head&gt; to observe the changes.
+</p>
+<br>
+<p>Tags set on page load:</p>
+<ul>
+  <li><code>setMetaTag('robots', 'index, follow')</code></li>
+  <li><code>setMetaTag('og:title', 'DoDo Framework Examples')</code> &mdash; uses property= attribute</li>
+  <li><code>setMetaTag('og:image', '/public/img/logo.png')</code></li>
+</ul>
+<br>
+<button dd-click="setRobotsNoindex()">SET robots=noindex,nofollow</button>
+<button dd-click="removeRobots()">REMOVE robots</button>
+<br><br>
+<button dd-click="addOGDescription()">ADD og:description</button>

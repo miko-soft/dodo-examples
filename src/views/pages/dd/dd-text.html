@@ -1,35 +1,35 @@
 <h1>dd-text</h1>
-Print pure text.
+Renders plain text content.
 
-<h3>Overwrite contentText</h3>
+<h3>Overwrite text content</h3>
 dd-text="product.name" &rarr; <em dd-text="product.name" style="color:green">PLACEHOLDER (notice: style will stay on the element unchanged)</em>
 
 <br><br><br>
 <h3>this.</h3>
-<i>If prefix <b>this.</b> is used it will not cause the error.</i>
+<i>Using the <b>this.</b> prefix will not cause an error.</i>
 <br>dd-text="this.product.name" &rarr; <em dd-text="this.product.name"></em>
 
 <br><br><br>
 <h3>HTML</h3>
-<i>The HTML tags will not be parsed.</i>
+<i>HTML tags will not be parsed — they are rendered as plain text.</i>
 <br>dd-text="textWithHtml" &rarr; <em dd-text="textWithHtml"></em>
 
 <br><br><br>
 <h3>Pipe option --pipe:</h3>
-<i>The pipe is any JS String function.</i>
+<i>The pipe accepts any JavaScript String method.</i>
 <br>dd-text="longText"&rarr; <em dd-text="longText"></em>
 <br>dd-text="longText --pipe:slice(0, 10).replace(/ipsu/i, 'IPSU').trim()" &rarr; <em dd-text="longText --pipe:slice(0, 10).replace(/ipsu/i, 'IPSU').trim()"></em>
 <br>dd-text="longText --pipe:replace(/Lorem/ig, 'LOREM')" &rarr; <em dd-text="longText --pipe:replace(/Lorem/ig, 'LOREM')"></em>
 
 <br><br><br>
 <h3>Automatic data type conversion:</h3>
-<i>The data type will be automatically converted to string: object &rarr; JSON string, boolean &rarr; string, number &rarr; string</i>
+<i>Data types are automatically converted to strings: objects become JSON strings, booleans and numbers become their string representations.</i>
 <br>dd-text="obj4json" convert object to JSON string &rarr; <em dd-text="obj4json"></em>
 <br>dd-text="bool" convert boolean to string &rarr; <em dd-text="bool"></em>
 
 <br><br><br>
 <h3>Initial value is undefined</h3>
-<i>If the initial controller's value is undefined or null the element will not be cloned.</i>
+<i>If the controller value is initially undefined or null, the element will not be rendered.</i>
 <br><button type="button" dd-click="changeJob()">change job</button>
 <br>dd-text="$model.job.country" &rarr; Start<em dd-text="$model.job.country">INNER TEXT</em>End
 

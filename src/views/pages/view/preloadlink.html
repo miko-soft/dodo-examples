@@ -1,0 +1,15 @@
+<h1>preloadLink()</h1>
+<p>
+  <br>preloadLink() adds a <code>&lt;link rel="preload"&gt;</code> resource hint to <code>&lt;head&gt;</code>, telling the browser to fetch a resource early before it is needed.
+  <br>The <code>type</code> argument maps to the <code>as</code> attribute: <code>'font'</code>, <code>'image'</code>, <code>'style'</code>, <code>'script'</code>, <code>'fetch'</code>, etc.
+  <br>For <code>type='font'</code> the method automatically adds <code>crossorigin="anonymous"</code>.
+  <br>Duplicate URLs are silently ignored — calling preloadLink() twice with the same URL adds only one tag.
+</p>
+<br>
+<p>The following preloads are added automatically on page load:</p>
+<ul>
+  <li><code>preloadLink('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap', 'style')</code></li>
+  <li><code>preloadLink('/views/pages/home/main.html', 'fetch')</code></li>
+</ul>
+<br>
+<p>Open <b>DevTools &rarr; Elements &rarr; &lt;head&gt;</b> to see the injected <code>&lt;link rel="preload"&gt;</code> tags.</p>

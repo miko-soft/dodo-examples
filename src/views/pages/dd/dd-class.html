@@ -1,11 +1,11 @@
 <h1>dd-class</h1>
-Modify the "class" attribute with the controller property value.
+Modifies the class attribute using a controller property value.
 
 
 <br><br>
 <h3>Controller property</h3>
 <button dd-click="runCLASS()">runCLASS</button>
-<small>Open browser developer tools to see the effect after the button is clicked.</small>
+<small>Open browser developer tools to observe the effect after clicking the button.</small>
 <p class="my-italic" dd-class="$model.myKlases">Class my-italic will remain</p>
 <p class="my-italic" dd-class="$model.myKlases --replace">Class my-italic will be removed due to --replace</p>
 <p class="my-green my-font-size" dd-class="$model.myKlases_empty --replace">The "class" attribute will be removed because <b>$model.myKlases_empty</b> is empty array.</p>

@@ -4,20 +4,20 @@ Click event listener.
 
 
 <br><br>
-<h4>DD-CLICK (execute controller method)</h4>
+<h4>DD-CLICK — executes a controller method</h4>
 <button dd-click="runCLICK(5, 'str', 8, 9, $element)">Fetch Data</button> <i>Click the button to fetch JSON from the server.</i>
 <br>DATA: <small dd-text="$model.answer.res.content"></small>
 <br>
-<br><button dd-click="print.inConsole.makeRed($element)">CLICK</button> - run function defined in the controller property, for example <i>print.inConsole.makeRed($element)</i>
+<br><button dd-click="print.inConsole.makeRed($element)">CLICK</button> - runs a function defined as a controller property, e.g. <i>print.inConsole.makeRed($element)</i>
 <br>
-<br><button dd-click="runCLICK2(this.products)">CLICK 2</button> - test function argument as controller property, for example <i>dd-click="runCLICK2(this.products)"</i>
-<br><button dd-click="runCLICK2(this.products[1].name)">CLICK 2</button> - test function argument as controller property, for example <i>dd-click="runCLICK2(this.products[1].name)"</i>
+<br><button dd-click="runCLICK2(this.products)">CLICK 2</button> - tests a controller property as a function argument, e.g. <i>dd-click="runCLICK2(this.products)"</i>
+<br><button dd-click="runCLICK2(this.products[1].name)">CLICK 2</button> - tests a controller property as a function argument, e.g. <i>dd-click="runCLICK2(this.products[1].name)"</i>
 <br>
-<br><button dd-click="runCLICK3('some text', 333, false, /as$/)">CLICK 3</button> - test different function argument types: string, number, boolean, regexp</i>
+<br><button dd-click="runCLICK3('some text', 333, false, /as$/)">CLICK 3</button> - tests various argument types: string, number, boolean, and regex
 <br>
 <br><input value="Perica" dd-click="runCLICK4($value)"> - click on the input field
 <br>
-<br><button dd-click="runCLICK5a('My friend');runCLICK5b(88)">CLICK 5</button> - run two controller methods
+<br><button dd-click="runCLICK5a('My friend');runCLICK5b(88)">CLICK 5</button> - runs two controller methods
 
 
 <style scoped>

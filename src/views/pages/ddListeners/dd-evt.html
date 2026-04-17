@@ -1,10 +1,10 @@
 <h1>dd-evt</h1>
-Chain multiple event listeners.
+Chains multiple event listeners on a single element.
 
 
 <br><br>
 <h4>Example 1</h4>
-Chained multiple commands.
+Multiple event listeners chained on one element.
 
 <br><br>
 dd-evt="
@@ -21,7 +21,7 @@ runEVT($element, $event, 'blue') --click
 
 <br><br>
 <h4>Example 2</h4>
-This example shows when text in U tag is clicked the $model is assigned with the controller value
+Clicking a U element assigns a controller value to the model.
 <i>dd-evt="onKlik(1) --click"</i>
 <br><u type="text" dd-evt="onKlik(1) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text2"></b>
 <br><u type="text" dd-evt="onKlik(2) --click">CLICK ME</u> &rarr; <b dd-text="$model.changed_text3"></b>

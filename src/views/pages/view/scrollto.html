@@ -1,0 +1,30 @@
+<h1 id="scrollto-top">scrollTo()</h1>
+<p>
+  <br>scrollTo() scrolls the window to the element matched by a CSS selector using <code>scrollIntoView()</code>.
+  <br>The second argument accepts <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView" target="_blank">ScrollIntoViewOptions</a> — e.g. <code>{ behavior: 'smooth', block: 'start' }</code>.
+  <br>Click a button to jump to the corresponding section below.
+</p>
+<br>
+<button dd-click="toSection1()">Scroll to Section 1 (default smooth)</button>
+<button dd-click="toSection2()">Scroll to Section 2 (smooth, block start)</button>
+<button dd-click="toSection3()">Scroll to Section 3 (instant, block center)</button>
+<br><br>
+
+<div id="section1" style="margin-top:600px; padding:24px; background:#3498db; color:white; border-radius:6px;">
+  <h2>Section 1</h2>
+  <p>Reached via <code>this.scrollTo('#section1')</code> — uses default options: <code>{ behavior: 'smooth', block: 'start' }</code>.</p>
+</div>
+
+<div id="section2" style="margin-top:600px; padding:24px; background:#e74c3c; color:white; border-radius:6px;">
+  <h2>Section 2</h2>
+  <p>Reached via <code>this.scrollTo('#section2', { behavior: 'smooth', block: 'start' })</code>.</p>
+</div>
+
+<div id="section3" style="margin-top:600px; padding:24px; background:#2ecc71; color:white; border-radius:6px;">
+  <h2>Section 3</h2>
+  <p>Reached via <code>this.scrollTo('#section3', { behavior: 'instant', block: 'center' })</code>.</p>
+</div>
+
+<div style="margin-top:600px; margin-bottom:32px;">
+  <button dd-click="toTop()">&#8679; Back to Top</button>
+</div>

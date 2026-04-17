@@ -34,6 +34,12 @@ import ViewLoadCSSCtrl from './controllers/view/ViewLoadCSSCtrl.js';
 import ViewPlugCSSCtrl from './controllers/view/ViewPlugCSSCtrl.js';
 import ViewHeadSettersCtrl from './controllers/view/ViewHeadSettersCtrl.js';
 import ViewLoadI18nCtrl from './controllers/view/ViewLoadI18nCtrl.js';
+import ViewUnloadAllCSSCtrl from './controllers/view/ViewUnloadAllCSSCtrl.js';
+import ViewSetCSSVarCtrl from './controllers/view/ViewSetCSSVarCtrl.js';
+import ViewSetFaviconCtrl from './controllers/view/ViewSetFaviconCtrl.js';
+import ViewSetMetaTagCtrl from './controllers/view/ViewSetMetaTagCtrl.js';
+import ViewScrollToCtrl from './controllers/view/ViewScrollToCtrl.js';
+import ViewPreloadLinkCtrl from './controllers/view/ViewPreloadLinkCtrl.js';
 
 
 // general directives
@@ -133,6 +139,12 @@ const $routes = [
   ['when', '/view/plugcss', ViewPlugCSSCtrl],
   ['when', '/view/headsetters', ViewHeadSettersCtrl],
   ['when', '/view/loadi18n', ViewLoadI18nCtrl],
+  ['when', '/view/unloadallcss', ViewUnloadAllCSSCtrl],
+  ['when', '/view/setcssvar', ViewSetCSSVarCtrl],
+  ['when', '/view/setfavicon', ViewSetFaviconCtrl],
+  ['when', '/view/setmetatag', ViewSetMetaTagCtrl],
+  ['when', '/view/scrollto', ViewScrollToCtrl],
+  ['when', '/view/preloadlink', ViewPreloadLinkCtrl],
 
 
   // general directives

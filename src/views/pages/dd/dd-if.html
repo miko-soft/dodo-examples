@@ -1,8 +1,8 @@
 <h1>dd-if, dd-elseif, dd-else</h1>
-Create an element when the if statement is truthy.
+Renders an element when the condition is truthy.
 
 <h3>Controller property</h3>
-<i>Example with pure controller property in the attribute value.</i>
+<i>Example using a controller property directly as the attribute value.</i>
 <br>dd-if="myBool" ; dd-else &rarr;
 <span>
   <b dd-if="myBool">OK</b>
@@ -12,8 +12,8 @@ Create an element when the if statement is truthy.
 
 <br><br>
 <h3>Model</h3>
-<i>Example with pure model in the attribute value. Initial model value is undefined so dd-else is shown. The <b>this.</b> will not cause error.</i>
-<br>NOTICE: if group is separated with SPAN tag from other if groups.
+<i>Example using a model property as the attribute value. The initial model value is undefined, so the dd-else branch is shown. Using the <b>this.</b> prefix will not cause an error.</i>
+<br>Note: each if-group is wrapped in a SPAN tag to isolate it from other if-groups.
 <br>dd-if="$model.my.bool" ; else &rarr;
 <span>
   <b dd-if="$model.my.bool">OK</b>
@@ -24,7 +24,7 @@ Create an element when the if statement is truthy.
 
 <br><br>
 <h3>Controller method</h3>
-<i>The controller method should return boolean or thruthy/falsy value.</i>
+<i>The controller method should return a boolean or other truthy/falsy value.</i>
 <br>dd-if="x_equal(2)" ; dd-elseif="x_equal(5)" ; dd-else &rarr;
 <span>
   <b dd-if="x_equal(2)" style="color:green">2</b>
@@ -35,7 +35,7 @@ Create an element when the if statement is truthy.
 
 <br><br>
 <h3>Expression with model</h3>
-<i>Some complex examples with model in the expression.</i>
+<i>More complex examples using a model property in the expression.</i>
 <br>dd-if="check_numbers('A')" | dd-elseif="check_numbers('B')" | dd-elseif="check_numbers('C')" | else &rarr;
 <span>
   <b dd-if="check_numbers('A')">n1 &gt; 6 and n2 &gt; 10</b>

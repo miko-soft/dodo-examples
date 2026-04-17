@@ -1,11 +1,11 @@
 <h1>dd-model</h1>
-Set $model property with dd-model.
-<br>NOTICE: Use dd-setinitial to set initial model value i.e. the value when page is opened
+Two-way data binding using dd-model.
+<br>Note: Use dd-setinitial to set the initial model value when the page loads.
 
 
 <br><br>
 <h3>INPUT TEXT</h3>
-The <i>this</i> and <i>$model</i> can be omitted in dd-model because it's always related to this.$model
+The <i>this</i> and <i>$model</i> prefixes can be omitted in dd-model, since it always refers to this.$model.
 <br><input type="text" value="Saša" dd-model="this.$model.myMdl_100" dd-setinitial="this.$model.myMdl_100"> &nbsp;&nbsp; dd-model="this.$model.myMdl_100" dd-setinitial="this.$model.myMdl_100"&rarr; <b dd-text="$model.myMdl_100"></b>
 <br><input type="text" value="Saša" dd-model="$model.myMdl_101"> &nbsp;&nbsp; dd-model="$model.myMdl_101" &rarr; <b dd-text="$model.myMdl_101"></b>
 <br><input type="text" value="Saša" dd-model="myMdl_102"> &nbsp;&nbsp; dd-model="myMdl_102" &rarr; <b dd-text="$model.myMdl_102"></b>
@@ -20,8 +20,8 @@ The <i>this</i> and <i>$model</i> can be omitted in dd-model because it's always
 
 <br><br>
 <h3>INPUT TEXT (--convertType)</h3>
-Type some numbers or JSON or boolean in the fields. Open browser console.
-<br> The <i>--convertType</i> option will correct datatype, for example "5" &rarr; 5
+Type a number, JSON object, or boolean value. Open the browser console to inspect the results.
+<br> The <i>--convertType</i> option corrects the data type, e.g. converts "5" to 5.
 <br>
 <input type="text" dd-model="myMdl_orig">
 <input type="text" dd-model="myMdl_converted --convertType" placeholder="--convertType">
@@ -38,18 +38,18 @@ Type some numbers or JSON or boolean in the fields. Open browser console.
 
 <br><br>
 <h3>INPUT CHECKBOX</h3>
-Set the controller value on "input" JS DOM event i.e. on every input change.
+Updates the controller value on every input event.
 <br>
 <input type="checkbox" name="my_checkbox1" dd-model="myCheckbox" value="125"> 125 &nbsp;&nbsp;
 <input type="checkbox" name="my_checkbox1" dd-model="myCheckbox" value="sasa" checked> sasa &nbsp;&nbsp;
 <input type="checkbox" name="my_checkbox1" dd-model="myCheckbox" value="true"> true
 &nbsp;&nbsp; <b dd-text="$model.myCheckbox"></b>
-<br><button type="button" dd-click="setCheckboxes('125','true')">set checkbokes</button> &nbsp; <button type="button" dd-click="resetCheckboxes()">reset checkboxes</button>
+<br><button type="button" dd-click="setCheckboxes('125','true')">set checkboxes</button> &nbsp; <button type="button" dd-click="resetCheckboxes()">reset checkboxes</button>
 
 
 <br><br>
 <h3>SELECT with dd-setinitial</h3>
-<i>Notice: The "Dara" will be default value because of dd-setinitial.</i>
+<i>Note: "Dara" is the default value because of dd-setinitial.</i>
 <br><select dd-model="$model.mySelect" dd-setinitial="$model.mySelect">
   <option value="Lara">Lara</option>
   <option value="Dara" selected>Dara</option>
@@ -76,7 +76,7 @@ Set the controller value on "input" JS DOM event i.e. on every input change.
 <h3>TEXTAREA</h3>
 <textarea dd-model="myTextarea"></textarea>
 &nbsp;&nbsp; <b dd-text="$model.myTextarea"></b>
-<br><button type="button" dd-click="setTextarea()">set select-multiple</button> &nbsp; <button type="button" dd-click="resetTextarea()">reset select-multiple</button>
+<br><button type="button" dd-click="setTextarea()">set textarea</button> &nbsp; <button type="button" dd-click="resetTextarea()">reset textarea</button>
 
 <style scoped>
   select {

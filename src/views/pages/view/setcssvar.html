@@ -1,0 +1,32 @@
+<h1>setCSSVar()</h1>
+<p>
+  <br>setCSSVar() sets a CSS custom property (variable) on :root or a specific scoped element.
+  <br>On page load: <code>--demo-color: #3498db</code> and <code>--demo-size: 18px</code> are set on :root.
+  <br>Click the buttons to update the variables and watch the box change instantly.
+</p>
+<style>
+  #cssvar-demo {
+    width: 220px;
+    height: 90px;
+    margin: 16px 0;
+    background-color: var(--demo-color, #3498db);
+    font-size: var(--demo-size, 18px);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background-color 0.3s, font-size 0.3s;
+  }
+</style>
+<br>
+<div id="cssvar-demo">Demo Box</div>
+<br>
+<b>Color:</b>
+<button dd-click="setBlue()">Blue</button>
+<button dd-click="setRed()">Red</button>
+<button dd-click="setGreen()">Green</button>
+&nbsp;&nbsp;
+<b>Font size:</b>
+<button dd-click="setLarge()">Large (28px)</button>
+<button dd-click="setSmall()">Small (14px)</button>

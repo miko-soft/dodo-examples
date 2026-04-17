@@ -1,9 +1,9 @@
 <h1>dd-keyup</h1>
-The keyup event listener.
+Attaches a keyup event listener to an input element.
 
 
 <br><br>
-<h4>DD-KEYUP (controller method)</h4>
-Focus the INPUT field, type some letters and press enter. (Open console to watch the result.)
-<br><input type="text" style="width:210" dd-keyup="runKEYUP($element, $value, $event)"> - bind to all keyup event codes
-<br><input type="text" value="123.45" style="width:210" dd-keyup="runKEYUP($element, $value, $event) --enter"> - bind to "enter" keyup event.code
+<h4>DD-KEYUP — executes a controller method</h4>
+Focus the input field, type some text, and press Enter. Open the browser console to see the result.
+<br><input type="text" style="width:210" dd-keyup="runKEYUP($element, $value, $event)"> - listens for all keyup event codes
+<br><input type="text" value="123.45" style="width:210" dd-keyup="runKEYUP($element, $value, $event) --enter"> - listens for the Enter key only

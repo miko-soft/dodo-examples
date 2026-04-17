@@ -1,5 +1,5 @@
 <h1>dd-value</h1>
-This directive takes controller property value or controller method returned value and sets the element value.
+Sets an element's value from a controller property or a value returned by a controller method.
 
 
 <br><br><br>
@@ -35,7 +35,7 @@ This directive takes controller property value or controller method returned val
 
 <br><br>
 <h3>RADIO</h3>
-The dd-each is used.
+dd-each is used to iterate the list of countries.
 <br><br>
 <button dd-click="setCountry()">Set Radio</button>
 <br><span>Selected country: <b dd-text="$model.countrySelected"></b></span>
@@ -64,7 +64,7 @@ dd-value="valueNumber(155)" &rarr; <input type="number" dd-value="valueNumber(15
 
 <br><br>
 <h3>dd-each with controller method</h3>
-First is solved mustache placeholder {{ctrlField}}, then function in dd-value="valueUser({{ctrlField}})" &rarr;
+The mustache placeholder {{ctrlField}} is resolved first, then the result is passed to the function in dd-value="valueUser({{ctrlField}})" &rarr;
 <p dd-each="controllerFields --ctrlField">
   <input type="text" dd-value="valueUser({{ctrlField}})">
 </p>

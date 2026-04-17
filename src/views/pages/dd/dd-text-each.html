@@ -1,11 +1,11 @@
 <h1>dd-text</h1>
-Directive dd-text in combination with dd-each.
+Using dd-text in combination with dd-each.
 
 <h3>dd-text and dd-each in the same element</h3>
 
 <br><br>
 
-In most cases you should use doubledollar sign <code>$$</code> to access the current value within dd-each.
+In most cases, use the double-dollar prefix <code>$$</code> to access the current iteration value inside dd-each.
 <br>
 <code>dd-each="animals --val,key" dd-text="$$val"</code>
 <ul>
@@ -13,7 +13,7 @@ In most cases you should use doubledollar sign <code>$$</code> to access the cur
 </ul>
 
 <br><br><br><br>
-But also you can use other ways to access the current value within dd-each:
+You can also access the current value inside dd-each in other ways:
 <br>
 <code>dd-each="animals --val,key" dd-text="animals[{{key}}]"</code>
 <ul>

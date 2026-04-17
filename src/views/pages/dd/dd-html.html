@@ -1,18 +1,18 @@
 <h1>dd-html</h1>
-Print text with HTML tags.
+Renders HTML markup directly into the DOM.
 
 <h3>Overwrite innerHTML</h3>
-<i>Open Chrome Dev Tools &rarr; Elements</i>
+<i>Open Chrome DevTools &rarr; Elements</i>
 <br>dd-html="product.name" &rarr; <span dd-html="product.name">PLACEHOLDER</span>
 
 <br><br><br>
 <h3>Controller Method</h3>
-<i>The controller method returns HTML string.</i>
+<i>The controller method returns an HTML string.</i>
 <br>dd-html="showHTML('I m the author.')" &rarr; <span dd-html="showHTML('I m the author.')">PLACEHOLDER</span>
 
 <br><br><br>
 <h3>Initial value is undefined</h3>
-<i>If the initial controller's value is undefined or null the content will be an empty string.</i>
+<i>If the controller value is initially undefined or null, the content is set to an empty string.</i>
 <br><button type="button" dd-click="changeJob()">change job country</button>
 <br>dd-html="$model.job.country" &rarr; Start<em dd-html="$model.job.country">INNER TEXT</em>End
 
@@ -25,5 +25,5 @@ dd-html="$model.myHTML" &rarr; <em dd-html="$model.myHTML"></em> <button type="b
 
 <br><br><br>
 <h3>dd-html with dd- elements</h3>
-<i>HTML with Dodo dd- directives:</i> <code>&lt;div dd-html="htmlWithDD"&gt;&lt;/div&gt;</code>
+<i>HTML content containing Dodo dd- directives:</i> <code>&lt;div dd-html="htmlWithDD"&gt;&lt;/div&gt;</code>
 <div dd-html="htmlWithDD"></div>

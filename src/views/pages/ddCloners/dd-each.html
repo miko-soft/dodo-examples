@@ -1,9 +1,9 @@
 <h1>dd-each</h1>
-Generate multiple HTML elements based on an array stored in a controller property.
+Generates multiple HTML elements from an array stored in a controller property.
 
 
 <h3>Controller property</h3>
-<i>Example with pure controller property in the attribute value:</i>
+<i>Example using a controller property directly as the attribute value:</i>
 <br><code>dd-each="names --val,key" AND dd-text="printKey({{key}})"</code>
 <br>
 <p dd-each="names --val,key">
@@ -14,9 +14,9 @@ Generate multiple HTML elements based on an array stored in a controller propert
 <br>
 <h4>Model</h4>
 <i>
-  Example with pure model in the attribute value.
-  <br>Initial model value is undefined so cloned elements are not displayed.
-  <br>The <b>this.</b> will not cause error.
+  Example using a model property as the attribute value.
+  <br>The initial model value is undefined, so no elements are rendered.
+  <br>Using the <b>this.</b> prefix will not cause an error.
 </i>
 <br><code>dd-each="$model.companies --company,ind"</code>
 <br>
@@ -39,7 +39,7 @@ Generate multiple HTML elements based on an array stored in a controller propert
 
 <br><br><br>
 <h3>dd-each and dd-html</h3>
-<i>Create table with dd-each and dd-html.</i>
+<i>Creates a table using dd-each and dd-html.</i>
 <table>
   <tr dd-each="cars --car,key" dd-html="tableCells({{key}})"></tr>
 </table>
@@ -47,9 +47,9 @@ Generate multiple HTML elements based on an array stored in a controller propert
 
 <br><br><br>
 <h3>dd-each and dd-if</h3>
-<i>Element dd-if is nested within dd-each.</i>
+<i>dd-if is nested inside dd-each.</i>
 <br>
-<br><button dd-click="changeCompanies()">change companies</button> - <small>click this button multiple times</small>
+<br><button dd-click="changeCompanies()">change companies</button> - <small>Click this button multiple times.</small>
 <br>
 <table>
   <tr dd-each="$model.companies --val1,key1">
