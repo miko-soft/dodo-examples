@@ -4,7 +4,7 @@ import cookie from '/views/pages/lib/cookie.html?raw';
 
 
 
-export default class Navig1Ctrl extends Controller {
+export default class CookieCtrl extends Controller {
 
   constructor(app) {
     super();

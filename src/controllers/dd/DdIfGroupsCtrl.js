@@ -4,7 +4,7 @@ import ddIfGroups from '/views/pages/dd/dd-if-groups.html?raw';
 
 
 
-export default class DdIfCtrl extends Controller {
+export default class DdIfGroupsCtrl extends Controller {
 
   constructor(app) {
     super();

@@ -4,7 +4,7 @@ import ddModel from '/views/pages/ddListeners/dd-model.html?raw';
 
 
 
-export default class DdModelDdSetCtrl extends Controller {
+export default class DdModelCtrl extends Controller {
 
   constructor(app) {
     super();

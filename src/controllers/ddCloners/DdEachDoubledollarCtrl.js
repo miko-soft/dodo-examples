@@ -4,7 +4,7 @@ import main from '/views/pages/ddCloners/dd-each-doubledollar.html?raw';
 
 
 
-export default class DdEachDdDoubledollarCtrl extends Controller {
+export default class DdEachDoubledollarCtrl extends Controller {
 
   constructor(app) {
     super();
