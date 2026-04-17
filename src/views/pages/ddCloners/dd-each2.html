@@ -1,0 +1,60 @@
+<h1>dd-each2</h1>
+Iterate a nested sub-array that belongs to each outer <code>dd-each</code> item.
+
+<br><br>
+<pre>
+this.users = [
+  { name: 'Peter', companies: ['Microsoft', 'IBM'] },
+  { name: 'John',  companies: ['Google', 'Yahoo']  }
+]
+</pre>
+
+<br>
+<b>Usage:</b>
+<br><code>dd-each="users --user,ui"</code> — outer loop over users
+<br><code>dd-each2="user.companies --company,ci"</code> — inner loop over each user's companies
+
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Companies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr dd-each="users --user,ui">
+      <td>{{ui}}</td>
+      <td><b>{{user.name}}</b></td>
+      <td>
+        <span dd-each2="user.companies --company,ci">{{ci}}:{{company}} &nbsp;</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<style scoped>
+  pre {
+    background: #f4f4f4;
+    padding: 8px 12px;
+    display: inline-block;
+  }
+
+  table {
+    margin-top: 14px;
+    border-collapse: collapse;
+    min-width: 460px;
+  }
+
+  table td,
+  table th {
+    border: 1px solid #aaa;
+    padding: 7px 12px;
+  }
+
+  table th {
+    background: #e8e8e8;
+  }
+</style>

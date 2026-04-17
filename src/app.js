@@ -75,6 +75,8 @@ import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
 import DdEachOptionCtrl from './controllers/ddCloners/DdEachOptionCtrl.js';
 import DdEachHtmlCtrl from './controllers/ddCloners/DdEachHtmlCtrl.js';
 import DdEach3DdataCtrl from './controllers/ddCloners/DdEach3DdataCtrl.js';
+import DdEach2Ctrl from './controllers/ddCloners/DdEach2Ctrl.js';
+import DdEach2ComplexCtrl from './controllers/ddCloners/DdEach2ComplexCtrl.js';
 import DdRepeatCtrl from './controllers/ddCloners/DdRepeatCtrl.js';
 
 
@@ -170,6 +172,8 @@ const $routes = [
   ['when', '/ddcloners/dd-each-option', DdEachOptionCtrl],
   ['when', '/ddcloners/dd-each-html', DdEachHtmlCtrl],
   ['when', '/ddcloners/dd-each-3d-data', DdEach3DdataCtrl],
+  ['when', '/ddcloners/dd-each2', DdEach2Ctrl],
+  ['when', '/ddcloners/dd-each2complex', DdEach2ComplexCtrl],
   ['when', '/ddcloners/dd-repeat', DdRepeatCtrl],
 
 

@@ -1,0 +1,77 @@
+<h1>dd-each2 complex</h1>
+Demonstrates nested iteration using <code>dd-each2</code> to loop over a sub-array within each outer <code>dd-each</code> row.
+<br>Use this pattern when each list item owns a collection of related records — such as a user with multiple companies.
+
+<br><br>
+<pre>
+this.users = [
+  {
+    first_name: 'Peter',
+    companies: [
+      { name: 'Microsoft', address: '1 Microsoft Way, Redmond, WA' },
+      { name: 'IBM', address: '1 New Orchard Rd, Armonk, NY' }
+    ]
+  },
+  {
+    first_name: 'John',
+    companies: [
+      { name: 'Google', address: '123 Main St, Anytown, USA' },
+      { name: 'Yahoo', address: '123 Main St, Anytown, USA' }
+    ]
+  }
+];
+</pre>
+
+<br>
+<b>Usage:</b>
+<br><code>dd-each="users --user,ui"</code> — outer loop over users
+<br><code>dd-each2="user.companies --company,ci"</code> — inner loop over each user's companies
+
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Companies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr dd-each="users --user,ui">
+      <td>{{ui}}</td>
+      <td style="color: chocolate;">{{user.name}}</td>
+      <td>
+        <span dd-each2="user.companies --company,ci"><b>{{ci}}:</b> {{company.name}}&nbsp;</span>
+      </td>
+      <td>
+        <span dd-each2="user.companies --company,ci"><b>{{ci}}:</b> {{company.address}}&nbsp;</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<style scoped>
+  pre {
+    background: #f4f4f4;
+    padding: 8px 12px;
+    display: inline-block;
+  }
+
+  table {
+    margin-top: 14px;
+    border-collapse: collapse;
+    min-width: 460px;
+  }
+
+  table td,
+  table th {
+    border: 1px solid #aaa;
+    padding: 7px 12px;
+  }
+
+  table th {
+    background: #e8e8e8;
+  }
+</style>
