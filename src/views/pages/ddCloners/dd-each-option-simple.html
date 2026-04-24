@@ -2,8 +2,8 @@
 A simple dd-each example using a SELECT element.
 <br>
 <br>
-<select dd-set="$model.selected_country" style="width: 200px;">
-  <option dd-each="countries --country,key" value="{{country}}">{{country}}</option>
+<select style="width: 200px;" dd-set="$model.selected_country">
+  <option dd-each="countries --country,key --selected:0" value="{{country}}">{{country}}</option>
 </select>
 <br>
 <br>
