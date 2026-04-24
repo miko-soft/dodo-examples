@@ -85,6 +85,7 @@ import DdEachSimpleCtrl from './controllers/ddCloners/DdEachSimpleCtrl.js';
 import DdEachDoubledollarCtrl from './controllers/ddCloners/DdEachDoubledollarCtrl.js';
 import DdEachDoubledollarSubpropertyCtrl from './controllers/ddCloners/DdEachDoubledollarSubpropertyCtrl.js';
 import DdEachCtrl from './controllers/ddCloners/DdEachCtrl.js';
+import DdEachOptionSimpleCtrl from './controllers/ddCloners/DdEachOptionSimpleCtrl.js';
 import DdEachOptionCtrl from './controllers/ddCloners/DdEachOptionCtrl.js';
 import DdEachHtmlCtrl from './controllers/ddCloners/DdEachHtmlCtrl.js';
 import DdEach3DdataCtrl from './controllers/ddCloners/DdEach3DdataCtrl.js';
@@ -199,6 +200,7 @@ const $routes = [
   ['when', '/ddcloners/dd-each-doubledollar', DdEachDoubledollarCtrl],
   ['when', '/ddcloners/dd-each-doubledollar-subproperty', DdEachDoubledollarSubpropertyCtrl],
   ['when', '/ddcloners/dd-each', DdEachCtrl],
+  ['when', '/ddcloners/dd-each-option-simple', DdEachOptionSimpleCtrl],
   ['when', '/ddcloners/dd-each-option', DdEachOptionCtrl],
   ['when', '/ddcloners/dd-each-html', DdEachHtmlCtrl],
   ['when', '/ddcloners/dd-each-3d-data', DdEach3DdataCtrl],

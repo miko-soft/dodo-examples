@@ -1,0 +1,11 @@
+<h1>dd-each select option simple</h1>
+A simple dd-each example using a SELECT element.
+<br>
+<br>
+<select dd-set="$model.selected_country" style="width: 200px;">
+  <option dd-each="countries --country,key" value="{{country}}">{{country}}</option>
+</select>
+<br>
+<br>
+<br>
+Selected country: <span style="color: red; font-weight: bold;" dd-text="$model.selected_country"></span>
