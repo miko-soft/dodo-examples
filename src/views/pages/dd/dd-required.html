@@ -1,0 +1,60 @@
+<h1>dd-required</h1>
+Marks form fields as required by setting the <b>required</b> property (<code>elem.required = true/false</code>).
+
+<h3>Controller property</h3>
+<i>Example using a controller property directly as the attribute value.</i>
+<br>dd-required="myBool" &rarr; <input type="text" dd-required="myBool" placeholder="required field">
+
+<br><br>
+<h3>Model</h3>
+<i>Example using a model property as the attribute value.
+  <br>The initial model value is undefined, so the element is required.
+  <br>Using the <b>this.</b> prefix will not cause an error.</i>
+<br>dd-required="$model.req.bool" &rarr; <input type="text" dd-required="$model.req.bool" placeholder="becomes optional">
+<br>dd-required="this.$model.req.bool" &rarr; <input type="text" dd-required="this.$model.req.bool" placeholder="becomes optional">
+<br><button dd-click="req1()">change model value</button>
+
+<br>
+<br><button dd-click="toggleREQ()">toggle REQUIRED</button>
+<input type="text" dd-required="$model.reqX" placeholder="toggle required">
+
+<br><br>
+<h3>Controller method</h3>
+<i>This example demonstrates a controller method call.</i>
+<br>dd-required="isRequired()" &rarr; <input type="text" dd-required="isRequired()" placeholder="method-controlled">
+
+<br><br>
+<h3>Controller method with model</h3>
+dd-required="isRequired2()" &rarr; <input type="text" dd-required="isRequired2()" placeholder="model-method controlled">
+<br><button dd-click="req2()">change model value</button>
+
+<br><br>
+<h3>Expression/condition</h3>
+<button dd-click="changeNumber(3)">set $model.a=3 [REQUIRED]</button> &nbsp; <button dd-click="changeNumber(30)">set $model.a=30 [OPTIONAL]</button>
+<input type="text" dd-required="($model.a <= 10)" placeholder="expression controlled">
+
+<br><br>
+<h3>Form validation</h3>
+<i>Submit the form to see browser validation in action.</i>
+<form onsubmit="event.preventDefault(); alert('Form submitted!')">
+  <input type="text" dd-required="myBool" placeholder="This field is required">
+  &nbsp;<button type="submit">Submit</button>
+</form>
+
+
+<style scoped>
+  input {
+    height: 25px;
+    width: 210px;
+    margin-left: 13px;
+    font: 15px Verdana;
+  }
+
+  input:required {
+    border: 2px solid #e07;
+  }
+
+  input:optional {
+    border: 2px solid #aaa;
+  }
+</style>

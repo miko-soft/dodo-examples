@@ -1,0 +1,44 @@
+<h1>dd-data</h1>
+Sets a <b>data-*</b> attribute on an element. Use the <b>--suffix</b> option to specify the data attribute name.
+
+<h3>Controller property</h3>
+<i>Sets <code>data-id</code> using a controller property.</i>
+<br>dd-data="myId --id" &rarr; <span dd-data="myId --id" style="padding:4px 8px;background:#eef;border:1px solid #aaf">element</span>
+<br><small>Inspect the element to see <code>data-id="user-42"</code></small>
+
+<br><br>
+<h3>Model</h3>
+<i>Sets <code>data-category</code> from a model property.</i>
+<br>dd-data="$model.category --category" &rarr;
+<div dd-data="$model.category --category" style="display:inline-block;padding:4px 8px;background:#efe;border:1px solid #afa">product card</div>
+<br><button dd-click="changeCategory()">change category</button>
+
+<br><br>
+<i>Sets <code>data-item-id</code> from a model property.</i>
+<br>dd-data="$model.itemId --item-id" &rarr;
+<button dd-data="$model.itemId --item-id">Item button</button>
+<br><button dd-click="changeId()">change item id</button>
+
+<br><br>
+<h3>Controller method</h3>
+<i>Sets <code>data-role</code> using a controller method.</i>
+<br>dd-data="getRole() --role" &rarr;
+<span dd-data="getRole() --role" style="padding:4px 8px;background:#fee;border:1px solid #faa">role element</span>
+<br><small>Inspect the element to see <code>data-role="admin"</code></small>
+
+<br><br>
+<h3>Reading data attributes via JavaScript</h3>
+<i>Data attributes set by dd-data are accessible via <code>dataset</code>.</i>
+<br>
+<button dd-data="myId --id" onclick="alert('data-id: ' + this.dataset.id)">Click to read data-id</button>
+
+
+<style scoped>
+  div, span {
+    margin-left: 8px;
+  }
+
+  button {
+    margin: 4px;
+  }
+</style>

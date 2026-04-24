@@ -1,0 +1,50 @@
+<h1>dd-readonly</h1>
+Makes elements read-only by setting the <b>readOnly</b> property (<code>elem.readOnly = true/false</code>).
+
+<h3>Controller property</h3>
+<i>Example using a controller property directly as the attribute value.</i>
+<br>dd-readonly="myBool" &rarr; <input type="text" dd-readonly="myBool" value="read-only text">
+
+<br><br>
+<h3>Model</h3>
+<i>Example using a model property as the attribute value.
+  <br>The initial model value is undefined, so the element is read-only.
+  <br>Using the <b>this.</b> prefix will not cause an error.</i>
+<br>dd-readonly="$model.ro.bool" &rarr; <input type="text" dd-readonly="$model.ro.bool" value="editable once model changes">
+<br>dd-readonly="this.$model.ro.bool" &rarr; <input type="text" dd-readonly="this.$model.ro.bool" value="editable once model changes">
+<br><button dd-click="ro1()">change model value</button>
+
+<br>
+<br><button dd-click="toggleRO()">toggle READONLY</button>
+<input type="text" dd-readonly="$model.roX" value="toggle me">
+
+<br><br>
+<h3>Controller method</h3>
+<i>This example demonstrates a controller method call.</i>
+<br>dd-readonly="isReadonly()" &rarr; <input type="text" dd-readonly="isReadonly()" value="method-controlled">
+
+<br><br>
+<h3>Controller method with model</h3>
+dd-readonly="isReadonly2()" &rarr; <input type="text" dd-readonly="isReadonly2()" value="model-method controlled">
+<br><button dd-click="ro2()">change model value</button>
+
+<br><br>
+<h3>Expression/condition</h3>
+<button dd-click="changeNumber(3)">set $model.a=3 [READONLY]</button> &nbsp; <button dd-click="changeNumber(30)">set $model.a=30 [EDITABLE]</button>
+<input type="text" dd-readonly="($model.a <= 10)" value="expression controlled">
+
+
+<style scoped>
+  input {
+    height: 25px;
+    width: 210px;
+    margin-left: 13px;
+    font: 15px Verdana;
+  }
+
+  input[readonly] {
+    background: #f0f0f0;
+    color: #666;
+    cursor: not-allowed;
+  }
+</style>

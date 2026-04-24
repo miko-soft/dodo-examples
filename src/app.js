@@ -71,6 +71,13 @@ import DdClassCtrl from './controllers/dd/DdClassCtrl.js';
 import DdStyleCtrl from './controllers/dd/DdStyleCtrl.js';
 import DdSrcCtrl from './controllers/dd/DdSrcCtrl.js';
 import DdAttrCtrl from './controllers/dd/DdAttrCtrl.js';
+import DdReadonlyCtrl from './controllers/dd/DdReadonlyCtrl.js';
+import DdRequiredCtrl from './controllers/dd/DdRequiredCtrl.js';
+import DdPlaceholderCtrl from './controllers/dd/DdPlaceholderCtrl.js';
+import DdTitleCtrl from './controllers/dd/DdTitleCtrl.js';
+import DdDataCtrl from './controllers/dd/DdDataCtrl.js';
+import DdMinCtrl from './controllers/dd/DdMinCtrl.js';
+import DdMaxCtrl from './controllers/dd/DdMaxCtrl.js';
 
 
 // cloner directives
@@ -84,6 +91,7 @@ import DdEach3DdataCtrl from './controllers/ddCloners/DdEach3DdataCtrl.js';
 import DdEach2Ctrl from './controllers/ddCloners/DdEach2Ctrl.js';
 import DdEach2ComplexCtrl from './controllers/ddCloners/DdEach2ComplexCtrl.js';
 import DdRepeatCtrl from './controllers/ddCloners/DdRepeatCtrl.js';
+import DdEntriesCtrl from './controllers/ddCloners/DdEntriesCtrl.js';
 
 
 // listener directives
@@ -95,6 +103,9 @@ import DdEvtCtrl from './controllers/ddListeners/DdEvtCtrl.js';
 import DdSetCtrl from './controllers/ddListeners/DdSetCtrl.js';
 import DdModelCtrl from './controllers/ddListeners/DdModelCtrl.js';
 import DdModelDdSetCtrl from './controllers/ddListeners/DdModelDdSetCtrl.js';
+import DdOutclickCtrl from './controllers/ddListeners/DdOutclickCtrl.js';
+import DdIntersectCtrl from './controllers/ddListeners/DdIntersectCtrl.js';
+import DdSwipeCtrl from './controllers/ddListeners/DdSwipeCtrl.js';
 
 
 // model
@@ -174,6 +185,13 @@ const $routes = [
   ['when', '/dd/dd-style', DdStyleCtrl],
   ['when', '/dd/dd-src', DdSrcCtrl],
   ['when', '/dd/dd-attr', DdAttrCtrl],
+  ['when', '/dd/dd-readonly', DdReadonlyCtrl],
+  ['when', '/dd/dd-required', DdRequiredCtrl],
+  ['when', '/dd/dd-placeholder', DdPlaceholderCtrl],
+  ['when', '/dd/dd-title', DdTitleCtrl],
+  ['when', '/dd/dd-data', DdDataCtrl],
+  ['when', '/dd/dd-min', DdMinCtrl],
+  ['when', '/dd/dd-max', DdMaxCtrl],
 
 
   // cloner directives
@@ -187,6 +205,7 @@ const $routes = [
   ['when', '/ddcloners/dd-each2', DdEach2Ctrl],
   ['when', '/ddcloners/dd-each2complex', DdEach2ComplexCtrl],
   ['when', '/ddcloners/dd-repeat', DdRepeatCtrl],
+  ['when', '/ddcloners/dd-entries', DdEntriesCtrl],
 
 
   // listener directives
@@ -198,6 +217,9 @@ const $routes = [
   ['when', '/ddlisteners/dd-set', DdSetCtrl],
   ['when', '/ddlisteners/dd-model', DdModelCtrl],
   ['when', '/ddlisteners/dd-model-dd-set', DdModelDdSetCtrl],
+  ['when', '/ddlisteners/dd-outclick', DdOutclickCtrl],
+  ['when', '/ddlisteners/dd-intersect', DdIntersectCtrl],
+  ['when', '/ddlisteners/dd-swipe', DdSwipeCtrl],
 
 
   // model

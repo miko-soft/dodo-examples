@@ -1,0 +1,54 @@
+<h1>dd-max</h1>
+Sets the <b>max</b> attribute on <code>&lt;input&gt;</code> elements (number, range, date, time, etc.).
+
+<h3>Controller property</h3>
+<i>Sets the maximum value of a number input using a controller property.</i>
+<br>dd-max="myMax" (max=100) &rarr; <input type="number" dd-max="myMax" placeholder="max 100">
+
+<br><br>
+<h3>Model — number input</h3>
+<i>The maximum value is driven by the model.</i>
+<br>dd-max="$model.maxVal" &rarr; <input type="number" dd-max="$model.maxVal" placeholder="try a value">
+<br>dd-max="this.$model.maxVal" &rarr; <input type="number" dd-max="this.$model.maxVal" placeholder="try a value">
+<br><button dd-click="setMaxLow()">set max=10</button>
+&nbsp;<button dd-click="setMaxHigh()">set max=200</button>
+
+<br><br>
+<h3>Model — range input</h3>
+<i>Range slider with a dynamic maximum.</i>
+<br>dd-max="$model.maxVal" &rarr; <input type="range" dd-max="$model.maxVal" min="0" style="width:200px">
+
+<br><br>
+<h3>Model — date input</h3>
+<i>Date picker with a maximum date from the model.</i>
+<br>dd-max="$model.maxDate" (max=2025-12-31) &rarr; <input type="date" dd-max="$model.maxDate">
+
+<br><br>
+<h3>Controller method</h3>
+<i>Maximum date returned by a method.</i>
+<br>dd-max="getMaxDate()" (max=2026-12-31) &rarr; <input type="date" dd-max="getMaxDate()">
+
+<br><br>
+<h3>Combined min + max</h3>
+<i>Use dd-min and dd-max together on the same element.</i>
+<br>
+<input type="number" dd-min="myMin" dd-max="myMax" placeholder="5 to 100">
+<br><small>dd-min="myMin" (5) &amp; dd-max="myMax" (100)</small>
+
+
+<style scoped>
+  input {
+    height: 25px;
+    margin-left: 8px;
+    font: 15px Verdana;
+    padding: 3px 6px;
+  }
+
+  input[type="number"] {
+    width: 120px;
+  }
+
+  button {
+    margin: 4px;
+  }
+</style>

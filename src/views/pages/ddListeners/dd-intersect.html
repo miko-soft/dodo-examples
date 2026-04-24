@@ -1,0 +1,49 @@
+<h1>dd-intersect</h1>
+Execute a controller method when an element enters the browser viewport, powered by the native
+<b>IntersectionObserver</b> API — no scroll-event polling needed.
+Observers are stored in <code>$dd.observers</code> and disconnected automatically by <code>ddUNLISTEN()</code>.
+
+<br><br>
+<b>Options:</b>
+<ul>
+  <li><code>--once</code> — disconnect the observer after the first intersection (fire-once)</li>
+  <li><code>--threshold:N</code> — visibility ratio 0–1 required to trigger; default is 0 (any pixel)</li>
+</ul>
+
+<br>
+<h4>1. Lazy-load an image — fires once when it scrolls into view (<code>--once</code>)</h4>
+<div dd-intersect="loadLazyImage() --once" style="min-height:60px;border:2px dashed #aaa;padding:8px;display:inline-block;">
+  <span dd-if="!$model.lazyLoaded" style="color:#999;">[ image will load when this box enters viewport ]</span>
+  <img dd-if="$model.lazyLoaded" dd-src="$model.lazySrc" alt="lazy loaded" style="max-width:400px;display:block;">
+</div>
+<i>&nbsp; Scroll down past the fold if needed — the image loads the first time this element is visible.</i>
+
+
+<br><br>
+<div style="height:60vh;background:repeating-linear-gradient(135deg,#f8f8f8,#f8f8f8 20px,#efefef 20px,#efefef 40px);display:flex;align-items:center;justify-content:center;color:#bbb;font-size:1.1em;">
+  ↓ &nbsp; scroll down &nbsp; ↓
+</div>
+
+
+<br>
+<h4>2. Animate a counter — triggers at 50 % visibility (<code>--threshold:0.5</code>)</h4>
+<section dd-intersect="animateSection($event) --threshold:0.5" style="padding:24px;background:#e8f4fd;border-radius:6px;text-align:center;max-width:300px;">
+  <div style="font-size:3rem;font-weight:bold;color:#1a73e8;" dd-text="$model.counter"></div>
+  <div style="color:#555;">projects shipped</div>
+  <small style="color:#888;">(animates once when 50 % of this card is visible)</small>
+</section>
+
+
+<br><br>
+<div style="height:60vh;background:repeating-linear-gradient(135deg,#f8f8f8,#f8f8f8 20px,#efefef 20px,#efefef 40px);display:flex;align-items:center;justify-content:center;color:#bbb;font-size:1.1em;">
+  ↓ &nbsp; scroll down &nbsp; ↓
+</div>
+
+
+<br>
+<h4>3. Infinite-scroll sentinel — fires every time it enters view (no <code>--once</code>)</h4>
+<p>Sentinel hit count: <b dd-text="$model.sentinelHits"></b></p>
+<div dd-intersect="loadNextPage()" style="height:40px;background:#d4edda;border:1px solid #a3cfa9;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#2d6a4f;">
+  ← sentinel (fires each time this enters the viewport) →
+</div>
+<br><br>

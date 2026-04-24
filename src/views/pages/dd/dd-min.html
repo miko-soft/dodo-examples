@@ -1,0 +1,47 @@
+<h1>dd-min</h1>
+Sets the <b>min</b> attribute on <code>&lt;input&gt;</code> elements (number, range, date, time, etc.).
+
+<h3>Controller property</h3>
+<i>Sets the minimum value of a number input using a controller property.</i>
+<br>dd-min="myMin" (min=5) &rarr; <input type="number" dd-min="myMin" placeholder="min 5">
+
+<br><br>
+<h3>Model — number input</h3>
+<i>The minimum value is driven by the model.</i>
+<br>dd-min="$model.minVal" &rarr; <input type="number" dd-min="$model.minVal" placeholder="try a value">
+<br>dd-min="this.$model.minVal" &rarr; <input type="number" dd-min="this.$model.minVal" placeholder="try a value">
+<br><button dd-click="setMinNegative()">set min=-10</button>
+&nbsp;<button dd-click="setMinPositive()">set min=1</button>
+
+<br><br>
+<h3>Model — range input</h3>
+<i>Range slider with a dynamic minimum.</i>
+<br>dd-min="$model.minVal" &rarr; <input type="range" dd-min="$model.minVal" max="100" style="width:200px">
+
+<br><br>
+<h3>Model — date input</h3>
+<i>Date picker with a minimum date from the model.</i>
+<br>dd-min="$model.minDate" (min=2024-01-01) &rarr; <input type="date" dd-min="$model.minDate">
+
+<br><br>
+<h3>Controller method</h3>
+<i>Minimum date returned by a method.</i>
+<br>dd-min="getMinDate()" (min=2025-01-01) &rarr; <input type="date" dd-min="getMinDate()">
+
+
+<style scoped>
+  input {
+    height: 25px;
+    margin-left: 8px;
+    font: 15px Verdana;
+    padding: 3px 6px;
+  }
+
+  input[type="number"] {
+    width: 120px;
+  }
+
+  button {
+    margin: 4px;
+  }
+</style>

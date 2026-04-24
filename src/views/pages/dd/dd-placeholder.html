@@ -1,0 +1,40 @@
+<h1>dd-placeholder</h1>
+Sets the <b>placeholder</b> attribute on input/textarea elements from a controller property or method.
+
+<h3>Controller property</h3>
+<i>Example using a controller property directly as the attribute value.</i>
+<br>dd-placeholder="myPlaceholder" &rarr; <input type="text" dd-placeholder="myPlaceholder">
+
+<br><br>
+<h3>Model</h3>
+<i>Example using a model property as the attribute value.</i>
+<br>dd-placeholder="$model.ph" &rarr; <input type="text" dd-placeholder="$model.ph">
+<br>dd-placeholder="this.$model.ph" &rarr; <input type="text" dd-placeholder="this.$model.ph">
+<br><button dd-click="changePlaceholder()">change placeholder</button>
+&nbsp;<button dd-click="resetPlaceholder()">reset</button>
+
+<br><br>
+<h3>Controller method</h3>
+<i>Placeholder text returned by a controller method.</i>
+<br>dd-placeholder="getPlaceholder()" &rarr; <input type="text" dd-placeholder="getPlaceholder()">
+
+<br><br>
+<h3>Textarea</h3>
+<i>Works on textarea elements too.</i>
+<br>dd-placeholder="$model.ph" &rarr; <textarea dd-placeholder="$model.ph" rows="3"></textarea>
+
+
+<style scoped>
+  input, textarea {
+    height: 25px;
+    width: 260px;
+    margin-left: 13px;
+    font: 15px Verdana;
+    padding: 3px 6px;
+  }
+
+  textarea {
+    height: 60px;
+    resize: vertical;
+  }
+</style>

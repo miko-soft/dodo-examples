@@ -1,0 +1,44 @@
+<h1>dd-title</h1>
+Sets the <b>title</b> attribute (tooltip) on any element from a controller property or method.
+<br><i>Hover over the elements to see the tooltip.</i>
+
+<h3>Controller property</h3>
+<i>Example using a controller property directly as the attribute value.</i>
+<br>dd-title="myTitle" &rarr; <button dd-title="myTitle">Hover me (ctrl prop)</button>
+
+<br><br>
+<h3>Model</h3>
+<i>Example using a model property as the attribute value.</i>
+<br>dd-title="$model.tip" &rarr; <button dd-title="$model.tip">Hover me (model)</button>
+<br>dd-title="this.$model.tip" &rarr; <span dd-title="this.$model.tip" style="text-decoration:underline;cursor:help">Hover this text (model)</span>
+<br><button dd-click="changeTitle()">change tooltip</button>
+&nbsp;<button dd-click="resetTitle()">reset</button>
+
+<br><br>
+<h3>Controller method</h3>
+<i>Tooltip text returned by a controller method.</i>
+<br>dd-title="getTitle()" &rarr; <button dd-title="getTitle()">Hover me (method)</button>
+
+<br><br>
+<h3>Works on any element</h3>
+<i>dd-title can be applied to any HTML element.</i>
+<br>
+<img dd-title="$model.tip" src="/img/logo.png" style="width:40px;height:40px;cursor:help" alt="logo with tooltip">
+&nbsp;
+<input type="text" dd-title="myTitle" placeholder="input with tooltip">
+&nbsp;
+<a href="#" dd-title="getTitle()">link with tooltip</a>
+
+
+<style scoped>
+  button {
+    margin: 4px;
+  }
+
+  input {
+    height: 25px;
+    width: 200px;
+    font: 15px Verdana;
+    padding: 3px 6px;
+  }
+</style>

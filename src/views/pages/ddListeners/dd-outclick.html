@@ -1,0 +1,36 @@
+<h1>dd-outclick</h1>
+Execute a controller method when the user clicks <b>outside</b> the element.
+The listener is attached to <code>document</code>; the <code>$dd.listeners</code> entry stores <code>elem: document</code> so <code>ddUNLISTEN()</code> cleans it up automatically on route change.
+
+
+<br><br>
+<h4>DD-OUTCLICK — close a dropdown when clicking outside</h4>
+<div dd-outclick="closeDropdown()" style="display:inline-block;position:relative;">
+  <button dd-click="toggleDropdown()">Toggle Dropdown ▾</button>
+  <ul dd-if="$model.dropdownOpen" style="position:absolute;top:100%;left:0;margin:0;padding:8px 0;list-style:none;background:#fff;border:1px solid #ccc;min-width:160px;z-index:10;box-shadow:2px 2px 6px rgba(0,0,0,.15);">
+    <li style="padding:6px 16px;">Option A</li>
+    <li style="padding:6px 16px;">Option B</li>
+    <li style="padding:6px 16px;">Option C</li>
+  </ul>
+</div>
+<i>&nbsp; Click the button to open, then click outside to close.</i>
+
+
+<br><br>
+<h4>DD-OUTCLICK — dismiss a tooltip/popup when clicking outside</h4>
+<div dd-outclick="closeDropdown2()" style="display:inline-block;position:relative;">
+  <button dd-click="toggleDropdown2()">Show Info ℹ</button>
+  <div dd-if="$model.dropdownOpen2" style="position:absolute;top:calc(100% + 6px);left:0;padding:10px 14px;background:#fffbe6;border:1px solid #f0c040;border-radius:4px;min-width:220px;z-index:10;box-shadow:2px 2px 6px rgba(0,0,0,.12);">
+    This is a tooltip popup. Click anywhere outside to dismiss it.
+  </div>
+</div>
+<i>&nbsp; Click outside the yellow box to dismiss.</i>
+
+
+<br><br>
+<b>Log:</b> <span dd-text="$model.log" style="color:steelblue;"></span>
+
+
+<style scoped>
+  ul li:hover { background: #f5f5f5; cursor: pointer; }
+</style>
